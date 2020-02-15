@@ -1,0 +1,235 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    font-family: 'Poppins', sans-serif;
+    background-color: #003d59;
+}
+
+
+h1
+{
+    color: white;
+    font-size: 30px;
+    margin-top: 40px;
+}
+
+form
+{
+    margin-top: 10px;
+    width: 400px;
+}
+
+
+
+.input-div
+{
+    position: relative;
+    display: grid;
+    grid-template-columns: 7% 93%;
+    margin: 25px 0;
+    padding: 5px 0;
+    border-bottom: 2px solid #d9d9d9;
+}
+
+.input-div::after, .input-div::before
+{
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #38d39f;
+    transition: .3s;
+}
+
+.input-div::after
+{
+    right: 190%;
+}
+
+.input-div::before
+{
+    left: 50%;
+}
+
+.input-div.focus .i i
+{
+    color: #38d39f;
+}
+
+.input-div.focus div h5
+{
+    top: -5px;
+    font-size: 15px;
+    width: 500px;
+}
+
+.input-div.focus::after, .input-div.focus::before
+{
+    width: 50%;
+}
+
+.input-div .one
+{
+    margin-top: 0;
+    
+}
+
+.input-div .two
+{
+    margin-bottom: 4px;
+}
+
+.i
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.i i
+{
+    color: #d9d9d9;
+    transition: .3s;
+}
+
+.input-div>div
+{
+    position: relative;
+    height: 45px;
+}
+
+.input-div>div h5
+{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-weight: 300px;
+    font-size: 18px;
+    transition: .3s;
+    width: 500px;
+}
+
+.input
+{
+    font-family: 'Poppins', sans-serif;
+    position: absoulate;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0.5rem 0.7rem;
+    font-size:1.2rem;
+    color:#555;
+   
+}
+
+
+
+
+
+
+.btn-orange:hover {
+    color: #fff;
+}
+a.btn-primary {
+    font-size: 1.6rem;
+    text-decoration: none;
+    padding: 1.8rem 4rem;
+    -webkit-border-radius: 3rem;
+    border-radius: 3rem;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+}
+.btn-orange {
+    
+    
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    color: #fff;
+    padding: 1.5rem 4rem;
+    font-size: 1.8rem;
+    background: #fe6625;
+
+}
+.renew-box {
+    width: 21rem;
+    display: inline-block;
+    margin: 12rem 10% 0;
+    padding: 2rem 1.5rem;
+    background: #1a516a;
+    -webkit-border-radius: 1rem;
+    border-radius: 1rem;
+}
+.renew-box h2 {
+    font-size: 1.5rem;
+    padding: 2rem 1rem;
+    font-style: italic;
+    font-weight: 300;
+}
+.renew-box a.btn-blue {
+    padding: 1.8rem 1.5rem;
+    margin-right: 0;
+}
+a.btn-primary {
+    font-size: 1.6rem;
+    text-decoration: none;
+    padding: 1.8rem 4rem;
+    -webkit-border-radius: 3rem;
+    border-radius: 3rem;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+}
+
+
+.renew-box a.btn-blue {
+    padding: 1.8rem 1.5rem;
+    margin-right: 0;
+}
+
+
+.input
+{
+    width: 400px;
+    color: white;
+    font-size: medium;
+}
+/* radio for renew */
+	
+ p .new {
+     color: white;
+ }
+
+
+@media screen and (max-width: 1050px)
+{
+    .container
+    {
+        grid-gap: 5rem;
+    }
+}
+
+@media screen and (max-width: 1000px)
+{
+  
+}
+
+@media screen and (max-width: 900px)
+{
+   
+}

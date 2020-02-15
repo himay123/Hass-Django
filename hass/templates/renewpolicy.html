@@ -1,0 +1,44 @@
+{% extends 'maste.html' %}
+{% load static %}
+{% block containt %}
+
+        <link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css">
+        <div class="container">
+            <div class="row centered-form">
+                <div class="col-md-6 col-sm-offset-2 col-md-offset-2">
+            
+                <h1> Renew My Car Policy.</h1>
+                <h2 style="color: white; font-size: 20px; margin-top: 20px; margin-bottom: 20px;">Choose below option to retrive your policy</h2>
+                  <form name="renewpolicy" method="POST">
+              
+               
+                  <label class="radio-inline">
+                    <input type="radio" name="renew" checked style="height:20px;width:20px"> <p style="color: white;"> Mobile no</p>
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="renew"><p style="color: white;">Registration no</p>
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="renew"><p style="color: white;">policy no</p>
+                  </label>
+                  
+                  <div class="input-div two">
+                      
+                      <div>
+                          <h5>Mobile no.</h5>
+                          <input type="text"  name="mobileno" class="input">
+                      </div>
+                  </div>
+                 
+                 <a href="#" class="btn-primary btn-orange js-car-register">Procced</a>
+                 
+              </form>
+          </div>
+      
+         
+         
+         </div>
+     </div>
+       
+        <script src="{% static 'js/main1.js' %}" type="text/javascript"></script>
+    {% endblock %}

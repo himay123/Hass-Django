@@ -1,0 +1,75 @@
+{% extends 'maste.html' %}
+{% load static %}
+{% block containt %}
+
+<style>
+    
+       .container
+       {
+           margin-top: 30px;
+           margin-left: 30px;
+       } 
+       form
+       {
+           padding: 20px;
+       }
+       
+
+.seperator i {
+    padding: 0 10px;
+    background: #f7f7f7;
+    position: relative;
+    top: -11px;
+    z-index: 1;
+}
+       .seperator {
+    margin: 20px 0 10px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+
+</style>
+  
+    <div class="container">
+        <div class="row centered-form">
+            <div class="col-md-6 col-sm-offset-2 col-md-offset-4">
+                <div class="panel panel-default panel-primary">
+                    <div class="panel-heading" style="height:50px;">
+                            <h1 class="panel-title text-center" style="line-height:30px; font-size: 20px; font-weight: 600;">Login</h1>
+                             </div>
+                             <div class="panel-body">
+                                    <form method="POST">
+                                        
+                                          {% csrf_token %}
+                                            <div class="form-group">
+                                               <input type="text" name="username" id="uname" class="form-control" placeholder="Enter Username">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" name="password" id="pass" class="form-control" placeholder="Enter password">
+                                             </div>
+                                             <div class="form-group">
+                                              <select name="choise" id="choise" class="form-control">
+                                                <option>Select login type</option>
+                                                   <option value="towing">Towing</option>
+                                                   <option value="rental">Rental</option>
+                                                   <option value="insurance">Insurance</option>
+                                              </select>
+                                          </div>
+                                            <div class="form-group">
+                                               <input type="submit" class="form-control btn btn-success" value="Login">     
+
+                                            </div>
+                                            <div class="seperator"><i>or</i></div>
+                                            <div class="text-center social-btn">
+                                                <a href="#" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Sign in with <b>Facebook</b></a>
+                                                <a href="#" class="btn btn-info btn-block"><i class="fa fa-twitter"></i> Sign in with <b>Twitter</b></a>
+                                                <a href="#" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a>
+                                            </div>
+                                     </div>
+                              </form>
+                        </div>
+                 </div>
+            </div>
+         </div>
+   {% endblock %}

@@ -1,0 +1,140 @@
+{% extends 'maste.html' %}
+{% load static %}
+{% block containt %}
+
+<style>
+    
+       .container
+       {
+           margin-top: 30px;
+           margin-left: 30px;;
+       } 
+      .panel-body{
+            color: #999;
+            border-radius: 3px;
+            margin-bottom:auto;
+            background: #f2f3f7;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+
+        }
+
+</style>
+
+<script>
+ 
+  /*function check()
+  {
+      var password=document.getElementById('pass').value;
+      var spassword=document.getElementById('cpass').value;
+      if(password!=spassword)
+      {
+          alert('Password Missmetch');
+          return false;
+      }
+      else
+      {
+          return true;
+      }
+  };*/
+  
+</script>  
+
+<body>
+    
+    <div class="container">
+        <div class="row centered-form">
+            <div class="col-md-6 col-sm-offset-2 col-md-offset-4">
+                
+                <div class="panel panel-default panel-primary">
+                    <div class="panel-heading">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+                            <ol class="carousel-indicators">
+                              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                              <li data-target="#myCarousel" data-slide-to="1"></li>
+                              <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>
+                        
+                            
+                            <div class="carousel-inner">
+                              <div class="item active">
+                                <img src="{% static 'images/banner.jpg' %}" alt="" style="width:100%;">
+                              </div>
+                        
+                              <div class="item">
+                                <img src="{% static 'images/images.jpg' %}" alt="" style="width:100%;">
+                              </div>
+                            
+                              <div class="item">
+                                <img src="{% static 'images/banner.jpg' %}" alt="" style="width:100%;">
+                              </div>
+                            </div>
+                          </div>
+                             </div>
+                             <div class="panel-body">
+                                    <form method="post">
+                                      {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-xs-4 col-sm-4 col-md-4">
+                                                <div class="form-group">
+                                        <input type="text" name="fname" id="fname"  size="32" class="form-control input-sm" placeholder="First Name">
+                                        <span id='first' class="text-danger font-weight-bold"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-4 col-sm-4 col-md-4">
+                                                <div class="form-group">
+                                                    <input type="text" name="middle" id="middle" class="form-control input-sm" placeholder="Middel Name">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-4 col-sm-4 col-md-4">
+                                                <div class="form-group">
+                                                    <input type="text" name="lname" id="lname" class="form-control input-sm" placeholder="Last Name">
+                                                </div>
+                                            </div>
+                                        </div>
+                                          
+                                            <div class="form-group">
+                                               <input type="number" name="mobile" id="mobile" class="form-control" placeholder="Enter Mobile Number">
+                                            </div>
+                                            <div class="form-group">        
+                                                <input type="date" name="dob" id="dob" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="radio-inline"><input type="radio" name="gen" id="gender" value="Male" checked>Male</label>
+                                                <label class="radio-inline"><input type="radio" name="gen"  id="gender" value="Female">Female</label>
+                                            </div>
+                                            
+                                             <!--<div class="form-group">
+                                                <select name="choice" id="choice" class="form-control">
+                                                     <option>Select Choice</option>
+                                                     <option value="towing">Towing</option>
+                                                     <option value="rental">Rental</option>
+                                                     <option value="insurance">Insurance</option>
+                                                </select>
+                                            </div>-->
+                                            <div class="form-group">
+                                                <textarea name="address" id="address" cols="30" rows="5" class="form-control" placeholder="Address"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email Address">
+                                            </div>
+                                            <div class="form-group">
+                                              <input type="password" name="pass" id="pass" class="form-control" placeholder="Enter Password">
+                                            </div>
+                                            <div class="form-group">
+                                               <input type="password" name="cpass" id="cpass" class="form-control" placeholder="enter conform Password">
+                                            </div>
+                                            
+                                              <input type="submit" class="form-control btn btn-success">   
+                                     </form>
+                                     
+                            </div>
+                              
+                        </div>
+                 </div>
+            </div>
+         </div>
+         
+
+  {% endblock %}
