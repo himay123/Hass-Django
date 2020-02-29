@@ -13,4 +13,23 @@ class User(AbstractUser):
 '''class document(models.Model):
     image=models.ImageField(upload_to='myimage')
     uploaded_by=models.ForeignKey(get_user_model(),on_delete=models.CASCADE)'''
+class cites(models.Model):
+    city_name=models.CharField(max_length=40)
+    city_state=models.CharField(max_length=40)
+    
+
+class Garage(models.Model):
+    dealer_name=models.CharField(max_length=40)
+    address=models.CharField(max_length=100)
+    city=models.CharField(max_length=40)
+    state=models.CharField(max_length=40)
+    contect_no=models.BigIntegerField()
+    contect_person=models.CharField(max_length=40)
+    type_of_vehical=models.CharField(max_length=40)
+    manufacture=models.CharField(max_length=100)
+    location=models.ForeignKey(cites,on_delete=models.CASCADE,null=True)
+
+    
+    
+    
 

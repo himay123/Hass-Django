@@ -1,0 +1,314 @@
+{% load static %}
+<html id="sfFrontendHtml" xmlns="http://www.w3.org/1999/xhtml" class="android">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta http-equiv="cleartype" content="on">
+
+<link rel="preconnect dns-prefetch" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+<link rel="preload" as="style" href="{% static 'css/home-style.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/home-style.css' %}" type="text/css">
+
+
+<link rel="preload" as="style" href="{% static 'css/header-footer.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/header-footer.css' %}" type="text/css">
+
+<link rel="preload" as="script" href="{% static 'js/jquery-3-4-1-min.js' %}">
+<script src="{% static 'js/jquery-3-4-1-min.js' %}"></script>
+<link rel="preload" as="script" href="js/customdeveloper.js"> 
+ <script src="js/customdeveloper.js"></script>
+ <script src="{% static 'js/home-script.js' %}"></script>
+ 
+ <!--[if IE 9]>
+  <script src="/docs/default-source/assets/js/jquery-placeholder-min.js"></script>
+    <script>
+       $(document).ready(function(){
+           $('input, textarea').placeholder({ customClass: 'my-placeholder' });
+       });
+    </script>
+    <style>
+        .my-placeholder { color:#818181; }
+    </style>
+    <![endif]-->
+
+</head>
+
+<header id="header">
+    <div class="header">
+        <div class="rightBlog il-headerTop">
+            <div class="il-container">
+               
+                <div class="feedBack">
+                    <a class="clickSlide" id="btnmain_login" href="{% url 'login' %}"><span class="profIcohide" style="display: block;"></span><span class="profIcoactive" style="display: none;"></span></a>
+                    <div class="profileSec">
+                        <div class="welProf">
+                            <h4>Welcome</h4>
+							<span class="guestIco" style="display: inline;"></span><span class="menIco" style="display: none;"></span><span class="womIco"></span>
+                            <div class="mobloginblock">
+                                <div class="mobBeforelogin">
+                                    <h5>Welcome Guest!</h5>
+                                    <a href="/registration-new-ui" class="mobloginBt">Login </a>
+                                </div>
+                                <div class="mobAfterlogin" style="display: none;">
+                                    <h3 class="attachUserNameDesk"><span class="detach-username" id="LblUser" style="display: none;"></span></h3>
+                                    <div class="editProf"><a href="/manage-your-policy/dashboard-duplicate">Edit Profile</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="logoutSec">
+                            
+                            
+                        <p class="detach-lastLogin">Last Log in: <span id="lbllastlogin"></span></p><a class="linkBtn detach-loginBtn" href="#" onclick="funClearsessionForNewTW();" id="LnkLogout" style="display: none;">
+                                <span class="glyphicon glyphicon-off"></span> Logout
+                            </a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    <div class="mainNvbg">
+        <div class="il-container">
+            <div class="nav clearfix">
+                <div class="mobHumberger"><span></span><span></span><span></span></div>
+                
+                <!--<div class="mobLogo">
+                    <a href="/">image logo</a>
+                </div> --> 
+                <div class="mobMenuWrapper">
+                    <div class="mobWelBlock clearfix">
+                        <a href="#" class="menuClose"></a>
+                        <div class="welProf">
+                            <h4>Welcome</h4>
+							<span class="guestIco"></span><span class="menIco" style="display: none;"></span><span class="womIco"></span>
+                            <div class="mobloginblock">
+                                <div class="mobBeforelogin">
+                                    <h5>Welcome Guest!</h5>
+                                    <a href="#" class="mobloginBt">Login</a>
+                                </div>
+                                <div class="mobAfterlogin" style="display: none;">
+                                    <h3 class="attachUserNameMob">Welcome, </h3>
+                                    <div class="editProf"><a href="#">Edit Profile</a> &nbsp;|&nbsp; <span class="loginAttacher"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="navBar">
+                        <li class="mobPro">
+                            <a class="mobProduct" id="Product_link">Products<span class="dwnArrow"></span></a>
+                            <span class="_mPdtBack"><span class="dwnArrow"></span>Back</span>
+                            <ul class="menuBox rightAln">
+                                <li>
+                                    <h4><a href="#" id="Motor_Insurance"></a><span class="menupIcons travelInsico"></span>Motor Insurance</h4>
+                                    <ul class="insuranceBlock">
+                                        <li><a onclick="$('.loader_new').show();" id="Car_Insurance" href="#">Car Insurance</a></li>
+                                        
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4><a href="#" id="Rental"></a><span class="menupIcons motorInsico"></span>Rental</h4>
+                                    <ul class="insuranceBlock">
+                                        <li><a onclick="$('.loader_new').show();" id="Car_Rental" href="#">Car Rental</a></li>
+                                    
+                                        
+                                    </ul>
+                                </li>
+                                <li>
+                                    <h4><a href="#" id="Towing"></a><span class="menupIcons helthInsico"></span>Towing</h4>
+                                    <ul class="insuranceBlock">
+                                        <li><a onclick="$('.loader_new').show();" id="heavy" href="#">Heavy Weight</a></li>
+                                        <li><a onclick="$('.loader_new').show();" id="light" href="#">Light Weight</a></li>
+                                        <li><a onclick="$('.loader_new').show();" id="other" href="#">Other Vehical</a></li>
+                                    </ul>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a>Claims<span class="dwnArrow"></span></a>
+                            <ul class="menuBox otherdrMenu">
+                                
+                                <li><a href="#">Motor Claims</a></li>
+                               
+                            </ul>
+                        </li>
+                        <li>
+                            <a id="Renewals_Link">Renewals<span class="dwnArrow"></span></a>
+                            <ul class="menuBox otherdrMenu">
+                                <li><a href="#" title="Car Policy" id="Car_Policy">Car Policy</a></li>
+                               
+                            </ul>
+                        </li>
+                        <li>
+                            <a>Support<span class="dwnArrow"></span></a>
+                            <ul class="menuBox otherdrMenu">
+                                <li><a href="#">Help Center</a></li> 
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Grievance Redressal</a></li><li class=""><a href="#">Counter Offer Acceptance</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a>Info Centre<span class="dwnArrow"></span></a>
+                            <ul class="menuBox otherdrMenu">
+                                <li><a href="#">Info Centre</a></li>
+                                <li><a href="#">Expert Blogs</a></li>
+                                <li><a href="#">FAQs</a></li>
+                                <li><a href="#">Tax Benefits</a></li>
+                                <li><a href="#">Downloads</a></li>
+                                <li><a href="#">Testimonials</a></li>
+                                <li><a href="#">Knowledge Articles</a></li>
+                                <li><a href="#">Insurance Updates</a></li>
+                            
+                            </ul>
+                        </li>
+                        <li class="no-dropdown">
+                            <a href="#">Investor Relations</a>
+                        </li>
+                    </ul>
+                    <ul class="calFeedback">
+                        <li class="mobhg"><a class="calBckclick callBackhide" href="#">call Back</a></li>
+                        <li><a class="calBckclick" href="#">Feedback</a></li>
+                    </ul>
+                    <div class="logouthere" style="display: none;">
+                        <!--<div class="logoutSec">
+                            <p>Last Log in: <span id="lbllastlogin"></span></p>
+                            
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+ 
+<img src="{% static 'images/main.jpg' %}" alt="" height="600px" width="100%">
+{% block containt %}
+
+    {% endblock %}
+    <div class="sf_cols">
+        <div class="sf_colsOut " data-placeholder-label="footer">
+            <div id="C003_Col00" class="sf_colsIn sf_1col_1in_100"><div class="sfContentBlock"><footer>
+            <div class="footerTop quick_links">
+                <div class="il-container">
+                    <div class="row clearfix" style="margin-left: 10px;">
+                        <div class="col-md-3">
+                            <h4 class="">PRODUCTS</h4>
+                            <ul>
+                                <li><a href="#">Motor Insurance</a></li>
+                                <li><a href="#">Car Insurance</a></li>
+                                <li><a href="#">Two Wheeler Insurance</a></li>
+                                <li><a href="#">Health Insurance</a></li>
+                                <li><a href="#">Complete Health Insurance</a></li>
+                                <li><a href="#">Health Booster</a></li>
+                                <li><a href="#">Personal Accident Insurance</a></li>
+                                <li><a href="#" target="_blank">International Travel Insurance</a></li>
+                                <li><a href="#">Home Insurance</a></li>
+                                <li><a href="#">Marine Insurance</a></li>
+                                <li><a target="_blank" href="#">NRI Insurance Services</a></li>
+                                <li><a target="_blank" href="#">Business Insurance</a></li>
+                                <li><a target="_blank" href="#">Third Party Insurance</a></li>
+                                <li><a target="_blank" href="/crop-insurance">Crop Insurance</a></li><li><a target="_blank" href="/rural-insurance">Rural Insurance </a></li>
+                            </ul>
+                            <h4 class="">INFO CENTER</h4>
+                            <ul>
+                                <li><a target="_blank" href="/experts-blogs">Expert Blog</a></li>
+                                <li><a target="_blank" href="/insurance-information">Insurance Information</a></li><li><a target="_blank" href="/branches">ICICI Lombard Branches</a></li>
+                            </ul>
+                            
+                        </div>
+                        <div class="col-md-3">
+                            <h4 class="">SERVICES</h4>
+                            <ul>
+                                <li><a href="/customer-support">Customer Support</a></li>
+                                <li><a target="_blank" href="/grievance-redressal">Grievance Redressal</a></li>
+                                <li><a target="_blank" href="/manage-your-policy/search-quote" rel="nofollow">Retrieve Quote</a></li>
+                                <li><a target="_blank" href="/IL-Health-Care/Home/UnclaimedAmount" rel="nofollow">Unclaimed Amount</a></li>
+                                <li><a target="_blank" href="/IL-Health-Care/Customer/ClaimIntimationOnlineTracking" rel="nofollow">Intimate Claim</a></li>
+                                <li><a target="_blank" href="https://app4.icicilombard.com/ucvselfhelp/(S(0c4nypkepjoazqvnkij1kzzf))/ucvwebappln/ucvnewclaimsearch.aspx" rel="nofollow">Track Claim</a></li>
+                                <li><a target="_blank" href="https://app3.icicilombard.com/claimstracker/trackclaim.aspx" rel="nofollow">Marine/Property Claims</a></li>
+                                <li><a target="_blank" onclick="window.open('https://chat.icicilombard.com/Chat/ChatPanel.aspx','targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=670,height=680');" rel="nofollow">Live Chat</a></li>
+                                <li><a href="/renew-policy">Renew Your Policy</a></li>
+                                <li><a href="/whatsapp-opt-out" v="">Whatsapp Notification</a></li>
+                                <li><a href="/electronic-insurance-account" rel="nofollow">EIA</a></li>
+                                <li><a target="_blank" href="/feedback" rel="nofollow">Customer Feedback</a></li>
+                                <li><a target="_blank" href="/support/contact-us">Contact Us</a></li>
+                            </ul>
+                            <h4 class="">PMFBY</h4>
+                            <ul>
+                                <li><a href="/crop-insurance" class="footer-no-hover" target="_blank">
+                                    <img class="lazy pmfbyLogo loaded" data-src="/images/default-source/default-album/pmfby.png" alt="Pradhan Mantri Fasal Bima Yojana" src="/images/default-source/default-album/pmfby.png" data-was-processed="true"><p class="pmfbyText">Pradhan Mantri Fasal<br>Bima Yojana</p></a><p class="pmfbyText">Toll free no: 1800 266 9725</p></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>LEGAL</h4>
+                            <ul>
+                                <li><a target="_blank" href="/legal/privacy-policy" rel="nofollow">Privacy Policy</a></li>
+                                <li><a target="_blank" href="/legal/privacy-policy-mobile-app" rel="nofollow">Insure App Privacy Policy</a></li>
+                                <li><a target="_blank" href="/legal/products-withdrawn" rel="nofollow">Products Withdrawn</a></li>
+                                <li><a target="_blank" href="/legal/do-not-call-registry" rel="nofollow">Do Not Call Registry</a></li>
+                                <li><a target="_blank" href="/legal/terms" rel="nofollow">Terms &amp; Conditions</a></li>
+                                <li><a target="_blank" href="/legal/disclaimer" rel="nofollow">Disclaimer</a></li>
+                                <li><a target="_blank" href="/legal/whistle-blower-policy" rel="nofollow">Whistle Blower Policy</a></li>
+                                <li><a target="_blank" title="Insurance Ombudsman" href="http://ecoi.co.in/ombudsman.html" rel="nofollow">Insurance Ombudsman</a></li>
+                                <li><a target="_blank" href="/claims/loss-survey-limits">Surveyor Limit</a></li>
+                                <li><a href="/docs/default-source/public-disclosures/code-for-fair-disclosure.pdf" title="Code for Fair Disclosure" target="_blank">Code for Fair Disclosure</a></li>
+                                <li><a href="/docs/default-source/default-document-library/code-of-conduct.pdf?sfvrsn=0" title="Code of Conduct" target="_blank">Code of Conduct</a></li>
+                                <li><a target="_blank" href="/docs/default-source/other-documents/stewardship_policy.pdf">Stewardship Policy</a></li>
+                                <li><a target="_blank" href="/docs/default-source/other-documents/summary-of-stewardship-for-website.xlsx?sfvrsn=2">Disclosure under Stewardship Policy</a></li>
+                                <li><a target="_blank" href="/docs/default-source/default-document-library/policy-for-protection-of-policyholder.pdf?sfvrsn=2">Policyholder’s Interest Protection Policy</a></li>
+                                <li><a target="_blank" href="/docs/default-source/downloads/listtt.pdf?sfvrsn=2">ICICI Lombard Product List </a></li>
+                                <li><a target="_blank" href="/docs/default-source/Policy-Wordings-product-Brochure/final-gro-mapping.pdf?sfvrsn=4">GRO Details of Active Branches</a></li>
+                            </ul>
+                            <h4>SOCIAL</h4>
+                            <div class="social_hover footer_social">
+                                <a href="https://www.facebook.com/ICICILombard" target="_blank"><span class="si1"></span></a> 
+                                <a href="https://www.linkedin.com/company/icici-lombard?trk=tyah" target="_blank"><span class="si2"></span></a> 
+                                <a href="https://plus.google.com/+ICICILombard/posts" target="_blank"><span class="si3"></span></a> 
+                                <a href="https://twitter.com/ICICILombard" target="_blank" title="twitter"><span class="si4"></span></a>
+                                <a href="https://www.youtube.com/user/ICICILombardLtd" target="_blank" title="youtube"><span class="si5"></span></a> 
+                                <a href="https://www.instagram.com/icicilombardofficial" target="_blank"><span class="si6"></span></a>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>ABOUT US</h4>
+                            <ul>
+                                <li><a target="_blank" href="/about-us">Overview</a></li>
+                                <li><a target="_blank" href="/about-us/promoters">Promoters</a></li>
+                                <li><a target="_blank" href="/about-us/csr">CSR</a></li>
+                                <li><a target="_blank" href="/india-risk-management">Risk Management</a></li>
+                                <li><a target="_blank" href="/about-us/public-disclosure">Public Disclosures</a></li>
+                            </ul>
+                            <h4>OTHERS</h4>
+                            <ul>
+                                <li><a href="/agent" target="_blank">Agents Portal</a></li>
+                                <li><a target="_blank" href="https://cp.icicilombard.com/">Corporate Login</a></li>
+                                <li><a target="_blank" href="/careers">Careers</a></li>
+                                <li><a target="_blank" href="https://alumni.icicilombard.com/psc/ILPSPROD/EMPLOYEE/HRMS/c/Z_XEMP_ONLN_MNU.Z_XEMP_PRE?Page=Z_XEMP_LOGIN&amp;Action=U">Alumni</a></li>
+                                <li><a target="_blank" href="https://onlinemanager.icicilombard.com/authenticateuser.asp">Online Manager</a></li>
+                                <li><a target="_blank" title="Suspended Agents" href="/docs/default-source/other-documents/suspended_agents.pdf?sfvrsn=16">Suspended Agents</a></li>
+                                <li><a target="_blank" title="Corporate Agents" href="/docs/default-source/other-documents/corporate_agents.pdf?sfvrsn=8">Corporate Agents</a></li>
+                                <li><a target="_blank" href="/sitemap">Sitemap</a></li>
+                                <li><a target="_blank" href="/IL-Health-Care/COI/COICertificate">Pradhan Mantri Suraksha Bima Yojana</a></li>
+                                <li><a target="_blank" href="/IL-Health-Care/Weather/Login">Crop Insurance - Login</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </footer><script>$(document).ready(function(){
+    $('.sfPublicWrapper').removeClass('sfPublicWrapper');
+    });</script>
+    
+    </div>
+                
+            </div>
+        </div>
+    </div>
+        
+    </body>
+    </html>
+    

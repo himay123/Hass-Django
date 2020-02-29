@@ -1,6 +1,73 @@
 {% extends 'maste.html' %}
 {% load static %}
 {% block containt %}
+<style>
+   
+  
+  input[type=radio].css-checkbox {
+							position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+						}
+
+						input[type=radio].css-checkbox + label.css-label {
+							padding-left:30px;
+							height:25px; 
+							display:inline-block;
+							line-height:25px;
+							background-repeat:no-repeat;
+							background-position: 0 0;
+							font-size:25px;
+							vertical-align:middle;
+							cursor:pointer;
+
+						}
+
+						input[type=radio].css-checkbox:checked + label.css-label {
+              
+							background-position: 0 -25px;
+						}
+						label.css-label {
+				background-image:url("{% static 'images\ck.png' %}");
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+</style>
+<script>
+  $(document).ready(function(){
+    $("#mno").fadeIn(1000);
+    
+    $("input[type='radio']").change(function(){
+  if($(this).val()=="mobileno")
+  {
+    console.log('hello')
+  $("#mno").fadeIn(1000);
+  }
+else
+{
+$("#mno").fadeOut(); 
+}
+if($(this).val()=="regno")
+{
+$("#reg").fadeIn(1000);
+}
+else
+{
+$("#reg").fadeOut(); 
+}
+if($(this).val()=="policyno")
+{
+$("#pno").fadeIn(1000);
+}
+else
+{
+$("#pno").fadeOut(); 
+}
+});
+});
+</script>
 
         <link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css">
         <div class="container">
@@ -10,27 +77,48 @@
                 <h1> Renew My Car Policy.</h1>
                 <h2 style="color: white; font-size: 20px; margin-top: 20px; margin-bottom: 20px;">Choose below option to retrive your policy</h2>
                   <form name="renewpolicy" method="POST">
-              
-               
-                  <label class="radio-inline">
-                    <input type="radio" name="renew" checked style="height:20px;width:20px"> <p style="color: white;"> Mobile no</p>
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="renew"><p style="color: white;">Registration no</p>
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="renew"><p style="color: white;">policy no</p>
-                  </label>
+              {% csrf_token %}
+                    <table>
+                      <tr>
+                          <td>
+                              <input type="radio" name="renew" id="radio1" value="mobileno" class="css-checkbox" checked="checked" />
+                              <label for="radio1"  class="css-label radGroup1"><p style="color: white; font-size: 18px;">Mobile no</p></label>
+                          </td>
+                          <td>
+                              <input type="radio" name="renew" value="regno" id="radio2" class="css-checkbox" />
+                              <label for="radio2" class="css-label radGroup1"><p style="color: white; font-size: 18px;">Registration no</p></label>
+                          </td>
+                          <td>
+                              <input type="radio" name="renew" value="policyno" id="radio3" class="css-checkbox" />
+                              <label for="radio3" class="css-label radGroup1"><p style="color: white; font-size: 18px;">Policy no</p></label>
+                          </td>
+                      </tr>
+                  </table>
                   
-                  <div class="input-div two">
-                      
-                      <div>
+                    <div class="input-div two" id="mno" style="display: none;">
+                       <div>
                           <h5>Mobile no.</h5>
-                          <input type="text"  name="mobileno" class="input">
+                          <input type="text"  name="mobileno"  class="input">
                       </div>
                   </div>
+                  <div class="input-div two" id="reg" style="display: none;">
+                  <div>
+                    <h5>Registration no.</h5>
+                    <input type="text"  name="regno" id="registration" class="input">
+                </div>
+              </div>
+              <div class="input-div two" id="pno" style="display: none;">
+                <div>
+                   <h5>Policy no.</h5>
+                   <input type="text"  name="policy"  class="input">
+               </div>
+           </div>
+           <input type="submit" value="PROCESS" class="btn-primary btn-orange js-car-register">
+                
+                
+            </div>
                  
-                 <a href="#" class="btn-primary btn-orange js-car-register">Procced</a>
+             
                  
               </form>
           </div>

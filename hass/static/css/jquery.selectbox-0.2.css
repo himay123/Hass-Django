@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+.sbOptions a,.sbSelector{display:block;text-align:center;outline:0}.sbHolder{background-color:#fff;font-size:16px;font-weight:400;height:35px;position:relative;border-bottom:2px dotted #ae353a}.sbToggle,.sbToggleOpen{background:url(../images/dd_downArrowbrw.png) 0 10px no-repeat}.sbOptions,.sbSelector,.sbToggle{position:absolute}.sbSelector{height:35px;left:0;line-height:30px;overflow:hidden;text-indent:10px;top:0;width:100%;padding-right:15px;letter-spacing:2px}.sbSelector:hover,.sbSelector:link,.sbSelector:visited{color:#a41c22;outline:0;text-decoration:none}.sbToggle{display:block;height:35px;outline:0;right:0;top:0;width:20px}.sbHolderDisabled{background-color:#3C3C3C;border:1px solid #515151}.sbOptions{background-color:#fff;list-style:none;left:0;margin:0;padding:0;top:35px;z-index:5;width:100%}.sbOptions li{padding:0}.sbOptions a{padding:4px 0 2px}.sbOptions a:link,.sbOptions a:visited{color:#616161;text-decoration:none}.sbOptions a.sbFocus,.sbOptions a:focus,.sbOptions a:hover{color:#000}.sbOptions li.last a{border-bottom:none}.sbOptions .sbDisabled,.sbOptions .sbGroup{border-bottom:dotted 1px #515151;padding:7px 0 7px 3px;display:block}.sbOptions .sbDisabled{color:#999}.sbOptions .sbGroup{color:#EBB52D;font-weight:700}.sbOptions .sbSub{padding-left:17px}.buysingletrip.bst .buysingletripContainer .RG_gray_box.full .sbToggle{background:url(../images/dd_downArrowbrw.png) 0 21px no-repeat;display:block;height:35px;outline:0;position:absolute;right:0;top:0;width:20px}.buysingletrip.bst .buysingletripContainer .RG_gray_box.full .sbSelector:hover,.buysingletrip.bst .buysingletripContainer .RG_gray_box.full .sbSelector:link,.buysingletrip.bst .buysingletripContainer .RG_gray_box.full .sbSelector:visited{color:#77787b;outline:0;text-decoration:none}.buysingletrip.bst .buysingletripContainer .RG_gray_box.full .sbHolder{height:50px}.buysingletrip.bst .buysingletripContainer .RG_gray_box.full .sbSelector{height:50px;line-height:50px}
+
+
+
+
+
+
+
+
+
+

@@ -134,7 +134,19 @@ form
     color:#555;
    
 }
+.carno-box {
+    max-width: 100%;
+}
 
+.carno-box {
+    background: #1a516a;
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 0.6rem;
+    /* width: 62%; */
+    margin-bottom: 3rem;
+    
+}
 
 
 

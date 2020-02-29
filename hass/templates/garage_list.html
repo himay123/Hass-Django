@@ -1,0 +1,121 @@
+{% extends 'maste.html' %}
+{% load static %}
+{% block containt %}
+
+<script>
+$(document).ready(function(){
+    $("#city").change(function(){
+        var state=$("#states").val();
+        var city=$("#city").val();
+
+
+        $.ajax({
+
+            url:"{% url 'get_manufacture' %}",
+            data:{
+                'state':state,
+                'city':city,
+            },
+            //dataType:'json',
+            success:function(data){
+                console.log(data);
+                $('#manufacture').empty();
+                $('#garage').empty();
+                
+                for (var i=0;i<data.length;i++){
+            
+                    var c=data[i].manufacture;
+                    var a=data[i].dealer_name;
+                    var address=data[i].address;
+                    var city=data[i].city;
+                    var state=data[i].state;
+                    var no=data[i].contect_no;
+                    var person=data[i].contect_person;
+                    var vehical=data[i].type_of_vehical;
+
+                    $('#manufacture').append(`<option value="${c}">${c}</option>`)
+                    $('#garage').append(`<option value="${a}">${a}</option>`)
+                    $('#garage_table').append(`<tr><td>${a}</td><td>${address}</td><td>${city}</td><td>${state}</td><td>${no}</td><td>${person}</td><td>${vehical}</td><td>${c}</td></tr>`);
+                    
+                    
+                }
+            }    
+        });
+
+
+    });
+
+
+
+    $("#states").change(function(){
+            var state=$("#states").val();
+            
+            $.ajax({
+
+                url:"{% url 'get_city' %}",
+                data:{
+                    'state':state
+                },
+                //dataType:'json',
+                success:function(data){
+                    
+                    $('#city').empty();
+                    for (var i=0;i<data.length;i++){
+                        
+                        var c=data[i].city_name;
+                        $('#city').append(`<option value="${c}">${c}</option>`)
+                    }
+                    
+                }
+
+
+            })
+    });
+});
+    
+
+</script>
+
+ <h1 class="text-info text-center" style="font-size: 30px; font-weight: 700;" >FIND GARAGE</h1>   
+ <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <select name="product" id="">
+            <option value="">select product</option>
+        </select>
+        <select name="states" id="states">
+            <option value="">select state</option>
+            {% for state in states %}
+            <option value="{{state.city_state}}">{{state.city_state}}</option>
+            {% endfor %}
+        </select>
+        <select name="cities" id="city">
+            <option value="">select city</option>
+        </select>
+        <select name="manufacture" id="manufacture">
+            <option value="">All manufacture</option>
+        </select>
+        <select name="garage" id="garage">
+            <option value="">All garage</option>
+        </select>
+
+        </div>
+</div>
+ <div class="table-responsive">
+     <table class="table table-hover" id="garage_table">
+         <thead>
+             <th>Dealer Name</th>
+             <th>Address</th>
+             <th>City</th>
+             <th>State</th>
+             <th>Contect_No</th>
+             <th>Contect_Person</th>
+             <th>Type_Of_Vehical</th>
+             <th>Manufacture</th>
+             <th>Operations</th>
+         </thead>
+         <tbody>
+            
+         </tbody>
+     </table>
+ </div>
+{% endblock %}

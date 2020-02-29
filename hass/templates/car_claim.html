@@ -1,0 +1,243 @@
+{% extends 'maste.html' %}
+{% load static %}
+{% block containt %}
+<script>
+    $(document).ready(function(){
+        $('#add_content').click(function(){
+           $('#demo').slideDown(1000)
+           $('#remove_content').show()
+           $('#add_content').hide()
+        });
+        $('#remove_content').click(function(){
+           $('#demo').slideUp(1000)
+           $('#remove_content').hide()
+           $('#add_content').show()
+        });
+        $('#add').click(function(){
+           $('#demo1').slideDown(1000)
+           $('#remove').show()
+           $('#add').hide()
+        });
+        $('#remove').click(function(){
+           $('#demo1').slideUp(1000)
+           $('#remove').hide()
+           $('#add').show()
+        });
+        $('#add1').click(function(){
+           $('#demo2').slideDown(1000)
+           $('#remove1').show()
+           $('#add1').hide()
+        });
+        $('#remove1').click(function(){
+           $('#demo2').slideUp(1000)
+           $('#remove1').hide()
+           $('#add1').show()
+        });
+    });
+
+</script>
+<div class="sfContentBlock" style="margin-top: -20px;">
+    <img title="Motor Claims" src="{% static 'images/motor_claims.jpg' %}" class="img-responsive mclaims" alt="Motor Claim" data-displaymode="Original">
+    </div>
+    
+  
+        <div class="container">
+        <div class="row paddts heds para">
+        <div class="col-lg-12"><h1 style="font-size: 25px;font-weight:500; margin-top: 20px;" class="text-danger">Motor Insurance Claim Process
+        </h1>
+        <p style="color: #333333; margin-top: 10px;">Motor insurance comes as a much-needed respite in the event of an accident that may cause damage to your vehicle. Insurance claims help pay for the repair of the vehicle and other financial issues incurred. While you can opt for the reimbursement claim process, choosing cashless claims method is an absolute convenience. All you have to do is get your car repaired at any of our network garages that’s closest to you and we will settle the bills directly with the garage. As on 1st May, 2018, we have a network of 5900+ garages. </p>
+        <p style="color: #333333; margin-top: 10px;">Filing or pursuing insurance claims might have been a headache, but now with digitization, the entire insurance claim process has become simple and easy. At HASS, we provide E-Claim services wherein you can a lodge a claim on the website as well as on the Insure app. You can use InstaSpect, a live video inspection feature on the Insure app that helps you register your claim instantly and get immediate approvals. With InstaSpect, you will be connected to a claim manager who will assist you with inspecting your vehicle over a video call.</p>
+        </div>
+        </div>
+        </div>
+        <div class="claim_process" style="margin-top: 20px;">
+        <div class="container">
+        <div class="row paddts">
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <div class="c_panel_container">
+        <div class="c_panel">
+            <div class="panel panel-default panel-primary">
+                <div class="panel-heading" style="height:50px;">
+                        <h1 class="panel-title text-center" style="line-height:30px; font-size: 20px; font-weight: 600;">Cashless Claims</h1>
+                        <button class="btn btn-primary pull-right" id="add_content" style="margin-top: -35px;">+</button>
+                        <button class="btn btn-primary pull-right" id="remove_content" style="display: none; margin-top: -35px;">-</button>
+                         </div>
+                         <div class="panel-body" style="display:none; background: #EAEAEA;" id="demo">
+        
+        <ul>
+            <p>In case of an unfortunate accident / breakdown, please call our toll free <strong>1800 2666</strong> and we would be glad to assist you.</p>
+            <h4 style="font-size: 20px; font-weight: 500;">Detailed description of steps:</h4>
+            <ul>
+                <li> Note the number of the other vehicle involved in the accident, if any.</li>
+                <li> Note down the names and contact details of witnesses, if any.</li>
+                <li> Contact our toll free number 1800 2666 and get your claim number / reference number or alternatively send SMS as “CLAIM” to 575758 and  you will receive call from call center representative.</li>
+                <li> The Call Centre Representative will provide you with the details of the documents required for claim processing and also details of our preferred cashless garage.</li>
+                <li> File an FIR at the police station nearest to the accident spot in case of third party property damage or bodily injury, theft, malicious damage, key loss and major accidents.</li>
+                <li> Take the vehicle immediately to the suggested garage.</li>
+                <li> Our Customer Service Manager (CSM) will contact you within 24 hours of registering the claim.</li>
+                <li> Submit all the required documents to the dealer / CSM and get them verified with the originals.</li>
+                <li> Our CSM will get the estimate for the repairs of your vehicle and give approval after assessment.</li>
+                <li> Payments that need to borne by us at our preferred garage will be made directly to the garage on completion of the repairs.</li>
+                <li>Our CSM will inform you about the balance amount that has to be paid by you as per policy terms and conditions.</li>
+            </ul>
+            <h4 style="font-size: 20px; font-weight: 500;">You can avail a host of benefits for every claim reported to us:</h4>
+            <p>
+            In case of an unfortunate accident / breakdown, be assured of complete assistance from us to get back on the road, as early as possible.
+            The first thing you need to do is call our toll free number 1800 2666, and then leave the rest to us.
+            </p>
+            <p>We would guide you to our wide network of garages to ensure a smooth ride where you would receive additional benefits such as</p>
+            <ul>
+                <li> Free pick-up, towing facility and wash benefit </li>
+                <li> Loss Assessment Survey of vehicle within 4 hours by dedicated Service Manager*</li>
+                <li> 6 month quality assurance on all repairs**</li>
+                <li> If the vehicle is serviced in a garage outside the purview of our network, then you can claim reimbursement for the same</li>
+            </ul>
+            <p><strong>*</strong>at selected garages</p>
+            <p><strong>*</strong>Applicable on claims intimated before 2 PM and not applicable on Sundays and ​national ​holidays</p>
+            <p><strong>*</strong>*Subject to maximum usage upto 6,000 km, post such repairs</p>
+        </ul>
+        </div>
+        </div>
+        <div class="panel panel-default panel-primary" data-toggle="collapse" data-target="#demo1">
+            <div class="panel-heading" style="height:50px;">
+                    <h1 class="panel-title text-center" style="line-height:30px; font-size: 20px; font-weight: 600;">Reimbursement Claim</h1>
+                    <button class="btn btn-primary pull-right" id="add" style="margin-top: -35px;">+</button>
+                        <button class="btn btn-primary pull-right" id="remove" style="display: none; margin-top: -35px;">-</button>
+                     </div>
+                     <div class="panel-body" style="display:none; background: #EAEAEA;" id="demo1">     
+          
+
+  
+        <p>In case of an unfortunate accident / breakdown, please call our toll free <strong>1800 2666</strong> and we would be glad to assist you.</p>
+        <h4 style="font-size: 20px; font-weight: 500;">Detailed description of the process:</h4>
+        <ul>
+            <li> 
+                <i class="material-icons">format_list_bulleted</i>Note the number of the other vehicle involved in the accident, if any.</li>
+            <li> Note down the names and contact details of witnesses, if any.</li>
+            <li> Contact our toll free number 1800 2666 and get your claim number / reference number or alternatively send SMS as “CLAIM” to 575758 and  you will receive call from call center representative</li>
+            <li> Our Customer Service Manager (CSM) will contact you within 24 hours of registering the claim.</li>
+            <li> Submit all the required documents to the CSM and get them verified with the originals. <a href="/downloads" target="_blank">Click here</a> to download claim forms.</li>
+            <li> HASS will initiate the claim process.</li>
+            <li> HASS will reimburse the approved claim amount directly to the customer.</li>
+        </ul>
+        </div>
+        </div>
+        <!-- start   -->
+        
+        <div class="panel panel-default panel-primary">
+            <div class="panel-heading" style="height:50px;">
+                    <h1 class="panel-title text-center" style="line-height:30px; font-size: 20px; font-weight: 600;">Role, duties and responsibilities of surveyor</h1>
+                    <button class="btn btn-primary pull-right" id="add1" style="margin-top: -35px;">+</button>
+                        <button class="btn btn-primary pull-right" id="remove1" style="display: none; margin-top: -35px;">-</button>
+                     </div>
+                     <div class="panel-body" style="display:none; background: #EAEAEA;" id="demo2">   
+      
+        <p>
+        <strong>
+        Extracts from CHAPTER IV of IRDAI (Insurance Surveyors and Loss Assessors) Regulations, 2015 <br>
+        <br>
+        DUTIES AND RESPONSIBILITIES OF A SURVEYOR AND LOSS ASSESSOR
+        </strong><br>
+        13.It shall be the duty of every Licensed Surveyor and Loss Assessor to investigate, manage, quantify, validate and deal with losses (whether insured or not) arising from any contingency, and report thereon to the insurer or insured, as the case may be., All Licensed Surveyors and Loss Assessors shall carry out the said work with competence, objectivity and professional integrity and strictly adhere to the code of conduct as stipulated in these Regulations.
+        </p>
+        <ul>
+            <li>
+            The following, shall, inter alia, be the duties and responsibilities of a Surveyor and Loss Assessor:-
+            <br>
+            <br>
+            <strong>(a)</strong> declaring whether he has any interest in the subject-matter in question or whether it pertains to any of his relatives, business partners or through material shareholding;<br>
+            <br>
+            Explanation: For the purpose of this clause ‘relatives’ shall mean any of the relatives as defined in Subsection (77) of Section 2 of the Companies Act, 2013;
+            <br>
+            <br>
+            <strong>(b)</strong> Bringing to the notice of the Authority, any change in the information or particulars furnished at the time of issuance of license, within a period not exceeding fifteen days from the date of occurrence of such change, that has a bearing on the license granted by the Authority
+            <br>
+            <br>
+            <strong>(b)</strong> maintaining confidentiality and neutrality without jeopardising the liability of the insurer and claim of the insured;
+            <br>
+            <br>
+            <strong>(d)</strong> conducting inspection and re-inspection of the property in question suffering a loss;
+            <br>
+            <br>
+            <strong>(e)</strong> examining, inquiring, investigating, verifying and checking upon the causes and the circumstances of the loss in question including extent of loss, nature of ownership and insurable interest;
+            <br>
+            <br>
+            <strong>(f)</strong> conducting spot and final surveys, as and when necessary and comment upon franchise, excess/under insurance and any other related matter;
+            <br>
+            <br>
+            <strong>(g)</strong> estimating, measuring and determining the quantum and description of the subject under loss;
+            <br>
+            <br>
+            <strong>(h)</strong> advising the insurer and the insured about loss minimisation, loss control, security and safety measures, wherever appropriate, to avoid further losses;
+            <br>
+            <br>
+            <strong>(i)</strong> commenting on the admissibility of the loss as also observance of warranty conditions under the policy contract;
+            <br>
+            <br>
+            <strong>(j)</strong> surveying and assessing the loss on behalf of insurer or insured;
+            <br>
+            <br>
+            <strong>(k)</strong> assessing liability under the contract of insurance;
+            <br>
+            <br>
+            <strong>(l)</strong> pointing out discrepancy, if any, in the policy wordings;
+            <br>
+            <br>
+            <strong>(m)</strong> satisfying queries of the insured/insurer and of persons connected thereto in respect of the claim/loss;
+            <br>
+            <br>
+            <strong>(n)</strong> recommending applicability of depreciation, percentage and quantum of depreciation;
+            <br>
+            <br>
+            <strong>(o)</strong> giving reasons for repudiation of claim, in case the claim is not covered by policy terms and conditions;
+            <br>
+            <br>
+            <strong>(p)</strong> taking expert opinion, wherever required;
+            <br>
+            <br>
+            <strong>(q)</strong> commenting on salvage and its disposal wherever necessary.
+            </li>
+            <li>A surveyor or loss assessor whether appointed by insurer or insured, shall submit his report to the insurer as expeditiously as possible, but not later than 30 days of his appointment, with a copy of the report to the insured giving his comments on the insured’s consent or otherwise on the assessment of loss. Where, in special circumstances of the case, either due to its special and complicated nature, the surveyor shall under intimation to the insured, seek an extension, in any case not exceeding six months from the insurer for submission of his report.</li>
+            <li>In cases where the Survey report is pending due to non completion of documents, the surveyor may issue the final survey report independently based on the available documents on record, giving minimum three reminders in writing to the insured.</li>
+            <li>
+            If an insurer, on the receipt of a survey report, finds that it is incomplete in any respect, he shall require the surveyor under intimation to the insured, to furnish an additional report on such incomplete issues. Such a request may be made by the insurer within 15 days of the receipt of the original survey report.<br>
+            Provided that the facility of calling for an additional report by the insurer shall not be resorted to more than once in the case of a claim.
+            </li>
+            <li>The surveyor on receipt of this communication shall furnish an additional report within three weeks of the date of receipt of communication from the insurer.</li>
+        </ul>
+        <br>
+        <strong>Please note:</strong> this is not an exhaustive list and the roles, duties and responsibilities of surveyor are subject to amendment basis the regulator’s directives. Further the said roles, duties and responsibilities are in addition to those already defined under the Protection of Policyholders’ Interests Regulations, 2017
+        </div>
+        </div>
+        <!-- End -->
+        </div>
+        </div>
+        
+             </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="panel panel-default panel-primary">
+                <div class="panel-heading" style="height:50px;">
+                        <h1 class="panel-title text-center" style="line-height:30px; font-size: 20px; font-weight: 600;">Quick Link</h1>
+                         </div>
+                         <div class="panel-body" style="background: #EAEAEA;">
+       
+        
+        <ul>
+            <li style="margin-bottom: 10px;"><a href="{% url 'garage_list' %}" style="text-decoration: none;"><h5 class="text-info">Garage List</h5></a></li>
+            <li style="margin-bottom: 10px;"><a href="#"><h5 class="text-info">Customer Support</h5></a></li>
+            <li style="margin-bottom: 10px;"><a href="#"><h5 class="text-info">Claim Tracker</h5></a></li>
+            <li style="margin-bottom: 10px;"><a href="#"><h5 class="text-info">Documents required for claim process</h5></a></li>
+            <li style="margin-bottom: 10px;"><a href="#"><h5 class="text-info">Claim related FAQ's</h5></a></li>
+            <li style="margin-bottom: 10px;"><a href="#" target="_blank"><h5 class="text-info">Policy Wordings</h5></a></li>
+            <li style="margin-bottom: 10px;"><a href="#"><h5 class="text-info">Download Claim Form</h5></a></li>
+        </ul>
+        
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        
+         
+{% endblock %}

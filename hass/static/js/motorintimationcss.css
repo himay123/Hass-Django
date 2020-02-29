@@ -1,0 +1,1448 @@
+.motorclaimwrapper{margin-top: 20px;}
+.motorclaimwrapper .initiate-claim {
+    background: #f5f5f5;
+    border-radius: 6px;
+    padding: 10px 0 0;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    max-width: 328px; 
+    margin-bottom: 20px;
+}
+
+.new_claims .agent_sect .motorclaimwrapper .initiate-claim p {
+    font-size: 12px;
+    line-height: 20px;
+        padding: 5px 8px;
+}
+
+.motorclaimwrapper .initiate-claim p strong {
+    display: block;
+}
+.new_claims .agent_sect .motorclaimwrapper a.init-claim-btn{
+    border: 1px solid #063b6d;
+    border-radius: 30px;
+    padding: 13px 15px;
+    font-size: 13px;
+    display: inline-block;
+    color: #063b6d;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 500;
+    margin-bottom: 20px;
+    position: unset;     
+}
+span.initiate-claim-bg {
+    content: '';
+    background: url(/docs/default-source/assets/tempcssjs/claimintimation/initiate-claim-bg.png) no-repeat;
+    display: block;
+    width: 325px;
+    height: 126px;
+    text-align: center;
+    margin: auto;
+        border-radius: 6px;
+}
+.eclaim-form {
+    background: #f5f5f5;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 328px;
+    margin: 0 auto;
+    padding: 15px 15px 12px 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+..eclaim-form .text-eclaim {
+    display: inline-block;
+    width: 75%;
+
+}
+.ud-claims .text-eclaim{
+    width: 68%;
+}
+.eclaim-form img {
+    float: right;
+    display: inline-block;
+ padding: 3px 0;
+}
+.eclaim-form .text-eclaim h4 {
+    font-size: 14px;
+    color: #282828;
+    margin: 0;
+    padding-bottom: 5px;
+}
+.fd_bk .agent_sect .eclaim-form .text-eclaim p, .eclaim-form .text-eclaim p {
+    font-size: 12px;
+    color: #000;
+    padding-bottom: 5px;
+    margin: 0;
+    line-height: 20px;
+    padding-top: 0;
+        font-weight: 400;
+}
+.new_claims.fd_bk .agent_sect .motorclaimwrapper .eclaim-form .text-eclaim a {
+    color: #007fb8;
+    font-size: 11px;
+    font-family: unset; 
+     margin: unset; 
+     padding: unset; 
+    display: unset;
+    position: unset;
+    margin-bottom: unset;
+    text-decoration: unset;
+}
+.new_claims.fd_bk .agent_sect .motorclaimwrapper .eclaim-form .text-eclaim a:after{
+
+        position: unset;
+    width: unset;
+    height: unset;
+    background-color:unset;
+    left: unset;
+}
+.new_claims.fd_bk  .agent_sect .motorclaimwrapper .eclaim-form .text-eclaim a:hover {
+    color: unset; 
+}
+.claim-p .popup {
+    max-width: 700px;
+    width: 100%;
+    max-height: unset;
+}
+.claim-p .popup h2 {
+    margin: 0;
+    color: #565656;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    padding: 15px 0 20px;
+}
+.claim-p .popup .content{
+    overflow: inherit;
+    padding: 15px 45px 0;
+}
+.claim-p .block.focus label{
+    top: -5px;
+    font-size: 21px;
+    color: #053c6d;
+    font-weight: 300;
+    position: relative;
+}
+.claim-p .block {
+   position: relative;
+    padding: unset;
+    padding-bottom: 10px;
+    text-align: unset;
+}
+.sInput input {
+    cursor: auto;
+    border: none;
+    color: #063b6d;
+    border-bottom: 1px solid #b4c4d3;
+    font-size: 16px;
+    z-index: 12;
+    width: 100%;
+    height: 35px;
+    margin-top: 16px;
+    outline: none;
+}
+.claim-p a.sBtn{
+    color: #fff;
+    text-transform: capitalize;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 18px;
+}
+.claim-details .motor-dtl, .claim-details .motor-dt2 {
+    display: block;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 300;
+    color: #053c6d;
+    position: relative;
+    line-height: 30px;
+    width: 100%;
+}
+
+.claim-details .motor-dtl:before {
+    content: '';
+    background: #4bc24b;
+    border-radius: 50px;
+    height: 60px;
+    width: 60px;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.claim-details .motor-dtl:after {
+content: '';
+    position: absolute;
+    top: 16px;
+    width: 32px;
+    height: 30px;
+    background: url(/docs/default-source/assets/tempcssjs/claimintimation/right-ico.png);
+    display: inline-block;
+    left: 47.5%;
+    right: 50%;
+}
+
+.claim-details {
+    width: 100%;
+    margin: 0;
+    display: none;
+    text-align: center;
+    margin: auto;
+}
+.claim-details span {
+    float: none;
+}
+
+.claim-details span.owner-nm {
+    display: inline-block;
+}
+
+.claim-details span.car-nm {
+    display: block;
+    padding-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+a.js-ntcra{
+    display: none;
+    padding: 15px 0 0;
+    color: #5f5f5f;
+    font-size: 11px;
+    text-decoration: underline; 
+}
+.eclaim-form .tooltip {
+    position: relative;
+    display: inline-block;
+    opacity: 1;
+    font-size: 15px;
+    z-index: 99;
+}
+.eclaim-form .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #fff;
+    color: #282828;
+    border: 1px solid #063b6d;
+    text-align: left;
+    border-radius: 6px;
+    padding: 8px 14px;
+    position: absolute;
+    z-index: 1;
+    bottom: 90%;
+    left: 50%;
+    margin-left: -96px;
+    opacity: 0;
+    transition: opacity 1s;
+    font-size: 12px;
+}
+.eclaim-form .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+.eclaim-form .glyphicon-info-sign{
+color: #2bbfff;
+}
+.claimint-thanyou .eclaim-form {
+    width: 45%;
+    max-width: 328px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.claimint-thanyou .eclaim-form .text-eclaim {
+    display: inline-block;
+    width: 75%;
+    text-align: left;
+}
+.claimint-thanyou .ud-claims .text-eclaim{
+    width: 68%;
+}
+.text-eclaim .glyphicon-info-sign:before {
+    content: "";
+    background: url("/docs/default-source/assets/tempcssjs/claimintimation/tooltip-ico.png") no-repeat;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    vertical-align: sub;
+}
+
+/*initiate claim*/
+
+.sBtn {
+    text-transform: uppercase;
+    background: #063b6d;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 20px;
+    margin-top: 30px;
+    display: inline-block;
+    padding: 8px 35px;
+}
+
+
+.overlayN {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: opacity 200ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 99999;
+  display: none;
+}
+#Errormsg.overlayN {
+    visibility: visible;
+}
+.overlayN .block p{color: #ff0000; margin: 0;    font-size: 15px;}
+.overlayN .cancel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: default;
+}
+.overlayN:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 75px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #666;
+  width: 90%;
+  max-height: 500px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  position: relative;
+  border-radius: 10px;
+}
+.popup.light{width:600px;}
+.popup.light1{width:990px;padding: 0;}
+.bTBor{position: absolute;bottom:0;width:100%;background:#eb8e15;height:6px;left:0;border-radius: 0 0 10px 10px;}
+
+
+.popup h2 {
+  margin-top: 0;
+  color: #282828;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    text-align: center;
+}
+
+.popup.light1 h2{color: #282828;font-size: 15px;font-weight: 400;margin: 0;padding: 12px 0;}
+.popup h3 {
+  margin: 0;
+  color: #282828;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+.popup .close {
+  position: absolute;
+  width: 27px;
+    height: 27px;
+    top: -52px;
+  right: 0;
+  opacity: 1;
+  transition: all 200ms;
+  font-size: 48px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #fff;
+}
+.popup .close:hover {
+  opacity: 1;color: #fff;
+}
+.popup .content {
+  max-height: 400px;
+  overflow: auto;
+  padding-right: 20px;
+}
+
+
+
+/*claim intimation*/
+
+.lombInsurance .detailsSectn.singleTripsec.customize{padding: 20px 0 60px;}
+
+ .healthSelectmain .singleTripselpln.claim-intimation-slide .sInput input {
+    cursor: auto;
+    border: none;
+    color: #053b6c;
+    border-bottom: 1px solid #e7e7e7;
+    font-size: 15px;
+    z-index: 12;
+    font-weight: 400;
+    width: 100%;
+    height: 30px;
+    outline: none;
+    margin-top: 0;
+}
+.healthSelectmain .singleTripselpln.claim-intimation-slide .sInput textarea {
+    cursor: auto;
+    border: none;
+    color: #053b6c;
+    border-bottom: 1px solid #e7e7e7;
+    font-size: 15px;
+    z-index: 12;
+    font-weight: 400;
+    width: 100%;
+    height: 85px;
+    padding-top: 15px;
+        resize: none;
+    outline: none;
+}
+ .healthSelectmain .singleTripselpln.claim-intimation-slide .time-icob {
+    background: url(/docs/default-source/assets/tempcssjs/claimintimation/time-ico.png) no-repeat;
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    float: unset;
+    right: 0;
+}
+ .healthSelectmain .singleTripselpln.claim-intimation-slide .loc-icob {
+    content: '';
+    background: url(/docs/default-source/assets/tempcssjs/claimintimation/loc-ico.png) no-repeat;
+    width: 21px;
+    height: 21px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.healthSelectmain .singleTripselpln.claim-intimation-slide .planDetails {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 40px 45px;
+   /* overflow: hidden;*/
+    box-shadow: 0 0 16px rgba(0,0,0,0.08);
+    -moz-box-shadow:0 0 16px rgba(0,0,0,0.08);
+    -ms-box-shadow:0 0 16px rgba(0,0,0,0.08);
+}
+ul.claim-tabs {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 8px;
+}
+
+ul.claim-tabs li {
+    display: inline-block;
+    list-style: none;
+    font-size: 15px;
+    color: #b9c0d1;
+    position: relative;
+    padding: 0 85px;
+    font-weight: 500;
+}
+ul.claim-tabs li.active-tabs {
+    color: #eb922c;
+}
+ul.claim-tabs li.lossdtl-fill {
+    color: #053562;
+}
+ul.claim-tabs li.driverdtl-fill {
+    color: #053562;
+}
+ul.claim-tabs li.fir-fill {
+    color: #053562;
+}
+ul.claim-tabs li.tab1.lossdtl-fill {
+    cursor: pointer;
+    pointer-events: auto;
+}
+ul.claim-tabs li.tab1{
+    pointer-events: none;
+}
+ul.claim-tabs li.tab2{
+    pointer-events: none;
+}
+ul.claim-tabs li.tab2.driverdtl-fill{
+    cursor: pointer;
+    pointer-events: auto;
+}
+ul.claim-tabs li.tab3.fir-fill{
+    cursor: pointer;
+    pointer-events: auto;
+}
+ul.claim-tabs li.tab3{
+    pointer-events: none;
+}
+input#setTime{
+    letter-spacing: 3px;
+}
+ul.claim-tabs li span {
+    background: #b9c0d1;
+    width: 5px;
+    height: 5px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-left: 15px;
+    left: 60px;
+    position: relative;
+}
+ul.claim-tabs li:nth-child(2) span {
+    left: 60px;
+}
+ul.claim-tabs li:first-child:before {
+    content: '';
+    background: url(/docs/default-source/assets/tempcssjs/claimintimation/loss-details-ico.png) no-repeat;
+    width: 35px;
+    height: 19px;
+    display: inline-block;
+    position: absolute;
+    left: 40px;
+}
+ul.claim-tabs li.active-tabs:first-child:before{
+    content: '';
+    background: url(/docs/default-source/assets/tempcssjs/claimintimation/loss-details-icoorg.png) no-repeat;
+    width: 35px;
+    height: 19px;
+    display: inline-block;
+    position: absolute;
+    left: 40px;
+}
+ul.claim-tabs li.lossdtl-fill:first-child:before{
+    content: '';
+    background: url(/docs/default-source/assets/tempcssjs/claimintimation/loss-details-icoblue.png) no-repeat;
+    width: 35px;
+    height: 19px;
+    display: inline-block;
+    position: absolute;
+    left: 40px;
+}
+ul.claim-tabs li:nth-child(2):before {
+    content: '';
+    background: url(/docs/default-source/assets/tempcssjs/claimintimation/driver-details-ico.png) no-repeat;
+    width: 21px;
+    height: 29px;
+    display: inline-block;
+    position: absolute;
+    left: 50px;
+        top: -5px;
+}
+ul.claim-tabs li.active-tabs:nth-child(2):before {
+    content: '';
+    background: url(/docs/default-source/assets/tempcssjs/claimintimation/driver-details-icoorg.png) no-repeat;
+    width: 21px;
+    height: 29px;
+    display: inline-block;
+    position: absolute;
+    left: 50px;
+        top: -5px;
+}
+ul.claim-tabs li.driverdtl-fill:nth-child(2):before {
+    content: '';
+    background: url(/docs/default-source/assets/tempcssjs/claimintimation/driver-details-ico-blue.png) no-repeat;
+    width: 21px;
+    height: 29px;
+    display: inline-block;
+    position: absolute;
+    left: 50px;
+        top: -5px;
+}
+ul.claim-tabs li:last-child:before {
+    content: '';
+    background: url(/docs/default-source/assets/tempcssjs/claimintimation/fir-details-ico.png) no-repeat;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    position: absolute;
+    left: 50px;
+        top: -3px;
+}
+ul.claim-tabs li.active-tabs:last-child:before{
+      content: '';
+    background: url(/docs/default-source/assets/tempcssjs/claimintimation/fir-details-icoorg.png) no-repeat;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    position: absolute;
+    left: 50px;
+        top: -3px;  
+}
+ul.claim-tabs li.fir-fill:last-child:before{
+      content: '';
+    background: url(/docs/default-source/assets/tempcssjs/claimintimation/fir-details-icoblue.png) no-repeat;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    position: absolute;
+    left: 50px;
+    top: -3px;  
+}
+.loss-details {
+    display: inline-block;
+    width: 100%;
+    padding: 50px 0 10px;
+    margin: 0 auto;
+        position: relative;
+}
+.driver-details{
+    display: none;
+    width: 100%;
+    padding: 50px 0 10px;
+    margin: 0 auto;
+        position: relative;
+}
+.fir-details{
+     display: none;
+    width: 100%;
+    padding: 50px 0 10px;
+    margin: 0 auto;
+        position: relative;
+}
+
+.claim-intdetail .block {
+    width: 22%;
+    display: inline-block;
+    float: left;
+    margin-right: 30px;
+    position: relative;
+}
+.gender-block div.errorN {
+    color: #ff0000;
+    font-size: 13px;
+    font-size: 12px;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    top: 1px;
+    display: none;
+}
+.loss-details .block:nth-child(4) {
+    margin-right: 0;
+}
+ .calendarBox .date .ui-datepicker-trigger {
+    float: right;
+    margin: 5px 0 0;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: -9px;
+    width: 20px;
+}
+.claim-intdetail .block label {
+    cursor: auto;
+    display: inline-flex;
+    font-size: 15px;
+    color: #999999;
+    font-weight: 400;
+    position: absolute;
+    top: -15px;
+    transition: 0.5s;
+    left: 0;
+}
+.claim-intdetail .block.focus label{
+top: -30px !important;
+    font-size: 13px;
+}
+.claim-intdetail .block.new-block {
+    width: 46.3%;
+    margin:6% 69px 50px 0;
+    float: left;
+    display: inline-block;
+}
+.claim-intdetail .block.wid-block {
+    width: 46.3%;
+    float: left;
+    display: inline-block;
+    margin-right: 30px;
+    text-align: left;
+        padding-bottom: 50px;
+}
+.claim-intdetail .block.wid-block.noblock {
+    float: unset;
+    width: 100%;
+    text-align: center;
+}
+.claim-intdetail .driver-details .block.wid-block.cr{
+    margin-right: 0;
+}
+.claim-intdetail .driver-details .block.new-block {
+    margin: 0 25px 0 0;
+    padding: 0;
+    margin-right: 68px;
+}
+.claim-intdetail .driver-details .block.new-block.drp {
+    margin-right: 0;
+}
+.claim-intdetail .block.drp {
+    position: relative;
+    margin: 0;
+    padding: 10px 0 28px;
+    height: 68px;
+}
+.claim-intdetail .block .glyphicon.glyphicon-menu-down {
+    color: #999999;
+    top: 0;
+    position: absolute;
+    right: 0;
+    font-size: 16px;
+}
+.claim-intdetail .sInput .basic_dd .sbHolder {
+    background-color: transparent;
+    font-size: 16px;
+    border-bottom: 1px solid #e7e7e7;
+    height: 30px;
+}
+.claim-intdetail .sInput .basic_dd .sbSelector {
+    letter-spacing: 0;
+}
+.claim-intdetail .basic_dd .sbOptions {
+    background-color: #fff;
+    font-size: 14px;
+    max-height: 200px !important;
+    overflow: auto;
+    top: 30px !important;
+    -webkit-box-shadow: 0 2px 2px #d4cfcf;
+    -ms-box-shadow: 0 2px 2px #d4cfcf;
+    -moz-box-shadow: 0 2px 2px #d4cfcf;
+    box-shadow: 0 2px 2px #d4cfcf;
+}
+
+.claim-intdetail .basic_dd .sbOptions li a {
+    color: #616161;
+    text-decoration: none;
+    height: auto;
+    text-align: left;
+    font-size: 14px;
+    padding: 5px 9px;
+    text-align: left;
+    padding: 6px 5px;
+}
+.claim-intdetail .basic_dd .sbOptions li {
+    color: #063b6d;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 0 10px;
+    border-bottom: 1px solid #eaeff3;
+}
+.claim-intdetail .basic_dd .sbOptions li:hover{
+
+  border:none;background:#063b6d;color:#fff;
+}
+.claim-intdetail .basic_dd .sbOptions li a:hover{
+
+  color:#fff;
+}
+.claim-intdetail .sInput .basic_dd .sbSelector {
+    opacity: 0;
+    line-height: 33px;
+    text-indent: 0;
+    text-align: left;
+    color: #063b6d;
+    font-size: 15px;
+}
+.gender-block {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    padding: 20px 0 30px;
+}
+.gender-block .unstyled {
+    display: inline-block;
+}
+
+.gender-block .unstyled li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.gender-block span, .wid-block span {
+    font-size: 16px;
+    color: #999999;
+}
+
+.gender-block .styled-checkbox + label {
+    padding: 13px 15px 13px 15px;
+    border-radius: 5px;
+}
+/*.gender-block .styled-checkbox:checked + label {
+    border: 1px solid #053c6d;
+}*/
+.gender-block .styled-checkbox + label:before {
+    border-radius: 50px;
+    border: 2px solid #d8d8d8;
+    width: 20px;
+    height: 20px;
+    background: #f3f3f3;
+}
+.gender-block .styled-checkbox:checked + label:after {
+    background: #053c6d;
+    transform: none;
+    height: 10px;
+    width: 10px;
+    border-radius: 50px;
+    left: 20px;
+    top: 19px;
+    box-shadow: none;
+}
+.gender-block .unstyled li:last-child {
+    margin-left: 0;
+}
+.gender-block .styled-checkbox:checked + label:before {
+    background: transparent;
+    border: 2px solid #9bb1c5;
+}
+.claim-intimationblock .btnSectn{
+    clear: both;
+}
+.claim-intimationblock .btnSectn a{
+    text-transform: capitalize;
+        padding: 13px 45px;
+        width: auto;
+            font-size: 18px;
+}
+.gender-block .unstyled li span {
+    color: #053562;
+    font-size: 16px;
+    display: inline-block;
+    vertical-align: sub;
+}
+.fir-details .fir-select {
+    font-size: 16px;
+    font-weight: 400;
+    color: #053c6d;
+    padding: 10px 30px;
+    border-radius: 30px;
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 8px;
+    border: 1px solid #053c6d !important;
+}
+.fir-details .fir-select.selected {
+    background: #053c6d;
+    color: #fff;
+    border: 1px solid #053c6d !important;
+}
+.fir-sp{
+    margin-right: 20px;
+}
+.ui-autocomplete .ui-menu-item {
+    color: #063b6d !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    padding: 9px 15px !important;
+    border-bottom: 1px solid #eaeff3 !important;
+    margin: 0 !important;
+}
+.ui-autocomplete {
+    background-color: #fff;
+    background-image: none;
+    max-height: 200px;
+    overflow: auto;
+}
+.ui-autocomplete .ui-menu-item-wrapper {
+    border: none !important;
+    text-transform: capitalize !important;
+}
+.ui-autocomplete .ui-menu-item:hover .ui-menu-item-wrapper, .ui-autocomplete .ui-menu-item-wrapper, .ui-autocomplete .ui-menu-item-wrapper:hover {
+    background: transparent !important;
+}
+.claim-intimationblock .block .errorN {
+    color: #ff0000;
+    font-size: 13px;
+    position: absolute;
+    background: transparent;
+    width: 100%;
+    padding: 0 0 5px;
+        z-index: 1;
+    display: none;
+    top: -41px;
+    left: 0;
+    text-align: left;
+}
+.claimint-thanyou{
+    display: none;
+}
+.claimint-thanyou h3 {
+    display: block;
+    text-align: center;
+    font-size: 17px;
+    color: #666666;
+    font-weight: 500;
+        padding: 0 0 35px;
+}
+
+.claimint-thanyou p span {
+    text-transform: uppercase;
+    color: #053562;
+    font-weight: 600;
+    font-size: 17px;
+}
+.claimint-thanyou a.skip-now {
+    padding: 25px 0 0;
+    display: block;
+    font-size: 14px;
+    color: #053562;
+    text-decoration: underline;
+}
+
+.wid45{width: 45%}
+
+.eclaim-form .text-eclaim {
+    display: inline-block;
+    width: 75%;
+    text-align: left;
+}
+.ud-claims .text-eclaim{
+    width: 67%;
+}
+.eclaim-form img {
+    float: right;
+    display: inline-block;
+ padding: 3px 0;
+}
+ 
+.claim-blocks {
+    width: 100%;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.claim-blocks h3 {
+    font-size: 17px;
+    color: #666666;
+    font-weight: 400;
+    margin: 0;
+    padding: 25px 0 30px;
+}
+.eclaim-form a.begin-btn {
+    text-transform: capitalize;
+    display: inline-block;
+    padding: 4px 15px;
+    border-radius: 50px;
+    text-align: center;
+    font-weight: 500;
+    color: #053562;
+    border: 1px solid #053562;
+    font-size: 12px;
+    margin: 0;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.buySectn .eclaim-form .glyphicon-info-sign {
+    color: #2bbfff;
+}
+.block.sInput.new-block.last-block {
+    margin-right: 0;
+}
+.claim-intdetail.optDetials {
+    overflow: hidden;
+}
+
+.new_claims.fd_bk .agent_sect .motorclaimwrapper a:before {
+    background-color: transparent;
+}
+.new_claims.fd_bk .agent_sect .motorclaimwrapper a:after {
+    display: none;
+}
+
+select.select-tm {
+    border: none;
+    outline: none;
+    padding: 7px 35px 5px 4px;
+    background: #fff;
+    position: absolute;
+    right: 0;
+    font-size: 13px;
+    bottom: 0;
+    color: #053c6d;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+.sInput.time-check span {
+    float: left;
+    display: inline-block;
+    padding-top: 5px;
+}
+.claim-intdetail .block.time-check{
+    display: inline-flex;
+    border-bottom: 1px solid #e7e7e7;
+}
+.healthSelectmain .singleTripselpln.claim-intimation-slide .sInput.time-check input{
+    width: 34%;
+    background: transparent;
+    padding: 0;
+    padding-left: 30px;
+    border: none;
+    font-size: 13px;
+
+}
+.healthSelectmain .singleTripselpln.claim-intimation-slide .sInput.time-check input::placeholder{
+    font-size: 12px;
+    text-align: left;
+    color: #999999;
+}
+.claim-p .block .errorN p b {
+    font-weight: 300;
+}
+.overlayN .block p {
+    color: #ff0000;
+    margin: 0;
+    font-size: 15px;
+}
+.claim-intdetail .basic_dd .sbOptions li:first-child a {
+    color: #fff;
+    padding: 0;
+    font-size: 0;
+}
+/*claim intimation*/
+
+
+
+@media(min-width: 991px) and (max-width: 1199px){
+    .tab .tab__head{
+        width: 29%;
+            margin-right: 20px;
+    }
+    .tab .tab__head li{
+            font-size: 13px;
+                padding: 15px 15px;
+    }
+    .tab .tab__container{
+            width: 68%;
+    }
+    .allResultsara .invPreBlocks{
+            float: left;
+                padding: 0 20px;
+    margin: 0 2px 12px;
+    }
+    .allResultsara {
+    padding: 45px 0 0;
+    display: inline-block;
+    width: 100%;
+}
+.motorclaimwrapper .businessFindet .fnbodyAccord{
+        padding: 0 20px;
+}
+ul.boardDirectors li{
+    width: 33%;
+}
+.colDtl span.invconNm a, .colDtl span.invConeml a{
+    font-size: 12px;
+}
+}
+.block .errorN {
+    color: #ff0000;
+    font-size: 13px;
+    top: -1px;
+    background: #fff;
+    width: 100%;
+    padding: 0 0 5px;
+    display: inline-block;
+    z-index: 9999;
+    display: none;
+}
+.claim-content .block .errorN{
+  top: 32px;
+}
+
+@media(max-width: 991px){
+    .allResultsara .invPreBlocks h5{
+        font-size: 14px;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 991px){
+    ul.tab__head h3{
+        font-size: 16px;
+    }
+    .tab .tab__head{
+    width: 27%;
+    margin-right: 10px
+    }
+    .tab .tab__head li{
+            font-size: 12px;
+                padding: 15px 15px;
+    }
+    .tab .tab__container{
+            width: 70%;
+    }
+.allResultsara .invPreBlocks {
+    float: left;
+    padding: 0;
+    margin: 0 4px 12px;
+}
+    .allResultsara {
+    padding: 45px 0 0;
+    display: inline-block;
+    width: 100%;
+}
+.motorclaimwrapper .businessFindet .fnbodyAccord{
+        padding: 0 10px;
+}
+ul.boardDirectors li{
+    width: 33%;
+}
+.colDtl span.invconNm a, .colDtl span.invConeml a{
+    font-size: 12px;
+}
+
+ul.claim-tabs li.active-tabs:first-child:before, ul.claim-tabs li:first-child:before {
+    left: 40px;
+    top: -25px;
+}
+ul.claim-tabs li:nth-child(2):before, ul.claim-tabs li.active-tabs:nth-child(2):before, ul.claim-tabs li.driverdtl-fill:nth-child(2):before{
+    left: 58px;
+    top: -33px;  
+}
+ul.claim-tabs li:last-child:before, ul.claim-tabs li.fir-fill:last-child:before, ul.claim-tabs li.active-tabs:last-child:before{
+    left: 51px;
+    top: -30px;
+}
+      .claim-intdetail.optDetials {
+    overflow: unset;
+}
+ul.claim-tabs li{
+    padding: 0 30px;
+        font-size: 13px;
+}
+ul.claim-tabs li span{
+        margin-left: 8px;
+    left: 22px;
+    top: -15px;
+}
+ul.claim-tabs li:nth-child(2) span {
+    left: 26px;
+} 
+.claim-intdetail .loss-details .block {
+    width: 45%;
+    margin-bottom: 45px;
+}
+.claim-intdetail .block.new-block {
+    width: 47.3%;
+    margin: 6% 25px 50px 0;
+}
+.claim-intdetail .driver-details .block.new-block{
+margin-right: 25px;
+}
+.claim-intdetail .block.wid-block:nth-child(2) {
+    margin-right: 0;
+}
+.gender-block span, .wid-block span{
+        margin-right: 8px;
+}
+.fir-details .fir-select{
+        padding: 7px 20px;
+} 
+
+}
+
+
+@media(max-width: 767px){
+    
+.claim-intdetail .block label{
+    font-size: 13px;
+}
+
+    .motorclaimwrapper .businessFindet .fnaccordDetails .fnlistAccord h2{
+            padding: 20px 30px 25px;
+            font-size: 16px;
+    }
+    .motorclaimwrapper .businessFindet .fnbodyAccord{
+            padding: 0 30px;
+    }
+    .fincResultsblock .fincYear h5{
+        border-right: none;
+        padding: 0 10px 15px 0;
+    }
+    .fincResultsblock .fincYear .changeYr{
+        padding-left: 0;
+    }
+    .motorclaimwrapper .businessFindet .fnaccordDetails .fnlistAccord ul.tabs1Result li{
+        padding: 8px 10px;
+    }
+    .tabsBodyarea{
+        width: 100%;
+        padding: 15px 0 0 5px;
+    }
+    .motorclaimwrapper .businessFindet .fnaccordDetails .fnlistAccord ul.fincYearPdf li {
+    display: inline-block;
+    padding: 5px 0;
+}
+.allResultsara .invPreBlocks{
+    width: 100%;
+}
+.motorclaimwrapper .businessFindet .fnaccordDetails .fnlistAccord .discUnd {
+    padding: 15px 0 25px;
+}
+.motorclaimwrapper .businessFindet .fnaccordDetails .fnlistAccord .contctDet .contact1, .contact2{
+    width: 100%;
+}
+.motorclaimwrapper .businessFindet .fnaccordDetails .fnlistAccord ul.unDivdlist li{
+    padding: 5px 0 5px 15px;
+}
+
+.sel-box {
+    position: relative;
+}
+#select {
+    display: block;
+    width: 235px;
+    height: 20px;
+    border: 1px solid #999;
+    padding: 5px;
+}
+.toc-odd {
+    position: absolute;
+    top: 32px;
+    background: #f1f1f1;
+    width: 250px;
+    display: none;
+}
+.tab .tab__head{
+width: 100%;
+    margin-top: 12px;
+    height: auto;
+    padding: 0;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.3);
+    z-index: 9;
+}
+ul.tab__head h3{
+    display: none;
+}
+#select {
+    display: block;
+    width: 100%;
+    height: 45px;
+    border: 1px solid #d2d2d2;
+    padding: 10px 16px;
+    font-size: 16px;
+    border-radius: 6px;
+    color: #063b6d;
+    font-weight: bold;
+    position: relative;
+        background: #f1f1f1;
+}
+
+  .tab .tab__container {
+    width: 100%;
+    padding: 25px 15px;
+} 
+#select:after {
+    content: '';
+    box-sizing: border-box;
+    height: 10px;
+    width: 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0px 1px 1px 0px;
+    transform: rotate(45deg);
+    transition: border-width 150ms ease-in-out;
+    position: absolute;
+    right: 15px;
+    top: 14px;
+} 
+.tab .tab__head li.active {
+    background-color: #063b6d;
+    color: #fff;
+    display: block;
+    border-left: none;
+}
+.tab .tab__head li{
+        padding: 10px 30px;
+}
+ul.boardDirectors li{
+    width: 40%;
+    margin-right: 47px;
+}
+.claim-intdetail .block.wid-block.cr {
+    width: 75%;
+}
+.claim-p .popup {
+    max-width: 700px;
+    width: 100%;
+    max-height: unset;
+    margin: 50px auto;
+    padding: 10px 0;
+    border: none;
+}
+.claim-p .popup h2 {
+    margin: 0;
+    font-size: 26px;
+    padding: 10px 0;
+}
+.claim-p .block.focus label {
+    top: 0;
+    font-size: 16px;
+}
+.claim-p .block .errorN {
+    bottom: -18px;
+    top: unset;
+    background: transparent;
+    font-size: 12px;
+    left:0;
+}
+.claim-p .popup .content {
+    overflow: unset;
+    padding: 15px 15px;
+    max-height: unset;
+    margin-bottom: 40px;
+}
+.claim-p a.sBtn{
+    padding: 10px 30px;
+    font-size: 16px;
+}
+.claim-p .sInput input{
+    font-size: 14px;
+}
+
+.motorclaimwrapper .initiate-claim{
+margin-top: 15px;
+overflow: hidden;
+}
+
+ul.claim-tabs li{
+    padding: 0 10px;
+        font-size: 13px;
+}
+.healthSelectmain .singleTripselpln.claim-intimation-slide .planDetails{
+        padding: 50px 15px;
+}
+ul.claim-tabs li.active-tabs:first-child:before, ul.claim-tabs li:first-child:before, ul.claim-tabs li.lossdtl-fill:first-child:before {
+    left: 28px;
+    top: -25px;
+}
+ul.claim-tabs li:nth-child(2):before, ul.claim-tabs li.active-tabs:nth-child(2):before, ul.claim-tabs li.driverdtl-fill:nth-child(2):before{
+      left: 39px;
+    top: -33px;  
+}
+ul.claim-tabs li:last-child:before, ul.claim-tabs li.active-tabs:last-child:before, ul.claim-tabs li.fir-fill:last-child:before{
+    left: 33px;
+    top: -30px;
+}
+.loss-details{
+        padding: 10px 0 10px;
+}
+.driver-details{
+    padding: 10px 0 10px;
+}
+.fir-details{
+    padding: 10px 0 10px;
+}
+.claim-intdetail .block{
+    width: 100%;
+        margin-right: 0;
+    margin-bottom: 45px;
+}
+.claim-intdetail .block.new-block {
+    width: 100%;
+    margin: 0 0 30px 0;
+}
+    .claim-intdetail.optDetials {
+    overflow: unset;
+}
+ul.claim-tabs li span {
+    width: 4px;
+    height: 4px;
+    margin-left: 3px;
+    left: 9px;
+    top: -15px;
+}
+ul.claim-tabs li:nth-child(2) span {
+    left: 9px;
+}
+.claim-intimationblock .block .errorN{
+    top: unset;
+    bottom: -26px;
+}
+.claim-intdetail .driver-details .block.new-block {
+    margin: 0 0 30px 0;
+    padding: 0;
+    margin-right: 0;
+    margin-bottom: 45px;
+}
+.claim-intdetail .driver-details .block.new-block.drp {
+    margin-bottom: 0;
+}
+.gender-block{
+    padding: 0 0 30px;
+}
+.claim-intdetail .block.wid-block{
+    width: 100%;
+}
+.claim-intdetail .block.wid-block{
+    padding-bottom: 20px;
+    text-align: center;
+}
+.eclaim-form{
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+} 
+.claimint-thanyou .eclaim-form {
+     width: 100%;
+}
+.ud-claims .text-eclaim {
+    width: 65%;
+ 
+}
+.block.sInput.new-block.last-block {
+    margin-top: 15px;
+}
+.claim-intimationblock .block.new-block.drp .errorN {
+    bottom: 0;
+}
+.healthSelectmain .singleTripselpln.claim-intimation-slide .sInput.time-check input{
+    height: auto;
+}
+}
+
+@media(max-width: 480px){
+    .motorclaimwrapper .businessFindet .fnaccordDetails .fnlistAccord ul.fincYearPdf li img{
+    display: inline-block;
+    vertical-align: top;
+    }
+    .motorclaimwrapper .businessFindet .fnaccordDetails .fnlistAccord ul.fincYearPdf li a{
+            width: 80%;
+    font-size: 13px;
+    }
+    ul.claim-tabs li span{
+    display: none;
+}
+.gender-block .unstyled li {
+    display: inline-block;
+    margin-left: 0;
+}
+.gender-block span, .wid-block span {
+    font-size: 14px;
+}
+.fir-sp {
+    margin-right: 10px;
+}
+.fir-details .fir-select {
+    font-size: 13px;
+    padding: 6px 20px;
+    margin-right: 5px;
+}
+
+ul.claim-tabs li span{
+    display: none;
+}
+}
+
+ 
+/*media screen*/
