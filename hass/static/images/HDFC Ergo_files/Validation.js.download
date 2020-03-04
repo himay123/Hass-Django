@@ -1,0 +1,1309 @@
+﻿// JScript File
+
+//For LTrim Function
+function Ltrim_string(objID) {
+    var j = 0, k = 0;
+    if (objID.length > 0) {
+        for (var i = 0; i < objID.length && k < objID.length; i++) {
+            if (objID.charAt(i) == " ") {
+                j++;
+            }
+            else {
+                k = objID.length;
+            }
+        }
+        objID = objID.substring(j, objID.length);
+    }
+    return objID;
+}
+
+//For trims value from rightside and returns orginal text without space
+function Rtrim_string(objID) {
+    var len = 0, chk = 0, newlen = 0;
+    if (objID.length > 0) {
+        len = objID.length;
+        for (var i = len - 1; i >= 0; i--) {
+            if (objID.charAt(i) == " ") {
+                if (chk == 1)
+                    newlen = newlen + 1;
+            }
+            else {
+                newlen = newlen + 1;
+                chk = 1;
+            }
+        }
+        objID = objID.substring(0, newlen);
+
+    }
+    return objID;
+}
+
+//For trims value from rightside and returns orginal text length
+function Rtrim_stringLen(objID) {
+    var chk = 0, len = 0, newlen = 0;
+    if (objID.value.length > 0) {
+        len = objID.value.length;
+        for (var i = len - 1; i >= 0; i--) {
+            if (objID.value.charAt(i) == " ") {
+                if (chk == 1)
+                    newlen = newlen + 1;
+            }
+            else {
+                newlen = newlen + 1;
+                chk = 1;
+            }
+        }
+    }
+    return newlen;
+}
+
+//function checks for the spaces in between
+function CheckSpaces(objID, strControlName) {
+    var trimVal = trimAll(objID.value);
+    if (trimVal.length > 0) {
+        for (var i = 0; i < trimVal.length; i++) {
+            if (trimVal.charAt(i) == " ") {
+                alert(strControlName + " : Spaces are not allowed");
+                objID.focus();
+                objID.select();
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+//For trims value from leftside and returns orginal text length
+function Ltrim_stringLen(objID) {
+    var chk = 0, len = 0, newlen = 0;
+    if (objID.value.length > 0) {
+        len = objID.value.length;
+        for (var i = 0; i <= len - 1; i++) {
+            if (objID.value.charAt(i) == " ") {
+                if (chk == 1)
+                    newlen = newlen + 1;
+            }
+            else {
+                newlen = newlen + 1;
+                chk = 1;
+            }
+        }
+    }
+    return newlen;
+}
+
+//function that checks for the blank space at starting
+function CheckLSpace(objID, strControlName) {
+    var chk = 0, len = 0;
+    if (objID.value.length > 0) {
+        len = objID.value.length;
+        for (var i = 0; i <= len - 1; i++) {
+            if (objID.value.charAt(i) == " ") {
+                if (chk != 1) {
+                    alert(strControlName + " : Spaces at the start are not allowed");
+                    objID.focus();
+                    objID.select();
+                    return false;
+                }
+            }
+            else
+                chk = 1;
+        }
+    }
+    return true;
+
+}
+
+//Blank Check
+function CheckBlank(objID, strControlName) {
+    if (Ltrim_string(objID.value) == "") {
+        //alert(strControlName+": Cannot be left blank");
+        alert("Please enter " + strControlName);
+        objID.value = "";
+        //objID.focus();
+        return false;
+    }
+    return true;
+}
+
+//Allow only Numbers in TextBox
+function CheckNumeric(objID, strControlName) {
+    if (objID.value != "") {
+        var num = /[0-9]+/
+        numflag = objID.value.match(num);
+        if (numflag != objID.value) {
+            alert(strControlName + ": Should be Numeric only.")
+            objID.focus();
+            objID.select();
+            return false;
+        }
+    }
+    return true;
+}
+
+//Allow only Numbers (in amount format) having decimal in TextBox
+function CheckAmount(objID, strControlName) {
+    if (objID.value != "") {
+        var num = /[0-9.0-9]+/
+        numflag = objID.value.match(num);
+        if (numflag != objID.value) {
+            alert(strControlName + ": Should be Numeric only.")
+            objID.focus();
+            objID.select();
+            return false;
+        }
+    }
+    return true;
+}
+
+function CheckAlphabets(objID, strControlName) {
+    var alpha = /[a-zA-Z]+/;
+    alphaflag = objID.value.match(alpha);
+    if (alphaflag != objID.value) {
+        //alert(strControlName+ ": Should be Alphabets only.")
+        alert("Please enter valid " + strControlName)
+        objID.focus();
+        objID.select();
+        return false;
+    }
+    return true;
+}
+
+//function to check alphabets with space
+function CheckAlphabetsWithSpace(objID, strControlName) {
+    var alpha = /[a-zA-Z ]+/;
+    alphaflag = objID.value.match(alpha);
+    if (alphaflag != objID.value) {
+        //alert(strControlName+ ": Should be Alphabets only.")
+        alert("Please enter valid " + strControlName)
+        objID.focus();
+        objID.select();
+        return false;
+    }
+    return true;
+}
+
+/////////function to check maximum lenght of charachters.
+function CheckMaximumCharLimit(objID, MaxCharachter, strControlName) {
+    if (objID.value != "") {
+        if (objID.value.length > MaxCharachter) {
+            //alert(strControlName + " : Should not be greater than " + MaxCharachter + " characters");
+            alert("Max " + MaxCharachter + " characters allowed");
+            objID.focus();
+            objID.select();
+            return false;
+        }
+    }
+    return true;
+}
+
+//Validation For Drop-Down List
+function CheckDropDown(objID, strControlName) {
+    if (objID.options[0].selected == "true" || objID.selectedIndex == 0) {
+        //alert(strControlName+ ": Select a proper option.");
+        alert("Please select " + strControlName);
+        objID.focus();
+        return false;
+    }
+    return true;
+}
+
+//Check for Decimal Numbers
+function CheckDecimal(objID, strControlName) {
+    var iCount = 0;
+    Temp = objID.value;
+    if (Temp.length == 0) {
+        Temp = 0;
+        return true;
+    }
+    var validchars = "1234567890.";
+    for (var j = 0; j < Temp.length && iCount < 2; j++) {
+        if (validchars.indexOf(Temp.charAt(j)) == -1) {
+            alert(strControlName + ": Should have Decimal values only");
+            objID.focus();
+            objID.select();
+            return false;
+        }
+        else if (Temp.charAt(j) == ".")
+            iCount++;
+    }
+    if (iCount > 1) {
+        alert(strControlName + ": Should have Decimal values only");
+        objID.focus();
+        objID.select();
+        return false;
+    }
+
+    return true;
+}
+
+//Validation For Single EMail-Id
+function CheckMail(objID, strControlName) {
+
+    var email = /[-a-zA-Z0-9_\.']+@[-a-zA-Z0-9]+\.[-a-zA-Z0-9\.]+/;
+    var eflag = objID.value.match(email);
+    if (eflag != objID.value) {
+        //alert(strControlName+ ": Should be in proper format")
+        alert("Please enter valid email address");
+        objID.focus();
+        objID.select();
+        return false;
+    }
+    else if (objID.value.indexOf(".") == 0) {
+        //alert(strControlName +": Should be valid Email")
+        alert("Please enter valid email address");
+        objID.focus();
+        objID.select();
+        return false;
+    }
+
+    var LastIndex = objID.value.lastIndexOf(".");
+    var FirstIndex = objID.value.indexOf(".");
+
+    if ((LastIndex - FirstIndex) == 1 || (objID.value.length - 1 == LastIndex)) // in case of ids like  abc@abc..abc and abc@abc.abc.
+    {
+        //alert(strControlName + ": Should be valid Email")
+        alert("Please enter valid email address");
+        objID.focus();
+        objID.select();
+        return false;
+    }
+    if (objID.value.indexOf("..") >= 1) {
+        //alert(strControlName + ": Should be valid Email")
+        alert("Please enter valid email address");
+        objID.focus();
+        objID.select();
+        return false;
+    }
+    return true;
+}
+
+//Validation For Phone No
+function CheckPhone(objID, strControlName) {
+    //    var num = /[0-9\-\+\/\"("\")"\s]+/
+    var num = /[0-9-\+]+/
+    numflag = objID.value.match(num);
+    if (objID.value != "") {
+        if (numflag != objID.value) {
+            alert(strControlName + ": Should be valid phone number")
+            objID.focus();
+            objID.select();
+            return false;
+        }
+        if (objID.value.length < 6) {
+            alert(strControlName + ": Should be atleast 6 digit number")
+            objID.focus();
+            objID.select();
+            return false;
+
+        }
+        else if (objID.value.length >= 18) {
+            alert(strControlName + ": Should not be greater than 18 digit")
+            objID.focus();
+            objID.select();
+            return false;
+        }
+    }
+    return true;
+}
+
+////////Checking:for phone number
+function PhoneCheck(objID, strControlName) {
+    var num = /[0-9\-\+\/\"("\")"\s]+/
+    numflag = objID.value.match(num);
+    if (objID.value != "") {
+        if ((numflag != objID.value) && (objID.value.length < 6) && (objID.value.length >= 18)) {
+            //alert(strControlName+ ": Should be valid phone number")
+            alert("Please enter valid phone number")
+            objID.focus();
+            objID.select();
+            return false;
+        }
+    }
+    return true;
+
+
+}
+
+////////Checking:for mobile number with specified length
+function MobileCheckLength(objControl, strControlName) {
+    if (objControl.value.length > 10 || objControl.value.length < 10) {
+        //alert(strControlName+ ":Should be 10 digit number");
+        alert("Please enter valid Mobile number")
+        objControl.focus();
+        objControl.select();
+        return false;
+    }
+
+    return true;
+}
+
+///function to check mobile number
+function CheckMobile(objID, strControlName) {
+    var num = /[0-9\+]+/
+    numflag = objID.value.match(num);
+    if (objID.value != "") {
+        if ((numflag != objID.value))//||( (objID.value.charAt(0) != "9")|| (objID.value.charAt(0) != "8")))
+        {
+            //alert(strControlName+ ": Should be valid Mobile number")
+            alert("Please enter valid Mobile number")
+            objID.focus();
+            objID.select();
+            return false;
+        }
+    }
+    return true;
+}
+
+function CheckMobileValidate(objControl, strControlName) {
+    var mobPat = /^(9|8|7|6)\d{9}$/;
+
+    if (mobPat.test(objControl.value) == 0) {
+        alert('Please Enter valid Mobile No.');
+        objControl.focus();
+        return false;
+    }
+    else {
+
+        return true;
+    }
+}
+
+function CheckMobileValidate1(objControl, strControlName) {
+    var mobPat = /^(09|9|08|7|6)\d{9}$/;
+    var blChk = mobPat.test(objControl.value);
+    if (mobField.value.search(mobPat) != 0) {
+        alert('Please Enter valid Mobile No.');
+        mobField.focus();
+        return false;
+    }
+    else {
+
+        return true;
+    }
+}
+
+////function to check specified length-length can be pass by passing values to the parameter
+function LengthCheck(objControl, strControlName, strlength) {
+    if (objControl.value.length != strlength) {
+        alert(strControlName + ": Should be " + strlength + " digits number");
+        objControl.focus();
+        return false;
+    }
+    return true;
+}
+
+/////////Checking:for no single radio button is selected
+function RadioCheck(objControl1, objControl2, strControlName) {
+    if (objControl1.checked == false && objControl2.checked == false) {
+        //alert(strControlName+": Select a proper choice");
+        alert("Please select " + strControlName);
+        objControl1.focus();
+        objControl1.select();
+        return false;
+    }
+
+    return true;
+}
+
+////returns the difference between 2 dates  dates should be in dd/mm/yyyy format
+function findDateDifference(x1, x2) {
+    var ssdate = new String(x1.value);
+    var ssdatee = new String(x2.value);
+
+    var SDate = new Array(3);
+    SDate = ssdate.split("/");
+    var ssdate1 = new String(SDate[1] + "/" + SDate[0] + "/" + SDate[2]);
+
+    var SDate1 = new Array(3);
+    SDate1 = ssdatee.split("/");
+    var ssdate2 = new String(SDate1[1] + "/" + SDate1[0] + "/" + SDate1[2]);
+
+    var one_day = 1000 * 60 * 60 * 24;
+
+    var objDate1 = new Date(ssdate1);
+    var objDate2 = new Date(ssdate2);
+    var diff = (objDate2.getTime() - objDate1.getTime()) / one_day;
+    if (parseInt(SDate1[2] % 4) > 0) {
+        diff = parseInt(diff) + 1;
+    }
+    return diff;
+}
+
+//Validation For Character Limit
+function CheckCharLimit(objID, str, strControlName) {
+    charlength = Ltrim_string(objID.value).length;
+    if (charlength < str) {
+        alert(strControlName + ": Should have atleast " + str + " characters.")
+        objID.focus();
+        objID.select();
+        return false;
+    }
+    return true;
+}
+
+////Allow only specified special characters --- Modified By Abhijit
+function CheckSpecialChar(objID, strControlName, spstr) {
+    var str = objID.value;
+    var validchars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" + spstr;
+    var tmpStr = ""
+
+    for (var j = 0; j < spstr.length; j++) {
+        tmpStr = tmpStr + spstr.charAt(j) + " ";
+    }
+    tmpStr = tmpStr.toString().replace("  ", "Space ");
+    if (spstr.toString().indexOf(" ") >= 0) {
+        spstr = spstr.toString().replace(" ", "Space");
+    }
+
+    if (CheckBlank(objID, strControlName)) {
+        for (var j = 0; j < str.length; j++)
+            if (validchars.indexOf(str.charAt(j)) == -1) {
+                //alert(strControlName + ": Should not have any special characters except: " + tmpStr)
+                alert("Please enter valid " + strControlName)
+                objID.focus();
+                objID.select();
+                return false;
+            }
+        return true;
+    }
+}
+
+function CheckSpecialAlphaOnly(objID, strControlName, spstr) {
+    var str = objID.value;
+    var validchars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ" + spstr;
+
+    if (spstr.toString().indexOf(" ") >= 0) {
+        spstr = spstr.toString().replace(" ", "Space ");
+    }
+
+    if (CheckBlank(objID, strControlName)) {
+        for (var j = 0; j < str.length; j++)
+            if (validchars.indexOf(str.charAt(j)) == -1) {
+                //alert(strControlName + ": Should not have any Numbers and special characters except: [ " + spstr + " ]")
+                alert("Please enter valid " + strControlName)
+                objID.focus();
+                objID.select();
+                return false;
+            }
+        return true;
+    }
+}
+
+function CheckForWord(objID, strControlName, Word) {
+    var str = objID.value;
+    if (str == Word) {
+        alert("Please Enter " + strControlName);
+
+        return false;
+    }
+    return true;
+}
+
+//Validation when for confirm password
+function confpswdchk(pass, confpass, msg) {
+    if (confpass.value != pass.value) {
+        alert(msg);
+        confpass.focus();
+        confpass.select();
+        return false;
+    }
+    return true;
+}
+
+//Check the TextBox Length
+function charlencheck(objID, strControlName, NoOfCharacters) {
+    charlength = Rtrim_stringLen(objID);
+    if (objID.value != "") {
+        if (charlength < NoOfCharacters) {
+            alert(strControlName + ": Cannot be less than " + NoOfCharacters + " characters!");
+            objID.focus();
+            objID.select();
+            return false;
+        }
+    }
+    //	if(objID.value.length != charlength)
+    //	{
+    //		alert(strControlName + ": Blank spaces are not allowed.");
+    //		objID.focus();
+    //		objID.select();
+    //		return false;
+    //    }
+    //    if(objID.value.length != Ltrim_stringLen(objID))
+    //	{
+    //		alert(strControlName + ": Blank spaces are not allowed.");
+    //		objID.focus();
+    //		objID.select();
+    //		return false;
+    //    }
+    return true;
+}
+
+//Do not allow only Numbers in TextBox
+function CheckUserName(objID, strControlName) {
+    if (objID.value != "") {
+        var num = /[0-9]+/
+        numflag = objID.value.match(num);
+        if (numflag == objID.value) {
+            alert(strControlName + ": Should be AlphaNumeric.")
+            objID.focus();
+            objID.select();
+            return false;
+        }
+    }
+    return true;
+}
+
+//Allow AlphaNumeric characters
+function CheckAlphaNumeric(objID, strControlName) {
+    var alpha = /[a-zA-Z0-9\'\-\/&\s]+/;
+    alphaflag = objID.value.match(alpha);
+    if (alphaflag != objID.value) {
+        alert(strControlName + ": Should be AlphaNumeric characters only.")
+        objID.focus();
+        objID.select();
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+//Allow only specified special characters
+function CheckSpaceChar(objID, strControlName) {
+    var str = objID.value;
+    var validchars = " ";
+    for (var j = 0; j < str.length; j++)
+        if (validchars.indexOf(str.charAt(j)) == 0) {
+            alert(strControlName + ": Should not have any spaces.")
+            objID.focus();
+            objID.select();
+            return false;
+        }
+    return true;
+}
+
+// Check the Login Name & Password for not being same.
+function ChkPwdAndLoginName(password, login) {
+    if (password.value.toLocaleLowerCase() == login.value.toLocaleLowerCase()) {
+        alert("Password and User Name cannot be same.");
+        password.focus();
+        password.select();
+        return false;
+    }
+    return true;
+}
+
+//For PMS=Check while adding Transaction 
+function QuantityCheck(objID, name) {
+
+    if (objID.value == 0) {
+        alert(name + ": Cannot be zero");
+        objID.focus();
+        objID.select();
+        return false;
+    }
+    return true;
+}
+
+function decimalNoCheck(objID, noOfDecimalDigits, MaxNo, objName) {
+    var val1 = objID.value.indexOf(".");
+    var val2 = eval(objID.value.length) - eval(val1) - 1;
+    if (val1 != "-1") {
+        if (val1 > MaxNo) {
+            alert(objName + ": Cannot be more than " + MaxNo + " digits before decimal!");
+            objID.focus();
+            objID.select();
+            return false;
+        }
+        if (val2 > noOfDecimalDigits) {
+            alert(objName + ": Can be " + noOfDecimalDigits + " decimals only!");
+            objID.focus();
+            objID.select();
+            return false;
+        }
+    }
+    else {
+        if (objID.value.length > MaxNo) {
+            alert(objName + ": Cannot be more than " + MaxNo + " digits!");
+            objID.focus();
+            objID.select();
+            return false;
+        }
+    }
+    return true;
+}
+
+function ClearText(objID, DefaultName) {
+    var textname = document.getElementById(objID);
+    if (textname.value == DefaultName)
+        textname.value = "";
+    // document.getElementById(objID).focus();
+}
+
+function FillText(objID, DefaultName) {
+    var textname = document.getElementById(objID);
+    if (textname.value == "")
+        textname.value = DefaultName;
+}
+
+///This function check radio buttons for selection
+function ChkRadio(radio, radioName) {
+    var radioChoice = false;
+    for (i = 0; i < radio.length; i++) {
+        if (radio[i].checked) {
+            radioChoice = true;
+            break;
+        }
+    }
+    if (!radioChoice) {
+        //alert(radioName+ " : Select the proper choice");
+        alert("Please select " + radioName);
+        return false;
+    }
+    return true;
+}
+
+///This function checks the Birth date validation    
+function checkBirthDate(objID, strControlName) {
+
+    var dt = new Date();
+    var x1 = dt.getDate() + "/" + (dt.getMonth() + 1) + "/" + dt.getFullYear();
+    var x2 = objID.value;
+    var ssdate = new String(x1);
+    var ssdatee = new String(x2);
+
+    var SDate = new Array(3);
+    SDate = ssdate.split("/");
+    var ssdate1 = new String(SDate[1] + "/" + SDate[0] + "/" + SDate[2]);
+
+    var SDate1 = new Array(3);
+    SDate1 = ssdatee.split("/");
+    var ssdate2 = new String(SDate1[1] + "/" + SDate1[0] + "/" + SDate1[2]);
+
+    var one_day = 1000 * 60 * 60 * 24;
+
+    var objDate1 = new Date(ssdate1 + "");
+    var objDate2 = new Date(ssdate2 + "");
+    var diff = (objDate2.getTime() - objDate1.getTime()) / one_day;
+    if (parseInt(SDate1[2] % 4) > 0) {
+        diff = parseInt(diff) + 1;
+    }
+    if (diff >= 0) {
+        alert(strControlName + ": can not be equal to or greater than Current date");
+        objID.focus();
+        objID.select();
+        return false;
+    }
+    return true;
+}
+
+//For trimming String
+function trimAll(sString) {
+    while (sString.substring(0, 1) == ' ') {
+        sString = sString.substring(1, sString.length);
+    }
+    while (sString.substring(sString.length - 1, sString.length) == ' ') {
+        sString = sString.substring(0, sString.length - 1);
+    }
+    return sString;
+}
+
+//Function to check the birthdate
+function BirthDate(date, strControlName1) {
+    var d = new Date();
+    var cyear = parseInt(d.getFullYear());
+    date_year = date.value.substring(date.value.length - 4, date.value.length)
+    date_year.value == parseInt(date_year);
+    if ((date_year == cyear) == true) {
+        alert(strControlName1 + ': Birth year can\'t same as current year.');
+        date.focus();
+        return false;
+    }
+    var diff = parseInt(cyear) - parseInt(date_year);
+
+    if (diff < 18) {
+        alert(strControlName1 + ': Your age must greater or equal to 18-Yrs.');
+        date.focus();
+        return false;
+    }
+    return true;
+}
+
+function DateComparison(Date1, strDate1, Date2, strDate2) {
+    var SplitFromDate = new Array();
+    var SplitToDate = new Array();
+    var FromDate = new Date();
+    var ToDate = new Date();
+
+    SplitFromDate = Date1.value.split("/");
+    SplitToDate = Date2.value.split("/");
+
+    FromDate.setFullYear(SplitFromDate[2], SplitFromDate[1], SplitFromDate[0]);
+    ToDate.setFullYear(SplitToDate[2], SplitToDate[1], SplitToDate[0]);
+
+    if (FromDate <= ToDate)
+        return true;
+    else {
+        alert(strDate1 + " : Should be less than or equal to '" + strDate2 + "'");
+        Date1.select();
+        return false;
+    }
+}
+
+function CheckBoxListValidation(objID, strControlName) {
+    var flag = false;
+    for (i = 0; document.getElementById(objID.id + "_" + i) != null; i++) {
+        if (document.getElementById(objID.id + "_" + i).checked == true) {
+            flag = true;
+            break;
+        }
+    }
+    if (!flag) {
+        //alert(strControlName + ": Select atleast one Option.");
+        alert("Please select atleast one " + strControlName);
+        return false;
+    }
+    return true;
+}
+
+function setFocus(ObjID) {
+    ObjID = document.getElementById(ObjID);
+    ObjID.focus();
+}
+
+function RadioListValidation(objID, strControlName) {
+    var flag = false;
+    for (i = 0; document.getElementById(objID.id + "_" + i) != null; i++) {
+        if (document.getElementById(objID.id + "_" + i).checked == true) {
+            flag = true;
+            break;
+        }
+    }
+    if (!flag) {
+        //alert(strControlName + ": Select atleast one Option.");
+        alert("Please select atleast one " + strControlName);
+        return false;
+    }
+    return true;
+}
+
+function OpenBuyOnline(URL) {
+    //URL = "MaintError.htm";
+    window.open(URL, "BuyOnline", "status=0,toolbar=0,resizable=yes,width=1003,height=610,left=10,top=50,scrollbars=yes");
+    //return false;
+}
+
+function MM_openBrWindow(theURL, winName, features) {
+    window.open(theURL, winName, features);
+}
+
+function SubMenu_Click(str, stri) {
+    SubMenu_UnClick("divTab_01", "1")
+    SubMenu_UnClick("divTab_02", "2")
+    SubMenu_UnClick("divTab_03", "3")
+    SubMenu_UnClick("divTab_04", "4")
+    SubMenu_UnClick("divTab_05", "5")
+    SubMenu_UnClick("divTab_06", "6")
+    SubMenu_UnClick("divTab_07", "7")
+
+    if (document.getElementById(str) != null)
+        document.getElementById(str).style.display = "block";
+
+    if (document.getElementById("dvTab1_" + stri) != null)
+        document.getElementById("dvTab1_" + stri).className = "nav_l";
+    if (document.getElementById("dvTab2_" + stri) != null)
+        document.getElementById("dvTab2_" + stri).className = "nav_r";
+    if (document.getElementById("dvTab3_" + stri) != null)
+        document.getElementById("dvTab3_" + stri).className = "dvTabActive";
+}
+
+function SubMenu_UnClick(str, stri) {
+
+
+    if (document.getElementById(str) != null)
+        document.getElementById(str).style.display = "none";
+
+
+    if (document.getElementById("dvTab1_" + stri) != null)
+        document.getElementById("dvTab1_" + stri).className = "navactive_l";
+    if (document.getElementById("dvTab2_" + stri) != null)
+        document.getElementById("dvTab2_" + stri).className = "navactive_r";
+    if (document.getElementById("dvTab3_" + stri) != null)
+        document.getElementById("dvTab3_" + stri).className = "dvTab01";
+
+
+
+
+}
+
+function ResetRedio(rbListID, iDef) {
+    var rbList = document.getElementById(rbListID);
+    var rdbChild;
+    for (var t = 0; t < rbList.cells.length; t++) {
+        rdbChild = document.getElementById(rbListID + "_" + t);
+        if (rdbChild != null)
+            if (rdbChild.checked) {
+                rdbChild.checked = false;
+            }
+    }
+    rdbChild = document.getElementById(rbListID + "_" + (iDef - 1));
+    if (rdbChild != null)
+        rdbChild.checked = true;
+}
+
+function expand(cid) {
+    if (document.getElementById(cid) != null)
+        document.getElementById(cid).style.display = "block";
+}
+
+function collaps(cid) {
+    if (document.getElementById(cid) != null)
+        document.getElementById(cid).style.display = "none";
+}
+
+function ValidPolicyNo() {
+
+    if (!ValidateMoterPolicy()) {
+        document.getElementById("txtPolicyNo").focus();
+        return false;
+    }
+    else {
+
+        window.open("MotorRenewal.aspx?a=" + document.getElementById("txtPolicyNo").value, 'RenewOnline', 'status=0,toolbar=0,resizable=yes,width=1003,height=610,left=10,top=50,scrollbars=yes');
+        //window.open('MaintError.htm','RenewOnline','status=0,toolbar=0,resizable=yes,width=1003,height=610,left=10,top=50,scrollbars=yes');
+        return false;
+    }
+}
+
+function ValidatePolicyNo(obj) {
+    if (obj.value.trim() != "") {
+        if (parseInt(obj.value.trim()) == 0) {
+            alert("Policy No. Should not be Zero")
+            obj.focus();
+            obj.select();
+            return false;
+
+        }
+        /*if(obj.value.trim().length < 16 )
+        {
+        alert("Policy No. should be 16 Digit");
+        obj.focus();
+        obj.select();
+        return false;
+        }*/
+        return true;
+    }
+}
+
+String.prototype.trim = function () {
+    a = this.replace(/^\s+/, '');
+    return a.replace(/\s+$/, '');
+};
+
+function Validate() {
+    var str1 = document.getElementById("txtPolicyNo").value.trim();
+
+    if (document.getElementById("txtPolicyNo").value.trim() == "") {
+        alert("Policy No. Should not be Blank");
+        document.getElementById("txtPolicyNo").focus();
+        return false;
+    }
+
+    var Status;
+    Status = ValidatePolicyNo(document.getElementById("txtPolicyNo"));
+    if (Status == false) {
+        return false;
+    }
+
+    if (str1.substring(0, 2).trim() != "vp" && str1.substring(0, 2).trim() != "VP" && str1.substring(0, 2).trim() != "23") {
+        alert("Please enter a valid Policy Number");
+        document.getElementById("txtPolicyNo").focus();
+        return false;
+    }
+    else {
+        if (str1.substring(0, 2).trim() == "vp" || str1.substring(0, 2).trim() == "VP") {
+            if (str1.length != 16) {
+                alert("Policy No. should be 16 Digit.");
+                document.getElementById("txtPolicyNo").focus();
+                return false;
+            }
+        }
+        else {
+            if (str1.substring(0, 2).trim() == "23") {
+                if (str1.length != 19) {
+                    alert("Policy No. should be 19 Digit.");
+                    document.getElementById("txtPolicyNo").focus();
+                    return false;
+                }
+            }
+        }
+    }
+    return true;
+
+}
+
+function SetKey(event) {
+
+    if (event.keyCode == 13) {
+        ValidPolicyNo();
+        return false;
+    }
+}
+
+function TabMenu_Click(str, stri) {
+    TabMenu_UnClick("divTab_01", "1")
+    TabMenu_UnClick("divTab_02", "2")
+    TabMenu_UnClick("divTab_03", "3")
+    TabMenu_UnClick("divTab_04", "4")
+    TabMenu_UnClick("divTab_05", "5")
+    TabMenu_UnClick("divTab_06", "6")
+    TabMenu_UnClick("divTab_07", "7")
+
+    if (document.getElementById(str) != null)
+        document.getElementById(str).style.display = "block";
+
+    if (document.getElementById("dvTab3_" + stri) != null)
+        document.getElementById("dvTab3_" + stri).className = "dvTabActive_h";
+
+}
+
+function TabMenu_UnClick(str, stri) {
+    if (document.getElementById(str) != null)
+        document.getElementById(str).style.display = "none";
+
+    if (document.getElementById("dvTab3_" + stri) != null)
+        document.getElementById("dvTab3_" + stri).className = "dvTabInActive_h";
+}
+
+function getPageScroll() {
+
+    var yScroll;
+
+    if (self.pageYOffset) {
+        yScroll = self.pageYOffset;
+    } else if (document.documentElement && document.documentElement.scrollTop) {	 // Explorer 6 Strict
+        yScroll = document.documentElement.scrollTop;
+    } else if (document.body) {// all other Explorers
+        yScroll = document.body.scrollTop;
+    }
+
+    arrayPageScroll = new Array('', yScroll)
+    return arrayPageScroll;
+}
+
+function getPageSize() {
+
+    var xScroll, yScroll;
+
+    if (window.innerHeight && window.scrollMaxY) {
+        xScroll = document.body.scrollWidth;
+        yScroll = window.innerHeight + window.scrollMaxY;
+    } else if (document.body.scrollHeight > document.body.offsetHeight) { // all but Explorer Mac
+        xScroll = document.body.scrollWidth;
+        yScroll = document.body.scrollHeight;
+    } else { // Explorer Mac...would also work in Explorer 6 Strict, Mozilla and Safari
+        xScroll = document.body.offsetWidth;
+        yScroll = document.body.offsetHeight;
+    }
+
+    var windowWidth, windowHeight;
+    if (self.innerHeight) {	// all except Explorer
+        windowWidth = self.innerWidth;
+        windowHeight = self.innerHeight;
+    } else if (document.documentElement && document.documentElement.clientHeight) { // Explorer 6 Strict Mode
+        windowWidth = document.documentElement.clientWidth;
+        windowHeight = document.documentElement.clientHeight;
+    } else if (document.body) { // other Explorers
+        windowWidth = document.body.clientWidth;
+        windowHeight = document.body.clientHeight;
+    }
+
+    // for small pages with total height less then height of the viewport
+    if (yScroll < windowHeight) {
+        pageHeight = windowHeight;
+    } else {
+        pageHeight = yScroll;
+    }
+
+    // for small pages with total width less then width of the viewport
+    if (xScroll < windowWidth) {
+        pageWidth = windowWidth;
+    } else {
+        pageWidth = xScroll;
+    }
+
+
+    arrayPageSize = new Array(pageWidth, pageHeight, windowWidth, windowHeight)
+    return arrayPageSize;
+}
+
+/*New functions added for homepage right pannels validation*/
+function SetHealtKey(event) {
+    if (event.keyCode == 13) {
+        ValidHealthPolicyNo();
+        return false;
+    }
+}
+
+function ValidHealthPolicyNo() {
+    
+    if (!ValidateHealth()) {
+        document.getElementById("txtHealthPolicy").focus();
+        return false;
+    }
+    else {
+        window.open("HealthRenewal.aspx?a=" + document.getElementById("txtHealthPolicy").value, 'RenewOnline', 'status=0,toolbar=0,resizable=yes,width=1003,height=610,left=10,top=50,scrollbars=yes'); return false;
+        //window.open('MaintError.htm','RenewOnline','status=0,toolbar=0,resizable=yes,width=1003,height=610,left=10,top=50,scrollbars=yes'); return false;  
+    }
+}
+
+function ValidateHealth() {
+    var str1 = document.getElementById("txtHealthPolicy").value.trim();
+    if (document.getElementById("txtHealthPolicy").value.trim() == "") {
+        alert("Policy No. Should not be Blank");
+        document.getElementById("txtHealthPolicy").focus();
+        return false;
+    }
+}
+
+function ValidateHealthPolicyNo(obj) {
+
+    var str1 = obj.value.trim();
+    if (str1.length == 16) {
+        return true;
+    }
+    else {
+        alert('Health policy No. can be 16 Digit only');
+        return false;
+    }
+
+
+
+
+    return true;
+
+}
+
+function ValidatePMS() {
+    var PMSLoginID = document.getElementById("txtID");
+    var _vPMSLoginID = PMSLoginID.value;
+    var PMSPwd = document.getElementById("txtPassword");
+    if (!CheckBlank(PMSLoginID, "Login ID") || !CheckBlank(PMSPwd, "Password")) {
+        return false;
+    }
+    else {
+        //window.open("https://netinsure.hdfcergo.com/NIPMS/webforms/pms/land.aspx?UserID_Portal="+PMSLoginID.value+"&Password_Portal="+PMSPwd.value,'PMSLogin','status=0,toolbar=0,resizable=yes,width=1003,height=610,left=10,top=50,scrollbars=yes');
+        LogPMS(_vPMSLoginID, PMSPwd);
+        PMSLoginID.value = "";
+        PMSPwd.value = "";
+    }
+}
+
+function LogPMS(PMSLoginID, PMSPwd) {
+    $.ajax({
+        type: "POST",
+        url: "bkp_pmslogin.aspx?q=pwd",
+        data: "pword=" + PMSPwd.value + "",
+        success: function (msg) {
+            alert(msg);
+            window.open("https://netinsure.hdfcergo.com/NIPMS/webforms/pms/land.aspx?UserID_Portal=" + PMSLoginID + "&Password_Portal=" + msg + "", "PMSLogin", "status=0,toolbar=0,resizable=yes,width=1003,height=610,left=10,top=50,scrollbars=yes");
+            //window.open("http://10.62.105.83:8500/commonbackpage.aspx?UserID_Portal=" + PMSLoginID+ "&Password_Portal=" + msg + "","PMSLogin","status=0,toolbar=0,resizable=yes,width=1003,height=610,left=10,top=50,scrollbars=yes");
+        }
+    });
+}
+
+function chkChange(iIndex) {
+    var tblMotor = document.getElementById('tblMotor');
+    var tblHealth = document.getElementById('tblHealth');
+
+    if ((tblHealth != null) && (tblMotor != null)) {
+        if (iIndex == 0) {
+            tblMotor.style.display = 'Block';
+            tblHealth.style.display = 'none';
+
+        }
+        else {
+
+            tblMotor.style.display = 'none';
+            tblHealth.style.display = 'Block';
+        }
+
+
+    }
+}
+
+function chkkey(evt) {
+    if (evt.keyCode == 13)
+    { ValidatePMS(); return false; }
+}
+/*New functions added for homepage right pannels validation*/
+
+/* Google Conversion Code */
+function GetGoogleCode() {
+
+    var sPath = window.location.pathname;
+    var Temp = "";
+    var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+    var code;
+
+    if (sPage.toUpperCase() == "CRITICALILLNESS.HTML") {
+        code = "kfncCOb97QIQ0oqlywM/963200338"; /* For Critical Illness */
+        return code;
+    }
+    else if (sPage.toUpperCase() == "HEALTHSURAKSHA.HTML") {
+        code = "VclwCO787QIQ0oqlywM/963200338"; /* For Health Suraksha */
+        return code;
+    }
+    else if (sPage.toUpperCase() == "ACCIDENTPROTECTIONPLAN.HTML") {
+        code = "znGjCN7-7QIQ0oqlywM/963200338"; /* For PersonalAccident */
+        return code;
+    }
+    else if (sPage.toUpperCase() == "CASHLESSHOSPITAL.HTML") {
+        code = "E8J4CMaB7gIQ0oqlywM/963200338"; /* For CashlessHospitalList */
+        return code;
+    }
+    else if (sPage.toUpperCase() == "GARAGE.HTML") {
+        code = "qX4lCLOdhwMQpfumzAM/965328293"; /* For GarageList */
+        return code;
+    }
+    else if (sPage.toUpperCase() == "PRIVATECARINSURANCE.HTML") {
+        code = "IzJUCNOZhwMQpfumzAM/965328293"; /* For Private car insurance */
+        return code;
+    }
+    else if (sPage.toUpperCase() == "TRAVELINSURANCE.HTML") {
+        code = "Xa5TCPy5tQMQ7K7h0AM/974673772"; /* For Travel insurance */
+        return code;
+    }
+    else {
+        code = "eZMOCNDU8gEQkL6v6gM/1028382480"; /* For Default */
+        return code;
+    }
+
+
+}
+
+function GetPageName() {
+
+    var sPath = window.location.pathname;
+    var Temp = "";
+    var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+    if (sPage.toUpperCase() == 'MOTORINSURANCE.HTML')  /* For Motor Bifuration page */
+    {
+        Temp = "AgtiCMuahwMQpfumzAM/965328293";
+        return Temp;
+    }
+    else if (sPage.toUpperCase() == 'HEALTHINSURANCE.HTML')/* For Health Bifuration Page*/
+    {
+        Temp = "nOUhCPb77QIQ0oqlywM/963200338";
+        return Temp;
+    }
+    else {
+        Temp = "eZMOCNDU8gEQkL6v6gM/1028382480";  /* default */
+        return Temp;
+    }
+}
+
+function Show_Hide_Div(toggleDiv, toggelBtn, Btnimage) {
+
+
+    if (toggleDiv.style.display == "block") {
+        toggleDiv.style.display = "none";
+        Btnimage.src = "../../CMT/Upload/BannerFiles/plus_icon.gif";
+
+    }
+    else {
+        toggleDiv.style.display = "block";
+        Btnimage.src = "../../CMT/Upload/BannerFiles/minus_icon.gif";
+
+    }
+}
+
+function CheckAlphaNumaric(objID, strControlName, spstr) {
+
+    var str = objID.value;
+    var validchars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890" + spstr;
+    var tmpStr = ""
+
+    for (var j = 0; j < spstr.length; j++) {
+        tmpStr = tmpStr + spstr.charAt(j) + " ";
+    }
+    tmpStr = tmpStr.toString().replace("  ", "Space ");
+    if (spstr.toString().indexOf(" ") >= 0) {
+        spstr = spstr.toString().replace(" ", "Space");
+    }
+
+    if (CheckBlank(objID, strControlName)) {
+        for (var j = 0; j < str.length; j++)
+            if (validchars.indexOf(str.charAt(j)) == -1) {
+                //alert(strControlName + ": Should not have any special characters except: " + tmpStr)
+                alert(strControlName + " should be AlphaNumeric ")
+                objID.focus();
+                objID.select();
+                return false;
+            }
+        return true;
+    }
+}
+
+function ValidateMoterPolicy() {
+
+    var str1 = document.getElementById("txtPolicyNo").value.trim();
+    if (document.getElementById("txtPolicyNo").value.trim() == "") {
+        alert("Policy No. Should not be Blank");
+        document.getElementById("txtPolicyNo").focus();
+        return false;
+    }
+    var Status;
+    Status = ValidatePolicyNo(document.getElementById("txtPolicyNo"));
+    if (Status == false) {
+        return false;
+    }
+
+    if (str1.substring(0, 2).trim() != "23") {
+        alert('Invalid Policy No');
+        return false;
+    }
+    else if (str1.substring(0, 2).trim() == "23") {
+        //        if (str1.length < 16) {
+        //            alert('Policy No should not be less than 16 digit');
+        //            return false;
+        //        }
+        //        else if (str1.length > 19) {
+        //            alert('Policy No should not be grater than 19 digit');
+        //            return false;
+        //        }
+
+        if (str1.length == 16 || str1.length == 19) {
+            return true;
+        }
+        else {
+            alert('Policy No can be 16 or 19 Digit only');
+        }
+
+    }
+
+
+}
+
+function PostRedirectToPortal(hdnRefEnc, hdnCustData, PortalURL) {
+    
+    // Create a Form
+    var $form = $("<form/>").attr("id", "data_form")
+                            .attr("action", PortalURL)
+                            .attr("method", "post");
+    $("body").append($form);
+    //Append the values to be send
+    AddParameter($form, "hdnRefEnc", hdnRefEnc);
+    AddParameter($form, "hdnCustData", hdnCustData);
+    //Send the Form
+    $form[0].submit();
+}
+
+function AddParameter(form, name, value) {
+    var $input = $("<input />").attr("type", "hidden")
+                                .attr("name", name)
+                                .attr("value", value);
+    form.append($input);
+}
+

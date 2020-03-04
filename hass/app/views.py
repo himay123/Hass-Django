@@ -116,17 +116,16 @@ def get_city(request):
     print(city)
     return JsonResponse(list(city),safe=False)
 
+
 def get_manufacture(request):
-    
     selected_city=request.GET.get('city')
     selected_state=request.GET.get('state')
-
     city=cites.objects.get(city_name=selected_city,city_state=selected_state)
     garage=Garage.objects.filter(location=city).values('dealer_name','address','city','state','contect_no','contect_person','type_of_vehical','manufacture')
-
     return JsonResponse(list(garage),safe=False)
 
     #manufacture=cites.objects.filter
+
 
 
 def policy_otp_page(request):
@@ -135,6 +134,30 @@ def policy_no_page(request):
     return render(request,'policyno_page.html')
 def head_page(request):
     return render(request,'head.html')
+def select_plan_page(request):
+    states1=cites.objects.all().values('city_state','city_name').distinct()
+    print(states1)
+    return render(request,'select_plan.html',{'states1':states1})
+def paln_detail_page(request):
+    return render(request,'plan_detail.html')
+def expert_blog_page(request):
+    return render(request,'expert_blog.html')
+def insurance_information_page(request):
+    return render(request,'insurance_info.html')
+def car_insurance_information_page(request):
+    return render(request,'car_insurance_info.html')
+def car_act_page(request):
+    return render(request,'car_act.html')
+def parking_tips_page(request):
+    return render(request,'parking_tips.html')
+def microdot_page(request):
+    return render(request,'microdot.html')
+def thired_party_detail_page(request):
+    return render(request,'thired_party_detail.html')
+def new_rules_page(request):
+    return render(request,'new_rules.html')
+def tuch_less_page(request):
+    return render(request,'tuchless.html')
 '''def login_page(request):
     if request.method=='POST':
         email=request.POST.get('email')

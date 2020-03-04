@@ -1,0 +1,205 @@
+{% extends 'maste.html' %}
+{% load static %}
+{% block containt %}
+<div id="head1">
+    <img src="{% static 'images/car.jpg' %}" class="ing-responsive" alt="" width="100%" height="300px" style="margin-top: -20px;">
+    <h1 class="text-center" style="background-color: brown; font-size: 30px;font-weight: 600;height: 50px;line-height: 50px;color: white;">Car Insurance Information</h1>
+    </div>
+    <div class="container" style="margin-top: 40px;">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            
+               <div class="jumbotron">
+                   <div class="left-date">
+                       <div class="dates">
+                           <p style="font-size: 40px;font-weight: 700;color: #391f4b;">1</p>
+                                  <span style="margin-right: 15px;color: #391f4b;">Mar 2020</span>
+                           </div>
+                    </div>
+                   <div class="right-info">
+                   <ul>
+                   <li>
+                      
+                   <h1 style="font-size: 22px; margin-top: 10px;color: #391f4b;">
+                      <a  href="{% url 'car_act' %}" target="_blank" style="text-decoration: none;color: #391f4b; font-size: 22px;margin-top: 10px;">Motor Vehicles (Amendment) Act 2019 Mandates Vehicle Insurance</a>
+                   </h1>
+                   <br>
+                   <div>
+                       <div style="color: #47473a;">
+                        Why has vehicle insurance become so important after new Motor Vehicles (Amendment) Act 2019 implementation? Know more about the latest motor insurance updates and traffic violation penalties.                   </div>
+                   <br>
+                   </div>
+                   <div class="posted_by">
+                    <a href="{% url 'car_act' %}" style="text-decoration: none;color: tomato;font-size: 25px; font-weight: 600;">Read More</a>
+                    <br>
+               </li>
+           </ul>
+       </div>
+   </div>
+</div>
+</div>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        
+           <div class="jumbotron">
+               <div class="left-date">
+                   <div class="dates">
+                       <p style="font-size: 40px;font-weight: 700;color: #391f4b;">28</p>
+                              <span style="margin-right: 15px;color: #391f4b;">feb 2020</span>
+                       </div>
+                </div>
+               <div class="right-info">
+               <ul>
+               <li>
+                  
+               <h1 style="font-size: 22px; margin-top: 10px;color: #391f4b;">
+                  <a  href="{% url 'parking_tips' %}" target="_blank" style="text-decoration: none;color: #391f4b; font-size: 22px;margin-top: 10px;">Some Tips for Safe Parking of Your Car or Two-Wheeler</a>
+               </h1>
+               <br>
+               <div>
+                   <div style="color: #47473a;">
+                    Many cases of vehicle theft and vandalism occur at parking lots and hence, it’s necessary to follow these tips for safe parking of your car.
+                 </div>
+               <br>
+               </div>
+               <div class="posted_by">
+                <a href="{% url 'parking_tips' %}" style="text-decoration: none;color: tomato;font-size: 25px; font-weight: 600;">Read More</a>
+                <br>
+           </li>
+       </ul>
+   </div>
+</div>
+</div>
+</div>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        
+           <div class="jumbotron">
+               <div class="left-date">
+                   <div class="dates">
+                       <p style="font-size: 40px;font-weight: 700;color: #391f4b;">25</p>
+                              <span style="margin-right: 15px;color: #391f4b;">Feb 2020</span>
+                       </div>
+                </div>
+               <div class="right-info">
+               <ul>
+               <li>
+                  
+               <h1 style="font-size: 22px; margin-top: 10px;color: #391f4b;">
+                  <a  href="{% url 'micro_dot' %}" target="_blank" style="text-decoration: none;color: #391f4b; font-size: 22px;margin-top: 10px;">Know How MicroDot Anti-Theft Technology Can Transform Your Vehicle’s Security</a>
+               </h1>
+               <br>
+               <div>
+                   <div style="color: #47473a;">
+                   ‘MicroDot’ is a powerful theft deterrent technology that involves the spraying of thousands of small laser dots containing unique identification data on the whole vehicle body.
+                 </div>
+               <br>
+               </div>
+               <div class="posted_by">
+                <a href="{% url 'micro_dot' %}" style="text-decoration: none;color: tomato;font-size: 25px; font-weight: 600;">Read More</a>
+                <br>
+           </li>
+       </ul>
+   </div>
+</div>
+</div>
+</div>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        
+           <div class="jumbotron">
+               <div class="left-date">
+                   <div class="dates">
+                       <p style="font-size: 40px;font-weight: 700;color: #391f4b;">20</p>
+                              <span style="margin-right: 15px;color: #391f4b;">Feb 2020</span>
+                       </div>
+                </div>
+               <div class="right-info">
+               <ul>
+               <li>
+                  
+               <h1 style="font-size: 22px; margin-top: 10px;color: #391f4b;">
+                  <a  href="{% url 'thired_party_detail' %}" target="_blank" style="text-decoration: none;color: #391f4b; font-size: 22px;margin-top: 10px;">Unbundling of Third Party & Own Damage Cover: What It Means For Vehicle Owners</a>
+               </h1>
+               <br>
+               <div>
+                   <div style="color: #47473a;">
+                    IRDAI has allowed the insurers to offer standalone own-damage cover for motor insurance policies. This will encourage fair pricing in the market and offer more flexibility to the vehicle owners.
+                </div>
+               <br>
+               </div>
+               <div class="posted_by">
+                <a href="{% url 'thired_party_detail' %}" style="text-decoration: none;color: tomato;font-size: 25px; font-weight: 600;">Read More</a>
+                <br>
+           </li>
+       </ul>
+   </div>
+</div>
+</div>
+</div>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        
+           <div class="jumbotron">
+               <div class="left-date">
+                   <div class="dates">
+                       <p style="font-size: 40px;font-weight: 700;color: #391f4b;">15</p>
+                              <span style="margin-right: 15px;color: #391f4b;">Feb 2020</span>
+                       </div>
+                </div>
+               <div class="right-info">
+               <ul>
+               <li>
+                  
+               <h1 style="font-size: 22px; margin-top: 10px;color: #391f4b;">
+                  <a  href="{% url 'new_rules' %}" target="_blank" style="text-decoration: none;color: #391f4b; font-size: 22px;margin-top: 10px;">What Are the New Traffic Fine Rules & How You Can Avoid Them?</a>
+               </h1>
+               <br>
+               <div>
+                   <div style="color: #47473a;">
+                    By having a comprehensive motor insurance policy, you can drive your vehicle worry-free knowing that you’re protected against all types of legal and financial contingencies.
+                </div>
+               <br>
+               </div>
+               <div class="posted_by">
+                <a href="{% url 'new_rules' %}" style="text-decoration: none;color: tomato;font-size: 25px; font-weight: 600;">Read More</a>
+                <br>
+           </li>
+       </ul>
+   </div>
+</div>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        
+           <div class="jumbotron">
+               <div class="left-date">
+                   <div class="dates">
+                       <p style="font-size: 40px;font-weight: 700;color: #391f4b;">05</p>
+                              <span style="margin-right: 15px;color: #391f4b;">Feb 2020</span>
+                       </div>
+                </div>
+               <div class="right-info">
+               <ul>
+               <li>
+                  
+               <h1 style="font-size: 22px; margin-top: 10px;color: #391f4b;">
+                  <a  href="{% url 'tuch_less' %}" target="_blank" style="text-decoration: none;color: #391f4b; font-size: 22px;margin-top: 10px;">How Touchless Technology will change the way you file claims?</a>
+               </h1>
+               <br>
+               
+               <br>
+               </div>
+               <div class="posted_by">
+                <a href="{% url 'tuch_less' %}" style="text-decoration: none;color: tomato;font-size: 25px; font-weight: 600;">Read More</a>
+                <br>
+           </li>
+       </ul>
+   </div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

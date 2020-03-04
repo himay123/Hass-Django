@@ -21,6 +21,17 @@ urlpatterns = [
     path('get_city',views.get_city,name='get_city'),
     path('mainpage',views.head_page,name='head'),
     path('get_manufacture',views.get_manufacture,name='get_manufacture'),
+    path('select_plan',views.select_plan_page,name='select_plan'),
+    path('plan_detail',views.paln_detail_page,name='plan_detail'),
+    path('expert_blog',views.expert_blog_page,name='expert_blog'),
+    path('insurance_info',views.insurance_information_page,name='insurance_info'),
+    path('car_info',views.car_insurance_information_page,name='car_info'),
+    path('car_act',views.car_act_page,name='car_act'),
+    path('parking_tips',views.parking_tips_page,name='parking_tips'),
+    path('micro_dot',views.microdot_page,name='micro_dot'),
+    path('thired_party_detail',views.thired_party_detail_page,name='thired_party_detail'),
+    path('new_rules',views.new_rules_page,name='new_rules'),
+    path('tuch_less',views.tuch_less_page,name='tuch_less'),
     
 
 ]

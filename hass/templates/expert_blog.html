@@ -1,0 +1,342 @@
+{% extends 'maste.html' %}
+{% load static %}
+{% block containt %}
+<style>
+   /* .top_border
+        {
+            height: 350px;
+            background-image: url("");
+            width: 100%;
+            background-size: cover;
+            background-position: fixed;     
+			margin-top:-20px;
+        }*/
+        #container
+        {
+            position: relative;
+            margin-top: -20px;
+
+        }
+         .bottom-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 60px;
+            font-weight: 500;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+             }
+             #main_content
+             {
+                margin-top: 20px;
+                 background-color: #f2f2f2;
+             }
+             .jumbotron
+             {
+                 margin-top: 10px;
+                 background-color: white;
+                 height: auto;
+                 border-radius:0px;
+             }
+             #blog
+             {
+                 margin-top: 40px;
+                 font-size: 30px;
+                 color: #391f4b;
+                 font-weight: 700;
+             }
+             h2{
+                font-family: arial;
+                font-size: 20px;
+                color: #333;
+                text-align: left;
+                margin: 0;
+                padding: 15px 0 10px;
+                }
+                h3{
+                    font-family: arial;
+                    font-size: 18px;
+                    color: #333;
+                    text-align: left;
+                    margin: 0;
+                }
+                p{
+                    font-family: arial;
+                    font-size: 18px;
+                    color: #666;
+                    text-align: left;
+                    margin: 0;
+                    padding: 20px 0 5px;
+                }
+                .ybg{
+                 background: #fafaf7;
+                 float: left;
+                 padding: 0 12px;
+                 margin: 35px 0 0;
+                }
+                .right-info{
+                    float: left;
+                    width: 88%;
+                    padding: 0 0 0 25px;
+                }
+               .left-date{
+                float: left;
+                width: 8%;
+                text-align: center;
+                
+            }
+                                        
+
+        
+</style>
+<div id="container">
+    <img src="{% static 'images/exp.jpg' %}" alt="Expert Blog" width="100%">
+    <div class="bottom-center">Experts Blog</div>
+</div>
+<div id='main_content'>
+ <div class="container">
+     <div class="row">
+         <div class="col-lg-5">
+             <label id="blog">EXPERT SPOTLIGHT & PANEL</label>
+             <div class="jumbotron" style="padding: 20px;height: 750px;">
+                  <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;position: relative;">
+                   
+               
+
+    
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="{% static 'images/abc.jpeg' %}" alt="" style="width:100%;height:250px;">
+        <h2>Himay Bharoliya</h2>
+        <h3>Chief - Underwriting, Reinsurance &amp; Claims</h3>
+        <p>A stalwart in the field of General Insurance, his expertise and insight in the field can feed the curiosity of freshers for generations to come.
+        </p>
+        <div class="brief">
+            <h3>
+            Total experience of 24 years</h3>
+            <h3>
+            Specialties: Underwriting and Claims</h3>
+            </div>
+            <p></p>
+            <br><br><br><br><br>
+      </div>
+
+      <div class="item">
+        <img src="{% static 'images/abc.jpeg' %}" alt="" style="width:100%;height:250px;">
+        <h2>Abhishek Dhameliya</h2>
+        <h3>Chief Financial officer, HASS General Insurance Company Limited</h3>
+        <p></p>
+        <p>Gopal Balachandran joined HASS in 2002, India’s number one private general insurance company and the first general insurance company in India to be ISO 9001:2000 certified. HASS General Insurance Company Limited is a joint venture between ICICI Bank Ltd. and Canada based Fairfax Financial Holdings Ltd. &nbsp;</p>
+        <p></p>
+      </div>
+    
+      <div class="item">
+        <img src="{% static 'images/abc.jpeg' %}" alt="" style="width:100%;height:250px;">
+        <h2>Sagar Chandresha</h2>
+        <h3>Head - Motor Underwriting &amp; Claims</h3>
+        <p>A hawk at identifying raw talent and nurturing it, it is no surprise that Amitabh successfully heads the Motor Underwriting, Claims and Product development functions while also leading the Motor Customer Service department.
+        </p>
+        <div class="brief">
+            <h3>
+            Total experience of 12 years</h3>
+            <h3>
+            Specialties: Underwriting and Claims</h3>
+            </div>
+            <p></p>
+            <br><br><br>
+      </div>
+      <div class="item">
+        <img src="{% static 'images/abc.jpeg' %}" alt="" style="width:100%;height:250px;">
+        <h2>Sagar Angan</h2>
+        <h3>Executive Director</h3>
+        <p>A seasoned banker with experience that betrays his age, Sanjeev is already excelling in his new role as Executive Director for the company's retail business division.</p>
+        <br><br><br><br><br>
+      </div>
+    </div>
+    <ol class="carousel-indicators" style=" margin-top:100px;">
+        <li data-target="#myCarousel" data-slide-to="0" class="active" style="background-color: #391f4b;"></li>
+        <li data-target="#myCarousel" data-slide-to="1" style="background-color: #391f4b;"></li>
+       <li data-target="#myCarousel" data-slide-to="2" style="background-color: #391f4b;"></li>
+       <li data-target="#myCarousel" data-slide-to="3" style="background-color: #391f4b;"></li>
+      </ol>
+  </div>
+ </div>
+</div>
+         <div class="col-lg-7">
+             <label id="blog">EXPERT BLOG</label>
+            <div class="jumbotron">
+                <ul>
+                    <li>
+                      <a href="#" target="_blank" style="text-decoration: none;color: #053C6D; font-size: 22px;">Protecting Organizations in an ever changing Risk Landscape</a>
+                       <p style="color: #053C6D;font-size: 18px;margin-top:-20px;">
+                            February 17 2020
+                        </p>
+                    </li>
+                <hr>
+                    <li>
+                      <a href="#" target="_blank" style="text-decoration: none;color: #053C6D; font-size: 22px;">The Predictive Power of AI</a>
+                      
+                        <p style="color: #053C6D;font-size: 18px;margin-top:-20px;">
+                            December 31 2019
+                        </p>
+                    </li>
+                    <hr>
+                    <li>
+                      <a href="#" target="_blank" style="text-decoration: none;color: #053C6D; font-size: 22px;">Corporate Social Responsibility at HASS</a>
+                      
+                        <p style="color: #053C6D;font-size: 18px;margin-top:-20px;">
+                            August 20 2019
+                        </p>
+                    </li>
+                    <hr>
+                    <li>
+                      <a href="#" target="_blank" style="text-decoration: none;color: #053C6D; font-size: 22px;">Budget 2019 Stays away from Subsidies; Focus on Long-Term Economic Development</a>
+                      
+                        <p style="color: #053C6D;font-size: 18px;margin-top:-20px;">
+                            July 09 2019
+                        </p>
+                    </li>
+                
+                    </ul>
+            </div>
+        </div>
+     </div>
+ </div>
+ </div>
+ <div class="container">
+     <div class="row">
+         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+             
+                <div class="ybg">
+                    <div class="left-date">
+                        <div class="dates">
+                            <p style="font-size: 40px;font-weight: 700;color: #391f4b;">17</p>
+                                   <span style="margin-right: 15px;color: #391f4b;">Feb 2020</span>
+                            </div>
+                     </div>
+                    <div class="right-info">
+                    <ul>
+                    <li>
+                       
+                    <h1 style="font-size: 22px; margin-top: 10px;color: #391f4b;">
+                       <a  href="#" target="_blank" style="text-decoration: none;color: #391f4b; font-size: 22px;margin-top: 10px;">PROTECTING ORGANIZATIONS IN AN EVER CHANGING RISK LANDSCAPE</a>
+                    </h1>
+                    <br>
+                    <div>
+                        <div style="color: #391f4b;">
+                        The risk management function has evolved from being regarded as a compliance function to being regarded as a business partner. This brings additional set of responsibilities and challenges. 
+                    </div>
+                    <br>
+                    </div>
+                    <div class="posted_by">
+                     Posted By - Himay Bharoliya	 
+                     </div>
+                     <br>
+                </li>
+            </ul>
+        </div>
+    </div>
+ </div>
+</div>
+     <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="ybg">
+                <div class="left-date">
+                    <div class="dates">
+                        <p style="font-size: 40px;font-weight: 700;color: #391f4b;">25</p>
+                               <span style="margin-right: 15px;color: #391f4b;">Dec 2019</span>
+                        </div>
+                 </div>
+                <div class="right-info">
+                <ul>
+                <li>
+                   
+                <h1 style="font-size: 22px; margin-top: 10px;color: #391f4b;">
+                   <a  href="#" target="_blank" style="text-decoration: none;color: #391f4b; font-size: 22px;margin-top: 10px;">THE PREDICTIVE POWER OF AI</a>
+                </h1>
+                <br>
+                <div>
+                    <div style="color: #391f4b;">
+                        Click here to know Girish Nayak – Chief – Customer Service, Technology and Operations, HASS General Insurance view on The Predictive Power of AI.
+                </div>
+                <br>
+                </div>
+                <div class="posted_by">
+                 Posted By - Sagar Chandresha	 
+                 </div>
+                 <br>
+            </li>
+        </ul>
+    </div>
+</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="ybg">
+                <div class="left-date">
+                    <div class="dates">
+                        <p style="font-size: 40px;font-weight: 700;color: #391f4b;">31</p>
+                               <span style="margin-right: 15px;color: #391f4b;">Oct 2019</span>
+                        </div>
+                 </div>
+                <div class="right-info">
+                <ul>
+                <li>
+                   
+                <h1 style="font-size: 22px; margin-top: 10px;color: #391f4b;">
+                   <a  href="#" target="_blank" style="text-decoration: none;color: #391f4b; font-size: 22px;margin-top: 10px;">CORPORATE SOCIAL RESPONSIBILITY AT HASS</a>
+                </h1>
+                <br>
+                <div>
+                    <div style="color: #391f4b;">
+                        Sanjeev Mantri, Executive Director, ICICI Lombard General Insurance talks about CSR activities of HASS
+                </div>
+                <br>
+                </div>
+                <div class="posted_by">
+                 Posted By - Abhishek Dhameliya	 
+                 </div>
+                 <br>
+            </li>
+        </ul>
+    </div>
+</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="ybg">
+                <div class="left-date">
+                    <div class="dates">
+                        <p style="font-size: 40px;font-weight: 700;color: #391f4b;">15</p>
+                               <span style="margin-right: 15px;color: #391f4b;">Aug 2019</span>
+                        </div>
+                 </div>
+                <div class="right-info">
+                <ul>
+                <li>
+                   
+                <h1 style="font-size: 22px; margin-top: 10px;color: #391f4b;">
+                   <a  href="#" target="_blank" style="text-decoration: none;color: #391f4b; font-size: 22px;margin-top: 10px;">GOVERNMENT KEEN TO CONTINUE ITS SUSTAINABLE GROWTH AGENDA, AVOID POPULISM</a>
+                </h1>
+                <br>
+                <div>
+                    <div style="color: #391f4b;">
+                        Click here to know Bhargava Dasgupta’s, MD & CEO, ICICI Lombard General Insurance view on Union budget 2019.
+                </div>
+                <br>
+                </div>
+                <div class="posted_by">
+                 Posted By - Sagar Anghan	 
+                 </div>
+                 <br>
+            </li>
+        </ul>
+    </div>
+</div>
+        </div>
+    </div>
+   </div>
+{% endblock %}

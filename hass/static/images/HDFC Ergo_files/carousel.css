@@ -1,0 +1,31 @@
+// carousel specific stylesheet; 
+ 
+.container {
+    height: 300px;
+    margin:30px auto;
+}
+
+.carouselContainer ul {margin:0; top: 0 !important;}
+
+.carouselContainer ul li {
+    /* transition: width .5s, height .5s, top .5s, left .5s;
+    -webkit-transition: width .5s, height .5s, top .5s, left .5s;
+    */ 
+} 
+
+.carouselContainer ul li img {}
+
+.left,
+.right {
+    cursor: pointer;
+} 
+.carouselContainer li {
+    width: 100%; 
+    max-width: 524px; 
+    height: auto; 
+
+} 
+.carouselContainer li img {
+    width: 100%; 
+    height: auto; 
+}

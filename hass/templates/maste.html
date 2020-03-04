@@ -139,7 +139,7 @@
                             <a>Info Centre<span class="dwnArrow"></span></a>
                             <ul class="menuBox otherdrMenu">
                                 <li><a href="#">Info Centre</a></li>
-                                <li><a href="#">Expert Blogs</a></li>
+                                <li><a href="{% url 'expert_blog' %}">Expert Blogs</a></li>
                                 <li><a href="#">FAQs</a></li>
                                 <li><a href="#">Tax Benefits</a></li>
                                 <li><a href="#">Downloads</a></li>
@@ -234,8 +234,8 @@
                         </ul>
                         <h4 class="">INFO CENTER</h4>
                         <ul>
-                            <li><a target="_blank" href="/experts-blogs">Expert Blog</a></li>
-                            <li><a target="_blank" href="/insurance-information">Insurance Information</a></li><li><a target="_blank" href="/branches">HASS Branches</a></li>
+                            <li><a target="_blank" href="{% url 'expert_blog' %}">Expert Blog</a></li>
+                            <li><a target="_blank" href="{% url 'insurance_info' %}">Insurance Information</a></li><li><a target="_blank" href="/branches">HASS Branches</a></li>
                         </ul>
                         
                     </div>

@@ -58,6 +58,27 @@ else
 $("#chasis_number").hide(); 
 }
 });
+$('#show_data').show();
+  $('#show_data').click(function(){
+    $("#car_make").show();
+    $("#car_model").show();
+    $("#engin_number").hide();
+    $("#chasis_number").hide();  
+    $("#table").hide(); 
+    $("h2").hide();
+    $('#hide_data').show();
+    $('#show_data').hide();
+   });
+   $('#hide_data').click(function(){
+    $("#car_make").hide();
+    $("#car_model").hide();
+    $("#engin_number").show();
+    $("#chasis_number").show();  
+    $("#table").show(); 
+    $("h2").show();
+    $('#hide_data').hide();
+    $('#show_data').show();
+   });
 });
 </script>
 
@@ -68,9 +89,9 @@ $("#chasis_number").hide();
             
                     <div class="btn btn-primary" style="color: white; margin-top: 50px;"><span>Policy no:<span id=""> 123545</span></span> <a href="#" style="text-decoration: underline;color: white;">Edit</a></div>
                 <h2 style="color: white; font-size: 20px; margin-top: 30px; margin-bottom: 20px;">Fill the below details to retrieve your policy</h2>
-                  <form name="renewpolicy" method="POST">
+                  <form name="renewpolicy" id="form1" method="POST">
               {% csrf_token %}
-                    <table>
+                    <table id="table">
                       <tr>
                           <td>
                               <input type="radio" name="renew" id="radio1" value="enginno" class="css-checkbox" checked="checked" />
@@ -96,14 +117,23 @@ $("#chasis_number").hide();
                     <input type="text"  name="cahssis_no"  class="input">
                 </div>
               </div>
-              <a href="#" style="text-decoration: underline;">Do not remember enginno and chassisno?</a>
+              
+              <div class="input-div two" id="car_make" style="display: none;">
+                <div>
+                   <h5>Select Your Car Make</h5>
+                   <input type="text"  name="car_make"  class="input">
+               </div>
+           </div>
+           <div class="input-div two" id="car_model" style="display: none;">
+           <div>
+             <h5>Select Your Car Model</h5>
+             <input type="text"  name="car_model"  class="input">
+         </div>
+       </div>
+              <a href="#" id="show_data" style="text-decoration: underline;display: none;">Do not remember enginno and chassisno?</a>
+              <a href="#" id="hide_data" style="text-decoration: underline;display: none;">I remember enginno and chassisno?</a>
                 <a href="#" class="btn-primary btn-orange js-car-register" style="margin-top: 50px;">Renew my policy</a>
-                
-     
-                 
-             
-                 
-              </form>
+            </form>
           </div>
       
          

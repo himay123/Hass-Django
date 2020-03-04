@@ -1,0 +1,61 @@
+{% extends 'maste.html' %}
+{% load static %}
+{% block containt %}
+<link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css">
+<style>
+
+
+body {
+ background:blanchedalmond;
+ 
+}
+h1
+{
+    font-size: 35px;
+    font-weight: lighter;
+    color: black;
+}
+    
+
+
+</style>
+ <div class="container">
+          <div class="row">  
+        <h1>Tell us about your car.</h1>
+        <form method="POST" style="width: 100%;">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="input-div one">
+                    <div>
+                        <h5>car make & model</h5>
+                         <input type=text class="input" name="model" style="color: black;">
+                  </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="input-div one">
+                    <div>
+                        <h5 style="margin-top: -20px;position: reletive;">Year of vehical purchase</h5>
+                         <select name="year" id="year" class="input" style="color: black;">
+                             <option value="" selected>2020</option>
+                         </select>
+                        
+                    </div>
+            </div>
+            </div>
+        </div>
+            <div class="input-div two" style="width: 40%;">
+                <div>
+                  <h5>City of Registretion</h5>
+                  <input type=text class="input" name="city" style="color: black;">
+              </div>
+          </div>
+          
+        
+         <a href="{% url 'plan_detail' %}" class="btn-primary btn-orange js-car-register">Process</a>
+         
+      </form>
+ 
+</div>
+ </div>
+{% endblock %}

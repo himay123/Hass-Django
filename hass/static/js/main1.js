@@ -16,13 +16,13 @@ function blurFunc()
        
     }
 
-    $('h5').css('width','100px');
+   // $('h5').css('width','100%');
 }
 
 inputs.forEach(input =>
     {   
         input.addEventListener('focus', focusFunc);
         input.addEventListener('blur', blurFunc);
-        
+
     });
 

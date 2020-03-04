@@ -1,0 +1,1206 @@
+/*stylesheet*/
+
+/* basic and defaults */
+
+body {
+   background: transparent url(../allinone_img/bg_gradient.png) repeat-x scroll 0 bottom;
+   min-height: 100vh;
+   margin: 0;
+   font-family: arial, sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+   /*'Ocean Sans Std', */
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e3d1c3+100 */
+   background: rgb(255, 255, 255);
+   /* Old browsers */
+   background: -moz-linear-gradient(top, rgba(255, 243, 234, 1) 0%, rgba(227, 209, 195, 1) 100%);
+   /* FF3.6-15 */
+   background: -webkit-linear-gradient(top, rgba(255, 243, 234, 1) 0%, rgba(227, 209, 195, 1) 100%);
+   /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(to bottom, rgba(255, 243, 234, 1) 0%, rgba(227, 209, 195, 1) 100%);
+   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e3d1c3', GradientType=0);
+   /* IE6-9 */
+}
+
+h1 {
+   font-size: 42px;
+}
+
+p {
+   font-size: 16px;
+}
+
+a, a:hover {
+   color: inherit;
+   text-decoration: none;
+}
+
+img {
+   vertical-align: middle;
+   border: 0px solid;
+}
+
+ul {
+   padding: 0;
+   margin: 0;
+}
+
+ul li {
+   list-style: none;
+}
+
+input, select, textarea, button {
+   font-family: arial, sans-serif;
+   font-size: 16px;
+   border: 0px solid;
+}
+
+/* 'Ocean Sans Std',  */
+
+.hidden {
+   display: none;
+}
+
+/* page code */
+
+body {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.header {
+   text-align: center;
+   padding-top: 10px;
+}
+
+.content {
+   /* padding-top: 10px; */
+   min-height: 580px;
+}
+
+.carousel, .footer {
+   min-width: 960px;
+   /* width: 90%; */
+   margin: 20px auto 0;
+   font-size: 10px;
+   font-weight: 100;
+}
+
+.footer {
+   color: rgba(254, 254, 254, 0.5);
+   width: 100%;
+   background: #9a8f86 none;
+   padding: 1em 0.5em;
+   box-sizing: border-box;
+   margin-top: 0;
+}
+
+.footer p {
+   width: 90%;
+   font-size: 10px;
+   margin: 0 auto;
+}
+
+/* carousel code */
+
+.carouselContainer {
+   margin: auto;
+}
+
+.carouselContainer li {
+   background: rgb(254, 254, 254);
+   overflow: visible !important;
+}
+
+.carouselContainer li .bgImg {
+   background-color: transparent;
+   background-position: center 0;
+   background-attachment: scroll;
+   background-size: cover;
+   width: 100%;
+   height: 100%;
+}
+
+.carouselContainer li .bgImg:after {
+   content: '';
+   display: block;
+   width: 100%;
+   height: 280px;
+   position: absolute;
+   bottom: 0;
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,1+100 */
+   background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 90%);
+   /* FF3.6-15 */
+   background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 90%);
+   /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 90%);
+   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000', GradientType=0);
+   /* IE6-9 */
+}
+
+.carouselContainer li .bgImg:before {
+   content: '';
+   display: block;
+   width: 113px;
+   height: 113px;
+   background: transparent url(../allinone_img/png-stamp.png) no-repeat scroll 0 0;
+   background-size: cover;
+   position: absolute;
+   background-repeat: no-repeat;
+   top: 0;
+   left: 0;
+}
+
+.carouselContainer .slideInner {
+   color: rgb(254, 254, 254);
+   position: absolute;
+   bottom: 0;
+   height: 70px;
+   padding: 0 10px;
+   text-align: center;
+   width: 100%;
+   box-sizing: border-box;
+}
+
+.carouselContainer li.left-1 .slideInner h1 {
+   width: 42%;
+   padding-left: 4%;
+   float: left;
+   text-align: left;
+   line-height: 1.1em;
+}
+
+.carouselContainer li.right-1 .slideInner h1 {
+   width: 42%;
+   padding-right: 4%;
+   float: right;
+   text-align: right;
+   line-height: 1.1em;
+}
+
+.carouselContainer li.fade2 .slideInner h1 {
+   width: 47%
+}
+
+.carouselContainer .fade1 .slideInner {
+   height: 90px;
+}
+
+.carouselContainer .fade2 .slideInner {
+   height: 90px;
+}
+
+.carouselContainer .active .slideInner {
+   height: 187px;
+}
+
+#carInsurance .bgImg {
+   background-image: url(../allinone_img/banner1.jpg);
+}
+
+#healthInsurance .bgImg {
+   background-image: url(../allinone_img/banner2.jpg);
+}
+
+#homeInsurance .bgImg {
+   background-image: url(../allinone_img/banner3.jpg);
+}
+
+#twoWheelerInsurance .bgImg {
+   background-image: url(../allinone_img/banner4.jpg);
+}
+
+#travelInsurance .bgImg {
+   background-image: url(../allinone_img/banner5.jpg);
+}
+
+.slide .slideInner h1 {
+   margin-bottom: 12px;
+   font-size: 23px;
+   line-height: 0.9em;
+}
+
+.slide.active .slideInner h1 {
+   font-size: 38px;
+}
+
+.slide .slideInner p {
+   display: none;
+   line-height: 1.45em;
+}
+
+.slide.active .slideInner p {
+   display: block;
+   width: 86%;
+   margin: 1em auto;
+}
+
+span.noBreak {
+   white-space: nowrap;
+}
+
+.slide.active .slideInner .bottom {
+   position: absolute;
+   bottom: -30px;
+   width: 100%;
+   box-sizing: border-box;
+   left: 0;
+}
+
+.slide.active .bottom a {
+   display: inline-flex;
+   justify-content: center;
+   align-items: baseline;
+   background: #ffffff none;
+   padding: 8px 18px;
+   color: #e32225;
+   font-weight: 600;
+}
+
+.slide.active .bottom a:after {
+   content: '›';
+   display: inline-block;
+   vertical-align: middle;
+   font-size: 20px;
+   padding-left: 0.2em;
+}
+
+.fade1 .bgImg {
+   opacity: 0.9;
+}
+
+.fade2 .bgImg {
+   opacity: 0.7;
+}
+
+/* popUp & form */
+
+.formWrapper {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   background: rgba(0, 0, 0, 0.4);
+   overflow: hidden;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 11111111;
+   justify-content: center;
+   align-content: center;
+}
+
+.formPop {
+   background: transparent;
+   display: flex;
+   width: 90%;
+   height: 501px;
+   max-width: 1200px;
+   padding: 0 40px;
+   margin: 0 auto;
+}
+
+.formPop.carInsurance {
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4e3b01+0,dcaf27+30 */
+   background: rgb(78, 59, 1);
+   /* Old browsers */
+   background: -moz-linear-gradient(left, rgba(78, 59, 1, 1) 0%, rgba(220, 175, 39, 1) 30%);
+   /* FF3.6-15 */
+   background: -webkit-linear-gradient(left, rgba(78, 59, 1, 1) 0%, rgba(220, 175, 39, 1) 30%);
+   /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(to right, rgba(78, 59, 1, 1) 0%, rgba(220, 175, 39, 1) 30%);
+   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e3b01', endColorstr='#dcaf27', GradientType=1);
+   /* IE6-9 */
+}
+
+.formPop.healthInsurance {
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2e4c21+0,5f9e45+30 */
+   background: rgb(46, 76, 33);
+   /* Old browsers */
+   background: -moz-linear-gradient(left, rgba(46, 76, 33, 1) 0%, rgba(95, 158, 69, 1) 30%);
+   /* FF3.6-15 */
+   background: -webkit-linear-gradient(left, rgba(46, 76, 33, 1) 0%, rgba(95, 158, 69, 1) 30%);
+   /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(to right, rgba(46, 76, 33, 1) 0%, rgba(95, 158, 69, 1) 30%);
+   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e4c21', endColorstr='#5f9e45', GradientType=1);
+   /* IE6-9 */
+}
+
+.formPop.homeInsurance {
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#aa490d+0,f7941d+100 */
+   background: rgb(170, 73, 13);
+   /* Old browsers */
+   background: -moz-linear-gradient(left, rgba(170, 73, 13, 1) 0%, rgba(247, 148, 29, 1) 100%);
+   /* FF3.6-15 */
+   background: -webkit-linear-gradient(left, rgba(170, 73, 13, 1) 0%, rgba(247, 148, 29, 1) 100%);
+   /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(to right, rgba(170, 73, 13, 1) 0%, rgba(247, 148, 29, 1) 100%);
+   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aa490d', endColorstr='#f7941d', GradientType=1);
+   /* IE6-9 */
+}
+
+.formPop.twoWheelerInsurance {
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4e3b01+0,dcaf27+30 */
+   background: rgb(78, 59, 1);
+   /* Old browsers */
+   background: -moz-linear-gradient(left, rgba(78, 59, 1, 1) 0%, rgba(220, 175, 39, 1) 30%);
+   /* FF3.6-15 */
+   background: -webkit-linear-gradient(left, rgba(78, 59, 1, 1) 0%, rgba(220, 175, 39, 1) 30%);
+   /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(to right, rgba(78, 59, 1, 1) 0%, rgba(220, 175, 39, 1) 30%);
+   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e3b01', endColorstr='#dcaf27', GradientType=1);
+   /* IE6-9 */
+}
+
+.formPop.travelInsurance {
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#112f4c+1,296fb7+30 */
+   background: rgb(17, 47, 76);
+   /* Old browsers */
+   background: -moz-linear-gradient(left, rgba(17, 47, 76, 1) 1%, rgba(41, 111, 183, 1) 30%);
+   /* FF3.6-15 */
+   background: -webkit-linear-gradient(left, rgba(17, 47, 76, 1) 1%, rgba(41, 111, 183, 1) 30%);
+   /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(to right, rgba(17, 47, 76, 1) 1%, rgba(41, 111, 183, 1) 30%);
+   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#112f4c', endColorstr='#296fb7', GradientType=1);
+   /* IE6-9 */
+}
+
+.formPop #features {
+   width: 351px;
+   align-self: center;
+   color: rgb(254, 254, 254);
+   padding: 0 20px 0 0;
+}
+
+#features h2 {
+   font-size: 40px;
+   font-weight: 600;
+   line-height: 1em;
+   margin-bottom: 17px;
+}
+
+#features h3 {
+   font-size: 26px;
+   font-weight: 400;
+   line-height: 1.2em;
+   margin-bottom: 34px;
+}
+
+#features ul {
+   padding: 0 0 0 20px;
+}
+
+#features li {
+   list-style-image: url(../allinone_img/list-check.png);
+   font-size: 18px;
+   line-height: 20px;
+   margin-bottom: 0.5em;
+}
+
+/* real form code */
+
+.formPop .formContainer {
+   width: 777px;
+   padding: 43px 30px;
+   background: rgb(254, 254, 254);
+   height: 496px;
+   margin: -54px 0 0;
+   box-shadow: 0 0 20px 0px rgba(1, 1, 1, 0.5);
+   z-index: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   position: relative;
+}
+
+.formPop .closewrp {
+   display: none;
+}
+
+.formContainer .closewrp {
+   display: block;
+   margin-top: 1em;
+   text-align: right;
+   margin-right: 1em;
+   position: absolute;
+   top: 0;
+   right: 0;
+}
+
+#headerform {
+   margin-top: 0.3em;
+}
+
+#headerform h1 {
+   font-size: 26px;
+   line-height: 1.12em;
+   margin: 0 0 24px 0;
+}
+
+#headerform h2 {
+   font-size: 20px;
+   font-weight: 400;
+   margin: 0 0 26px 0;
+}
+
+#insuranceForm {
+   overflow: hidden;
+}
+
+#insuranceForm .fieldWrap {
+   position: relative;
+   width: 327px;
+   float: left;
+   margin-bottom: 46px;
+   margin-right: 47px;
+}
+
+#insuranceForm .fieldWrap:nth-child(2n) {
+   margin-right: 0;
+}
+
+#insuranceForm .fieldWrap:nth-child(3) {
+   clear: both;
+}
+
+.fieldWrap label {
+   font-size: 14px;
+   display: block;
+   color: rgba(1, 1, 1, 0.5);
+   cursor: pointer;
+}
+
+.fieldWrap .infoText, .fieldWrap .holder {
+   display: block;
+   width: 100%;
+   padding: 14px 0 11px;
+   border: 0 solid rgba(1, 1, 1, 0.2);
+   border-width: 0 0 1px 0;
+   line-height: 1em;
+   transition: 0.5s all;
+   color: #343434;
+}
+
+.fieldWrap .infoText:focus, .fieldWrap .holder.focus, .fieldWrap .countryCode.focus {
+   border-color: #343434;
+   outline: none;
+}
+
+.fieldWrap select.infoText {
+   height: 45px;
+   box-sizing: border-box;
+}
+
+.fieldWrap #mob {
+   display: inline-block;
+   width: 87%;
+   padding: 14px 0 11px 3%;
+}
+
+.fieldWrap .countryCode {
+   display: inline-block;
+   width: 10%;
+   text-align: right;
+   padding: 14px 0 11px;
+   border: 0 solid rgba(1, 1, 1, 0.2);
+   border-width: 0 0 1px 0;
+   color: #343434;
+}
+
+.fieldWrap #city {
+   z-index: 2;
+}
+
+.select-wrapper {
+   position: relative;
+   width: 100%;
+   display: block;
+}
+
+.holder {
+   z-index: 3;
+   font-size: 18px;
+   line-height: 1.2em;
+}
+
+.select-wrapper .holder:before {
+   content: '▼';
+   display: inline-block;
+   /*position: absolute;*/
+   float: right;
+   /*right: 10px;
+						z-index: 1;
+						top: 1em;*/
+}
+
+.select-wrapper select {
+   position: absolute;
+   opacity: 0;
+}
+
+#insuranceForm .fieldWrap.subscribe {
+   clear: both;
+   width: 100%;
+   display: flex;
+}
+
+.subscribe label {
+   display: inline;
+   font-size: 12px;
+   color: #343434;
+}
+
+#subscribe_trigger {
+   background: #e42223;
+   height: 1em;
+   width: 1em;
+   border-radius: 2px;
+   font-size: 12px;
+   line-height: 1em;
+   margin-right: 1em;
+}
+
+#subscribe_trigger.checked {
+   background-image: url(../allinone_img/list-check.png);
+   background-size: 100%;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+#subscribe_trigger #subscribe {
+   opacity: 0;
+   margin: 0;
+}
+
+#insuranceForm .fieldWrap.submit {
+   clear: both;
+   width: 100%;
+   text-align: right;
+   margin: 0;
+   /*  */
+}
+
+#submit {
+   color: rgb(254, 254, 254);
+   padding: 15px 72px;
+   font-size: 16px;
+   background: #e42125;
+   cursor: pointer;
+   -webkit-appearance: none;
+}
+
+.error_pop {
+   left: 0;
+   width: 100%;
+   top: auto !important;
+   right: 15px;
+   padding: 2px 5px;
+   background: #e31e24;
+   font-size: 12px;
+   color: #fff;
+   border-radius: 1px;
+   display: none;
+   margin-right: 280px;
+}
+
+.error_pop img {
+   position: absolute;
+   top: -8px;
+   right: 10px;
+   transform: rotate(-180deg);
+}
+
+#error_pop_subscribe img {
+   display: none;
+}
+
+#imageLoader {
+   opacity: 0;
+   height: 0;
+   width: 0;
+   overflow: hidden;
+   position: absolute;
+   z-index: -2;
+}
+
+#tabsWrap {
+   width: 100%;
+   padding: 2%;
+   display: none;
+   /* display: flex; */
+   justify-content: space-between;
+   align-items: center;
+   flex-direction: row;
+   box-sizing: border-box;
+}
+
+#tabsWrap .tab, #tabsWrap .tabdisabled {
+   display: block;
+   width: 18%;
+   text-overflow: clip;
+   word-wrap: break-word;
+   height: 19vw;
+   align-self: flex-end;
+   text-align: center;
+   align-content: flex-end;
+   color: #68615b;
+   cursor: pointer;
+   font-weight: 600;
+}
+
+#tabsWrap .tab:before, #tabsWrap .tabdisabled:before {
+   content: '';
+   width: 100%;
+   height: 10vw;
+   display: block;
+   background: transparent url(../allinone_img/icons/bike.svg) no-repeat scroll center;
+   background-size: 60%;
+   margin-bottom: 0em;
+}
+
+#tabsWrap .tab p, #tabsWrap .tabdisabled p {
+   margin: 0;
+   font-family: 'arial narrow', sans-serif;
+   font-size: 15px;
+   font-weight: 400;
+}
+
+#tabsWrap .tab.activeTab, #tabsWrap .tabdisabled.activeTab {
+   color: #e32225;
+}
+
+#tabsWrap #twoWheelerInsurance-tab.tab:before, #tabsWrap #twoWheelerInsurance-tab.tabdisabled:before {
+   background-image: url(../allinone_img/icons/bike.svg);
+}
+
+#tabsWrap #travelInsurance-tab.tab:before, #tabsWrap #travelInsurance-tab.tabdisabled:before {
+   background-image: url(../allinone_img/icons/travel.svg);
+}
+
+#tabsWrap #carInsurance-tab.tab:before, #tabsWrap #carInsurance-tab.tabdisabled:before {
+   background-image: url(../allinone_img/icons/car.svg);
+}
+
+#tabsWrap #healthInsurance-tab.tab:before, #tabsWrap #healthInsurance-tab.tabdisabled:before {
+   background-image: url(../allinone_img/icons/health.svg);
+}
+
+#tabsWrap #homeInsurance-tab.tab:before, #tabsWrap #homeInsurance-tab.tabdisabled:before {
+   background-image: url(../allinone_img/icons/home.svg);
+}
+
+/* activeTabs styling */
+
+#tabsWrap #twoWheelerInsurance-tab.tab.activeTab:before, #tabsWrap #twoWheelerInsurance-tab.tabdisabled.activeTab:before {
+   background-image: url(../allinone_img/icons/bike_active.svg);
+}
+
+#tabsWrap #travelInsurance-tab.tab.activeTab:before, #tabsWrap #travelInsurance-tab.tabdisabled.activeTab:before {
+   background-image: url(../allinone_img/icons/travel_active.svg);
+}
+
+#tabsWrap #carInsurance-tab.tab.activeTab:before, #tabsWrap #carInsurance-tab.tabdisabled.activeTab:before {
+   background-image: url(../allinone_img/icons/car_active.svg);
+}
+
+#tabsWrap #healthInsurance-tab.tab.activeTab:before, #tabsWrap #healthInsurance-tab.tabdisabled.activeTab:before {
+   background-image: url(../allinone_img/icons/health_active.svg);
+}
+
+#tabsWrap #homeInsurance-tab.tab.activeTab:before, #tabsWrap #homeInsurance-tab.tabdisabled.activeTab:before {
+   background-image: url(../allinone_img/icons/home_active.svg);
+}
+
+::-webkit-input-placeholder {
+   /* Chrome/Opera/Safari */
+   color: #343434;
+}
+
+::-moz-placeholder {
+   /* Firefox 19+ */
+   color: #343434;
+}
+
+:-ms-input-placeholder {
+   /* IE 10+ */
+   color: #343434;
+}
+
+:-moz-placeholder {
+   /* Firefox 18- */
+   color: #343434;
+}
+
+.slide.active {
+   // box-shadow: 0 0 10px rgba(254, 1, 1, 0.5);
+}
+
+.formPop {
+   position: relative;
+}
+
+#InsuranceType:before {
+   content: '';
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   background: transparent url(../allinone_img/banner1.jpg) no-repeat scroll 0 bottom;
+   background-size: auto 100%;
+   opacity: .1;
+   pointer-events: none;
+}
+
+#InsuranceType.healthInsurance:before {
+   background-image: url(../allinone_img/banner2.jpg);
+}
+
+#InsuranceType.homeInsurance:before {
+   background-image: url(../allinone_img/banner3.jpg);
+}
+
+#InsuranceType.twoWheelerInsurance:before {
+   background-image: url(../allinone_img/banner4.jpg);
+}
+
+#InsuranceType.travelInsurance:before {
+   background-image: url(../allinone_img/banner5.jpg);
+}
+
+@media only screen and (max-width: 900px) {
+   .content {
+      width: 100%;
+      min-height: unset;
+      padding: 0;
+   }
+   .carousel {
+      margin-bottom: 3em;
+   }
+   .slide .slideInner h1 {
+      font-size: 18px;
+   }
+   .slide.active .slideInner h1 {
+      display: block;
+   }
+   .carouselContainer .active .slideInner {
+      min-height: 130px;
+      height: 36%;
+      width: 100%;
+   }
+   .carouselContainer li .bgImg:after {
+      height: 100%;
+   }
+   .slide.active .slideInner h1 {
+      font-size: 26px;
+      margin-bottom: 0.4em;
+   }
+   .slide.active .slideInner p {
+      font-size: 16px;
+      line-height: 1.4em;
+      margin-top: 0;
+   }
+   .left, .right {
+      opacity: 0;
+      z-index: -1 !important;
+      left: 0 !important;
+      right: 0 !important;
+   }
+   .carousel, .footer {
+      width: 80%;
+      /*padding: 0 10%;*/
+      min-width: unset;
+   }
+   .footer {
+      width: 100%;
+   }
+   .footer p {
+      width: 90%;
+   }
+   #tabsWrap {
+      display: flex;
+      width: 100vw;
+      margin: 0 auto;
+   }
+   #tabsWrap .tab, #tabsWrap .tabdisabled {
+      display: inline-block;
+      /* height: 10vh; */
+      text-align: center;
+      font-size: 24px;
+      width: 18%;
+   }
+   #tabsWrap .tab:before, #tabsWrap .tabdisabled:before {
+      width: 80%;
+      margin: 0 auto;
+   }
+   .footer p {
+      /*color: #68615b; */
+      font-size: 10px;
+   }
+   .formWrapper {
+      height: auto !important;
+      position: absolute;
+      overflow: visible;
+      display: block;
+   }
+   .formPop {
+      display: block;
+      padding: 0;
+      width: 100%;
+   }
+   .formPop #features {
+      width: 100%;
+      padding: 5%;
+      box-sizing: border-box;
+   }
+   #features h2 {
+      margin-top: 50px;
+   }
+   .formPop .formContainer {
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 5%;
+      box-sizing: border-box;
+      position: absolute;
+   }
+   form#insuranceForm .fieldWrap {
+      width: 100%;
+      float: none;
+   }
+   #features li {
+      font-size: 25px;
+   }
+   .fieldWrap .error_pop img {
+      top: -0.6em;
+   }
+   .formPop .closewrp {
+      display: block;
+      margin: 0;
+      text-align: right;
+      background: rgba(254, 254, 254, 1);
+      padding: 1em 1em;
+      z-index: 10000;
+      position: absolute;
+      width: 100%;
+      box-sizing: border-box;
+   }
+   .formContainer .closewrp {
+      display: none;
+   }
+   #submit {
+      display: block;
+      width: 100%;
+      -webkit-appearance: none;
+   }
+   .formPop.carInsurance {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4e3b01+0,dcaf27+30 */
+      background: rgb(78, 59, 1);
+      /* Old browsers */
+      background: -moz-linear-gradient(top, rgba(78, 59, 1, 1) 0%, rgba(220, 175, 39, 1) 80%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(78, 59, 1, 1) 0%, rgba(220, 175, 39, 1) 80%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(78, 59, 1, 1) 0%, rgba(220, 175, 39, 1) 80%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e3b01', endColorstr='#dcaf27', GradientType=1);
+      /* IE6-9 */
+   }
+   .formPop.healthInsurance {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2e4c21+0,5f9e45+30 */
+      background: rgb(46, 76, 33);
+      /* Old browsers */
+      background: -moz-linear-gradient(top, rgba(46, 76, 33, 1) 0%, rgba(95, 158, 69, 1) 80%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(46, 76, 33, 1) 0%, rgba(95, 158, 69, 1) 80%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(46, 76, 33, 1) 0%, rgba(95, 158, 69, 1) 80%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e4c21', endColorstr='#5f9e45', GradientType=1);
+      /* IE6-9 */
+   }
+   .formPop.homeInsurance {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#aa490d+0,f7941d+100 */
+      background: rgb(170, 73, 13);
+      /* Old browsers */
+      background: -moz-linear-gradient(top, rgba(170, 73, 13, 1) 0%, rgba(247, 148, 29, 1) 100%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(170, 73, 13, 1) 0%, rgba(247, 148, 29, 1) 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(170, 73, 13, 1) 0%, rgba(247, 148, 29, 1) 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aa490d', endColorstr='#f7941d', GradientType=0);
+      /* IE6-9 */
+   }
+   .formPop.twoWheelerInsurance {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4e3b01+0,dcaf27+30 */
+      background: rgb(78, 59, 1);
+      /* Old browsers */
+      background: -moz-linear-gradient(top, rgba(78, 59, 1, 1) 0%, rgba(220, 175, 39, 1) 80%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(78, 59, 1, 1) 0%, rgba(220, 175, 39, 1) 80%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(78, 59, 1, 1) 0%, rgba(220, 175, 39, 1) 80%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4e3b01', endColorstr='#dcaf27', GradientType=1);
+      /* IE6-9 */
+   }
+   .formPop.travelInsurance {
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#112f4c+1,296fb7+30 */
+      background: rgb(17, 47, 76);
+      /* Old browsers */
+      background: -moz-linear-gradient(top, rgba(17, 47, 76, 1) 1%, rgba(41, 111, 183, 1) 80%);
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(17, 47, 76, 1) 1%, rgba(41, 111, 183, 1) 80%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(17, 47, 76, 1) 1%, rgba(41, 111, 183, 1) 80%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#112f4c', endColorstr='#296fb7', GradientType=1);
+      /* IE6-9 */
+   }
+}
+
+@media only screen and (max-width: 600px) {
+   .carousel {
+      width: 100%;
+      margin-top: 10px;
+   }
+   .slide .slideInner {
+      // height: 100%;
+   }
+   .slide .slideInner h1 {
+      display: none;
+   }
+   form #insuranceForm .fieldWrap {}
+   #scrollBelow {
+      margin-top: 1.5em;
+   }
+   #scrollBelow span.heroArrow {
+      display: block;
+      text-align: center;
+   }
+   #scrollBelow .heroArrow img {
+      width: 1em;
+      height: 1em;
+   }
+   #scrollBelow h2 {
+      font-size: 25px;
+      text-align: center;
+      font-weight: 300;
+      margin-bottom: 0;
+      margin-top: 0;
+   }
+   #features li {
+      font-size: 18px;
+   }
+   #InsuranceType:before {
+      background-size: auto 100%;
+   }
+   #tabsWrap {
+      display: flex;
+      width: 98vw;
+      padding: 0;
+      margin: 0 auto;
+   }
+   #tabsWrap .tab, #tabsWrap .tabdisabled {
+      width: 19%;
+      height: 10vh;
+   }
+   #tabsWrap .tab:before, #tabsWrap .tabdisabled:before {
+      /*width: 80%;
+      margin: 0 auto;*/
+   }
+   #tabsWrap .tab a:before, #tabsWrap .tabdisabled a::before {
+      width: 100%;
+      margin: 0 auto;
+   }
+   #tabsWrap .tab p, #tabsWrap .tabdisabled p {
+      font-size: 0.9em;
+      line-height: 0.6em;
+   }
+   #tabsWrap .tab p a, #tabsWrap .tabdisabled p a {
+      font-size: 13px;
+   }
+   .footer {
+      margin-top: 20px;
+   }
+   .footer p {
+      /*color: #68615b; */
+      font-size: 10px;
+      -webkit-text-size-adjust: 100%;
+   }
+   .footer p a {
+      font-size: 10px !important;
+   }
+}
+
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+   #tabsWrap .tab, #tabsWrap .tabdisabled {
+      height: 20vh;
+   }
+   #tabsWrap .tab:before, #tabsWrap .tabdisabled:before {
+      width: 16vh;
+      height: 10vh;
+   }
+}
+
+@media only screen and (min-width: 768px) {
+   #scrollBelow {
+      display: none;
+   }
+   #features li {
+      margin-bottom: 0.7em;
+   }
+   .carouselContainer .active .slideInner {
+      height: 217px;
+   }
+   .slide.active .slideInner h1 {
+      font-size: 40px;
+   }
+   .carouselContainer li.right-1 .slideInner h1, .carouselContainer li.left-1 .slideInner h1 {
+      display: none;
+   }
+   .slide.active .slideInner p {
+      font-size: 20px;
+   }
+   .slide.active .bottom a {
+      font-size: 22px;
+      padding: 10px 38px;
+   }
+   #tabsWrap .tab:before, #tabsWrap .tabdisabled:before {
+      width: 60%;
+   }
+   #tabsWrap .tab p, #tabsWrap .tabdisabled p {
+      font-size: 26px;
+   }
+   #insuranceForm .fieldWrap {
+      width: 45%;
+      margin-bottom: 2em;
+   }
+   #InsuranceType:before {
+      background-size: 100%;
+      background-position: center 0;
+   }
+   .carousel, .footer {
+      width: 100%;
+   }
+}
+
+@media only screen and (min-width: 400) and (max-width: 768px) {
+   #tabsWrap {
+      padding-top: 0;
+   }
+   #tabsWrap .tab:before, #tabsWrap .tabdisabled:before {
+      width: 50%;
+      height: 2em;
+   }
+   #tabsWrap .tab, #tabsWrap .tabdisabled {
+      height: 4em;
+   }
+   #tabsWrap .tab p, #tabsWrap .tabdisabled p {
+      font-size: 16px;
+   }
+   .carouselContainer .active .slideInner {
+      height: 27%;
+   }
+   .slide.active .slideInner h1 {
+      font-size: 40px;
+   }
+   .slide.active .slideInner p {
+      font-size: 16px;
+      line-height: 1.2em;
+   }
+   #tabsWrap .tab p, #tabsWrap .tabdisabled p {
+      font-size: 26px;
+   }
+   .carouselContainer li.right-1 .slideInner h1, .carouselContainer li.left-1 .slideInner h1 {
+      display: none;
+   }
+   #InsuranceType:before {
+      background-size: 100%;
+      background-position: center 0;
+   }
+   #travelInsurance .bgImg {
+      background-position: center 20px;
+   }
+}
+
+@media only screen and (max-width: 400px) {
+   .carouselContainer .active .slideInner {
+      height: 40%;
+   }
+   .formPop {
+      height: 100%;
+   }
+   /* click-to-scroll*/
+   #features #scrollBelow {
+      display: block;
+      /*position: absolute;*/
+      width: 100%;
+      padding-top: 8%;
+   }
+   #scrollBelow span.heroArrow {
+      display: block;
+      margin-top: 0.2em;
+   }
+   #scrollBelow h2 {
+      font-size: 25px;
+      text-align: center;
+      font-weight: 300;
+      margin-bottom: 0;
+      margin-top: 0;
+   }
+   #scrollBelow h2 a {
+      font-size: 25px;
+      display: block;
+   }
+   #scrollBelow h2 img {
+      width: 1.2em;
+      height: 1.2em;
+   }
+   #features li {
+      font-size: 18px;
+   }
+}
+
+@media only screen and (min-width: 1024px) {
+   .innerWrap {
+      height: 60%;
+   }
+   /* click-to-scroll*/
+   #features #scrollBelow {
+      display: none;
+   }
+   #insuranceForm .fieldWrap {
+      width: 45%;
+      margin-bottom: 2em;
+   }
+   .carouselContainer .active .slideInner {
+      height: 187px;
+   }
+   .slide.active .slideInner h1 {
+      font-size: 38px;
+   }
+   .slide.active .slideInner p {
+      font-size: 16px;
+      line-height: 1.2em;
+   }
+   #tabsWrap .tab p, #tabsWrap .tabdisabled p {
+      font-size: 26px;
+   }
+   #InsuranceType:before {
+      background-size: auto 100%;
+      background-position: 0;
+   }
+   .carouselContainer li.right-1 .slideInner h1, .carouselContainer li.left-1 .slideInner h1 {
+      display: block;
+   }
+   #features #scrollBelow display: none;
+}

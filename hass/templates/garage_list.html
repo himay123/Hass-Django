@@ -1,9 +1,35 @@
 {% extends 'maste.html' %}
 {% load static %}
 {% block containt %}
+<style>
+    .table
+    {
+        background-color: #e7ecec;
+     
+    }
+    /* header */
+.table > thead > tr > th {
+   border-bottom: 5px solid #322250;
+}
+/* rows */
+.table > thead > tr > th, .table > tbody > tr > th, .table > tbody > tr > td{
+   border-top: 1px solid #322250;
+}
+.h3text{
+        font-size: 24px;
+        color: #053c6d;
+        margin-top: 10px;
+        }
+.h3text1{
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0;color: #053c6d;
+        }
 
+</style>
 <script>
 $(document).ready(function(){
+    $('#garage_table').hide()
     $("#city").change(function(){
         var state=$("#states").val();
         var city=$("#city").val();
@@ -21,7 +47,7 @@ $(document).ready(function(){
                 console.log(data);
                 $('#manufacture').empty();
                 $('#garage').empty();
-                
+                $("#garage_table tr:has(td:empty + td:empty)").index()
                 for (var i=0;i<data.length;i++){
             
                     var c=data[i].manufacture;
@@ -35,6 +61,7 @@ $(document).ready(function(){
 
                     $('#manufacture').append(`<option value="${c}">${c}</option>`)
                     $('#garage').append(`<option value="${a}">${a}</option>`)
+                    $('#garage_table').show()
                     $('#garage_table').append(`<tr><td>${a}</td><td>${address}</td><td>${city}</td><td>${state}</td><td>${no}</td><td>${person}</td><td>${vehical}</td><td>${c}</td></tr>`);
                     
                     
@@ -71,51 +98,108 @@ $(document).ready(function(){
 
             })
     });
+    
 });
     
 
 </script>
 
  <h1 class="text-info text-center" style="font-size: 30px; font-weight: 700;" >FIND GARAGE</h1>   
- <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12">
-        <select name="product" id="">
-            <option value="">select product</option>
-        </select>
-        <select name="states" id="states">
-            <option value="">select state</option>
-            {% for state in states %}
-            <option value="{{state.city_state}}">{{state.city_state}}</option>
-            {% endfor %}
-        </select>
-        <select name="cities" id="city">
-            <option value="">select city</option>
-        </select>
-        <select name="manufacture" id="manufacture">
-            <option value="">All manufacture</option>
-        </select>
-        <select name="garage" id="garage">
-            <option value="">All garage</option>
-        </select>
-
+ <div class="container" style="margin-top: 50px;">
+    <div class="row">
+        <div class="col-lg-1 col-md-1"></div>
+        <div class="col-lg-2 col-md-2">
+            <select name="product" id="product" class="form-control">
+                <option class="">select product</option>
+                <option value="">Car</option>
+            </select>
         </div>
+        
+        <div class="col-lg-2 col-md-2">
+            <select name="states" id="states" class="form-control">
+                <option value="">select state</option>
+                {% for state in states %}
+                <option value="{{state.city_state}}">{{state.city_state}}</option>
+                {% endfor %}
+            </select>
+        </div>
+       
+        <div class="col-lg-2 col-md-2">
+            <select name="cities" id="city" class="form-control">
+                <option value="">select city</option>
+            </select>
+        </div>
+       
+        <div class="col-lg-2 col-md-2">
+            <select name="manufacture" id="manufacture" class="form-control">
+                <option value="">All manufacture</option>
+            </select>
+        </div>
+       
+        <div class="col-lg-2 col-md-2"> 
+            <select name="garage" id="garage" class="form-control">
+            <option value="">All garage</option>
+             </select>
+        </div>
+        
+  </div>
 </div>
- <div class="table-responsive">
-     <table class="table table-hover" id="garage_table">
-         <thead>
-             <th>Dealer Name</th>
-             <th>Address</th>
-             <th>City</th>
-             <th>State</th>
-             <th>Contect_No</th>
-             <th>Contect_Person</th>
-             <th>Type_Of_Vehical</th>
-             <th>Manufacture</th>
-             <th>Operations</th>
-         </thead>
-         <tbody>
-            
-         </tbody>
-     </table>
- </div>
+<div class="container" style="margin-top: 50px;">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="table-responsive ">
+                <table class="table" id="garage_table"  style="background-color:#053c6d;width: 100%;">
+                    <thead>
+                        <th>Dealer Name</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Contect_No</th>
+                        <th>Contect_Person</th>
+                        <th>Type_Of_Vehical</th>
+                        <th>Manufacture</th>
+                        
+                    </thead>
+                    <tbody>
+                   </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-12 col-md-12">
+    <h3 class="h3text1">CASHLESS GARAGES ALL YOU NEED TO KNOW</h3>
+    <br>
+    <br>
+    <p>Cashless garages are exactly what they sound like - a facility to get your vehicle repaired at a garage without paying the entire bill. Offered by your motor insurance company, this facility can be availed in case you meet with a mishap, at the nearest garage, provided the garage features in the insurance company's list of cashless garage network.</p>
+    <img style="padding: 5px; border-width: 0px; border-style: solid; margin-bottom: 20px;" alt="Cashless Garage" src="{% static 'images/case.jpg' %}" width="630" height="420">
+    <h3 class="h3text">Latest Trends in the Insurance Sector</h3>
+    <p style="margin-top: 10px;">Apart from offering competitive pricing, pragmatic add-ons and superb customer service, motor insurance companies have, over the years, focused on expanding their garage network. Not only are they entering into tie-ups with newer automobile brands but they are also increasing the number of service points in each city. This is done primarily to vie for the potential customer's attention and also to significantly enhance the riding experience of existing policyholders.</p>
+    <p>Industry players reveal that around 80% of motor insurance claims involve cashless garages. A growing trend in the insurance sector, cashless claims are undoubtedly a win-win situation for all the stakeholders involved, namely, the insured, the insurer and the garage.</p>
+    <h3 class="h3text">How Can One Avail Cashless Garage Servicing?</h3>
+    <p style="margin-top: 10px;">In case of an accident, contact your insurance provider and notify them about the unfortunate event. They will arrange for a surveyor and inform you about your nearest cashless garage as per the insurance company's empanelled list. You could also search for your preferred dealer/garage by visiting the Company's website or by accessing its mobile app.</p>
+    <p>After having shortlisted the garage, approach them to get your vehicle repaired. Remember, it is advisable to choose a garage depending on its manufacturer/brand specialty. After completion of repairs, sign the necessary papers and collect your vehicle.</p>
+    <p>The garage invoice is settled by the insurance company. You would only be required to pay for any repair that is beyond the coverage of your <a href="/motor-insurance" target="_blank"> motor insurance policy. </a></p>
+    <img style="padding: 5px; border-width: 0px; border-style: solid;" alt="Cashless Claims" src="https://www.icicilombard.com/motor-insurance/cashless_process.jpg" width="641" height="231">
+    <h3 class="h3text">Key Benefits</h3>
+    <img style="padding: 5px; float: right; border-width: 0px; border-style: solid;" alt="Cashless Claims" src="{% static 'images/key.jpg' %}" width="339" height="335">
+    <p style="margin-top: 10px;" class="ptext">Cashless garages are a convenient option for the insured as the entire repairs, claims and payment process is seamlessly managed in a professional manner by the insurance company. Other advantages of availing the facility are:</p>
+    <h3 class="h3text">• Peace of Mind</h3>
+    <p style="margin-top: 10px;">The unfortunate event of an accident takes a toll on you physically, mentally as well as financially. Opting for a cashless facility curtails the requirement of arranging for cash and streamlines the entire process of claims, right from surveying the damage to settling the claim.</p>
+    <h3 class="h3text">• Reliable Garages</h3>
+    <p style="margin-top: 10px;">Insurance companies are constantly on the lookout for upgrading their cashless garage list to make it more inclusive. Garages that are empanelled feature a proven track record of customer service and satisfaction. Besides, these garages are reliable, provide genuine spare parts and charge tariff as per the industry standards.</p>
+    <h3 class="h3text">• Hassle-free Experience</h3>
+    <p style="margin-top: 10px;">Car owners and bike owners can enjoy a hassle-free experience through the facility of cashless garage claims. The insurance company directly deals with the garage, saving you the trouble of negotiation, documentation and settlement. Opt for an insurance provider that features a robust network of cashless garages for both four-wheelers and two-wheelers.
+    </p><div style="text-align: center;"><img alt=""></div>
+    </div>
+    </div>
+    </div>
+   
+    
+    
+    
 {% endblock %}

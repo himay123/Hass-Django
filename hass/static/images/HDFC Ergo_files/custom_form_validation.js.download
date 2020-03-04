@@ -1,0 +1,314 @@
+// form validation js; 
+ 
+var flag = 1; 
+function submitform(Form) {
+    
+    var param = new String(document.getElementById("mob").value);
+    var mobStart=param.substr(0,1);
+    /* if (((document.getElementById('name').value == "")||(document.getElementById('name') == "Name")) && ((document.getElementById('email').value == "")||(document.getElementById('email').value == "Email ID")) && ((document.getElementById('mob').value == "")||(document.getElementById('mob').value == "Mobile")) && ((document.getElementById('mob').value == "")||(document.getElementById('mob').value == "Mobile")) && ((document.getElementById('age').value == "")||(document.getElementById('age').value == "City")) && ((document.getElementById('ddl_city').value == "")||(document.getElementById('ddl_city').value == "City"))) {
+        //alert("Please enter your name");
+        $("#error_pop_name").show().animate({top: '-0px'});
+        $("#error_pop_email").show().animate({top: '-0px'});
+        $("#error_pop_mob").show().animate({top: '-0px'}); 
+        $("#error_pop_age").show().animate({top: '-0px'});
+        $("#error_pop_ddl_city").show().animate({top: '-0px'});
+        document.getElementById('name').select();
+        return false;
+    } */
+    //else; 
+    if((document.getElementById('name').value=="") || (document.getElementById('name').value=="Name")) {
+        //alert("Please enter your Name");
+        $("#error_pop_name").show().animate({top: '-0px'});
+        $("#error_pop_name").html("<img src='allinone_img/tool_arrow.png' /> Please enter Your name");
+        document.getElementById('name').select(); 
+        flag=0; 
+        return false;
+    }
+     else if(/^-?\d+\.?\d*$/.test(document.getElementById('name').value) ) {
+        $("#error_pop_name").show().animate({top: '-0px'});
+        $("#error_pop_name").html("<img src='allinone_img/tool_arrow.png' /> Please enter valid name");
+        document.getElementById('name').select(); 
+        flag=0; 
+        return false;
+    }
+    else if(!textValidate_name(document.getElementById('name').value, '')){
+        //alert("Please enter a valid Name");
+        $("#error_pop_name").show().animate({top: '-0px'});
+        $("#error_pop_name").html("<img src='allinone_img/tool_arrow.png' /> Please enter valid name");
+        document.getElementById('name').select(); 
+        flag=0; 
+        return false;
+    }  
+    else {
+        flag=1; 
+    }
+    // else;
+
+    if((document.getElementById('ddl_city').value == "")||(document.getElementById('ddl_city').value == "City")||(document.getElementById('ddl_city').value == '00000000-0000-0000-0000-000000000001')) {
+            //alert("Please enter your Name");
+            $("#error_pop_ddl_city").show().animate({top: '-0px'});
+            $("#error_pop_ddl_city").html("<img src='allinone_img/tool_arrow.png' /> Please choose your City");
+            document.getElementById('ddl_city').focus(); 
+            flag=0; 
+            return false;
+    }
+    else {
+        flag=1; 
+    }
+//    else if(/^[. 0-9]/.test(document.getElementById('ddl_city').value) ) {
+//        $("#error_pop_ddl_city").show().animate({top: '-0px'});
+//        $("#error_pop_ddl_city").html("<img src='allinone_img/tool_arrow.png' /> Please enter valid City name");
+//        document.getElementById('ddl_city').focus();
+//        return false;
+//    }
+    //else;
+
+    if((document.getElementById('mob').value=="")||(document.getElementById('mob').value=="Mobile")){
+            //alert("Please enter your Mobile Number");
+            $("#error_pop_mob").show().animate({top: '-0px'});
+            $("#error_pop_mob").html("<img src='allinone_img/tool_arrow.png' /> Please enter your Mobile Number");
+            document.getElementById('mob').select(); 
+            flag=0; 
+            return false;
+        }else if((document.getElementById('mob').value.length < 10)){
+            //alert("Please enter a valid Mobile Number");
+            $("#error_pop_mob").show().animate({top: '-0px'});
+            $("#error_pop_mob").html("<img src='allinone_img/tool_arrow.png' /> Please enter a valid Mobile Number");
+            document.getElementById('mob').select(); 
+            flag=0; 
+            return false;
+        }else if((document.getElementById('mob').value.length > 10)){
+            //alert("Please enter a valid Mobile Number");
+            $("#error_pop_mob").show().animate({top: '-0px'});
+            $("#error_pop_mob").html("<img src='allinone_img/tool_arrow.png' /> Please enter a valid Mobile Number");
+            document.getElementById('mob').select(); 
+            flag=0; 
+            return false;
+        }/* else if((document.getElementById('mob').value.length == 13) && (mob !='+')){
+            //alert("Please enter a valid Mobile Number");
+            $("#error_pop_mob").show().animate({top: '-0px'});
+            $("#error_pop_mob").html("<img src='allinone_img/tool_arrow.png' /> Please enter a valid Mobile Number");
+            document.getElementById('mob').select();
+            return false;
+        }else if((document.getElementById('mob').value.length < 13) && (mob =='+')){
+            //alert("Please enter a valid Mobile Number");
+            $("#error_pop_mob").show().animate({top: '-0px'});
+            $("#error_pop_mob").html("<img src='allinone_img/tool_arrow.png' /> Please enter a valid Mobile Number");
+            document.getElementById('mob').select();
+            return false;
+        }*/
+        else if(!numberValidate(document.getElementById('mob').value, '')){
+            //alert("Please enter a valid Mobile Number");
+            $("#error_pop_mob").show().animate({top: '-0px'});
+            $("#error_pop_mob").html("<img src='allinone_img/tool_arrow.png' /> Please enter a valid Mobile Number");
+            document.getElementById('mob').select(); 
+            flag=0; 
+            return false;
+        }else if((mobStart !='9') && (mobStart !='8') && (mobStart !='7') && (mobStart !='+')){
+            //alert("Please Enter Valid Mobile Number!");
+            $("#error_pop_mob").show().animate({top: '-0px'});
+            $("#error_pop_mob").html("<img src='allinone_img/tool_arrow.png' /> Please enter a valid Mobile Number");
+            document.getElementById('mob').focus();
+            document.getElementById('mob').select(); 
+            flag=0; 
+            return false;
+        }
+        else {
+            flag=1; 
+        }
+        // else;
+
+	if((document.getElementById('email').value=="") || (document.getElementById('email').value=="Email ID*")) {
+        //alert("Please enter your Email");
+        $("#error_pop_email").show().animate({top: '-0px'});
+        $("#error_pop_email").html("<img src='allinone_img/tool_arrow.png' /> Please enter a valid Email ID");
+        document.getElementById('email').select(); 
+        flag=0; 
+        return false;
+    }else if(validateemailv2(document.getElementById('email').value)==false){
+        //alert("Please enter a valid Email ID.");
+        $("#error_pop_email").show().animate({top: '-0px'});
+        $("#error_pop_email").html("<img src='allinone_img/tool_arrow.png' /> Please enter a valid Email ID");
+        document.getElementById('email').select(); 
+        flag=0; 
+        return false;
+    } 
+    else {
+        flag=1; 
+    }
+    //else ;
+
+//	if((document.getElementById('age').value == "")||(document.getElementById('age').value == "City")) {
+//        //alert("Please enter your Name");
+//        $("#error_pop_age").show().animate({top: '-0px'});
+//        $("#error_pop_age").html("<img src='allinone_img/tool_arrow.png' /> Please select your age group");
+//        document.getElementById('age').focus();
+//        return false;
+//    }
+    // else; 
+
+    if ((document.getElementById('subscribe').checked == false)) {
+            $("#error_pop_subscribe").show().animate({top: '-0px'}); 
+            flag=0; 
+            return false;
+        }
+    else{
+        flag=1; 
+        //Form.submit();
+        //document.kotak_eterm.submit();
+    } 
+
+    // if(flag==1){
+    //     var theType = $('#prodname').val(); 
+    //     document.cookie= 'theType='+theType; 
+    //     dataLayer.push({'event':'all-in-one','category':'All-in-one SEM','action':'Submit','label':theType}); 
+    //     console.log(theType); 
+    // } 
+
+} 
+
+
+
+function numberValidate(incomingString, defaultValue){
+    if(trimSpace(incomingString).length == 0 || incomingString.search(/[^0-9,+]/g) != -1)
+    {
+        return false;
+    }else
+        return true;
+}
+
+function trimSpace(x){
+    var emptySpace = / /g;
+    var trimAfter = x.replace(emptySpace,"");
+    return(trimAfter);
+}
+
+function textValidate_name(incomingString, defaultValue){
+    if(trimSpace(incomingString).length == 0 || incomingString.search(/[^a-z.A-Z ]/g) != -1 || incomingString==defaultValue)
+        return false;
+    else
+        return true;
+}
+function special_validation(incomingString, defaultValue){
+    if(trimSpace(incomingString).length == 0 || incomingString.search(/[^a-z.A-Z0-9- ]/g) != -1 || incomingString==defaultValue)
+        return false;
+    else
+        return true;
+}
+
+function validateemailv2(email) {
+    var checkTLD=1;
+    var knownDomsPat=/^(com|net|org|edu|int|mil|gov|arpa|biz|aero|name|coop|info|pro|museum)$/;
+    var emailPat=/^(.+)@(.+)$/;
+    var specialChars="\\(\\)><@,;:\\\\\\\"\\.\\[\\]";
+    var validChars="\[^\\s" + specialChars + "\]";
+    var quotedUser="(\"[^\"]*\")";
+    var ipDomainPat=/^\[(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})\]$/;
+    var atom=validChars + '+';
+    var word="(" + atom + "|" + quotedUser + ")";
+    var userPat=new RegExp("^" + word + "(\\." + word + ")*$");
+    var domainPat=new RegExp("^" + atom + "(\\." + atom +")*$");
+    var matchArray=email.match(emailPat);
+    if (matchArray==null) {
+        return false;
+    }
+    var user=matchArray[1];
+    var domain=matchArray[2];
+
+    for (i=0; i<user.length; i++) {
+        if (user.charCodeAt(i)>127) {
+            return false;
+        }
+    }
+    for (i=0; i<domain.length; i++) {
+        if (domain.charCodeAt(i)>127) {
+            return false;
+        }
+    }
+    if (user.match(userPat)==null) {
+        return false;
+    }
+
+    var IPArray=domain.match(ipDomainPat);
+    if (IPArray!=null) {
+    for (var i=1;i<=4;i++) {
+        if (IPArray[i]>255) {
+            return false;
+        }
+    }
+        return true;
+    }
+    var atomPat=new RegExp("^" + atom + "$");
+    var domArr=domain.split(".");
+    var len=domArr.length;
+    for (i=0;i<len;i++) {
+        if (domArr[i].search(atomPat)==-1) {
+            return false;
+        }
+    }
+if (checkTLD && domArr[domArr.length-1].length!=2 && domArr[domArr.length-1].search(knownDomsPat)==-1) {
+    return false;
+}
+if (len<2) {
+    return false;
+}
+    return true;
+} 
+ 
+$(document).ready(function(){ 
+
+    // appending validation notifications; 
+    $('#name').after('<div class="error_pop" id="error_pop_name"><img src="img/tool_arrow.png"/>Please enter your Name</div>'); 
+    $('#email').after('<div class="error_pop" id="error_pop_email"><img src="img/tool_arrow.png"/>Please enter your Email ID</div>'); 
+    $('#mob').after('<div class="error_pop" id="error_pop_mob"><img src="img/tool_arrow.png"/>Please enter your Mobile Number</div>'); 
+    $('#age').after('<div class="error_pop" id="error_pop_age"><img src="img/tool_arrow.png"/>Please select your age group</div>'); 
+    $('#ddl_city').after('<div class="error_pop" id="error_pop_ddl_city"><img src="img/tool_arrow.png"/>Please select your City</div>'); 
+    $('#subscribe').after('<div class="error_pop" id="error_pop_subscribe"><img src="img/tool_arrow.png"/>This is mandatory so our Holiday Expert can get in touch with you</div>'); 
+    /*$('#name').after('<div class="error_pop" id="error_pop_name"><img src="img/tool_arrow.png"/>Please enter your Name</div>'); */
+
+
+    // validation bubble behaviour (jQuery); 
+    $("#name").focus(function(){
+        setTimeout(function(){
+            $("#error_pop_name").hide(); 
+        },5000);
+    });
+    $("#name").keypress(function(){
+        $("#error_pop_name").hide();
+    });
+    $("#email").focus(function(){
+        setTimeout(function(){
+            $("#error_pop_email").hide(); 
+        },5000); 
+    });
+    $("#email").keypress(function(){
+        $("#error_pop_email").hide();
+    });
+    $("#mob").focus(function(){
+        setTimeout(function(){
+            $("#error_pop_mob").hide();
+        },5000); 
+    });
+    $("#mob").keypress(function(){
+        $("#error_pop_mob").hide();
+    });
+    $("#age").focus(function(){
+        setTimeout(function(){
+            $("#error_pop_age").hide();
+        },5000); 
+    });
+    $("#age").keypress(function(){
+        $("#error_pop_age").hide();
+    });
+    $("#ddl_city").focus(function(){
+        setTimeout(function(){
+            $("#error_pop_ddl_city").hide();
+        },5000); 
+    });
+    $("#ddl_city").keypress(function(){
+        $("#error_pop_ddl_city").hide();
+    });
+    $("#subscribe").click(function(){
+        $("#error_pop_subscribe").hide();
+    }); 
+}); 

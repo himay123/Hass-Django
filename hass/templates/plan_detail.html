@@ -1,0 +1,724 @@
+{% load static %}
+<html>
+ 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+
+
+   <link rel="stylesheet" href="{% static 'css/layout_trans.css' %}">
+    <link rel="stylesheet" href="{% static 'css/buyingflow_trans.css' %}">
+  <script src="{% static 'js/jquery-2-2-1-min.js' %}"></script>  
+  <link rel="preload" as="style" href="{% static 'css/header-footer.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/header-footer.css' %}" type="text/css">
+<link rel="preload" as="script" href="{% static 'js/jquery-3-4-1-min.js' %}">
+<script src="{% static 'js/jquery-3-4-1-min.js' %}"></script>
+<link rel="preload" as="script" href="{% static 'js/customdeveloper.js' %}"> 
+ <script src="{% static 'js/customdeveloper.js'%}"></script>
+ <script src="{% static 'js/home-script.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css">
+
+    <title>Select Plan</title>
+    <style>
+      
+        
+        /* The Modal (background) */
+        .modal,.modal1 {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          right:0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        
+        /* Modal Content */
+        .modal-content {
+           
+          background-color: #fefefe;
+          margin: auto;
+          padding: 20px;
+          border: 1px solid #888;
+          width: 80%;
+          height: 100%;
+        }
+        
+        /* The Close Button */
+        .close {
+          color: #aaaaaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+          color: #000;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        input[type=radio].css-checkbox {
+							position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+						}
+
+						input[type=radio].css-checkbox + label.css-label {
+							padding-left:30px;
+							height:25px; 
+							display:inline-block;
+							line-height:25px;
+							background-repeat:no-repeat;
+							background-position: 0 0;
+							font-size:25px;
+							vertical-align:middle;
+							cursor:pointer;
+
+						}
+
+						input[type=radio].css-checkbox:checked + label.css-label {
+              
+							background-position: 0 -25px;
+						}
+						label.css-label {
+                                        background-image:url("{% static 'images\ck.png' %}");
+                                        -webkit-touch-callout: none;
+                                        -webkit-user-select: none;
+                                        -khtml-user-select: none;
+                                        -moz-user-select: none;
+                                        -ms-user-select: none;
+                                         user-select: none;
+			                             }
+                                         @media screen and (max-width: 1199px){
+                                            
+                                            }
+                                         @media screen and (max-width: 1024px){
+                                            
+                                            }
+                                        @media screen and (max-width: 991px){
+                                            #select_popup
+                                            {
+                                                margin-left: 40px;
+                                            }
+                                            .modal-content
+                                            {
+                                                height: auto;
+                                                overflow-x: hidden;
+                                            }
+                                            
+                                           
+                                            }
+                                        @media screen and (max-width: 767px){
+                                            #select_popup
+                                            {
+                                                margin-left: 40px;
+                                            }
+                                            .modal-content
+                                            {
+                                                
+                                                width: 100%;
+                                                height: auto;
+                                                overflow-x: hidden;
+                                            }
+                                          
+                                            }
+                                        @media screen and (max-width: 640px){
+                                            
+                                            #select_popup
+                                            {
+                                                margin-left: 40px;
+                                            }
+                                            .modal-content
+                                            {
+                                                
+                                                width: 100%;
+                                                height: auto;
+                                                overflow-x: hidden;
+                                            }
+                                           
+                                            }
+                                        @media screen and (max-width: 575px){
+                                            #select_popup
+                                            {
+                                                margin-left: 40px;
+                                            }
+                                            .modal-content
+                                            {
+                                                
+                                                width: 100%;
+                                                height: auto;
+                                                overflow-x: hidden;
+                                            }
+                                            h1{
+                                                font-size: 20px;
+                                            }
+                                          
+                                            }
+        </style>
+        <script>
+          
+        </script>
+ </head>
+<body data-aos-easing="ease-in-out-sine" data-aos-duration="400" data-aos-delay="0">
+   
+
+    <header id="header">
+    
+        <div class="mainNvbg">
+            <div class="il-container">
+                <div class="nav clearfix">
+                    <div class="mobHumberger"><span></span><span></span><span></span></div>
+                    
+                    <!--<div class="mobLogo">
+                        <a href="/">image logo</a>
+                    </div> --> 
+                    <div class="mobMenuWrapper">
+                        <div class="mobWelBlock clearfix">
+                            <a href="#" class="menuClose"></a>
+                            <div class="welProf">
+                                <h4>Welcome</h4>
+                                <span class="guestIco"></span><span class="menIco" style="display: none;"></span><span class="womIco"></span>
+                                <div class="mobloginblock">
+                                    <div class="mobBeforelogin">
+                                        <h5>Welcome Guest!</h5>
+                                        <a href="{% url 'login' %}" class="mobloginBt">Login</a>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="navBar">
+                            <li class="mobPro">
+                                <a class="mobProduct" id="Product_link">Products<span class="dwnArrow"></span></a>
+                                <span class="_mPdtBack"><span class="dwnArrow"></span>Back</span>
+                                <ul class="menuBox rightAln">
+                                    <li>
+                                        <h4><a href="#" id="Motor_Insurance"></a><span class="menupIcons travelInsico"></span>Motor Insurance</h4>
+                                        <ul class="insuranceBlock">
+                                            <li><a onclick="$('.loader_new').show();" id="Car_Insurance" href="{% url 'c_insurance' %}">Car Insurance</a></li>
+                                            
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4><a href="#" id="Rental"></a><span class="menupIcons motorInsico"></span>Rental</h4>
+                                        <ul class="insuranceBlock">
+                                            <li><a onclick="$('.loader_new').show();" id="Car_Rental" href="#">Car Rental</a></li>
+                                        
+                                            
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <h4><a href="#" id="Towing"></a><span class="menupIcons helthInsico"></span>Towing</h4>
+                                        <ul class="insuranceBlock">
+                                            <li><a onclick="$('.loader_new').show();" id="heavy" href="#">Heavy Weight</a></li>
+                                            <li><a onclick="$('.loader_new').show();" id="light" href="#">Light Weight</a></li>
+                                            <li><a onclick="$('.loader_new').show();" id="other" href="#">Other Vehical</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                            <li>
+                                <a>Claims<span class="dwnArrow"></span></a>
+                                <ul class="menuBox otherdrMenu">
+                                    
+                                    <li><a href="{% url 'c_claim' %}">Motor Claims</a></li>
+                                   
+                                </ul>
+                            </li>
+                            <li>
+                                <a id="Renewals_Link">Renewals<span class="dwnArrow"></span></a>
+                                <ul class="menuBox otherdrMenu">
+                                    <li><a href="{% url 'renew' %}" title="Car Policy" id="Car_Policy">Car Policy</a></li>
+                                   
+                                </ul>
+                            </li>
+                            <li>
+                                <a>Support<span class="dwnArrow"></span></a>
+                                <ul class="menuBox otherdrMenu">
+                                    <li><a href="#">Help Center</a></li> 
+                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">Grievance Redressal</a></li><li class=""><a href="#">Counter Offer Acceptance</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li>
+                                <a>Info Centre<span class="dwnArrow"></span></a>
+                                <ul class="menuBox otherdrMenu">
+                                    <li><a href="#">Info Centre</a></li>
+                                    <li><a href="#">Expert Blogs</a></li>
+                                    <li><a href="#">FAQs</a></li>
+                                    <li><a href="#">Tax Benefits</a></li>
+                                    <li><a href="#">Downloads</a></li>
+                                    <li><a href="#">Testimonials</a></li>
+                                    <li><a href="#">Knowledge Articles</a></li>
+                                    <li><a href="#">Insurance Updates</a></li>
+                                
+                                </ul>
+                            </li>
+                            <li class="no-dropdown">
+                                <a href="#">Investor Relations</a>
+                            </li>
+                        </ul>
+                            <!--<div class="logoutSec">
+                                <p>Last Log in: <span id="lbllastlogin"></span></p>
+                                
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+     <div class="container">
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+             </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">  
+                           <h1 style="color: black;margin-left:60px;" >Your car & previous policy details.</h1>
+                  <form method="POST" name="select_popup" id="select_popup" style="width: 75%; margin-left: 60px;">
+                    <div class="row">
+                      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                          <div class="input-div one">
+                              <div>
+                                  <h5>car make & model</h5>
+                                   <input type=text class="input" name="model" style="color: black;">
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                          <div class="input-div one">
+                              <div>
+                                  <h5>vehical purchase date</h5>
+                                  <input type=text class="input" name="vehical" style="color: black;">
+                                </div>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="input-div two">
+                                <div>
+                                   <h5>City of Registretion</h5>
+                                   <input type=text class="input" name="city" style="color: black;">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="input-div two">
+                                <div>
+                                   <h5>Ex-showroom price</h5>
+                                   <input type=text class="input" name="s_price" style="color: black;">
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <div class="input-div two">
+                                <div>
+                                   <h5>Previous Policy End-date</h5>
+                                   <input type=text class="input" name="city" style="color: black;">
+                              </div>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12"></div>
+                        <div class="col-lg-4 col-md-3 col-sm-12 col-xs-12"></div>
+                     </div>
+                     <div class="row">
+                        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                            <h3 style="margin-top: 30px;">Register Under individual</h3>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                            <table id="table" style="margin-top: 30px;">
+                                <tr>
+                                    <td>
+                                        <input type="radio" name="renew" id="radio1" value="enginno" class="css-checkbox" checked="checked" />
+                                        <label for="radio1"  class="css-label radGroup1"><p style="font-size: 18px;">&nbsp;&nbsp;Yes</p></label>
+                                    </td>
+                                    &nbsp;&nbsp; <td>
+                                      &nbsp;&nbsp; <input type="radio" name="renew" value="chassisno" id="radio2" class="css-checkbox" />
+                                        <label for="radio2" class="css-label radGroup1"><p style=" font-size: 18px;">&nbsp;&nbsp;No</p></label>
+                                    </td>
+                                    
+                                </tr>
+                            </table>
+                        </div>
+                     </div>
+                         <a href="{% url 'plan_detail' %}" class="btn-primary btn-orange js-car-register" style="margin-top: 30px;">Submit</a>
+                   
+                </form>
+           
+          </div>
+           </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+     </div>
+    </div>
+<div class="sfContentBlock">
+    <div id="mainApp">
+    
+        <div class="mainWrapper ip-main main-wrap">
+            <div class="wrapper-content plan-page">
+                <section class="bg-blue section-content js-planWrap">
+                    <div class="container pad-n"><div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-n">
+                            <div data-aos="fade-up" data-aos-duration="1000" class="car-detail-wrap aos-init aos-animate">
+         <div class="car-detail">
+        <h3>HONDA </h3> 
+        <p> ACCORD 2.4 VTI L (IVTEC) AT (2354CC) </p>
+        <a href="#" class="edit js-carEdit link-blue" data-toggle="modal" data-target="#myModal">Edit details</a>
+         </div> 
+         <ul class="break-up">
+             <li><p class="leftValue">City of registration</p><span class="rightValue">GUJARAT-SURAT</span></li> 
+             <li><p class="leftValue">Vehicle purchase date</p><span class="rightValue">24-02-2019</span></li> 
+             <li><p class="leftValue">Ex-showroom price</p><span class="rightValue">₹ 14,33,250</span></li> 
+             <li><p class="leftValue">Previous <span>OD</span> policy end date</p><span class="rightValue">07-03-2020</span></li> 
+             <li><p class="leftValue">Claims in current policy</p><span class="rightValue">0</span></li> 
+             <li><p class="leftValue">Previous policy NCB</p><span class="rightValue">0 %</span></li> 
+             <li><p class="leftValue">Registered under</p><span class="rightValue">Individual</span> <!----></li> 
+             <!----> <!----> <!----> <!----></ul> 
+             <!----> <!----> <div class="covers-plan over-inh">
+                                  <ul class="break-up covers-block">
+                                      <li style="display: none;"><span class="leftValue">Tenure for OD coverage</span> 
+                                           <div class="radioButtons rightValue">
+                                               <div class="radio">
+                                                   <input id="years-cal1" name="tocyears" type="radio" checked="checked" value="3"> <label for="years-cal1" class="radio-label">3 Years</label>
+                                                </div> 
+                                                <div class="radio"><input id="years-cal2" name="tocyears" type="radio" value="1"> <label for="years-cal2" class="radio-label">1 Year</label></div>
+                                            </div>
+                                            </li> <!----> <!---->
+                                           </ul>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                 <div data-aos="fade-up" data-aos-duration="1000" class="plan-parent-wrap aos-init aos-animate">
+                                    
+                                          <div data-aos="fade-up" data-aos-duration="1000" class="plan-detail-wrap js-planwrap aos-init aos-animate">
+                                              <h1>Pick a plan that’s best for you.</h1> 
+                                              <div class="policytyp-block"><span class="p-type">Policy Type: </span> 
+                                                <div class="policy-dropdown"><span class="down-list">Own Damage Only</span> <span>We require your third party policy details</span> <a href="javascript:void(0)" class="link-blue">Add</a>
+                                                </div>
+                                            </div> 
+                                            <div class="idv-amount"><span><span>
+                                                IDV: ₹  11,46,600
+                                            </span></span><a href="javascript:void(0)" class="btn-small" data-toggle="modal" data-target="#myModal1">Edit</a></div> 
+                                             <div class="plan-wrap-main">
+                                                 <div class="plan-block clearfix js-plan active">
+                                                     <div class="coverage">
+                                                         <div class="cover-circle">
+                                                             <div>
+                                                                 <span class="cover__title">2</span>Covers
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="addons-detail"><h4>Just the basics. No bells, no whistles.</h4><span>Basic protection for your car and others as well.</span> 
+                                                <div class="js-addonlist">
+                                                    <ul class="addon-list"><li>
+                                                            Road Side Assistance<span class="tooltip-ui tooltip"><span class="tooltip-text">
+                                                                    This is an add-on cover wherein during the policy period, you can avail emergency assistance services as listed in the policy wordings.<br><br> <strong>Key Inclusions: </strong>1. Towing service on vehicle breakdown/accident<br>2. Breakdown support over phone
+                                                                    3. Arrangement/supply of fuel<br>4. Arrangement of keys<br>5. Battery jump start<br>6. Message relay in case vehicle is immobilized due to a breakdown/accident<br>7. Replacement of flat tyre<br>8. Minor repairs<br>9. Arrangement of rental vehicle<br>10. Arrangement of accommodation<br>11. Referral of legal advisor<br>12. Referral of hospital<br>13. Taxi benefit upto a distance of 50 km<br>14. Accommodation benefits for a day (maximum Rs. 5000)<br><br><strong>Key Exclusions: </strong>Theft, supply/replacement of parts or consumables, services during natural or man-made calamities, loss to the vehicle when it is driven against the recommendations of the owner/manufacturer's manual, services done without prior approval from us.
+                                                                </span></span></li> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <li>Car Damages Cover</li> <!----></ul><a href="#" class="btn-small-fill btn-small" data-toggle="modal" data-target="#myModal1">Add more covers</a></div></div> <div class="right-side-plan"><div class="amount-plan"><div class="amt-detail tp"><span>Total Premium<strong>₹ 16,518</strong></span></div><a href="javascript:void(0)" class="js-planbuy btn-primary btn-orange">Buy now</a> <!---->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                     <div class="plan-block clearfix js-plan">
+                                                         <div class="coverage">
+                                                             <div class="cover-circle">
+                                                                 <div>
+                                                                    <span class="cover__title">5</span>Covers
+                                                    </div></div></div> <div class="addons-detail"><!----> <h4>Zero depreciation. Zero worries</h4> <span>
+                                                    Not just protection for your car. Protect against depreciation too.
+                                                </span> <!----> <!----></div> <div class="right-side-plan"><div class="js-banner-discount">
+                                                    <div class="telematic"><!----></div></div> 
+                                                    <div class="amount-plan">
+                                                        <div class="amt-detail tp"><span>Total Premium<strong>₹ 27,342</strong></span>
+                                                        </div><!----> <a href="javascript:void(0)" class="js-planbuy btn-primary btn-white">View</a></div>
+                                                    </div>
+                                                </div> 
+                                                <div class="plan-block clearfix js-plan">
+                                                    <div class="coverage">
+                                                        <div class="cover-circle">
+                                                            <div>
+                                                                <span class="cover__title">6 </span>Covers
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="addons-detail"><h4>A smart plan for a smarter you.</h4> <!----> <span>
+                                                    Go beyond just protection with our IL Assist tracking device
+                                                </span> <!----> <!----></div> 
+                                                <div class="right-side-plan">
+                                                    <div class="js-banner-discount">
+                                                        <div class="telematic"><a href="#car-tracking" class="cmn-popup"><!----></a>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="amount-plan">
+                                                        <div class="amt-detail">
+                                                            <span>Total Premium<strong>₹ 28,570</strong></span></div><!----> <a href="javascript:void(0)" class="js-planbuy btn-primary btn-white">View</a>
+                                                        </div>
+                                                    </div>
+                                                </div> <!---->
+                                            </div>
+                                             <div id="ppcovers" class="suminsured-block">
+                                                 <figure><img src="/docs/default-source/assets/freshlook/images/shield.svg"></figure> <div class="ppcover-area"><div class="check-feild"><input id="p-cover1" type="checkbox" value="true" class="input-check"> <label for="p-cover1" class="js-addoncover"></label><!----></div> <p>I want to protect myself from harm caused by accidents with Personal Protect Cover<span class="tooltip-ui tooltip"><span class="tooltip-text"><strong>Personal Protect Cover:</strong> Coverage against death and permanent total disability</span></span></p></div> <div class="sum-prem-block"><div class="input-block select-vu ripple-bar sm-input focus"><span class="error-il"></span> <label>Sum Insured</label> <div dir="auto" class="v-select custom-dropdown vs--single vs--unsearchable"><div class="vs__dropdown-toggle"><div class="vs__selected-options"><span class="vs__selected">
+            3,00,000
+           <!----></span> <input readonly="readonly" aria-label="Search for option" role="combobox" type="search" autocomplete="off" class="vs__search"></div> <div class="vs__actions"><button type="button" title="Clear selection" class="vs__clear"><svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"><path d="M6.895455 5l2.842897-2.842898c.348864-.348863.348864-.914488 0-1.263636L9.106534.261648c-.348864-.348864-.914489-.348864-1.263636 0L5 3.104545 2.157102.261648c-.348863-.348864-.914488-.348864-1.263636 0L.261648.893466c-.348864.348864-.348864.914489 0 1.263636L3.104545 5 .261648 7.842898c-.348864.348863-.348864.914488 0 1.263636l.631818.631818c.348864.348864.914773.348864 1.263636 0L5 6.895455l2.842898 2.842897c.348863.348864.914772.348864 1.263636 0l.631818-.631818c.348864-.348864.348864-.914489 0-1.263636L6.895455 5z"></path></svg></button> <svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" role="presentation" class="vs__open-indicator"><path d="M9.211364 7.59931l4.48338-4.867229c.407008-.441854.407008-1.158247 0-1.60046l-.73712-.80023c-.407008-.441854-1.066904-.441854-1.474243 0L7 5.198617 2.51662.33139c-.407008-.441853-1.066904-.441853-1.474243 0l-.737121.80023c-.407008.441854-.407008 1.158248 0 1.600461l4.48338 4.867228L7 10l2.211364-2.40069z"></path></svg> <div class="vs__spinner" style="display: none;">Loading...</div></div></div> <!----></div></div> <div class="premium-amt"><span>Premium</span> <span><strong>₹  384</strong></span></div></div></div></div></div></div></div></div></section> <!----> <div class=""></div></div></div> <div class="js-popup-wrap overlayN overlayNew travelgeoscope break-case-block"><div class="popup light js-popup-body js-paclose"><div class="content content-heightauto pacover-popblock commonpop-pad"><h3>Vehicle Inspection</h3> <div class="vehicle-policycover"><div class="rec-idv dark-form"><div class="rec-text"><p>Vehicle inspection is required as your previous policy did not have zero depreciation cover. You can do "Mobile Self-Inspection" using your Smartphone or we can arrange for inspection by our representative. Continue to book online and the policy will be available in your online account subject to satisfactory inspection, you can check the inspection status and policy in your online account soon.</p>
+        </div></div></div></div> <div class="amount idv-btn"><a href="#" class="btn-orange btn-primary js-pacovers ok-btn">Ok</a></div></div></div> <!----> <!----> <div id="car-tracking" class="js-popup-wrap overlayN travelgeoscope"><div class="popup light js-popup-body"><div class="content"><div class="car-addv"><div class="car-text-addv"><h1>Take your driving <br>game one level up.</h1> <p>Upgrade to a smarter driving experience.</p> <ul class="drv-exp"><li>Driving insights to improve<br> car's performance</li> <li>Engine and battery <br>health indicator</li> <li>SMS to emergency contacts<br> in case of an accident</li> <li>Real-time location<br> sharing on mobile app</li></ul></div> <div class="amount"><a href="#" class="btn-orange btn-primary js-ui-close">Ok, got it</a></div></div> <div class="il-assist"><figure><img src="/docs/default-source/assets/freshlook/images/il-assist-insapp.jpg"></figure> <div class="inapp-block"><h3>Get IL-Assist on the Insure App</h3> <p>IL Assist feature uses a telematics device that tracks and monitors your car using GPS and on-board diagnostics technology.</p><span>Download Insure App by ICICI Lombard</span> <figure><img src="/docs/default-source/assets/freshlook/images/google-play.png"></figure></div> <div class="inst-pross"><h3>A simple 2-minute installation</h3> <p>
+                            Plug the telematics device in to the OBD Port, which is present in all cars.
+                            This is the same port your mechanic uses to scan your car when you take it in for repairs.
+                        </p></div></div></div></div></div> <div id="check-disc" class="js-popup-wrap overlayN travelgeoscope"><div class="popup light js-popup-body"><a href="#" class="close js-popup-close"></a> <div class="content content-heightauto"><div class="exc-discount dark-form"><h3>Please confirm your details to avail an exclusive discount.</h3> <div class="input-block mobile-block ripple-bar"><label for="exc-name">Name</label> <input id="exc-name" type="text" maxlength="30"></div> <div class="input-block mobile-block ripple-bar"><label for="exc-mobile">Mobile</label> <input id="exc-mobile" type="text" maxlength="10"></div> <div class="input-block mobile-block ripple-bar"><label for="exc-mobile">Email</label> <input id="exc-mobile" type="text" maxlength="30"></div> <div class="input-block mobile-block ripple-bar"><label for="exc-mobile">PAN Card</label> <input id="exc-mobile" type="text" maxlength="10"></div></div> <div class="amount idv-btn"><a href="#" class="btn-orange btn-primary js-popup-clos">Get discount</a></div></div></div></div> <div id="pa-coverpop" class="js-popup-wrap overlayN travelgeoscope"><div class="popup light js-popup-body js-paclose"><a href="#" class="close js-popup-close"></a> <div class="content content-heightauto pacover-popblock commonpop-pad"><h3>Waiver of Personal Acident cover</h3> <p>Please confirm the following important details.</p> <!----> <div class="vehicle-policycover"><div class="check-feild checkBoxsmall"><input type="checkbox" id="pac" class="input-check"> <label for="pac"></label> <span class="pac-text">I hereby declare that the owner driver does not require Compulsory Personal Accident cover as:</span></div> <div class="rec-idv dark-form pac-disabled"><div class="radio"><input id="accident-cover1" name="radio111" type="radio" value="true" class="val-req"> <label for="accident-cover1" class="radio-label"></label></div> <div class="rec-text"><p>I have a separate existing Personal Accident cover against Death and Permanent Disability (Total and Partial) for Sum Insured of at least ? 15 lacs</p></div></div> <div class="rec-idv dark-form pac-disabled"><div class="radio"><input id="accident-cover2" name="radio1112" type="radio" value="true" class="val-req"> <label for="accident-cover2" class="radio-label"></label></div> <div class="rec-text border-hid"><p>I do not have a valid driving license</p></div></div></div></div> <div class="amount idv-btn"><a href="#" class="js-popup-close btn-orange btn-primary js-pacovers">Yes, it's correct</a></div></div></div> <!----> <div class="js-popup-wrap overlayN travelgeoscope break-case-block" style="display: none;"><div class="popup light js-popup-body js-paclose"><div class="content content-heightauto pacover-popblock commonpop-pad"><h3>Vehicle Inspection</h3> <div class="vehicle-policycover"><div class="rec-idv dark-form"><div class="rec-text"><p>Vehicle inspection is required as your previous policy has expired. You can do "Mobile Self-Inspection" using your Smartphone or we can arrange for inspection by our representative. Continue to book online and the policy will be available in your online account subject to satisfactory inspection, you can check the inspection status and policy in your online account soon.</p></div></div></div></div> <div class="amount idv-btn"><a href="#" class="btn-orange btn-primary js-pacovers ok-btn">Ok</a></div></div></div> <div class="js-popup-wrap overlayN travelgeoscope break-case-block" style="display: none;"><div class="popup light js-popup-body js-paclose"><div class="content content-heightauto pacover-popblock commonpop-pad"><h3>Vehicle Inspection</h3> <div class="vehicle-policycover"><div class="rec-idv dark-form"><div class="rec-text"><p>   Vehicle inspection is required as your vehicle was purchased/registered 15 days back. You can do "Mobile Self-Inspection" using your Smartphone or we can arrange for inspection by our representative. Continue to book online and the policy will be available in your online account subject to satisfactory inspection, you can check the inspection status and policy in your online account soon.</p></div></div></div></div> <div class="amount idv-btn"><a href="#" class="btn-orange btn-primary js-pacovers ok-btn">Ok</a></div></div></div> <div class="js-popup-wrap overlayN travelgeoscope" style="display: none;"><div class="popup light js-popup-body js-paclose"><div class="content content-heightauto pacover-popblock commonpop-pad"><h3>Vehicle Inspection</h3> <div class="vehicle-policycover"><div class="rec-idv dark-form"><div class="rec-text"><p>Dear Customer, We would like to inform that since your previous own damage policy has expired, your current policy will be renewed post a successful break-in inspection.</p></div></div></div></div> <div class="amount idv-btn"><a href="#" class="btn-orange btn-primary js-pacovers">Ok</a></div></div></div> <div class="js-popup-wrap overlayN travelgeoscope break-case-block" style="display: none;"><div class="popup light js-popup-body js-paclose"><div class="content content-heightauto pacover-popblock commonpop-pad"><h3>Vehicle Inspection</h3> <div class="vehicle-policycover"><div class="rec-idv dark-form"><div class="rec-text"><p>   Vehicle inspection is required as your previous policy was third party. You can do "Mobile Self-Inspection" using your Smartphone or we can arrange for inspection by our representative. Continue to book online and the policy will be available in your online account subject to satisfactory inspection, you can check the inspection status and policy in your online account soon.</p></div></div></div></div> <div class="amount idv-btn"><a href="#" class="btn-orange btn-primary js-pacovers ok-btn">Ok</a></div></div></div> <!----> <!----></div>
+
+
+<style type="text/css">
+    @media(max-width: 767px) {
+        .afterFormSpace .policyTypeBox.tw-policy-new .editPolicy {
+            right: 15px;
+            font-size: 12px;
+        }
+
+            .afterFormSpace .policyTypeBox.tw-policy-new .editPolicy:before {
+                display: none;
+            }
+
+        a.tw-policyadd.editPolicy {
+            position: relative;
+        }
+
+        .afterFormSpace .policyTypeBox.tw-policy-new a.tw-policyadd {
+            position: absolute;
+            top: 40px;
+            font-size: 12px;
+            right: 15px;
+        }
+    }
+</style>
+
+</div>
+ <!-- Modal -->
+ <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="height:auto;">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+               <div class="content">
+                        <div class="addons-area">
+                            <div class="addon-text">
+                                <h2>Choose Add-ons</h2>
+                                <p>Select add-on covers which should be chosen for the complete protection of your car.</p>
+                            </div>
+                            <div class="totl-prem"><span class="prem">Total Premium</span><span class="prem-amt js-targetfly">₹ 9,241</span></div>
+                            <div class="amount addon-btn"><a href="#" class="btn-orange btn-primary">Done</a></div>
+                        </div>
+                        <div class="customMscroll white-shadow">
+                           
+                                <div class="add-onblock">
+                                    <div class="check-feild">
+                                        <input id="check-addon1" type="checkbox" class="input-check">
+                                        <label for="check-addon1" class="js-addoncover"></label><span class="js-addoncover1"></span>
+                                    </div>
+                                    <div class="cover-block js-covertext">
+                                        <h3>Zero Depreciation (ZD) Cover</h3><span>₹ 199</span>
+                                        <p>Every year, your car devaluates due to wear and tear of its parts. The add-on does not consider this, giving you complete coverage.</p>
+                                    </div>
+                                </div>
+                                <div class="add-onblock">
+                                    <div class="check-feild">
+                                        <input id="check-addon2" type="checkbox" class="input-check">
+                                        <label for="check-addon2" class="js-addoncover"></label><span class="js-addoncover1"></span>
+                                    </div>
+                                    <div class="cover-block js-covertext">
+                                        <h3>Engine Protect Plus Cover </h3><span>₹ 199</span>
+                                        <p>This add-on cover protects your engine from damages that are caused as a consequence of an accident.</p>
+                                    </div>
+                                </div>
+                                <div class="add-onblock">
+                                    <div class="check-feild">
+                                        <input id="check-addon3" type="checkbox" class="input-check">
+                                        <label for="check-addon3" class="js-addoncover"></label><span class="js-addoncover1"></span>
+                                    </div>
+                                    <div class="cover-block js-covertext">
+                                        <h3>Garage Cash Allowance </h3><span>₹ 199</span>
+                                        <p>A daily allowance is given to you for the number of days that your car is under repairs in the garage due to vehicle damages.</p>
+                                    </div>
+                                </div>
+                                <div class="add-onblock">
+                                    <div class="check-feild">
+                                        <input id="check-addon4" type="checkbox" class="input-check">
+                                        <label for="check-addon4" class="js-addoncover"></label><span class="js-addoncover1"></span>
+                                    </div>
+                                    <div class="cover-block js-covertext">
+                                        <h3>Consumable Items</h3><span>₹ 199</span>
+                                        <p>Due to accident-related car damages, the expenses on consumable items such as nuts, bolts, screws, washers, bearings, etc. are compensated to you.</p>
+                                    </div>
+                                </div>
+                                    <div class="add-onblock">
+                                    <div class="check-feild">
+                                        <input id="check-addon5" type="checkbox" checked="checked" class="input-check">
+                                        <label for="check-addon5" class="js-addoncover"></label><span class="js-addoncover1"></span>
+                                    </div>
+                                    <div class="cover-block">
+                                        <h3>Consumable Items</h3>
+                                        <p>Due to accident-related car damages, the expenses on consumable items such as nuts, bolts, screws, washers, bearings, etc. are compensated to you.</p>
+                                    </div>
+                                </div>
+                                <div class="add-onblock">
+                                    <div class="check-feild">
+                                        <input id="check-addon8" type="checkbox" checked="checked" class="input-check">
+                                        <label for="check-addon8" class="js-addoncover"></label><span class="js-addoncover1"></span>
+                                    </div>
+                                    <div class="cover-block">
+                                        <h3>Accident Cover for Passengers</h3>
+                                        <p>Compensation is provided to your co-passengers if they suffer from accident-related injuries while you are driving the vehicle.</p>
+                                    </div>
+                                </div>
+                                <div class="add-onblock">
+                                    <div class="check-feild">
+                                        <input id="check-addon6" type="checkbox" checked="checked" class="input-check">
+                                        <label for="check-addon6" class="js-addoncover"></label><span class="js-addoncover1"></span>
+                                    </div>
+                                    <div class="cover-block">
+                                        <h3>Loss of Personal Belongings</h3>
+                                        <p>
+                                            Compensation is provided to you for your loss/damage of personal belongings on account
+                                            of theft from your car.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="add-onblock">
+                                    <div class="check-feild">
+                                        <input id="check-addon7" type="checkbox" checked="checked" class="input-check">
+                                        <label for="check-addon7" class="js-addoncover"></label><span class="js-addoncover1"></span>
+                                    </div>
+                                    <div class="cover-block">
+                                        <h3>Protection Against Lost/Damaged Keys</h3>
+                                        <p>In case of damage or loss of car keys due to theft or burglary, the cost of repairing/replacing the car keys is compensated.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+      
+    </div>
+  </div>
+  
+
+<div class="sfContentBlock">
+   
+  <div id="check-disc" class="js-popup-wrap overlayN travelgeoscope">
+        <div class="popup light js-popup-body">
+            <a href="#" class="close js-popup-close"></a>
+            <div class="content content-heightauto">
+                <div class="exc-discount dark-form">
+                    <h3>Please confirm your details to avail an exclusive discount.</h3>
+                    <div class="input-block mobile-block ripple-bar">
+                        <label for="exc-name">Name</label>
+                        <input id="exc-name" type="text" maxlength="30">
+                    </div>
+                    <div class="input-block mobile-block ripple-bar">
+                        <label for="exc-mobile">Mobile</label>
+                        <input id="exc-mobile" type="text" maxlength="10">
+                    </div>
+                    <div class="input-block mobile-block ripple-bar">
+                        <label for="exc-mobile">Email</label>
+                        <input id="exc-mobile" type="text" maxlength="30">
+                    </div>
+                    <div class="input-block mobile-block ripple-bar">
+                        <label for="exc-mobile">PAN Card</label>
+                        <input id="exc-mobile" type="text" maxlength="10">
+                    </div>
+                </div>
+                <div class="amount idv-btn"><a href="#" class="btn-orange btn-primary js-popup-clos">Get discount</a></div>
+            </div>
+        </div>
+    </div>
+
+
+</div><div class="sfContentBlock">    <!-- Start footer-->
+    <footer class="footer_bg_f9fafc">
+       <div class="il-footer new_footer">
+        <div class="footerContainer">
+            <div class="il-container">
+                <div class="ftFloater clearfix">
+                    <div class="ft-col addressBlock">
+                        <div class="ft-addIn">
+                            <div class="ft-logo"><img src="/docs/default-source/assets/images/marineplan/icicilombard-footer-logo.png"></div>
+                            <h6>ICICI Lombard General Insurance Company Limited</h6>
+                            <div class="ftAdrsLine">
+                                <p>414, P.Balu Marg, Off Veer Sawarkar Marg, near Siddhivinayak Temple, Prabhadevi Mumbai-400025.</p>
+                                <div class="emlnoBlock"><span>Email: customersupport@icicilombard.com</span><span>Fax no: 022 61961323</span><span>CIN: L67200MH2000PLC129408</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ft-col footerNav">
+                        <h3>Products</h3>
+                        <ul>
+                            <li><a href="/motor-insurance/car-insurance#coverage">Car Insurance</a></li>
+                            <li><a href="/motor-insurance/two-wheeler-insurance#coverage">Two Wheeler Insurance</a></li>
+                            <li><a href="/travel-insurance#products">Travel Insurance</a></li>
+                            <li><a href="/health-insurance#products">Health Insurance</a></li>
+                            <li><a href="/home-insurance#coverage">Home Insurance</a></li>
+                        </ul>
+                    </div>
+                    <div class="ft-col footerNav">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="/customer-support">Help Center</a></li>
+                            <li><a href="/support/contact-us">Contact Us</a></li>
+                            <li><a href="/grievance-redressal">Grievance Redressal</a></li>
+                            <li><a href="https://app4.icicilombard.com/UCVSelfHelp/ucvWebAppln/IRCTCNomineeDetails.aspx?">IRCTC-Nomminee Details Update</a></li>
+                            <li><a href="/link-aadhaar-number">Link Aadhaar &amp; PAN number</a></li>
+                        </ul>
+                    </div>
+                    <div class="ft-col footerNav">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="/legal/privacy-policy">Privacy Policy</a></li>
+                            <li><a href="/legal/terms">Terms &amp; Conditions</a></li>
+                            <li><a href="/legal/disclaimer">Disclaimer</a></li>
+                            <li><a href="/legal/whistle-blower-policy">Whistle Blower Policy</a></li>
+                            <li><a href="/about-us/public-disclosure">Public Disclosures</a></li>
+                        </ul>
+                    </div>
+                    <div class="gcFootText addressBlockRight">
+                        <p>ICICI Lombard General Insurance Ltd. is one of the largest private sector general insurance company in India offering insurance coverage for motor, health, travel, home, student travel and more. Policies can be purchased and renewed online as well. Immediate issuance of policy copy online.</p>
+                        <p>ICICI trade logo displayed above belongs to ICICI Bank and is used by ICICI Lombard GIC Ltd. under license and Lombard logo belongs to ICICI Lombard GIC Ltd assigned by Northbridge Financial Corporation solely for the territory of India. Insurance is the subject matter of the solicitation. The advertisement contains only an indication of cover offered. For more details on risk factors, terms, conditions and exclusions, please read the sales brochure carefully before concluding a sale. CIN:&nbsp;L67200MH2000PLC129408</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+      </div>
+    </footer>
+    <!-- End footer-->
+
+</div>
+        </div>
+    
+
+</div>
+</form>
+<script src="{% static 'js/main1.js' %}"></script>
+</body>
+
+</html>

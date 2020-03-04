@@ -29,6 +29,11 @@ class Garage(models.Model):
     manufacture=models.CharField(max_length=100)
     location=models.ForeignKey(cites,on_delete=models.CASCADE,null=True)
 
+class car(models.Model):
+    year=models.CharField(max_length=5)
+    make=models.CharField(max_length=40)
+    model=models.CharField(max_length=40)
+
     
     
     
