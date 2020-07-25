@@ -1,0 +1,179 @@
+{% extends 'maste.html' %}
+{% load static %}
+{% block containt %}
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <title>parocess</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <style>
+        .b {
+                 border:thin black solid;
+                 padding: 25px;
+                 
+            }
+            
+            table, th, td {
+              border: 1px solid black;
+              border-collapse: collapse;
+            }
+            th, td {
+              padding: 5px;
+              text-align: left;    
+            }
+            hr.new4 {
+  border: 1px solid black;
+}
+
+            
+    </style>
+    <script>
+    $(document).ready(function(){
+        
+    $("#states").change(function(){
+            var state=$("#states").val();
+            
+            $.ajax({
+
+                url:"{% url 'get_rto_code' %}",
+                data:{
+                    'state':state
+                },
+                //dataType:'json',
+                success:function(data){
+                    
+                    $('#r_t_o').empty();
+                    for (var i=0;i<data.length;i++){
+                        
+                        var c=data[i].reg_no;
+                        $('#r_t_o').append(`<option value="${c}">${c}</option>`)
+                    }
+                    
+                }
+
+
+            })
+    });
+ 
+$("#make").change(function(){
+            var make=$("#make").val();
+            
+            $.ajax({
+
+                url:"{% url 'get_make_model' %}",
+                data:{
+                    'make':make
+                },
+                //dataType:'json',
+                success:function(data){
+                    
+                    $('#model').empty();
+                    for (var i=0;i<data.length;i++){
+                        
+                        var c=data[i].model;
+                        $('#model').append(`<option value="${c}">${c}</option>`)
+                    }
+                    
+                }
+
+
+            })
+    });
+});
+    </script>
+    </head>
+    <body>
+            <form method="POST" class="b">
+                    {% csrf_token %}
+        <div class="container" style="margin-top: 20px;">
+            <div class="row">
+                    
+                <div col-lg-3></div>
+                <div col-lg-6>
+                    
+                    
+                        <h1 style="color: indigo;"><span style="color: crimson;border-bottom: 3px solid crimson;">Policy </span> Detail</h1>
+                        <div class="container">
+                                <h1 style="font-size: 20px;font-weight: bold;">Hass Genral Insurance Company Limited</h1>
+                                <br>
+                                <table style="width:100%;">
+                                    <tr>
+                                        <th>Insurance Name</th>
+                                        <td>{{user.first_name}} {{user.mid_name}} {{user.last_name}}</td>
+                                        <th>RTO</th>
+                                        <td>{{rto}}</td>
+                                        <th>Registration State:</th>
+                                        <td>{{stat}}</td>
+                                        <th>Registration City:</th>
+                                        <td>{{city}}</td>
+                                        
+                                    </tr><tr>
+                                        <th>Corr.Address/
+                                          <br>  Place of Supply</th>
+                                        <td colspan="5">{{user.address}},{{user.city}},{{user.state}}</td>
+                                        <th>Price of Policy:</th>
+                                        <td>{{price}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Mobile No.</th>
+                                        <td>{{user.mobile}}</td>
+                                        <th>Phone No.</th>
+                                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                        <th>Email</th>
+                                        <td>{{user.email}}</td>
+                                        <th>Vehicle Registration No.</th>
+                                        <td>{{rto}}-{{series}}-{{number}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Period of Insurance</th>
+                                        <td>From Date & Time</td>
+                                        <th colspan="2">{{date}} </th>
+                                        <td>To Date & Time </td>
+                                        <th>{{ex}}</th>
+                                        <th>Policy Issuance Date </th>
+                                        <td>{{date}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Make</th>
+                                        <th>Model - Variant</th>
+                                        <th>Engine No </th>
+                                        <th>Chassis No </th>
+                                        <th>Mfg Yr</th>
+                                        <th>Seats <br>(Incl.
+                                            of side car)</th>
+                                        <th>Fuel Type</th>
+                                        <th>CC / Watts</th>
+                                    </tr>
+                                    <tr>
+                                        <td>{{make}}</td>
+                                        <td>{{model}}</td>
+                                        <td>{{engine}}</td>
+                                        <td>{{chassis}}</td>
+                                        <td>{{year}}</td>
+                                        <td>{{seat}}</td>
+                                        <td>{{fuel}}</td>
+                                        <td>{{cc}}</td>
+                                    </tr>
+                                      
+                                </table>
+                            <div class="row">
+                            <div class="container">
+                                <hr>
+                             <a href="{% url 'payment' %}"><input type="submit" class="btn btn-danger" value="PROCESS TO PAY"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                
+                
+            </div>
+        </div>
+    </form>
+    </body>
+    
+    </html>
+    {% endblock %}

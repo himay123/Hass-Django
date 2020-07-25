@@ -2,131 +2,261 @@
 {% load static %}
 {% block containt %}
 
- 
+
     <style>
         .head1
         {
-            height: 500px;
-            background-image: url("{% static 'images/car4.jpg' %}");
+            height: 800px;
+            background-image: url("{% static 'images/i4.svg' %}");
             width: 100%;
             background-size: cover;
             background-position: center;     
 			margin-top:-20px;
         }
-        
+ 
         
     </style>
 
     
         <div class="head1" class="img-responsive">
             <div style="width: 100%; background-color:rgba(0,0,0,0.5); height:100%">
-              
-                <label style="font-size: 70px; font-weight: 500; color:white; margin-left:500px;margin-top:150px;">
-                    ABOUT US
-                </label>
+              <marquee behaviour="scroll" direction="left" scrollamount="10">
+                <label style="font-size: 20px; font-weight: bolder; color:white;margin-top:10px;">
+                    {{claim_msg}}{{msg}}
+				</label>
+			</marquee>
             </div>
         </div>
-        <div class="container">
-			<div class="row">
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					<lable style="font-size: 70px;color: skyblue;">01</lable><br>
-					<lable style="font-size: 40px;color: black;">BEST AGENT</lable>
-					<img src="{% static 'images/c1.jpg' %}" class="img-responsive" style="height: 70%;width: 100%">
-					<button class="btn btn-info btn-lg" style="margin-top: 40px;">READ MORE</button>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<lable style="font-size: 70px;color: skyblue;">02</lable><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<lable style="font-size: 40px;color: black;">DISCOUNT</lable>
-					<img src="{% static 'images/c3.jpg' %}" class="img-responsive" style="height: 70%;width: 100%">
-					<button class="btn btn-info btn-lg"  style="margin-top: 50px;">READ MORE</button>
-				</div>
-				<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-					<lable style="font-size: 70px;color: skyblue;">03</lable><br>
-					<lable style="font-size: 40px;color: black;">QUALITY</lable>
-					<img src="{% static 'images/c2.jpg' %}" class="img-responsive" style="height: 70%;width: 120%;">
-					<button class="btn btn-info btn-lg"  style="margin-top: 50px;">READ MORE</button>
-				</div>
-			</div>
-		</div>
-      
-      <div class="container" id="blok">
-        	<table style="margin-left: 60px;border: 0px;">
-        		<tr>
-        			<td style="padding-left: 70px;">
-						<lable style="font-size: 70px;color: skyblue;">01</lable>
+              <div class="container" style="margin-top: 50px;">
+				  <div class="row">
+					  <div class="col-lg-1">
+						  <img src="{% static 'images\i1.svg' %}" alt="">
+					  </div>
+					  <div class="col-lg-2">
+					
+							<span>Certified &amp; Licensed by</span>
+							<span class="title-lg" style="font-weight:bold;">IRDAI (Reg.No.158)</span>
+							<span style="font-size:13px;">Indian Insurance Regulator</span>
 						
-        			</td>
-        			<td style="padding-left: 70px;">
-        				<lable style="font-size: 70px;color: skyblue;">02</lable>
-        			</td>
-        			<td style="padding-left: 70px;">
-        				<lable style="font-size: 70px;color: skyblue;">03</lable>
-        			</td>
-        		</tr>
-        		<tr>
-        			<td style="padding-left: 70px;">
-        				<lable style="font-size: 50px;color: black;">BEST AGENT</lable>
-        			</td>
-        			<td style="padding-left: 70px;">
-        				<lable style="font-size: 50px;color: black;">DISCOUNT</lable>
-        			</td>
-        			<td style="padding-left: 70px;">
-        				<lable style="font-size: 50px;color: black;">QUALITY</lable>
-        			</td>
-        		</tr>
-        		<tr>
-        			<td style="padding-left: 70px;">
-        				<img src="{% static 'images/c1.jpg' %}" style="height: 70%;width: 100%">
-        			</td>
-        			<td style="padding-left: 70px;">
-        				<img src="{% static 'images/c3.jpg' %}" style="height: 70%;width: 100%">
-        			</td>
-        			<td style="padding-left: 20px;">
-        				<img src="{% static 'images/c2.jpg' %}" style="height: 70%;width: 120%">
-        			</td>
-        		</tr>
-        		<tr>
-        			<td style="padding-left: 70px;padding-top: 40px;">
-        				<button class="btn btn-info btn-lg">READ MORE</button>
-        			</td>
-        			<td style="padding-left: 70px;padding-top: 40px;">
-        				<button class="btn btn-info btn-lg">READ MORE</button>
-        			</td>
-        			<td style="padding-left: 70px;padding-top: 40px;">
-        				<button class="btn btn-info btn-lg">READ MORE</button>        				
-        			</td>
-        		</tr>
-			</table>
-		 </div>
-		 <div style="height: 300px;width: 100%;background-color: #000000;margin-top: 25px;">
-			<h2 style="text-align: center;color: white;font-weight: 10;padding-top: 10px">THE CLIENTS’ COMMENTS</h2>
-		
-        	<table style="margin-left: 240px;border: 0px;margin-top: 50px;">
-        		<tr>
-        			<td style="padding-left: 70px;">
-        				<lable style="font-size: 50px;color: skyblue;">Mr.Sharma</lable>
-        			</td>
-        			<td style="padding-left: 70px;">
-        				<lable style="font-size: 50px;color: skyblue;">Mrs.Patel</lable>
-        			</td>
-        			<td style="padding-left: 70px;">
-        				<lable style="font-size: 50px;color: skyblue;">Mr.Roy</lable>
-        			</td>
-        		</tr>
-        		<tr>
-        			<td style="padding-left: 70px;padding-top: 30px;">
-        				<lable style="font-size: 20px;color: white;">"Best site for insurance service"</lable>
-        			</td>
-        			<td style="padding-left: 70px;padding-top: 30px;">
-        				<lable style="font-size: 20px;color: white;">"Awesome Website"</lable>
-        			</td>
-        			<td style="padding-left: 70px;padding-top: 30px;">
-        				<lable style="font-size: 20px;color: white;">"Best for Security"</lable>
-        			</td>
-				</tr>
-				</table>
+					  </div>
+
+					  <div class="col-lg-1 col-lg-offset-1">
+						<img src="{% static 'images\i2.svg' %}" alt="">
+					  </div>
+					  <div class="col-lg-2">
+						<span>Trusted by</span>
+						<span class="title-lg" style="font-weight:bold;">25 Lakh Indians</span><br>
+						<span style="font-size:13px;">for their insurance needs</span>
+					  </div>
+					  <div class="col-lg-1 col-lg-offset-1 ">
+						<img src="{% static 'images\i3.svg' %}" alt="">
+					  </div>
+					  <div class="col-lg-2">
+						<span>Avail cashless Facility</span>
+						<span class="title-lg" style="font-weight:bold;">1000+ Garages</span><br>
+						<span style="font-size:13px;">Pan India</span>
+					  </div>
+				  </div>
+				  
+			  </div>
+			  <hr>
+			  <h1 class="text-center" style="font-size: 30px;">Buy Policy To Experience our Service</h1>
+			  <center><a href="{% url 'select_plan' %}" class="btn btn-warning btn-lg">BUY NOW</a></center>
+			  
+			  <div class="jumbotron" style="border-radius: 0px; margin-top: 50px;">
+				<h1 class="text-center" style="font-size: 30px;margin-top: -10px;">Common mistakes when comparing car insurance quotes</h1>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-5 col-lg-offset-1">
+							<div class="well" style="background-color: white; height: 260px;">
+								  <h1 style="font-size: 25px;">How do people car insurance compare quotes generally?</h1>
+								  <ul style="font-size: 18px;">
+									  <li>Low Premium</li>
+									  <li>Low Premium</li>
+									  <li>Low Premium</li>
+								  </ul>
+							</div>
+						</div>
+						<div class="col-lg-5">
+							<div class="well" style="background-color: white;height: 260px;">
+								<h1 style="font-size: 25px;">But how should car insurance quotes be compared?</h1>
+								<ul style="font-size: 18px;">
+									<li>Look for the Right Insured Declared Value (IDV)</li>
+									<li>Check the Service Quality of the Insurance Company</li>
+									<li>Check the Claim Settlement History of the Insurance Company</li>
+								</ul>
+							</div>
+						</div>
+					</div>
 				</div>
-				<br><br>
-        
-	
+			  </div>
+			  <br>
+			   <h1 class="text-center" style="font-size: 30px;">Claim Your Policy Now...!</h1>
+			<center><a href="{% url 'c_claim' %}" class="btn btn-warning btn-lg">CLAIM NOW</a></center>
+			<div class="jumbotron" style="border-radius: 0px; margin-top: 50px; height: 500px;">
+				<h1 class="text-center" style="font-size: 30px;margin-top: -10px;">How should you select the best Vehicle Insurance plan?</h1><br>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4">
+							<div class="well" style="background-color: white; height: 350px;">
+								 <span class="text-left" style="font-size: 18px;font-weight: bold;">
+									Look for the IDV
+									<br> offered
+								 </span>
+								 <span class="text-right"><img src="{% static 'images/i5.svg' %}" alt="" height="40px" style="margin-left: 130px; margin-top: -35px;"></span>
+								 <p style="font-size: 15px;color: #817e7e;margin-top: 50px;">IDV is the value of your car that you will receive if there’s theft or total loss. So, it is wise to check the IDV offered by the insurer. Caution: Insurers often lower your IDV to lower the premium Digit gives you the option to set it while buying your car insurance policy online.</p>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="well" style="background-color: white;height: 350px;">
+								<span class="text-left" style="font-size: 18px;font-weight: bold;">
+									Check for the services
+									<br> offered
+								 </span>
+								 <span class="text-right"><img src="{% static 'images/i6.svg' %}" alt="" height="70px" style="margin-left: 170px; margin-top: -35px;"></span>
+								 <p style="font-size: 15px;color: #817e7e;margin-top: 50px;">Look for services that gives you convenience. Caution: Some insurers offer lower prices however not so great services Digit offers are convenient services like Doorstep Pickup, Repair & Drop with 6 months Warranty, 24*7 Customer Care Support, Cashless at 1000+ Garages, Advance Cash for repairs and many more.</p>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="well" style="background-color: white;height: 350px;">
+								<span class="text-left" style="font-size: 18px;font-weight: bold;">
+									Speed of claims of
+									<br> the insurer
+								 </span>
+								 <span class="text-right"><img src="{% static 'images/i7.svg' %}" alt="" height="60px" style="margin-left: 130px; margin-top: -35px;"></span>
+								 <p style="font-size: 15px;color: #817e7e;margin-top: 50px;">Claims is the moment of truth. You should always check how fast does the insurer settle claims! Caution: Claim Settlement numbers is an important yardstick to be checked 90.4% of Digit’s claims settled are within just 30 days. This means our claims are fast and hassle-free.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			  </div>
+			  <h1 class="text-center" style="font-size: 30px;">Why switch to Digit Vehicle Insurance?</h1>
+			  <p class="text-center" style="font-size: 20px;">Because we treat you like a VIP</p>
+			  <div class="container">
+				  <div class="row">
+					  <div class="col-lg-3 col-lg-offset-1">
+						  <img src="{% static 'images\i8.svg' %}" alt="" class="img-responsive" style="height: 200px;">
+						  <h1 class="text-center" style="font-size: 25px;font-weight: bold;">Super-Fast claims</h1>
+						  <p style="font-size: 15px;color: #817e7e;">90.4% claims settled in 30 days, with superfast claim process</p>
+					  </div>
+					  <div class="col-lg-3 col-lg-offset-1">
+						<img src="{% static 'images\i9.svg' %}" alt=""  class="img-responsive" style="height: 200px;">
+						<h1 class="text-center" style="font-size: 25px;font-weight: bold;">Cashless Repairs</h1>
+						  <p style="font-size: 15px;color: #817e7e;">1400+ Cashless Garages for you to choose from across India</p>
+					  </div>
+					  <div class="col-lg-3 col-lg-offset-1">
+						<img src="{% static 'images\i10.svg' %}" alt=""  class="img-responsive" style="height: 200px;">
+						<h1 class="text-center" style="font-size: 25px;font-weight: bold;">Doorstep Pickup & Repair</h1>
+						  <p style="font-size: 15px;color: #817e7e;">Doorstep pickup, repair and drop with 6 months repair warranty</p>
+					  </div>
+				  </div>
+				  <div class="row">
+					<div class="col-lg-3 col-lg-offset-1">
+						<img src="{% static 'images\i11.svg' %}" alt=""  class="img-responsive" style="height: 200px;">
+						<h1 class="text-center" style="font-size: 25px;font-weight: bold;">24*7 Support</h1>
+						  <p style="font-size: 15px;color: #817e7e;">24*7 call facility even on National Holidays</p>
+					</div>
+					<div class="col-lg-3 col-lg-offset-1">
+						<img src="{% static 'images\i12.svg' %}" alt=""  class="img-responsive" style="height: 200px;">
+						<h1 class="text-center" style="font-size: 25px;font-weight: bold;">Smartphone Enabled Self Inspection</h1>
+						  <p style="font-size: 15px;color: #817e7e;">Just click the damages on your phone and you are done</p>
+					</div>
+					<div class="col-lg-3 col-lg-offset-1">
+						<img src="{% static 'images\i13.svg' %}" alt=""  class="img-responsive" style="height: 200px;">
+						<h1 class="text-center" style="font-size: 25px;font-weight: bold;">High IDV per rupee</h1>
+						  <p style="font-size: 15px;color: #817e7e;">We give you the option to select the right IDV for your car</p>
+					</div>
+				</div>
+			  </div>
+			  <div class="jumbotron">
+				  <div class="container">
+					<h1 class="text-center" style="font-size: 30px;">What’s Covered in Digit Vehicle Insurance</h1><br>
+					 <div class="row">
+						  <div class="col-lg-3 col-lg-offset-1">
+							  <div class="well" style="background: white;height: 290px;">
+									<img src="{% static 'images\i14.svg' %}" alt="" height="100" style="margin-left: 50px;">
+									<h1 class="text-center" style="font-size: 25px;font-weight: bold;">Accidents</h1>
+									<p style="font-size: 15px;color: #817e7e;margin-top: 30px;">Common damages to your own car like accidents & collisions</p>
+							</div>
+						  </div>
+						  <div class="col-lg-3 col-lg-offset-1">
+							<div class="well" style="background: white;height: 290px;">
+								<img src="{% static 'images\i15.svg' %}" alt="" height="70" style="margin-left: 50px;">
+								<h1 class="text-center" style="font-size: 25px;font-weight: bold;">Theft</h1>
+									<p style="font-size: 15px;color: #817e7e;margin-top: 30px;">If unfortunately your car gets stolen</p>
+							</div>
+						</div>
+						<div class="col-lg-3 col-lg-offset-1">
+							<div class="well" style="background: white;height: 290px;">
+								<img src="{% static 'images\i16.svg' %}" alt="" height="70" style="margin-left:30px;">
+								<h1 class="text-center" style="font-size: 25px;font-weight: bold;">Fire</h1>
+									<p style="font-size: 15px;color: #817e7e;margin-top: 30px;">Common damages due to Fire</p>
+							</div>
+						</div>
+					  </div>
+					  <div class="row">
+						<div class="col-lg-3 col-lg-offset-1">
+							<div class="well" style="background: white;height: 290px;">
+								  <img src="{% static 'images\i17.svg' %}" alt="" height="70" style="margin-left: 40px;">
+								  <h1 class="text-center" style="font-size: 25px;font-weight: bold;">Natural Disasters</h1>
+									<p style="font-size: 15px;color: #817e7e;margin-top: 30px;">Damages due to any natural calamities</p>
+						  </div>
+						</div>
+						<div class="col-lg-3 col-lg-offset-1">
+						  <div class="well" style="background: white;height: 290px;">
+							  <img src="{% static 'images\i18.svg' %}" alt="" height="70" style="margin-left: 50px;">
+							  <h1 class="text-center" style="font-size: 25px;font-weight: bold;">Personal Accident</h1>
+									<p style="font-size: 15px;color: #817e7e;margin-top: 30px;">If there is a car accident and unfortunately it leads to death or disability of the owner</p>
+						  </div>
+					  </div>
+					  <div class="col-lg-3 col-lg-offset-1">
+						  <div class="well" style="background: white;height: 290px;">
+							  <img src="{% static 'images\i19.svg' %}" alt="" height="50" style="margin-left: 10px;">
+							  <h1 class="text-center" style="font-size: 25px;font-weight: bold;">Third Party Losses</h1>
+									<p style="font-size: 15px;color: #817e7e;margin-top: 30px;">Damage your car causes to someone else's car or any other property</p>
+						  </div>
+					  </div>
+					</div>
+				  </div>
+			  </div>
+			  <div class="jumbotron" style="background: white;">
+				<h1 class="text-center" style="font-size: 30px;">What’s not Covered</h1>
+			  <p class="text-center" style="font-size: 20px;color: #817e7e;">It is equally important to know what’s not covered in your car insurance policy, so that there are no surprises when you make a claim. Here are some such situations:</p>
+			  <div class="container">
+				  <div class="row">
+					<div class="col-lg-4">
+						<div class="well" style="background: white;height: 140px;">
+							<p style="color: #817e7e;">Damage due to drunk driving</p>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="well" style="background: white;height: 140px;">
+						<p style="color: #817e7e;">Driving without a valid driving license</p>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="well" style="background: white;height: 140px;">
+						<p style="color: #817e7e;">Driving with a learner’s license and without a valid driving license holder in the passenger’s seat</p>
+						</div>
+					</div>
+				  </div>
+				  <div class="row">
+					<div class="col-lg-4">
+						<div class="well" style="background: white;height: 140px;">
+						<p style="color: #817e7e;">Damage which is not a direct result of an accident</p>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="well" style="background: white;height: 140px;">
+						<p style="color: #817e7e;">Damage due to contributory negligence</p>
+						</div>
+					</div>
+					
+				  </div>
+			  </div>
+			</div>
+			<h1 class="text-center" style="font-size: 30px;">Renew your Vehicle insurance Today!</h1>
+			<center><a href="{% url 'renew' %}" class="btn btn-warning btn-lg">Renew Now</a></center>  
+				
+
 {% endblock %}

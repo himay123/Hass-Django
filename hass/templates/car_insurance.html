@@ -2,49 +2,208 @@
 {% load static %}
 {% block containt %}
         <link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css">
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <title>parocess</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+    <style>
+        .b {
+                 border:thin black solid;
+                 padding: 25px;
+                 
+            }
+    </style>
+        <script>
+            $(document).ready(function(){
+                
+    $("#states").change(function(){
+            var state=$("#states").val();
+            
+            $.ajax({
+
+                url:"{% url 'get_place' %}",
+                data:{
+                    'state':state
+                },
+                //dataType:'json',
+                success:function(data){
+                    
+                    $('#place').empty();
+                    for (var i=0;i<data.length;i++){
+                        
+                        var c=data[i].place;
+                        $('#place').append(`<option value="${c}">${c}</option>`)
+                    }
+                    
+                }
+
+
+            })
+    });
+                
+            $("#place").change(function(){
+                    var place=$("#place").val();
+                    
+                    $.ajax({
+        
+                        url:"{% url 'get_rto_code' %}",
+                        data:{
+                            'place':place
+                        },
+                        //dataType:'json',
+                        success:function(data){
+                            
+                            $('#r_t_o').empty();
+                            for (var i=0;i<data.length;i++){
+                                
+                                var c=data[i].reg_no;
+                                $('#r_t_o').append(`<option value="${c}">${c}</option>`)
+                            }
+                            
+                        }
+        
+        
+                    })
+            });
+         
+        $("#make").change(function(){
+                    var make=$("#make").val();
+                    
+                    $.ajax({
+        
+                        url:"{% url 'get_make_model' %}",
+                        data:{
+                            'make':make
+                        },
+                        //dataType:'json',
+                        success:function(data){
+                            
+                            $('#model').empty();
+                            for (var i=0;i<data.length;i++){
+                                
+                                var c=data[i].model;
+                                $('#model').append(`<option value="${c}">${c}</option>`)
+                            }
+                            
+                        }
+        
+        
+                    })
+            });
+     $("form[name='car_insu']").validate({
+
+    rules: {
+      states:{
+          required:true
+      },
+      r_t_o:{
+          required:true
+      },
+      series:{
+          required:true,
+          minlength:2,
+          maxlength:2
+      },
+      num:{
+          required:true,
+          digits:true,
+          minlength:4,
+          maxlength:4
+      },
+      check:"required"
+    },
+    
+    submitHandler: function(form) {
+       form.submit();
+    }
+
+	
+  });
+
+	$("form input").focusout(function () {
+        $(this).valid();
+    });
+        });
+            </script>
+        
         <div class="container">
-            <div class="row centered-form">
-                <div class="col-md-6 col-sm-offset-2 col-md-offset-2">
+            <div class="row">
+                <div class="col-lg-8">
             
                 <h1> Get What Your Car needs.</h1>
-                  <form name="login" method="POST">
-                  <div class="input-div one">
-                      
-                      <div>
-                          <h5 >Vehical Registration No.</h5>
+                  <form name="car_insu" method="POST" style="width: 100%;color: white;">
+                      {% csrf_token %}
+                      <label>Vehical Register No*</label>
+                      <div class="row">
                           
-                          <input type=text class="input" name="registration">
-                          
-                      </div>
-                  </div>
-                  <div class="input-div two">
-                      
-                      <div>
-                          <h5>Mobile Number</h5>
-                          <input type=password class="input">
-                      </div>
-                  </div>
-                  <div class="input-div two">
-                      <div>
-                  <h5>Email</h5>
-                  <input type="text" name='name' class="input">
-                  </div>
-                 </div>
-                <div style="color: white;"> <input type="checkbox" name="input-check"> I agree to the <a href="#" style="text-decoration:none;color: white;">Terms and Conditions</a></div>
+                        <div class="col-lg-3">
+                            <div class="form-group">
+                              <select name="states" id="states" class="form-control">
+                                  <option value="">select state</option>
+                                  {% for state in states %}
+                                  <option value="{{state.state}}">{{state.state}}</option>
+                                  {% endfor %}
+                              </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <select name="place" id="place" class="form-control">
+                                <option value="">select Place</option>
+                            </select>   
+                        </div>
+                        <div class="col-lg-2">
+                            <select name="r_t_o" id="r_t_o" class="form-control">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="col-lg-2">
+                           <input type="text" class="form-control" name="series" placeholder="e.g. AZ" style="text-transform: uppercase;">
+                        </div>
+                        <div class="col-lg-2">
+                            <input type="number" class="form-control" name="num" placeholder="e.g. 1234" >
+                        </div>
+                    </div>
+                         <div class="row">
+                             <div class="col-lg-12">
+                                <div class="form-group"> 
+                                    <label for="mobile">Mobile Number*</label> 
+                                    <input type="text" class="form-control" name="mobile" placeholder="Mobile" value="{{ user.mobile }}"  readonly>
+                                  </div>
+                             </div>
+                         </div>
+                       
+                  
+                         <div class="row">
+                            <div class="col-lg-12">
+                               <div class="form-group"> 
+                                   <label for="email">Email Id*</label>
+                                 <input type="text" class="form-control" name="email" placeholder="Email" value="{{ user.email}}"  readonly>
+                       </div>
+                   </div>
+                </div>
+                <div style="color: white;"> <input type="checkbox" name="check"> I agree to the <a href="#" style="text-decoration:none;color: white;">Terms and Conditions</a></div>
                 <br><br>
-                 <a href="{% url 'select_plan' %}" class="btn-primary btn-orange js-car-register">Get Quote</a>
+                 <a href="{% url 'select_plan' %}" class="btn-primary btn-orange js-car-register"><input type="submit" value="Process To Get"></a>
                  
               </form>
           </div>
       
          
-         <div class="col-md-4">
+         <div class="col-lg-4">
             <div class="renew-box"><img src="{% static 'images/renewal_2.svg' %}" width="50px"> 
                 <h2 style="color: white;">Already have a car policy from us?</h2> 
                 <a href="{% url 'renew' %}" class="btn-primary btn-orange btn-blue">Renew in 2 minutes</a></div>
          </div>
          </div>
      </div>
-       
+     <br><br>
+     <div class="form-group">
+        <a href="{% url 'logout' %}"><input type="button" class="form-control btn btn-success" value="LOG OUT"></a>     
+     </div>
         
     {% endblock %}

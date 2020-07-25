@@ -1,0 +1,85 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+
+        <div class="container" style="margin-top: 20px;">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="panel panel-info">
+                        <div class="panel-heading" style="height:150px;">
+                                <h1 class="panel-title text-center" style="line-height:120px; font-size: 50px; font-weight: 600;">Services offered</h1>
+                                 </div>
+                                 <div class="panel-body">
+                                    <strong>Covrage Readous</strong>
+                                    <hr>
+                                    <strong>Number Of Services</strong>
+                                    <hr>
+                                    <strong>Free Towing</strong>
+                                    <hr>
+                                    <strong>On-site Repairs</strong>
+                                    <br><br>Battery Jump Start
+                                    <br><br>Flat-Tyre Assistance
+                                    <br><br>Locked/Lost Key
+                                    <br><br>Fuel Delivery
+                                    <br><br>Wrong Fueling
+                                    <br><br>On-site Minor Repairs
+                                    <hr>
+                                    <strong>Taxi Benefit</strong>
+                                    <hr>
+                                    <strong>Medical Coordination</strong>
+                                    <hr>
+                                    <strong>Onward Journey</strong>
+                                    
+                                </div>
+                               </div> 
+                </div>
+                <div class="col-lg-3">
+                    <div class="panel panel-info">
+                        <div class="panel-heading" style="height:50px;">
+                                <h1 class="panel-title text-center" style="line-height:40px; font-size: 25px; font-weight: 600;">Standard</h1>
+                                 </div>
+                                 <div class="panel-body">
+                                     <h1 class="text-center" style="font-size: 40px; font-weight:700;height: 45px;">₹ {{standerd}}</h1>
+                                     <hr><strong>Anywhere in India</strong>
+                                     <hr><strong>3 times / yr</strong>
+                                     <hr><strong>Up to 50 kms</strong>
+                                     <hr><br><img src="{% static 'img/icon_plan1.png' %}" style="margin-left: 100px;">
+                                     <br><br><img src="{% static 'img/icon_plan1.png' %}" style="margin-left: 100px;">
+                                     <br><br><img src="{% static 'img/icon_plan1.png' %}" style="margin-left: 100px;">
+                                     <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Free fuel delivery - 5 litres
+                                     <br><br><img src="{% static 'img/icon_plan1.png' %}" style="margin-left: 100px;">
+                                     <br><img src="{% static 'img/icon_plan1.png' %}" style="margin-left: 100px;">
+                                     <hr><img src="{% static 'img/icon_plan1.png' %}" style="margin-left: 100px;">
+                                     <hr><img src="{% static 'img/icon_plan1.png' %}" style="margin-left: 100px;">
+                                     <hr><img src="{% static 'img/icon_plan2.png' %}" style="margin-left: 100px;">
+                                     <hr><a href="{% url 'towing_plan' cat='Lost Or Locked Key' price='1599' %}"><button class="btn btn-danger btn-lg" style="margin-left: 50px;">BUY NOW</button></a>
+                                    </div>
+                                
+                               </div> 
+                </div>
+                <div class="col-lg-3">
+                    <div class="panel panel-info">
+                        <div class="panel-heading" style="height:50px;">
+                                <h1 class="panel-title text-center" style="line-height:40px; font-size: 25px; font-weight: 600;">Elite</h1>
+                                 </div>
+                                 <div class="panel-body">
+                                        <h1 class="text-center" style="font-size: 40px; font-weight:700">₹ {{elite}}</h1>
+                                        <hr><strong>Anywhere in India</strong>
+                                     <hr><strong>5 times / yr</strong>
+                                     <hr><strong>Unlimited kilometers</strong>
+                                     <hr><br><img src="{% static 'img/icon_plan1.png' %}" style="margin-left: 100px;">
+                                     <br><br><img src="{% static 'img/icon_plan1.png' %}" style="margin-left: 100px;">
+                                     <br><br><img src="{% static 'img/icon_plan1.png' %}" style="margin-left: 100px;">
+                                     <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Free fuel delivery - 5 litres
+                                     <br><br><img src="{% static 'img/icon_plan1.png' %}" style="margin-left: 100px;">
+                                     <br><img src="{% static 'img/icon_plan1.png' %}" style="margin-left: 100px;">
+                                     <hr><img src="{% static 'img/icon_plan1.png' %}" style="margin-left: 100px;">
+                                     <hr><img src="{% static 'img/icon_plan1.png' %}" style="margin-left: 100px;">
+                                     <hr><img src="{% static 'img/icon_plan1.png' %}" style="margin-left: 100px;">
+                                     <hr><a href="{% url 'towing_plan' cat='Lost Or Locked Key' price='2399' %}"><button class="btn btn-danger btn-lg" style="margin-left: 50px;">BUY NOW</button></a>                                </div>
+                               </div> 
+                </div>
+            </div> 
+        </div>
+
+    {% endblock %}

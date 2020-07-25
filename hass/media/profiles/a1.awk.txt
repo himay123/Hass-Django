@@ -1,0 +1,81 @@
+a=1
+while test $a -le 100
+do
+if [ $a -le 9 ]
+then
+echo " ">bca00$a
+fi
+a=`expr $a + 1`
+done
+
+a=1
+while test $a -le 100
+do
+if [ $a -le 9 ]
+then
+echo " ">bca00$a
+fi
+a=`expr $a + 1`
+done
+
+
+BEGIN{
+
+	printf " employee detail "
+	fs="|"
+	printf FILENAME
+	}$4=="marketing" && $6>6000{
+	cnt++;total+=$6
+	printf "%2d%2d$-125%-125%-125%6d\n",NR,cnt,$2,$3,$4,$6
+}
+END{
+printf "total =%4d \n" , total
+}
+
+
+BEGIN{
+printf "employee detail:";
+}$6>1000 && $3=="manager" { cnt++; total+=$6;
+hra+=$6*.10; da+=$6*.06; printf "%d %s %d %d", $3,$6,$6*.10,$6*.06}
+
+END{ printf "%-d %-d %-d %-d",total/cnt,hra/cnt,da/cnt}
+
+
+
+
+
+
+
+//palindrom
+
+
+BEGIN{
+print "........"
+print "palindrom word"
+print "........"
+}
+{
+for(i=1;i<=NF;i++)
+{
+f=1
+a=0
+for(j=length($i);j>0;j--)
+{
+if(substr($i,j,1)!=substr($i,f,1))
+{
+a=1
+}
+f++
+}
+if(a==0)
+{
+print $i
+palin++
+}
+}
+}
+END{
+printf "......"
+printf "total palindrom words:%d \n",palin
+printf "....."
+}

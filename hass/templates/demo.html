@@ -1,0 +1,19 @@
+{% extends 'master1.html' %}
+{% load static %}
+{% block containt %}
+<script>
+  $("#myInput").geocomplete({
+  formId: "myForm"
+})
+</script>
+<br>
+<br>
+<div id="myForm">
+  <input id="myInput" data-geocomplete="street address" />
+  <br><br>
+  <select data-geocomplete="country"></select>
+  <input data-geocomplete="formatted phone number" />
+  ...
+</div>
+
+{% endblock %}

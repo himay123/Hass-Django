@@ -1,0 +1,282 @@
+{% extends 'rantal_master.html' %}
+{% load static %}
+{% block containt %}
+<script>
+    $(document).ready(function(){
+    $("#states").change(function(){
+            var state=$("#states").val();
+            
+            $.ajax({
+
+                url:"{% url 'get_city' %}",
+                data:{
+                    'state':state
+                },
+                //dataType:'json',
+                success:function(data){
+                    
+                    $('#city').empty();
+                    for (var i=0;i<data.length;i++){
+                        
+                        var c=data[i].city_name;
+                        $('#city').append(`<option value="${c}">${c}</option>`)
+                    }
+                    
+                }
+        })
+    });
+});
+</script>
+ 
+<style>
+    .head1
+    {
+        height: 500px;
+        background-image: url("{% static 'images/unnamed.jpg' %}");
+        width: 100%;
+        background-size: cover;
+        background-position: center;     
+        
+    }
+    .search {
+    width: 540px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 5px;
+    line-height: 60px;
+    text-align: left;
+    text-indent: 20px;
+    font-size: 18px;
+    font-weight: 400;
+    position: relative;
+    cursor: pointer;
+    color: #323a44;
+    text-decoration: none;
+    display: block;
+    margin-left: 400px;
+    margin-top: 30px;
+}
+.advantage {
+    background-color: white;
+    padding: 30px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+h3 {
+    color: #70ad4d;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0;
+}
+.carGroup {
+    background-size: cover;
+    height: 500px;
+    color: #fff;
+}
+.carGroup h2 {
+    text-align: center;
+    padding-top: 30px;
+}
+.carGroup .title {
+    text-align: center;
+    font-size: 18px;
+    margin: 0;
+}
+.carGroup .items {
+    width: 70%;
+    margin: 0 auto;
+    color: #fff;
+    margin-top: 100px;
+    position: relative;
+}
+.carGroup .items .item {
+    display: none;
+}
+.carGroup .items .item.carListActive {
+    display: block;
+}
+
+h2{
+font-size: 24px;
+    text-transform: uppercase;
+    margin: 0;
+    }
+    .carGroup .items .item .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+}
+.carGroup .items .item .row img {
+    height: 200px;
+}
+.carGroup .items .item .row .details .name {
+    font-size: 60px;
+    text-transform: uppercase;
+}
+.carGroup .items .item .row .details .price {
+    font-size: 24px;
+    margin: 0;
+}
+.carGroup .items .item .row .details .groups {
+    text-transform: uppercase;
+    width: 500px;
+}
+.carGroup .items .item .desc {
+    font-size: 30px;
+    text-align: center;
+}
+ 
+</style>
+
+
+    <div class="head1" class="img-responsive">
+        <div style="width: 100%; background-color:rgba(0,0,0,0.5); height:100%">
+          
+            <label style="font-size: 50px; font-weight: 500; color:white; margin-left:250px;margin-top:150px;">
+                DRIVE IN THE CITY & OUTSTATION
+            </label>
+            <br>
+            <label style="font-size:30px; font-weight: 500; color:white; margin-left:400px;">Self Drive Car Rental in
+            </label>
+                       <select name="states" id="states" style="background: white;font-size: large;">
+                            <option value="">select state</option>
+                            {% for state in states %}
+                            <option value="{{state.city_state}}">{{state.city_state}}</option>
+                            {% endfor %}
+                        </select>
+                         <select name="city" id="city" style="background: white;font-size: large;">
+                            <option value="">select city</option>
+                        </select>
+                    
+        
+              
+            <a class="search" href="#" title="Start your wonderful journey" style="text-decoration: none;">Start your wonderful journey<i class="glyphicon glyphicon-chevron-right  pull-right" style="line-height: 55px; margin-right:10px;"></i></a>
+        </div>
+    </div>
+    <div class="advantage">
+        <h2>The HASS Advantage</h2>
+        <p>We simplified car rentals, so you can focus on what's important to you.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-lg-offset-2">
+                    <div class="well" style="height: 230px;">
+                    <img src="{% static 'images/r1.jpeg' %}" alt="" height="60px" width="60px" style="margin-left: 80px;">
+                    <h3 class="text-center">Fuel Cost Included</h3><br>
+                    <p>Don't worry about mileage! All fuel costs are included. If you refill fuel, we'll pay you back!</p>
+                </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="well" style="height: 230px;">
+                        <img src="{% static 'images/r6.jpeg' %}" alt="" height="60px" width="60px" style="margin-left: 80px;">
+                    <h3 class="text-center">No Hidden Charges</h3><br>
+                    <p>Our prices include taxes and insurance.<br>What you see is what you really pay!</p>
+                </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="well" style="height: 230px;">
+                        <img src="{% static 'images/r5.jpeg' %}" alt="" height="60px" width="60px" style="margin-left: 80px;">
+                    <h3 class="text-center">Flexi Pricing Packages</h3><br>
+                    <p>One size never fits all! Choose a balance of time and kilometers that works best for you.</p>
+                </div>
+            </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-lg-offset-2">
+                    <div class="well" style="height: 230px;">
+                        <img src="{% static 'images/r2.jpeg' %}" alt="" height="60px" width="60px" style="margin-left: 80px;">
+                    <h3 class="text-center">Go Anywhere</h3><br>
+                    <p>Our cars have all-India permits.  Just remember to pay state tolls and entry taxes.</p>
+                </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="well" style="height: 230px;">
+                        <img src="{% static 'images/r3.jpeg' %}" alt="" height="60px" width="60px" style="margin-left: 80px;">
+                    <h3 class="text-center">24x7 Roadside Assistance</h3><br>
+                    <p>We have round-the-clock, pan India partners. Help is never far away from you.</p>
+                </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="well" style="height: 230px;">
+                        <img src="{% static 'images/r4.jpeg' %}" alt="" height="60px" width="60px" style="margin-left: 80px;">
+                    <h3 class="text-center">Damage Insurance</h3><br>
+                    <p>All your bookings include damage insurance! Drive safe, but don’t worry!</p>
+                </div>
+                </div>
+            </div>
+        </div>
+     </div>
+        <div class="carGroup bg-image"  style="background-image: url({% static 'images\car_bg.jpg' %});">
+            <h2>A Car for every need</h2>
+            <p class="title">We have a range of cars, so something will perfectly fit your trip</p>
+            <div class="items">
+                <div id="carList" class="inner">
+                    
+                         <div class="item carListActive">
+                                <div class="row">
+                                    <img class="lazy-img" alt="LUXURY" data-src="https://s3-ap-southeast-1.amazonaws.com/zoomcar/photos/profile/24c58f1d7259354483684a3aef0f1bbfedd32155.png?1501503721" src="https://s3-ap-southeast-1.amazonaws.com/zoomcar/photos/profile/24c58f1d7259354483684a3aef0f1bbfedd32155.png?1501503721">
+                                    <div class="details">
+                                        <div class="name">LUXURY</div>
+                                        <p class="price">Price Starting at ₹ 265/hr (Fuel Free)</p><p class="groups">Cars Available: Mercedes GLA</p>
+                                    </div>
+                                </div>
+                                <p class="desc">Go out for a special meal</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                   <div class="container-fluid" style="background: #f5f5f5;">
+                    <h1 class="text-center">HOW HASS WORKS</h1>
+                    <p class="text-center">Drive yourself to an adventure and back in 5 simple steps</p>
+                       <div class="row">
+                            <div class="col-lg-1"></div>
+                            <div class="col-lg-2">
+                                <div class="well" style="background: white;height: 220px;">
+                                    <img src="{% static 'images\r7.svg' %}" alt="Book" style="margin-left: 40px;margin-top: 10px;">
+                                    <h1 class="text-center" style="font-size: 16px;">BOOK</h1>
+                                    <p>Search for and book a car on our site!</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="well" style="background: white;height: 220px;">
+                                    <img src="{% static 'images\r8.svg' %}" alt="Book" style="margin-left: 40px;margin-top: 10px;"><br>
+                                    <h1 class="text-center" style="font-size: 16px;">UPLOAD LICENSE</h1>
+                                    <p>Upload your driver’s license, and pay a small security deposit.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="well" style="background: white;height: 220px;">
+                                    <img src="{% static 'images\r9.png' %}" alt="Book" style="margin-left: 60px;height:40px;">
+                                    <h1 class="text-center" style="font-size: 16px;">UNLOCK</h1>
+                                    <p>We SMS your car details 20 minutes before pickup. Unlock it via the Zoomcar app.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="well" style="background: white;height: 220px;">
+                                    <img src="{% static 'images\r7.svg' %}" alt="Book" style="margin-left: 40px;">
+                                    <h1 class="text-center" style="font-size: 16px;">HASS</h1>
+                                    <p>Fill the start checklist in the Zoomcar app. Grab the keys from the glove-box and drive.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="well" style="background: white;height: 220px;">
+                                    <img src="{% static 'images\r10.svg' %}" alt="Book" style="margin-left: 40px;margin-top: 10px;">
+                                    <h1 class="text-center" style="font-size: 16px;">RETURN</h1>
+                                    <p>Return the car to the same location and fill the end checklist to end your trip.</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-1"></div>
+                       </div>
+                   </div>
+                   
+        
+{% endblock %}

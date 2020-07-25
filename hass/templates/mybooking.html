@@ -1,0 +1,93 @@
+{% extends 'master1.html' %}
+{% load static %}
+{% block containt %}
+
+      <style>
+        .hg
+        {
+          height: 100px;
+        }
+      </style>
+    </head>
+      <body>
+        <br>
+        <br>
+        <div class="container">
+        
+          <div class="row">
+            <div class="col-lg-4 offset-lg-1">
+              <div class="card bg-light w-100 shadow-sm rounded">
+                <div class="card-header text-center" style="font-weight: bolder;" >USER PROFILE</div>
+               <br>
+                <center> <img src="{% static 'img/d.png' %}" width="150px"></center>
+               <div class="card-body">
+                 <div class="card-title text-center">
+               <h1 class="text-danger" style="font-size: 25px; font-weight: bold;">{{ user.first_name|title }} {{ user.mid_name|title  }}<br></h1>
+               <span class="text-primary" style="color: gray; font-weight: bold;">{{ user.mobile }}</span> <br>
+                <span class="text-primary" style="color: gray; font-weight: bold;">{{ user.email| title}}</span> <br>
+                </div>
+                <div class="card-text">
+                  <ul class="list-group list-group-flush">  
+                    <li class="list-group-item"><img src="{% static 'img/c.png' %}" width="25px"><span style="color: gray; font-weight: bold;">Profile Document</span> <br></center></li>
+                    <li class="list-group-item"><img src="{% static 'img/ri.png' %}" width="25px"><span style="color: gray; font-weight: bold;">Mobile Number</span> <br></center></li>
+                    <li class="list-group-item"><img src="{% static 'img/c.png' %}" width="25px"><span style="color: gray; font-weight: bold;">Acoount</span> <br></center></li>
+                 <li class="list-group-item"> <span style="color: gray; font-weight: bold;">My Booking</span></li>
+              <li class="list-group-item"><a href="{% url 'change_password' %}"<span style="color: gray; font-weight: bold;">CHANGE PASSWORD</span></a></li>
+                  </ul>
+ </div>
+       </div>
+       </div>
+            
+            </div>
+
+
+
+
+            <div class="col-lg-6">
+            {% for i in aa %}     
+        
+          <div class="row">
+                
+                       <div class="card w-100 bg-light border border-info shadow rounded">
+                         <div class="card-header">  <H3 style="font-weight: bolder;" class="text-center">CONFIRMED BOOKING</H3></div>
+                          <br>
+                         <center><img src="{{ i.picture.url }}" class="" alt="" height="140px;" width="280px;">                
+                    </center> 
+                      <div class="card-body text-center">
+                  <div class="card-title">
+                    <h1 style="color: brown;">{{ i.model }} {{ i.make }}</h1>
+                  </div>
+                  <div class="card-text">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item"><span style="color:gray;"><img src="{% static 'img/5.png'%}" width="18px" height="18px">5 Seater</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:gray;"><img src="{% static 'img/6.png'%}" width="18px" height="18px">Automatic Gearbox</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:gray;" class="vi"><img src="{% static 'img/5.png'%}" width="18px" height="18px"> AGE LIMIT 18+</span></li>
+                    <li class="list-group-item">   <span style="color:gray;"><img src="{% static 'img/12.png'%}" width="18px" height="18px">AIR CONDITIONING </span>&nbsp;&nbsp;&nbsp;<span style="color:gray;"><img src="images/images.png" alt="" height="20px"><img src="{% static 'img/17.jfif'%}" width="18px" height="18px">Fual Policy[Full] </span>&nbsp;&nbsp;&nbsp;<span style="color:gray;" class="vi"><img src="{% static 'img/2.png'%}" width="18px" height="18px"> DIESEL</span>
+                          <li class="list-group-item"> <span style="color: gray;">{{ i.km_price }}</span>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:gray;" class="vi"><img src="{% static 'img/15.png'%}" width="18px" height="18px">Cancellation Free in 3 Days</span> <span style="color:gray;" class="vi"><img src="{% static 'img/13.png'%}" width="18px" height="18px">{{ user.address }}</span></li>
+                    <li class="list-group-item">           
+                    <span class="text-success" style="font-size: 25px;">Rs.{{ i.price }}</span>  </li>               
+                    </ul>
+                    <br>
+                    <center>  <a href="{% url 'cancel' id=i.id %}"><button class="btn btn-outline-danger">CANCEL BOOKING</button>
+                    </a></center>
+                    
+                  
+                  </div>
+                  </div>
+            
+                  </div>
+                  
+              <br>
+              </div>
+              <br>
+              
+              
+           <br>
+          {% endfor %}
+        </div>
+</body>
+
+<br>
+<br>
+</div>                                                                                                                                                                                          <br>
+                                                                                                                                                                                                          
+
+{% endblock %}

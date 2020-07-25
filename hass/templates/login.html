@@ -1,13 +1,24 @@
-{% extends 'maste.html' %}
+
 {% load socialaccount %}
 {% load static %}
-{% block containt %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 <style>
     
        .container
        {
-           margin-top: 30px;
+           margin-top: 100px;
            margin-left: 30px;
        } 
        form
@@ -31,7 +42,52 @@
 
 
 </style>
+  <script>
+          
+$(document).ready(function() {
+  // Initialize form validation on the registration form.
+  // It has the name attribute "registration"
+
+  $("form[name='login']").validate({
+    // Specify validation rules
+    rules: {
+      // The key name on the left side is the name attribute
+      // of an input field. Validation rules are defined
+      // on the right side
+    
+      username:{
+        required:true,
+       
+      },
+      password:"required",
+      choise:"required"
+    },
+    // Specify validation error messages
+    messages: {
+       password: "Please provide a password",
+       username: "Please enter a email address",
+       
+    },
+    // Make sure the form is submitted to the destination defined
+
+    // in the "action" attribute of the form when valid
+    submitHandler: function(form) {
+       form.submit();
+    }
+
+	
+  });
+
+	$("form input").focusout(function () {
+        $(this).valid();
+    });
+});
+  </script>
+  </head>
+  <body>
   
+ 
+   
     <div class="container">
         <div class="row centered-form">
             <div class="col-md-6 col-sm-offset-2 col-md-offset-4">
@@ -40,14 +96,19 @@
                             <h1 class="panel-title text-center" style="line-height:30px; font-size: 20px; font-weight: 600;">Login</h1>
                              </div>
                              <div class="panel-body">
-                                    <form method="POST">
-                                        
+                              {% for message in messages %}
+                               <div class="alert alert-danger">
+                                {{message}}
+                               </div>
+                               {% endfor %}
+                                    <form method="POST" name="login">
+                                       
                                           {% csrf_token %}
                                             <div class="form-group">
-                                               <input type="text" name="username" id="uname" class="form-control" placeholder="Enter Username">
+                                               <input type="text" name="username" id="uname" class="form-control" placeholder="Enter Email">
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" name="password" id="pass" class="form-control" placeholder="Enter password">
+                                                <input type="password" name="password" id="pass" class="form-control" placeholder="Enter Password">
                                              </div>
                                              <div class="form-group">
                                               <select name="choise" id="choise" class="form-control">
@@ -63,9 +124,9 @@
                                             </div>
                                             <div class="seperator"><i>or</i></div>
                                             <div class="text-center social-btn">
-                                                <a href="#" class="btn btn-primary btn-block"><i class="fa fa-facebook"></i> Sign in with <b>Facebook</b></a>
-                                                <a href="#" class="btn btn-info btn-block"><i class="fa fa-twitter"></i> Sign in with <b>Twitter</b></a>
-                                                <a href="{% provider_login_url 'google' %}" class="btn btn-danger btn-block"><i class="fa fa-google"></i> Sign in with <b>Google</b></a>
+                                                <a href="{% url 'password_reset'%}" class="btn btn-info btn-block"><i class="">FORGOT PASSWORD</a>
+                                                  <br>
+                                                <a href="{% url 'register' %}" style="text-decoration: none;" class="btn btn-primary btn-block">Sing up</a>
                                             </div>
                                      </div>
                               </form>
@@ -73,4 +134,5 @@
                  </div>
             </div>
          </div>
-   {% endblock %}
+        </body>
+        </html>

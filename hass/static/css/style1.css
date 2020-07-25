@@ -31,7 +31,7 @@ form
 {
     position: relative;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 100%;
     margin: 25px 0;
     padding: 5px 0;
     border-bottom: 2px solid #d9d9d9;
@@ -67,12 +67,12 @@ form
 {
     top: -5px;
     font-size: 15px;
-    width: 500px;
+    width: 100%;
 }
 
 .input-div.focus::after, .input-div.focus::before
 {
-    width: 50%;
+    width: 100%;
 }
 
 .input-div .one
@@ -115,7 +115,7 @@ form
     font-weight: 300px;
     font-size: 18px;
     transition: .3s;
-    width: 500px;
+    
 }
 
 .input

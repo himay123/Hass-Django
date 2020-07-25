@@ -2,11 +2,15 @@
 {% load static %}
 {% block containt %}
 <link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 <style>
 
 
 body {
- background:blanchedalmond;
+ background:#F7F6F6;
  
 }
 h1
@@ -15,44 +19,431 @@ h1
     font-weight: lighter;
     color: black;
 }
+
+
+
     
 
 
 </style>
+<script>
+  /*  $(document).ready(function(){
+
+
+        $ ('#select-box').click(function(){
+                $("#select-box").hide();
+                console.log('hello');
+
+            });
+
+        
+            $('#make').focusout(function(){
+                    $("#select-box").hide;
+                });
+        
+        $("#make").keyup(function(){
+            $.ajax({
+                
+                url:"{% url 'get_make' %}",
+                data:{
+                    'make':$("#make").val()
+
+                },
+                beforeSend:function(){
+                    $('#make').css("background","blanchedalmond no-repeat 165px");
+                },
+                success:function(data){
+                    $("#select-box").show();
+                    
+                    $("#select-box").html(`<ul id="selectmake">`);
+                    if (data.length>10){
+                        length=10;
+                    }
+                    else{
+                        length=data.length;
+                    }
+                        
+                    for (var i=0;i<length;i++){
+                        var make_value=data[i].make+' '+data[i].model;
+                        //console.log
+                    $("#select-box").after(`<li id="li_make" value="${data[i].make} ${data[i].model}">${data[i].make} ${data[i].model}</option>`);
+                    }
+                    
+                    
+
+                }
+
+
+            });
+        });
+ });*/
+/*  $(document).ready(function(){
+
+    $("#select-box").change(function(){
+     var item = $(this).val();        
+      $("#make").val(item);
+      $("#select-box").hide();
+
+});
+
+
+  
+
+$("#make").keyup(function(){
+    $.ajax({
+        
+        url:"{% url 'get_make' %}",
+        data:{
+            'make':$("#make").val()
+
+        },
+        beforeSend:function(){
+           // $('#make').css("background","blanchedalmond no-repeat 165px");
+        },
+        success:function(data){
+            $("#select-box").show();
+            $("#select-box").empty();
+            
+           // $("#select-box").html(`<select id="selectmake">`);
+            if (data.length>100){
+                length=100;
+            }
+            else{
+                length=data.length;
+            }
+                
+            for (var i=0;i<length;i++){
+                var make_value=data[i].make+' '+data[i].model;
+                //console.log
+               $("#select-box").append(`<option id="li_make" value="${data[i].make} ${data[i].model}">${data[i].make} <span>-</span> ${data[i].model}</option>`);
+     
+            }
+     
+            
+
+        }
+
+
+    });
+});
+});
+/*$( function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  });*/
+  /*function searchOpen() {
+      console.log('hello')
+    var search = $('#make').val()
+    var data = {
+        search: search
+    };
+    $.ajax({
+        url:"{% url 'get_make' %}",
+        data:{
+            'make':$("#make").val()
+
+        },
+        success:function searchResult(data) {
+            if (data.length>100){
+                length=100;
+            }
+            else{
+                length=data.length;
+            }
+                
+            for (var i=0;i<length;i++){
+                var make_value=data[i].make+' '+data[i].model;
+                $("#select-box").append(data[i])
+        $( "#make" ).autocomplete ({
+                source: data
+      
+             });
+           
+            }
+              console.log(data);
+}
+        
+        
+    });
+}*/
+$(document).ready(function(){
+    $("#states").change(function(){
+            var state=$("#states").val();
+            
+            $.ajax({
+
+                url:"{% url 'get_place' %}",
+                data:{
+                    'state':state
+                },
+                //dataType:'json',
+                success:function(data){
+                    
+                    $('#place').empty();
+                    for (var i=0;i<data.length;i++){
+                        
+                        var c=data[i].place;
+                        $('#place').append(`<option value="${c}">${c}</option>`)
+                    }
+                    
+                }
+
+
+            })
+    });
+                
+            $("#place").change(function(){
+                    var place=$("#place").val();
+                    
+                    $.ajax({
+        
+                        url:"{% url 'get_rto_code' %}",
+                        data:{
+                            'place':place
+                        },
+                        //dataType:'json',
+                        success:function(data){
+                            
+                            $('#r_t_o').empty();
+                            for (var i=0;i<data.length;i++){
+                                
+                                var c=data[i].reg_no;
+                                $('#r_t_o').append(`<option value="${c}">${c}</option>`)
+                            }
+                            
+                        }
+        
+        
+                    })
+            });
+         
+        $("#make").change(function(){
+                    var make=$("#make").val();
+                    
+                    $.ajax({
+        
+                        url:"{% url 'get_make_model' %}",
+                        data:{
+                            'make':make
+                        },
+                        //dataType:'json',
+                        success:function(data){
+                            
+                            $('#model').empty();
+                            for (var i=0;i<data.length;i++){
+                                
+                                var c=data[i].model;
+                                $('#model').append(`<option value="${c}">${c}</option>`)
+                            }
+                            
+                        }
+        
+        
+                    })
+            });
+
+    $("form[name='car_insu']").validate({
+
+rules: {
+    make:"required",
+  states:{
+      required:true
+  },
+  r_t_o:{
+      required:true
+  },
+  series:{
+      required:true,
+      minlength:2,
+      maxlength:2
+  },
+  number:{
+      required:true,
+      minlength:4,
+      maxlength:4
+  },
+  engine:{
+      required:true,
+      minlength:13,
+      maxlength:13
+  },
+  chassis:{
+      required:true,
+      minlength:17,
+      maxlength:17
+  },
+  cc:"required"
+},
+    
+submitHandler: function(form) {
+   form.submit();
+    }
+ });
+    });
+
+
+   
+</script>
  <div class="container">
+    <label style="font-size: 40px; color: crimson;">{{renew_msg}}</label>
           <div class="row">  
         <h1>Tell us about your car.</h1>
-        <form method="POST" style="width: 100%;">
+        <form method="POST" style="width: 100%;" name="car_insu">
+            {% csrf_token %}
         <div class="row">
-            <div class="col-lg-8">
-                <div class="input-div one">
-                    <div>
-                        <h5>car make & model</h5>
-                         <input type=text class="input" name="model" style="color: black;">
-                  </div>
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="make">Make*</label>
+                    <select class="form-control" id="make" name="make">
+                     <option value="">Select Make</option>
+                     {% for make1 in make %}
+                     <option value="{{make1.make}}">{{make1.make}}</option>
+                     {% endfor %}
+                     </select>
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="input-div one">
-                    <div>
-                        <h5 style="margin-top: -20px;position: reletive;">Year of vehical purchase</h5>
-                         <select name="year" id="year" class="input" style="color: black;">
-                             <option value="" selected>2020</option>
+                <div class="form-group">
+                    <label for="model">Model*</label>
+                    <select class="form-control" id="model" name="model">
+                     <option value="states">Select Model</option>
+                     </select>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label for="model">Year*</label>
+                        {{state}}
+                         <select  name="year" id="year" class="form-control">
+                             <option  value="2020" selected>2020</option>
+                             <option  value="2019">2019</option>
+                             <option  value="2018">2018</option>
+                             <option  value="2017">2017</option>
+                             <option  value="2016">2016</option>
+                             <option  value="2015">2015</option>
+                             <option  value="2014">2014</option>
+                             <option  value="2013">2013</option>
+                             <option  value="2012">2012</option>
+                             <option  value="2011">2011</option>
+                             <option  value="2010">2010</option>
+                             <option  value="2009">2009</option>
+                             <option  value="2008">2008</option>
+                             <option  value="2007">2007</option>
+                             <option  value="2006">2006</option>
+                             <option  value="2005">2005</option>
+                             <option  value="2004">2004</option>
+                             <option  value="2003">2003</option>
+                             <option  value="2002">2002</option>
+                             <option  value="2001">2001</option>
+                             <option  value="2000">2000</option>
                          </select>
                         
                     </div>
             </div>
-            </div>
         </div>
-            <div class="input-div two" style="width: 40%;">
-                <div>
-                  <h5>City of Registretion</h5>
-                  <input type=text class="input" name="city" style="color: black;">
-              </div>
-          </div>
-          
-        
-         <a href="{% url 'plan_detail' %}" class="btn-primary btn-orange js-car-register">Process</a>
+        <div class="row">
+                          
+                <div class="col-lg-4">
+                    <div class="form-group">
+                            <label for="model">Select State:</label>
+                      <select name="states" id="states" class="form-control">
+                          <option value="">select state</option>
+                          {% for state in states %}
+                          <option value="{{state.state}}">{{state.state}}</option>
+                          {% endfor %}
+                      </select>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                        <label for="model">CIty:</label>
+                    <select name="place" id="place" class="form-control">
+                        <option value="">select Place</option>
+                    </select>   
+                </div>
+                <div class="col-lg-4">
+                        <label for="model">RTO:</label>
+                    <select name="r_t_o" id="r_t_o" class="form-control">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="row">
+                  <div class="col-lg-6">
+                    <label for="model">Enter Vehicle Series</label>
+               <input type="text" class="form-control" name="series" placeholder="e.g. AZ" style="text-transform: uppercase;">
+            </div>
+            <div class="col-lg-6">
+                    <label for="model">Enter Vehicle Number</label>
+                <input type="number" class="form-control" name="number" placeholder="e.g. 1234" >
+            </div>
+            </div>
+            <br>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                        <label for="model">Enter Engine Number:</label>
+                        <input type="text" class="form-control" name="engine" placeholder="e.g. JC71ET3015028" style="text-transform: uppercase;">      
+                 </div>
+            </div>
+            <div class="col-lg-6">
+                            <label for="model">Enter Chassis Number:</label>
+                            <input type="text" class="form-control" name="chassis" placeholder="e.g. ME4JC717CIT010067" style="text-transform: uppercase;">      
+                     
+                </div>
+
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="form-group">
+                        <label for="model">Seat Avaiblity Inside Car:</label>
+                        <select name="seat" class="form-control">
+                            <option value="2">2</option>
+                            <option value="4">4</option>
+                            <option value="7">7</option>
+                        </select>
+                    </div>
+                </div>
+            <div class="col-lg-4">
+                    <label for="model">Fuel Type:</label>
+                    <select name="fuel" class="form-control">
+                        <option value="Petrol">Petrol</option>
+                        <option value="Deisel">Deisel</option>
+                        <option value="CNG">CNG</option>
+                        <option value="LPG">LPG</option>
+                    </select>                
+            </div>
+            <div class="col-lg-4">
+                <label for="model">CC / Watts:</label>
+                <input type="number" placeholder="e.g. 500" class="form-control" name="cc">
+            </div>
+    </div>
+        <a href="{% url 'select_plan' %}"><input type="submit" value="PROCESS"  class="btn-primary btn-orange js-car-register"></a>
          
       </form>
  

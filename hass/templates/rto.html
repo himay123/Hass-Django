@@ -1,0 +1,63 @@
+{% extends 'master1.html '%}
+{% load static %}    
+{% block containt %}
+<br>
+<br>
+    <style>
+        .h
+        {
+            color: gray;
+            font-size: 20px;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="container">
+           
+           <br>
+            <hr>
+           <center><h1>GOING OUTSTATION?</h1></center> 
+           <hr>
+           <h2>At the RTO checkpost:</h2>
+           <hr>
+            <div class="row">
+                        <div class="col-lg-3 h">
+                            <br>
+                           <center><span style="color:gray;" class="vi"><img src="{% static 'img/1-1.png'%}" width="100px" height="100px"></span>
+                           </center> 
+                           <br>
+                   <center> Securely park your Zoomcar vehicle</center>
+                </div>
+                <div class="col-lg-3 h">
+                    <br>
+                    <center><span style="color:gray;" class="vi"><img src="{% static 'img/2-1.png'%}" width="100px" height="100px"></span>
+                    </center>
+                    <br>
+                  <center>  Ensure that you are carrying your original driver's license</center>
+                </div>
+                <div class="col-lg-3 h">
+                    <br>
+                   <center> <span style="color:gray;" class="vi"><img src="{% static 'img/3-1.png'%}" width="100px" height="100px"></span>
+                   </center>
+                   <br>
+                  <center>  Fetch all the required documents from the vehicle to the RTO officer</center>
+                </div>
+
+                <div class="col-lg-3 h">
+                    <br>
+                    <center><span style="color:gray;" class="vi"><img src="{% static 'img/4-1.png'%}" width="100px" height="100px"></span>
+                    </center>
+                    <br>
+                   <center> Make the cash payment for the visitor permit</center>
+                </div>
+                
+            </div>
+            <hr>
+            <h3 style="color: gray;">
+                PLEASE NOTE: 
+                In no set of circumstances should you have to pay any additional cash fine or penalty. It is NOT required that you have a special driver's license designation or badge in order to operate Zoomcar’s vehicles!
+
+                </h3>
+        </div>
+    </body>
+    {% endblock %}

@@ -1,0 +1,80 @@
+
+{% extends 'master1.html' %}
+{% load static %}
+{% block containt %}
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+          body{
+              background:#f2f2f2;
+          }
+          .well
+          {
+              background: white;
+          }
+          h1{
+              font-size: 25px;
+          }
+          #book
+          {
+              height: 50px;
+              width: 140px;
+          }
+      </style>
+    
+    </head>
+    <body>
+    <center>  <div class="container-fluid rounded" style="margin-top: 20px;">
+    
+            
+              <div class="col-lg-12">
+                {% for i in data %}
+                {% for j in data1 %}
+                <div class="well">
+                    <table>
+                    <div class="row">
+                        <div class="col-lg-3">`
+                            <img src="{{ i.pic.url }}" alt="" height="140px;" width="300px;">
+                        </div>
+                        <div class="col-lg-7">
+                            <h1 style="color: brown;">{{ i.model }} {{ i.make }}</h1>
+                            <span style="color:gray;"><img src="{% static 'img/5.png'%}" width="18px" height="18px">5 Seater</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span style="color:gray;"><img src="{% static 'img/6.png'%}" width="18px" height="18px">Automatic Gearbox</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                              
+                            <span style="color:gray;" class="vi"><img src="{% static 'img/5.png'%}" width="18px" height="18px"> AGE LIMIT 18+</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <br><br>
+                            <span style="color:gray;" class="vi"><img src="{% static 'img/2.png'%}" width="18px" height="18px"> DIESEL</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span style="color:gray;"><img src="images/images.png" alt="" height="20px"><img src="{% static 'img/17.jfif'%}" width="18px" height="18px">Fual Policy[Full] </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span style="color:gray;"><img src="{% static 'img/12.png'%}" width="18px" height="18px">AIR CONDITIONING </span>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span style="color:gray;" class="vi"><img src="{% static 'img/13.png'%}" width="18px" height="18px">{{ user.address }}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        
+                            <br><br>
+                                         <span style="color:gray;" class="vi"><img src="{% static 'img/15.png'%}" width="18px" height="18px">Cancellation Free in 3 Days</span>       
+                        </div>
+                        <div class="col-lg-2">
+                            <h1 class="text-success" style="font-size: 35px;">Rs.{{ j.price }}</h1>
+                            <span style="color: gray;">{{ j.km_price }}</span>
+                            
+                    <a href="{% url 'prac' id=i.id id1=j.id %}"><button class="btn btn-success btn-lg"  id=" " style="margin-top: 10px;" >BOOK NOW</button></a>
+                        </div>
+                    </div>
+
+                </div>
+                
+<hr>
+<hr>
+{% endfor %}
+{% endfor %}
+
+
+    </body>
+<br>
+<br>
+
+    </html>
+    
+    {% endblock %}
+    

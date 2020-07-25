@@ -1,0 +1,1060 @@
+{% extends 'maste.html' %}
+{% load static %}
+{% block containt %}
+<style>
+    table
+    {
+        color: #415F81;
+        background-color:blanchedalmond;
+    }
+</style>
+<script>
+    $(document).ready(function(){
+        $("#first").show();
+     $("#policy").on('change',function(){
+        if(this.value == 'genral')
+        {
+            $("#first").show();
+            $("#second").hide();
+            $("#thired").hide();
+            $("#four").hide();
+        }
+        if(this.value == 'cover')
+        {
+            $("#first").hide();
+            $("#second").show();
+            $("#thired").hide();
+            $("#four").hide();
+        }
+        if(this.value == 'claims')
+        {
+            $("#first").hide();
+            $("#second").hide();
+            $("#thired").show();
+            $("#four").hide();
+        }
+        if(this.value == 'policy')
+        {
+            $("#first").hide();
+            $("#second").hide();
+            $("#thired").hide();
+            $("#four").show();
+        }
+    });
+});
+</script>
+<div id="head1">
+<img src="{% static 'images/faq.jpg' %}" class="ing-responsive" alt="" width="100%" height="300px" style="margin-top: -20px;">
+<h1 class="text-center" style="background-color: brown; font-size: 30px;font-weight: 600;height: 50px;line-height: 50px;color: white;margin-top: 0px;">Frequently Asked Questions</h1>
+</div>
+<div class="container" style="margin-top: 30px;">
+ <div class="row">
+     <div class="col-lg-3 col-lg-offset-3">
+         <select name="product" id="product" class="form-control">
+         <option value="insurance">Car Insurance</option>
+         <option value="towing">Towing</option>
+         <option value="rental">Rental</option>
+        </select>
+     </div>
+     <div class="col-lg-3">
+         <select name="policy" id="policy" class="form-control">
+             <option value="genral">Genral</option>
+             <option value="cover">Cover</option>
+             <option value="claims">Claims</option>
+             <option value="policy">Policy</option>
+         </select>
+     </div>
+ </div>
+</div>
+<h1 class="text-center">FAQS</h1>
+<div class="container">
+    <div style="display: none;" id="first">
+        <ul class="section">
+                        
+            <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd56749" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+                <h3>
+                  <a onclick="return false;" id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl0_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C074$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl0$listItemToggleLnk','')">Does this policy cover Pre-existing diseases?</a>
+                </h3>
+                <div id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl0_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+                  <p></p><p>Any claim due to or arising out of pre-existing medical condition/ailment whether declared or undeclared is not covered under the policy.</p>
+<p></p>
+                </div>
+            </li>
+        
+            <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd5675e" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+                <h3>
+                  <a onclick="return false;" id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl1_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C074$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl1$listItemToggleLnk','')">Is there cover for pre-medical conditions like Diabetes?</a>
+                </h3>
+                <div id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl1_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+                  <p></p><p><strong>Any claim due to or arising out of pre-existing medical condition/ailment whether declared or undeclared is not covered under the policy.</strong></p>  
+<p></p>
+                </div>
+            </li>
+        
+            <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055de115d2" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+                <h3>
+                  <a onclick="return false;" id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl2_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C074$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl2$listItemToggleLnk','')">Why do I need Travel Insurance?</a>
+                </h3>
+                <div id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl2_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+                  <p>Unfortunate events such as baggage loss, passport loss, a medical emergency or an accident can affect your travels, whether for business or leisure. International Travel Insurance protects you from such perils by ensuring that you are not left stranded in any kind of emergency.</p>
+                </div>
+            </li>
+        
+            <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055de11789" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+                <h3>
+                  <a onclick="return false;" id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl3_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C074$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl3$listItemToggleLnk','')">What sum insured should I opt for while traveling to Schengen countries?</a>
+                </h3>
+                <div id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl3_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+                  <p>You should choose a plan with a minimum sum insured of USD 50,000.</p>
+                </div>
+            </li>
+        
+            <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055de11798" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+                <h3>
+                  <a onclick="return false;" id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl4_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C074$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl4$listItemToggleLnk','')">Are there any sub-limits applicable for Schengen countries?</a>
+                </h3>
+                <div id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl4_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+                  <p>No, there are no sub-limits applicable for Schengen countries.</p>
+                </div>
+            </li>
+        
+            <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055de117a7" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+                <h3>
+                  <a onclick="return false;" id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl5_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C074$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl5$listItemToggleLnk','')">What is an ASP?</a>
+                </h3>
+                <div id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl5_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+                  <p>ASP stands for Assistance Service Provider. The most essential service they provide is cashless medical services. They also provide the necessary information to deal with any problem regarding claims.</p>
+                </div>
+            </li>
+        
+            <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055de117b6" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+                <h3>
+                  <a onclick="return false;" id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl6_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C074$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl6$listItemToggleLnk','')">In case medical treatment is required, is there any need for pre-approval before hospitalization?</a>
+                </h3>
+                <div id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl6_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+                  <p>You will need to contact our ASP and they will arrange for cashless claims for the medical treatment.</p>
+                </div>
+            </li>
+        
+            <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055de117c8" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+                <h3>
+                  <a onclick="return false;" id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl7_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C074$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl7$listItemToggleLnk','')">What are the procedures if pre-approval is required?</a>
+                </h3>
+                <div id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl7_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+                  <p>For hospitalization, we have a toll free no., which you have to call for the cashless claim, and for a physician visit, you will be reimbursed on the bills. Please call our toll free numbers to register your claim.<br>
+In USA and Canada : + 1 844 871 1200(Toll Free)<br>
+From the rest of the world: +91 124 4498778(Call back facility)<br>
+In India: 1800 102 5721(Toll Free and Accessible in India only)<br>
+Fax: +91 124 4006674<br>
+E-mail : icicilombard@falck.com</p>
+                </div>
+            </li>
+        
+            <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0003ff-45fd-68ff-8a0d-f0055e0f9389" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+                <h3>
+                  <a onclick="return false;" id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl8_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C074$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl8$listItemToggleLnk','')">I have been planning a trip with my family to France. While booking my tickets for the same, I read about the Schengen visa norms and the insurance requirements. In which Schengen countries shall I mandatorily have to buy insurance?</a>
+                </h3>
+                <div id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl8_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+                  <p>The Schengen area signifies a zone of 26 different European countries that would mandatorily require you to avail a travel insurance policy which covers medical expenses up to 30,000 Euros without any restrictions or sub-limits. <br>
+</p><table class="table blist tblz01 rwd-table">
+<tbody>
+</tbody><thead>
+<tr>
+    <th colspan="3" style="border-bottom: 5px solid #063b6d;">The Schengen countries are the ones enlisted below </th>
+</tr>
+</thead>
+<tbody><tr>
+    <td>Austria</td>
+    <td>Norway</td>
+    <td>Italy</td>
+</tr>
+<tr>
+    <td>Czech Republic</td>
+    <td>Portugal</td>
+    <td>Liechtenstein</td>
+</tr>
+<tr>
+    <td>Estonia</td>
+    <td>Slovenia</td>
+    <td>Luxembourg</td>
+</tr>
+<tr>
+    <td>France</td>
+    <td>Sweden</td>
+    <td>Netherlands</td>
+</tr>
+<tr>
+    <td>Greece</td>
+    <td>Belgium</td>
+    <td>Poland</td>
+</tr>
+<tr>
+    <td>Iceland</td>
+    <td>Denmark</td>
+    <td>Slovakia</td>
+</tr>
+<tr>
+    <td>Latvia</td>
+    <td>Finland</td>
+    <td>Spain</td>
+</tr>
+<tr>
+    <td>Lithuania</td>
+    <td>Germany</td>
+    <td>Switzerland</td>
+</tr>
+<tr>
+    <td>Malta</td>
+    <td>Hungary</td>
+    <td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<br>
+<table class="table blist tblz01 rwd-table">
+<thead>
+<tr>
+    <th colspan="2" style="border-bottom: 5px solid #063b6d;">List of European Union Member States which are not  Schengen States but with similar travel insurance parameters.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>Bulgaria</td>
+    <td>Croatia</td>
+</tr>
+<tr>
+    <td>Cyprus</td>
+    <td>Romania</td>
+</tr>
+</tbody>
+</table><p></p>
+                </div>
+            </li>
+        
+            <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0003ff-45fd-68ff-8a0d-f0055e204c0b" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+                <h3>
+                  <a onclick="return false;" id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl9_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C074$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl9$listItemToggleLnk','')">I recently purchased an international travel policy bearing nomenclature Gold W 50 and was planning a trip to Europe. What does the name indicate and will this policy take care of my medical expenses that I may incur in Europe. </a>
+                </h3>
+                <div id="ctl00_innerPg_C074_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl9_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+                  <p></p><p>The policy nomenclature consists of 3 parts - Gold indicates the plan opted by you, “W” indicates worldwide which is the geographical scope of the policy and “50” indicates USD 50,000 which is the medical sum insured of the policy.  </p>
+<p>The Schengen region signifies a group of European countries that have specific insurance parameters and the worldwide plan shall not cater to these insurance requirements. So your Gold W 50 plan will not be valid in Europe.</p>
+<p>When planning a trip, it is highly recommended that the customer check the geographical scope of the travel policy prior to making a purchase. Please find below a ready reference on which plan shall be valid depending on the travel destinations. </p>
+<table class="table blist tblz01 rwd-table" >
+<tbody><tr>
+<th rowspan="2" valign="top"><p align="center">Travel    Destinations</p></th>
+<th rowspan="2" valign="top"><p align="center">Age of customer</p></th>
+<th colspan="3" valign="top"><p align="center">Policies To be    Purchased along with their nomenclature</p></th>
+</tr>
+<tr>
+<th valign="top"><p align="center">Worldwide (W)</p></th>
+<th valign="top"><p align="center">Excluding US    &amp; Canada (X)</p></th>
+<th valign="top"><p align="center">Schengen (S)</p></th>
+</tr>
+<tr>
+<td rowspan="2" valign="top"><p>US/Canada    and Schengen countries</p></td>
+<td valign="top"><p>Below    51 yrs</p></td>
+<td valign="top"><p align="center">✔</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+</tr>
+<tr>
+<td valign="top"><p>51    and above</p></td>
+<td valign="top"><p align="center">✔</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+<td valign="top"><p align="center">✔</p></td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"><p>&nbsp;</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+</tr>
+<tr>
+<td rowspan="2" valign="top"><p>UK    and Schengen countries</p></td>
+<td valign="top"><p>Below    51 yrs</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+<td valign="top"><p align="center">✔</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+</tr>
+<tr>
+<td valign="top"><p>51    and above</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+<td valign="top"><p align="center">✔</p></td>
+</tr>
+<tr>
+<td valign="top"></td>
+<td valign="top"><p>&nbsp;</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+</tr>
+<tr>
+<td rowspan="2" valign="top"><p>Schengen    countries</p></td>
+<td valign="top"><p>Below    51 yrs</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+<td valign="top"></td>
+<td valign="top"><p align="center">✔</p></td>
+</tr>
+<tr>
+<td valign="top"><p>51    and above</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+<td valign="top"><p align="center">✔</p></td>
+</tr>
+<tr>
+<td></td>
+<td valign="top"><p>&nbsp;</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+</tr>
+<tr>
+<td rowspan="2" valign="top"><p>Non    Schengen areas in Europe </p></td>
+<td valign="top"><p>Below    51 yrs</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+<td valign="top"><p align="center">✔</p></td>
+<td valign="top"><p align="center">&nbsp;</p></td>
+</tr>
+<tr>
+<td valign="top"><p>51    and above</p></td>
+<td valign="top"><p>&nbsp;</p></td>
+<td valign="top"><p align="center">✔</p></td>
+<td valign="top"><p>&nbsp;</p></td>
+</tr>
+</tbody></table>
+
+<p></p>
+                </div>
+            </li>
+        
+            </ul></div>
+
+<div style="display: none;" id="second">
+    <ul class="section">
+                        
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd54ef8" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl0_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl0$listItemToggleLnk','')">What is Garage Cash Plan?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl0_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p><strong>For Partial Loss- </strong>: If your vehicle is under repair after an accident, a fixed daily allowance will be paid for the number of days the vehicle will be in authorised garage for repair or number of days as mentioned in the schedule, whichever is lesser.<br>
+<br>
+In the event of Total Loss/Constructive Total Loss of your vehicle, a lump sum amount as mentioned in the schedule shall be paid.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd54f10" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl1_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl1$listItemToggleLnk','')">Number of days covered under Garage cash cover?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl1_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>The duration for which the company will be liable for claim in respect of this add on will be consider from the day after the insured vehicle is delivered to the Garage till the day immediately preceding the date of discharge or date of invoice for such repair as prepared by the garage, whichever is earlier.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd55e2f" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl2_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl2$listItemToggleLnk','')">What are the events covered in HASS Motor Insurance policy?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl2_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>The HASS Motor Insurance policy is a comprehensive vehicle insurance cover, which offers you:<br>
+<br>
+• Any Loss or damage to your vehicle<br>
+• Third Party Liability<br>
+• Any permanent injury / death to a person caused by your insured vehicle<br>
+• Any damage caused to the property other than property belonging to the insured or held in trust or in custody or control of insured by your vehicle<br>
+• A <a href="/health-insurance/personal-accident-insurance">Personal Accident Cover</a> for the owner-driver of the vehicle while he is driving<br>
+<br>
+In case of loss or damage to the vehicle or the accessories insured, the Company covers the insured if the accident occurs due to the following hazards:<br>
+<br>
+• Fire, explosion, self ignition or lightning<br>
+• Burglary, housebreaking or theft<br>
+• Riot and strike<br>
+• Earthquake (fire and shock damage)<br>
+• Flood, typhoon, hurricane, storm, tempest, inundation, cyclone, hailstorm, frost<br>
+• Accident by external means<br>
+• Malicious act<br>
+• Terrorist activity<br>
+• Whilst in transit by road, rail, inland-waterway, lift, elevator or air<br>
+• Landslide and rockslide<br>
+<br>
+</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd55e47" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl3_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl3$listItemToggleLnk','')">What are the types of events or losses not covered under this policy?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl3_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>The following events or losses are not covered in this policy:<br>
+• Mechanical/ Electrical breakdown<br>
+• Wear and tear, ageing of vehicle<br>
+• Consequential loss*<br>
+• Depreciation<br>
+• Deliberate accidental loss<br>
+• Intoxicated driving<br>
+• Any contractual liability<br>
+• Damage to/ by a person driving any vehicles or cars without a valid license<br>
+<br>
+* Consequential loss is an indirect loss, which is not directly resulting out of a loss event, but arising as a consequence of loss event. For example, Mr. Singh was on his way to office for an important meeting with client. Unfortunately, his vehicle met with a road accident resulting in damages to vehicle and it consumed lot of his time. Due to this, he could not attend the meeting resulting in loss of approx <span class="rpicon">`</span>15 Lakhs. Damages to vehicle due to the accident are covered however, but the loss of <span class="rpicon">`</span>15 Lakhs is consequential and hence not covered.<br>
+<br>
+For details, kindly refer to the <a target="_blank" href="/docs/default-source/default-document-library/two-wheeler-package-policy.pdf?sfvrsn=0" title="Policy Wordings">Two-wheeler Policy Wordings</a>.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd55e62" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl4_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl4$listItemToggleLnk','')">What is Third Party Liability cover? Is it covered?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl4_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>Third Party Liability insurance covers losses to a third person who is not a party to the insurance contract. The Motor Third Party insurance covers the following losses:<br>
+<br>
+• Any permanent injury / death to a person caused by your insured vehicle<br>
+• Any damage caused to the property (including third party vehicle) of some other individual by your insured vehicle<br>
+<br>
+Liability is covered for an unlimited amount in respect of death or injury. Any damage to third party property is covered up to <span class="rpicon">`</span>7.5 Lakhs in case of Private Car and <span class="rpicon">`</span> 1 Lakh in case of Two-wheeler.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd55ec4" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl5_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl5$listItemToggleLnk','')">Will I get a Personal Accident cover if the vehicle is registered under someone else's name, but is driven by me and the premium is also paid by me?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl5_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>The policy essentially contains a Personal accident cover for the owner-driver, as per tariff. In case of un-named driver, the personal accident cover has to be purchased separately by paying an additional premium.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd55ed3" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl6_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl6$listItemToggleLnk','')">Will I be eligible for any discounts if I am a member of the Automobile Association of India?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl6_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>
+Yes, as a member of any of the following recogni​zed Automobile Associations, a discount on Own Damage (OD) premium is given under the policy. The following Associations are recogni​zed:<br>
+<br>
+• The Automobile Association of Eastern India<br>
+• The Uttar Pradesh Automobile Association<br>
+• The Western India Automobile Association<br>
+• The Automobile Association of Southern India<br>
+• The Automobile Association of Upper India</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd55ee2" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl7_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl7$listItemToggleLnk','')">Is there any discount available if I install an Anti-theft alarm and Locking system?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl7_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>If your vehicle is fitted with anti theft devices, which are approved by the Automobile Research Association of India (ARAI), a discount on Own Damage (OD) premium is allowed.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd55ef3" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl8_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl8$listItemToggleLnk','')">What is Accident Cover for un-named passengers?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl8_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>Passengers other than the insured, including a paid driver and cleaner of the vehicle can be insured under this cover by paying an additional premium. This covers them against death or disability caused due an unfortunate accident.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd55f06" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl9_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl9$listItemToggleLnk','')">How is the value of the vehicle (IDV - Insured Declare Value) determined?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl9_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>
+The IDV of the vehicle is to be fixed based on the manufacturer's listed selling price of the brand and model, as the vehicle proposed for insurance at the commencement of insurance /renewal and adjusted for depreciation. <br>
+<br>
+The IDV of the side car(s) and/ or accessories, if any, fitted to the vehicle, but not included in the manufacturer's listed selling price of the vehicle is also likewise to be fixed. The schedule of depreciation for arriving at IDV is as below:<br>
+<br>
+</p>
+<center>
+</center>
+<table class="table blist tblz01 rwd-table">
+<thead>
+<tr>
+<th colspan="2"><center>Schedule of Depreciation for arriving at IDV</center></th>
+</tr>
+<tr>
+<th><center>Age of the Vehicle</center></th>
+<th><center>% of Depreciation fixing IDV</center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Not exceeding 6 months</td>
+<td><center>5%</center></td>
+</tr>
+<tr>
+<td>Exceeding 6 months but not exceeding 1 year</td>
+<td><center>15%</center></td>
+</tr>
+<tr>
+<td>Exceeding 1 year but not exceeding 2 years</td>
+<td><center>20%</center></td>
+</tr>
+<tr>
+<td>Exceeding 2 years but not exceeding 3 years</td>
+<td><center>30%</center></td>
+</tr>
+<tr>
+<td>Exceeding 3 years but not exceeding 4 years</td>
+<td><center>40%</center></td>
+</tr>
+<tr>
+<td>Exceeding 4 years but not exceeding 5 years</td>
+<td><center>50%</center></td>
+</tr>
+</tbody>
+</table><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd55f19" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl10_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl10$listItemToggleLnk','')">What is the rate of depreciations on parts for partial loss claim?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl10_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>
+The following rates of  depreciation shall apply for replacement of parts for the partial loss claim in  respect of all categories of vehicles /accessories
+<br>
+1. &nbsp;Rate of depreciation for all rubber/ nylon / plastic parts, tyres and tubes,  batteries and air bags -50%
+<br>
+2. &nbsp;For fibre glass  components -30%
+<br>
+3. &nbsp;For all parts made of  glass -Nil
+<br>
+4. &nbsp;Rate of depreciation for  all other parts including wooden parts will be as per the following schedule.<br>
+<br>
+</p><center>
+</center><p></p>
+<table class="table blist tblz01 rwd-table">
+<thead>
+<tr>
+<th colspan="2"><center>Schedule of Depreciation for arriving at IDV</center></th>
+</tr>
+<tr>
+<th><center>Age of the Vehicle</center></th>
+<th><center>% of Depreciation</center></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Not exceeding 6 months</td>
+<td><center>Nil</center></td>
+</tr>
+<tr>
+<td>Exceeding 6 months but not exceeding 1 year</td>
+<td><center>5%</center></td>
+</tr>
+<tr>
+<td>Exceeding 1 year but not exceeding 2 years</td>
+<td><center>10%</center></td>
+</tr>
+<tr>
+<td>Exceeding 2 years but not exceeding 3 years</td>
+<td><center>15%</center></td>
+</tr>
+<tr>
+<td>Exceeding 3 years but not exceeding 4 years</td>
+<td><center>25%</center></td>
+</tr>
+<tr>
+<td>Exceeding 4 years but not exceeding 5 years</td>
+<td><center>35%</center></td>
+</tr>
+<tr>
+<td>Exceeding 5 years but not exceeding 10 years</td>
+<td><center>40%</center></td>
+</tr>
+<tr>
+<td>Exceeding 10 years</td>
+<td><center>50%</center></td>
+</tr>
+</tbody>
+</table>
+<p>
+</p>
+<p></p><center></center><br>
+5. &nbsp;Rate of Depreciation for Painting (effective for policy inception falls on or after 1st Feb 2013): In the case of painting, the depreciation rate of 50% shall be applied only on the material cost of total painting charges. In case of a consolidated bill for painting charges, the material component shall be considered as 25% of the total painting charges for the purpose of applying the depreciation.
+<p></p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd55f28" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl11_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl11$listItemToggleLnk','')">What are electrical and non-electrical accessories? How to calculate the value of accessories?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl11_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>
+<strong>Electrical accessories:</strong> Any electrical and/or electronic equipment that is not factory fitted with the vehicle can be covered under electrical accessories at an additional premium of 4% on the value of such fitting. Value of electrical accessories will be as declared by the insured. For example, a Music System that is installed in the car after purchase of the vehicle can be covered.<br>
+<br>
+<strong>Non-electrical accessories:</strong> Any Non-electrical/ Non-electronic equipment that is not factory fitted with the vehicle can be covered under non-electrical accessories at an additional premium of invoice value*. Value of non-electrical accessories should be the Invoice value of the non-electrical accessories up to the maximum limit of <span class="rpicon">`</span> 20,000. For example, Mag wheels and/ or leather seats that are installed in the car after purchase of the vehicle can be covered.<br>
+<br>
+* Own damage rate
+</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd55f37" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl12_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl12$listItemToggleLnk','')">What does the Legal Liability cover for a paid driver include?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl12_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>A legal liability for paid driver implies that if you have hired a driver to drive your vehicle and he meets with an accident while driving it, then the insurance company will provide compensation for his injury/ loss of life.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd55f4c" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl13_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl13$listItemToggleLnk','')">If I have a LPG/ CNG kit fitted in the car that is not endorsed in the RC, can I take a policy?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl13_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>Policy will only be issued if the LPG/ CNG kit is duly endorsed on the RC (Registration Certificate) by the concerned RTO.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd55f6e" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl14_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl14$listItemToggleLnk','')">What is the process for obtaining Third Party only cover?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl14_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>To issue only Third Party cover, our local underwriter needs to carry out a risk assessment which cannot be done online. Thus, we request the customer to visit us at the nearest branch.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd56a99" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl15_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl15$listItemToggleLnk','')">Does the insured have to pay the difference if the actual expenses are more than the cover?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl15_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>
+<strong>Yes.</strong> For example, if the insured has a cover of Rs.10,000 for maternity
+and incurs an expense of <span class="rpicon">`</span> 15,000 then the insured will have to pay <span class="rpicon">`</span> 5,000/-
+by himself.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd56ab7" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl16_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl16$listItemToggleLnk','')">Do the 2 Insured Adults have to be spouses?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl16_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>
+It is <strong>not necessary </strong>that the 2 Insured Adults have to be spouses.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055de703a8" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl17_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl17$listItemToggleLnk','')">*What is the duration of days covered under Garage cash cover? </a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl17_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>The duration for which the company will be liable for claim in respect of this add-on will be considered from the day after the insured vehicle is delivered to the garage till the day immediately preceding the date of discharge or date of invoice for such repair as prepared by the garage, whichever is earlier.</p>
+<p>*As per the plan opted</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055de70881" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl18_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl18$listItemToggleLnk','')">What is an Accident Cover for un-named passengers?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl18_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>Passengers other than you, including a paid driver and cleaner of the vehicle can be insured under this cover by paying an additional premium. This covers them against death or disability caused due an unfortunate accident.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055de7140b" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl19_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl19$listItemToggleLnk','')">If I have an LPG/CNG kit fitted in the car that is not endorsed in the RC, can I take a policy?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl19_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>The policy will only be issued if the LPG/CNG kit is duly endorsed on the RC (Registration Certificate) by the concerned RTO.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055de71467" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl20_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl20$listItemToggleLnk','')">What is a voluntary deductible?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl20_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>A voluntary deductible is the higher amount you opt for as a deductible over and above the compulsive deductible in the event of a claim. (The Final Claim amount will be decided after deduction of depreciation on parts, VD and compulsory deductible as per IMT).</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055de714c9" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl21_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C136$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl21$listItemToggleLnk','')">What is the process for obtaining only a Third Party cover?</a>
+            </h3>
+            <div id="ctl00_innerPg_C136_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl21_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>To issue only a Third Party cover, our local underwriter needs to carry out a risk assessment which cannot be done online. Thus, we request you to visit us at the nearest branch.</p><p></p>
+          
+        </li>
+    
+        </ul>
+</div>
+<div id="thired" style="display: none;">
+    <ul class="section">
+                        
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd54f70" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl0_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C140$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl0$listItemToggleLnk','')">How do I register my claim?</a>
+            </h3>
+            <div id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl0_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>
+Contact our Toll Free Helpline 1800 2666 to register your claim and get a claim number/ reference number. You can also directly register your claim online*, with our <a class="href-text" href="/claims/motor-claims" target="_blank"><span style="text-decoration: underline;">Lodge A Motor Claim</span></a> service.<br>
+<br>
+* Please note that as of now, only accidental damage claims can be processed through the 'Lodge A Motor Claim' interface
+</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd54f94" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl1_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C140$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl1$listItemToggleLnk','')">When should I report to the police?</a>
+            </h3>
+            <div id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl1_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>Incidents such as "Third Party Property Damage", "Bodily Injury To Self or Third Party" or "Theft" should be reported to the nearest police station as early as possible, under whose jurisdiction the incident has occurred.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd55ffb" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl2_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C140$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl2$listItemToggleLnk','')">What is Cashless Claim and Non-cashless/ Reimbursement claim?</a>
+            </h3>
+            <div id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl2_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>
+<strong>Cashless Claim :</strong> In cashless claim facility, the repair charges of the vehicle are directly paid to the garage by us, provided the vehicle is repaired in our garage network.<br>
+<br>
+<strong>Non-cashless/ Reimbursement :</strong> If the vehicle is repaired in a garage outside the purview of our network, then you will be liable to pay the repair charges of the garage. You can get your claim amount reimbursed by submitting the original bills and payment receipts to our office.
+</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd5600a" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl3_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C140$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl3$listItemToggleLnk','')">What is the claim procedure adopted by the company for settlements?</a>
+            </h3>
+            <div id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl3_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>
+HASS adopts the following process for settlement of claim:<br>
+<br>
+<strong>For Cashless claim settlement -</strong><br>
+• The Customer Relationship Manager (C​RM) / Surveyor attends the claim within 24 hours of registering the claim<br>
+• Insured must fill the claim form, (<a class="href-text" href="/docs/default-source/downloads/motor_claim_form.pdf?sfvrsn=0" target="_blank"><span style="text-decoration: underline;">click here</span></a> to download it or collect it from the C​RM/ Surveyor/ Dealer) and submit all the required documents to the C​RM/ Surveyor/ Dealer<br>
+• Our C​RM will get the estimate for the repairs of insured vehicle and give spot approval after assessment<br>
+• After the completion of repairs at our preferred garage, we will make the payment of our share of the loss directly to the garage. Any amount over and above the admissible amount will have to be directly paid by the Insured<br>
+• The amount of Depreciation as per the rate prescribed under the Indian Motor Tariff and Compulsory Deductions under the policy need to be borne by the Insured<br>
+<br>
+<strong>For Non-cashless/ Reimbursement claim settlement -</strong><br>
+• The Customer Relationship Manager (C​RM) / Surveyor attends the claim within 24 hours of registering the claim<br>
+• Insured must fill the claim form (<a target="_blank" href="/docs/default-source/other-documents/motor_claim_form.pdf?sfvrsn=0" title="Claim Form">click here</a> to download it or collect it from C​RM/ Surveyor/ Dealer) and submit all the required documents to the C​RM/ Surveyor/ Dealer<br>
+• The C​RM/ Surveyor assess the loss, estimates the repair amount and then informs the Insured on the same day of assessment. The C​RM/ Surveyor will also take photographs of the damaged vehicle<br>
+• Insured can then get the vehicle repaired at preferred workshop/ garage. The C​RM later carries out a re-inspection of the vehicle. The Insured then pays the workshop/ garage as per the C​RM/ Surveyor’s assessed estimation, who thereafter releases a ‘Proof of Release’ document. (The proof of release is an authenticated document signed by the insured to release his vehicle from the garage after it is checked and repaired)<br>
+• Insured needs to submit the original bill, proof of release and cash receipt (derived from the garage) to the C​RM/ Surveyor<br>
+• The C​RM/ Surveyor then submits all required documents to HASS for settlement of the claim<br>
+• Upon acceptance of the claim, the company issues the cheque to the Insured within seven working days from the date of receipt of all documents<br>
+• The amount of Depreciation as per the rate prescribed under the Indian Motor Tariff and Compulsory Deductions under the policy need to be borne by the Insured</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd56027" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl4_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C140$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl4$listItemToggleLnk','')">What documents are required to file a claim?</a>
+            </h3>
+            <div id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl4_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>
+In case of accidental damages claim, you need to provide the following documents:<br>
+• <a class="href-text" href="/docs/default-source/downloads/motor_claim_form.pdf?sfvrsn=0" target="_blank"><span style="text-decoration: underline;">Claim Form</span></a> duly signed<br>
+• Valid R.C. copy of the vehicle<br>
+• Valid driving license copy<br>
+• Policy copy<br>
+• FIR, if required (For Theft, Third Party Injury/ Damage; Highway accidents - Major only)<br>
+• Original repair bill, proof of release and cash receipt<br>
+• Any other document as required to investigate the Claim or Company's obligation to make payment for it</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd5603e" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl5_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C140$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl5$listItemToggleLnk','')">Please provide me with the list of garages in my city where I can avail Cashless service?</a>
+            </h3>
+            <div id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl5_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p><a class="href-text" href="/cashless-garages" target="_blank"><span style="text-decoration: underline;">Click here</span></a> to search and view the list of garages in your city where you can avail Cashless service</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd56051" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl6_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C140$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl6$listItemToggleLnk','')">What is the meaning of deductibles? What is the deductible applicable to Private Car and Two-wheeler?</a>
+            </h3>
+            <div id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl6_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>Deductible means the amount that you will bear in case of a claim. This amount is deducted from the claim amount. Car Insurance Policy carries a Compulsory Deductible of <span class="rpicon">`</span> 1,000 (for vehicles not exceeding 1500 cc) or <span class="rpicon">`</span> 2,000/- (for vehicles exceeding 1500 cc). Two-wheeler Insurance policies carry a Compulsory Deductible of <span class="rpicon">`</span> 100.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd56063" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl7_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C140$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl7$listItemToggleLnk','')">What is meant by Constructive Total Loss?</a>
+            </h3>
+            <div id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl7_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>Constructive Total Loss refers to accidental loss/ damage to your vehicle where the aggregate cost of retrieval and/ or repairs amounts to be more than 75% of the Insured's Declared Value (IDV) on your policy.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd56072" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl8_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C140$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl8$listItemToggleLnk','')">If I lodge a claim after the expiry of my policy date for an event that occurred during the policy period, will it still be valid?</a>
+            </h3>
+            <div id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl8_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>Yes, you will be eligible for the claim even after the expiry of the policy date. This is because the event took place during the policy period.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055de71875" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl9_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C140$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl9$listItemToggleLnk','')">Which documents are required to file a claim?</a>
+            </h3>
+            <div id="ctl00_innerPg_C140_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl9_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>In case of accidental damages claim, you need to provide the following documents:</p>
+<ul>
+<li> Claim Form duly signed</li>
+<li>  Valid R.C. copy of the vehicle</li>
+<li>  Valid driving license copy</li>
+<li>  Policy copy</li>
+<li> FIR, if required (For Theft, Third Party Injury/Damage; Highway accidents - Major only)</li>
+<li> Original repair bill, proof of release and cash receipt</li>
+<li> Any other document as required to investigate the Claim or Company's obligation to make payment for it</li>
+<ul></ul>
+</ul><p></p>
+            </div>
+        </li>
+    
+        </ul>
+</div>
+<div id="four" style="display: none;">
+    <ul class="section">
+                        
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd55001" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl0_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C139$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl0$listItemToggleLnk','')">What is an endorsement?</a>
+            </h3>
+            <div id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl0_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>An endorsement is a written evidence of an agreed change in the policy. It is a document that incorporates changes in the terms of the policy. Additional premium will charged as applicable.
+</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd55017" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl1_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C139$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl1$listItemToggleLnk','')">What is a non-premium bearing endorsement?</a>
+            </h3>
+            <div id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl1_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>A non-premium bearing endorsement is the endorsement for which no additional premium is charged. For example, Rectification in contact details, Rectification in engine/ chassis number, Addition of hypothecation, etc.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd560ce" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl2_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C139$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl2$listItemToggleLnk','')">What is a premium bearing endorsement?</a>
+            </h3>
+            <div id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl2_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>A premium bearing endorsement is the endorsement for which additional premium is charged. For example, Transfer of ownership, Addition of LPG/ CNG kit, Change of RTO location, etc.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd560e9" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl3_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C139$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl3$listItemToggleLnk','')">I want to make changes in my policy</a>
+            </h3>
+            <div id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl3_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>
+<span class="B">Following changes are allowed in the policy</span><br>
+• <span class="B">Name rectification</span><br>
+• Please send a mail with the policy details on <a href="mailto:himaybharoliya503666@gmail.com><span style="text-decoration: underline;">himaybharoliya503666@gmail.com/span></a>. You would be provided with a request number and the changes would be done<br>
+• You can <a class="href-text" href="https://app4.icicilombard.com/ucvselfhelp/ucvwebappln/index.aspx" target="_blank"><span style="text-decoration: underline;">click here</span></a> to put in a request<br>
+• You can also visit our nearest branch with these documents for the same<br>
+<br>
+<span class="B">Registration number/ Engine/ Chassis number rectification</span><br>
+• Please send a mail with the policy details and a scanned copy of your RC book on <a href="mailto:himaybharoliya503666@gmail.com><span style="text-decoration: underline;">himaybharoliya503666@gmail.com/span></a>. You would be provided with a request number and the changes would be done<br>
+• You can <a class="href-text" href="https://app4.icicilombard.com/ucvselfhelp/ucvwebappln/index.aspx" target="_blank"><span style="text-decoration: underline;">click here</span></a> to put in a request and upload a scanned copy of your RC book<br>
+• You can also visit our nearest branch with these documents for the same.<br>
+<br>
+<span class="B">Address Rectification</span><br>
+• Please send a mail with the policy details and the correct address details on <a href="mailto:himaybharoliya503666@gmail.com><span style="text-decoration: underline;">himaybharoliya503666@gmail.com/span></a>. You would be provided with a request number and the changes would be done<br>
+• You can <a class="href-text" href="https://app4.icicilombard.com/ucvselfhelp/ucvwebappln/index.aspx" target="_blank"><span style="text-decoration: underline;">click here</span></a> to put in a request and upload a scanned copy of your address proof<br>
+• You can also visit our nearest branch with a request letter for the same<br>
+<br>
+<span class="B">Address change</span><br>
+• Please send a mail with the policy details and the correct address details on <a href="mailto:himaybharoliya503666@gmail.com><span style="text-decoration: underline;">himaybharoliya503666@gmail.com/span></a>. You would be provided with a request number and the changes would be done<br>
+• You can <a class="href-text" href="https://app4.icicilombard.com/ucvselfhelp/ucvwebappln/index.aspx" target="_blank"><span style="text-decoration: underline;">click here</span></a> to put in a request and upload a scanned copy of your address proof<br>
+• You can also visit our nearest branch with a request letter for the same<br>
+<br>
+<span class="B">Change in model/Vehicle</span><br>
+• Please visit our nearest branch with a copy of your RC book, request letter and policy documents. These changes might affect the premium charged, so please carry a cheque along.<br>
+<br>
+<span class="B">Name transfer (Transfer of ownership)</span><br>
+• If you transfer your vehicle on some other person’s name, the insurance also needs to be transferred on the new owner’s name.<br>
+• To get the insurance transferred in the new owner’s name, please visit our nearest branch with:<br>
+1. Endorsed copy of Registration Certificate/ Form 29 and Form 30 along with seller request letter for transfer of ownership<br>
+2. Proposal form filled and signed by the new owner of the vehicle<br>
+3. Vehicle inspection report if the difference between the date of transfer and request for endorsement is greater than 14 days<br>
+4. These changes might affect the premium charged, so please carry a cheque along<br>
+<br>
+<span class="B">Addition of LPG/ CNG kit/ Electrical/ Non-electrical accessories</span><br>
+<br>
+Please visit our nearest branch with the following documents:<br>
+• Invoice copy of the CNG kit/ Electrical/ Non-electrical accessories and endorsed RC (with LPG/ CNG) or letter with the declaration value<br>
+• Request letter<br>
+• Cheque for paying the required premium<br>
+<br>
+<span class="B">Addition of Anti-theft device</span><br>
+<br>
+Please visit our nearest branch with the following documents:<br>
+• Invoice copy of fitted device (ARAI approved) or letter with the declaration value<br>
+• Request letter<br>
+<br>
+<span class="B">Change in RTO/ Registration</span><br>
+• Please visit our nearest branch with the following documents:<br>
+• Copy of your updated endorsed Registration Certificate (RC)<br>
+•
+<request></request>
+These changes might affect the premium charged, so please carry a cheque along.<br>
+<br>
+<span class="B">NCB Recovery/ Change</span><br>
+<br>
+Please visit our nearest branch with the following documents:<br>
+• Request letter from Insured<br>
+• Original NCB reserving letter from Previous Insurer<br>
+• Proof of sale of old vehicle<br>
+<br>
+<span class="B">Addition of Hypothecation</span><br>
+• Please send a mail with the policy details, a scanned copy of your request letter, your sanction letter from the financial institution and the endorsed copy of your Registration Certificate (RC) on <a href="mailto:himaybharoliya503666@gmail.com><span style="text-decoration: underline;">himaybharoliya503666@gmail.com/span></a>. You would be provided with a request number and the changes would be done<br>
+• You can <a class="href-text" href="https://app4.icicilombard.com/ucvselfhelp/ucvwebappln/index.aspx" target="_blank"><span style="text-decoration: underline;">click here</span></a> to put in a request and upload the scanned copy of request letter, your sanction letter from the financial institution and the endorsed copy of Registration Certificate<br>
+• You can also visit our nearest branch with these documents for the same<br>
+<br>
+<span class="B">Change of Hypothecation</span><br>
+• Please send a mail with the policy details, a scanned copy of Request letter, your sanction letter from the new financial institution, NOC from the previous financial institution and the endorsed copy of Registration Certificate on <a href="mailto:himaybharoliya503666@gmail.com><span style="text-decoration: underline;">himaybharoliya503666@gmail.com/span></a>. You would be provided with a request number and the changes would be done<br>
+• You can <a class="href-text" href="https://app4.icicilombard.com/ucvselfhelp/ucvwebappln/index.aspx" target="_blank"><span style="text-decoration: underline;">click here</span></a> to put in a request and upload the scanned copy of Request letter, your sanction letter from the new financial institution, NOC from the previous financial institution and the endorsed copy of Registration Certificate<br>
+• You can also visit our nearest branch with these documents for the same<br>
+<br>
+<span class="B">Cancellation of hypothecation</span><br>
+• Please send a mail with the policy details and a scanned copy of Request letter, your NOC letter from the financial institution documents and the endorsed copy of Registration Certificate on <a href="mailto:himaybharoliya503666@gmail.com><span style="text-decoration: underline;">himaybharoliya503666@gmail.com/span></a>. You would be provided with a request number and the changes would be done<br>
+• You can <a class="href-text" href="https://app4.icicilombard.com/ucvselfhelp/ucvwebappln/index.aspx" target="_blank"><span style="text-decoration: underline;">click here</span></a> to put in a request and upload the scanned copy of Request letter, your NOC letter from the financial institution documents and the endorsed copy of Registration Certificate<br>
+• You can also visit our nearest branch with these documents for the same</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd56104" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl4_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C139$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl4$listItemToggleLnk','')">What are the documents required to cancel the policy?</a>
+            </h3>
+            <div id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl4_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>
+<span class="B">The documents required to cancel the policy by the customers are as follows</span><br>
+• Customer Request Letter<br>
+• Alternate policy proof (TP / Comprehensive)<br>
+• Original Policy Copy<br>
+• Sale Proof of the vehicle or Sale deed/Form 29&amp;30 along with RTO acknowledgement. (in case of vehicle sold)<br>
+• NOC from financer if the vehicle is seized by the financer<br>
+<br>
+</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd56117" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl5_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C139$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl5$listItemToggleLnk','')">What are the documents required for cancelling policy due to Double Insurance with other Insurance Company?</a>
+            </h3>
+            <div id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl5_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>
+<span class="B">The documents required to cancel the double policy by the customer are as follows</span><br>
+• Customer Request Letter (should contain the details of the policies from both the insurance companies)<br>
+• Original Policy Copy<br>
+• Policy copy of the other Insurance company<br>
+<br>
+</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055dd56126" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl6_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C139$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl6$listItemToggleLnk','')">What are the documents required for cancelling policy due to Double Insurance with HASS General Insurance Co.?</a>
+            </h3>
+            <div id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl6_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>
+<span class="B">The documents required to cancel the double policy by the customer are as follows</span><br>
+• Customer Request Letter (should contain the details of both the HASS policies)<br>
+• Original Policy Copy<br>
+<br>
+</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055de7239d" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl7_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C139$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl7$listItemToggleLnk','')">What are the documents required for cancelling the policy the due to Double Insurance with another Insurance Company?</a>
+            </h3>
+            <div id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl7_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>The documents you require to cancel the double policy are as follows:</p>
+<p>• Customer Request Letter (should contain the details of the policies from both the insurance companies)</p>
+<p>• Original Policy Copy</p>
+<p>• Policy copy of the other Insurance Company</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055de7241a" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl8_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C139$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl8$listItemToggleLnk','')">What is Car Insurance Online Claim? </a>
+            </h3>
+            <div id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl8_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>A claim can be defined as a legal statement made to gain the following:</p>
+<p>•	Money as per the terms of insurance</p>
+<p>•	Enforcement of a right against third party as stated in the policy</p>
+<p>The legal document that carries ‘claim’ is often referred to as a ‘Statement of Claim’. It is often in the form of a communication expressed in the amount of cash which the party requires to pay or reimburse.
+Consumers may face many issues when filing the ‘statement of claim’. Although the process of filing a claim is straight forward, it is vital to carry it out in a proper manner. In the event of failure to do so, the claim may be declared null and void.</p>
+<p>Check out the process for car insurance claims in India: </p>
+<strong>Step 1: Notify the Company </strong><br>
+<p>First, you should call your insurance company or representative at the earliest. Make sure you follow this step regardless of how far you are from home. It is crucial to inform the insurance company about the accident.</p>
+<strong>Step 2: Get Guidance</strong><br>
+<p>You should get adept guidance on how to proceed with the claims process from your insurance provider. Know about the forms and important documents required for the same. You can get this information on the car insurance online website.</p>
+<strong>Step 3: Documentation</strong><br>
+<p>You may require a "proof of loss" form in conjunction with the documents related to your claim such as bills for car repair, medical bills etc. Make sure you supply all of the necessary info to the insurer in order to process the claim.</p>
+<strong>Step 4: Expenses</strong><br>
+<p>Keep the records of all of your expenses incurred due to an accident.</p>
+<strong>Step 5: Keep Records</strong><br>
+<p>Make double sure you keep records of paperwork intact. The documentation may be required for reference later.</p>
+<strong>Process of Registering a Car Insurance Claim</strong><br>
+<strong>Step 1:</strong><br>
+<p>Make sure you note the number of the other vehicle involved in the accident.</p>
+<strong>Step 2:</strong><br>
+<p>List out names and contact details of witnesses.</p>
+<strong>Step 3:</strong><br>
+<p>Get in touch with the insurance provider’s 24x7 call centre. Also keep the claim number/reference number handy.</p>
+<strong>Step 4:</strong><br>
+<p>Contact a call centre representative to get the details of documents needed for processing the claim. You should also provide the details of your preferred garage, where the facility for cashless repair is available.</p>
+<strong>Step 5:</strong><br>
+<p>File an FIR (First Information Report) at the nearest police station in the event of theft, damage to property, bodily injury, and other major damages.</p><p></p>
+            </div>
+        </li>
+    
+        <li class="section-list section-item" data-sf-provider="OpenAccessDataProvider" data-sf-id="8c0002ff-45fd-68ff-8a0d-f0055de72429" data-sf-type="Telerik.Sitefinity.Lists.Model.ListItem">
+            <h3>
+              <a onclick="return false;" id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl9_listItemToggleLnk" data-sf-field="Title" data-sf-ftype="ShortText" href="javascript:__doPostBack('ctl00$innerPg$C139$ctl00$ctl00$ctl00$listsControl$ctrl0$listItemsControl$ctrl9$listItemToggleLnk','')">What happens After Registering the Claim?</a>
+            </h3>
+            <div id="ctl00_innerPg_C139_ctl00_ctl00_ctl00_listsControl_ctrl0_listItemsControl_ctrl9_listItemContent" style="display: block;" data-sf-field="Content" data-sf-ftype="LongText">
+              <p></p><p>The customer service manager from the insurance provider will get in touch with you. This happens within 24 hours of claim registration. Once the manager reaches the appointed place, you need to submit the copy of documents to him and get the originals verified.</p>
+<p>The manager will get the estimate for the repairs of your car. He will give spot approval after inspection. Once the repair process is completed at one of the network garages, the company will pay the bills directly to the garage (as per the terms stated in the policy).</p><p></p>
+            </div>
+        </li>
+    
+        </ul>
+</div>
+</div>
+
+{% endblock %}

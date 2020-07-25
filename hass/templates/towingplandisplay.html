@@ -1,0 +1,102 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+      <style>
+        .hg
+        {
+          height: 100px;
+        }
+        .nn
+        {
+          background-color: gray;
+        }
+        .n
+        {
+          background-color: lightblue;
+        }
+      </style>
+    </head>
+      <body>
+          <br>
+          <br>
+          <br>
+        <div class="container">
+        
+          <div class="row">
+            <div class="col-lg-4 offset-lg-1 n">
+              <div class="card bg-light w-100 shadow-sm rounded">
+                <br>
+                <div class="card-header text-center" style="font-weight: bolder;" >USER PROFILE</div>
+               <br>
+                <center> <img src="{% static 'img/d.png' %}" width="150px"></center>
+               <div class="card-body">
+                 <div class="card-title text-center">
+               <h1 class="text-danger" style="font-size: 25px; font-weight: bold;">{{ user.first_name|title }} {{ user.mid_name|title  }}<br></h1>
+               <span class="text-primary" style="color: gray; font-weight: bold;">{{ user.mobile }}</span> <br>
+                <span class="text-primary" style="color: gray; font-weight: bold;">{{ user.email| title}}</span> <br>
+                </div>
+                <br>
+                <div class="card-text">
+                  <ul class="list-group list-group-flush">  
+                    <li class="list-group-item"><img src="{% static 'img/c.png' %}" width="25px"><span style="color: gray; font-weight: bold;">Profile Document</span> <br></center></li>
+                    <li class="list-group-item"><img src="{% static 'img/ri.png' %}" width="25px"><span style="color: gray; font-weight: bold;">Mobile Number</span> <br></center></li>
+                    <li class="list-group-item"><img src="{% static 'img/c.png' %}" width="25px"><span style="color: gray; font-weight: bold;">Acoount</span> <br></center></li>
+                 <li class="list-group-item"> <span style="color: gray; font-weight: bold;">My Booking</span></li>
+              <li class="list-group-item"><a href="{% url 'change_password' %}"<span style="color: gray; font-weight: bold;">CHANGE PASSWORD</span></a></li>
+                  </ul>
+ </div>
+       </div>
+       </div>
+            
+            </div>
+            <div class="col-lg-1"></div>
+            
+            <div class="col-lg-6">
+            {% for i in abh %}     
+        
+          <div class="row nn">
+                
+                       <div class="card w-100 bg-light border border-info shadow rounded">
+                         <div class="card-header">  <H3 style="font-weight: bolder;" class="text-center">YOUR PLAN</H3></div>
+                          <br>
+                         
+                      <div class="card-body text-center">
+                  <div class="card-title">
+                    <h1 class="text-danger">{{ i.model }} {{ i.make }}</h1>
+                  </div>
+                  <br>
+                  <div class="card-text">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item"><h2 class="text-danger">STATE: {{ i.state }}</h1></li>
+                    <li class="list-group-item"><h2 class="text-danger">VEHICAL NUMBER:&nbsp;&nbsp;&nbsp;{{i.rto }}&nbsp;&nbsp;{{ i.series }}&nbsp;&nbsp;{{i.number}}</h1> </li> 
+                          <li class="list-group-item"><h2 class="text-danger">DATE:&nbsp;&nbsp;&nbsp;{{i.date}}</h2> </li>
+                    <li class="list-group-item">    
+                        <h2 class="text-danger">CATEGORY&nbsp;&nbsp;&nbsp;{{i.category}}</h2>       
+                           </ul>
+                    <br>
+                    
+                  <a href="{% url 'formfillup' %}"><button class="btn btn-danger btn-lg">ACTIVATE PLAN</button></a>
+                  </div>
+                  </div>
+            
+                  </div>
+                
+              <br>
+              </div>
+              <br>
+              
+              
+           <br>
+           
+          {% endfor %}
+        </div>
+</body>
+
+<br>
+<br>
+</div>                                                                                                                                                                                          <br>
+                                                                                                                                                                                                          
+<br><br>
+
+
+{% endblock %}

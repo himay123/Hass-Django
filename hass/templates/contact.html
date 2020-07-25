@@ -1,0 +1,282 @@
+{% load static %}
+
+<head>
+<link rel="shortcut icon" href="images/favicon.png">
+<link rel="canonical" href="{% url 'about' %}"/>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','../connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1114341115291156');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1114341115291156&amp;ev=PageView&amp;noscript=1"
+/></noscript>
+
+<script type="text/javascript">
+var axel = Math.random() + "";
+var a = axel * 10000000000000;
+document.write('<iframe src="https://5626822.fls.doubleclick.net/activityi;src=5626822;type=allia0;cat=allia00;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+</script>
+<noscript>
+<iframe src="https://5626822.fls.doubleclick.net/activityi;src=5626822;type=allia0;cat=allia00;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+</noscript>
+<!-- End of DoubleClick Floodlight Tag: Please do not remove -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Allianz Global Assistance - About Us | Allianzroadassist.com</title>
+<meta name="description" content="Allianz road assist help people anytime and anywhere. It offers direct services to the consumer such as Travel Insurance, Travel Medical Assistance and CRM.">
+
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style_fonts.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet.css' %}" media="screen">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style_media.css' %}" media="screen">
+<script type="text/javascript" src="{% static 'js/jquery.2.1.4.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/css3mediaquery.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/function.js' %}"></script>
+
+
+<script type="text/javascript" src="{% static 'js/about_flexslider.js' %}"></script>
+
+
+<script>
+jQuery(window).load(function()
+{
+ var sloganFinder = window.location.hash.replace("#","");
+ if(sloganFinder !== '')
+ { 
+ var sloganLocation = $("#WhyChoosUs").offset();
+ $('html, body').animate({scrollTop: sloganLocation.top}, 1000); 
+ }        
+});
+</script>
+</head>
+
+<body>
+<!-- Google Tag Manager -->
+<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-NZMDPW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+{'gtm.start': new Date().getTime(),event:'gtm.js'}
+);var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZMDPW');</script>
+<!-- End Google Tag Manager -->
+
+<!--<div class="ClickToCall"><span>X</span><a href="tel:18001031958" title="Click to Call"><img src="images/clicktocall.png" alt="Click to Call - 18001031958"></a></div>-->
+
+<div id="mainwaper"><!-- mainwaper part start here -->
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style_fonts.css' %}" media="screen">
+<script src="{% static 'js/validation.js' %}" type="text/javascript"></script>
+
+<header id="header">
+<div class="header_holder"><div class="header"><!--header part start -->
+	<div class="menuicon"><a href="javascript://" class="mobileicon"><img src="{% static 'images/menuicon.jpg' %}"></a></div>
+    <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="Allianz Global Assistance"></a>
+	<h1>
+    <small>Need Roadside Assistance?</small>
+	<strong><a href="tel:1800 103 1958" onclick="ga('send', 'event', '1800 103 1958', 'Click', '1800 103_1958');" style="color:#003781;text-decoration:none;">1800 103 1958</a></strong>
+    </h1>
+<!-- header part close --></div></div>
+</header>
+
+
+
+
+<nav id="topnav"><div class="topnav_holder"><div class="topnav"><!-- topnav part start -->
+    <ul class="nav-desktop">
+    <li><a href="{% url 'index' %}" class="tnactive">Home</a></li>
+    <li><a href="{% url 'ac_towing' %}" >About Us</a></li>
+    <li><a href="#" class="nodisplay" >Plans <span>&nbsp;</span></a>
+            <ul>
+            <li><a href="{% url '4wheel' %}">4 Wheelers</a></li>
+            <li><a href="{% url '2wheel' %}">2 Wheelers</a></li>
+            
+            </ul>
+    </li>
+    <li><a href="services.html" >Services <span>&nbsp;</span></a>
+    <ul>
+            <li><a href="{% url 'index' %}">Towing Service</a></li>
+            <li><a href="{% url 'ac_towing' %}">Accidental Towing</a></li>
+            <li><a href="{% url 'bat_jump' %}">Battery Jumpstart</a></li>
+            <li><a href="{% url 'flat_tyre' %}">Flat Tyre</a></li>
+            <li><a href="{% url 'lost_key' %}">Lost or Locked keys</a></li>
+            <li><a href="{% url 'fuel_pro' %}">Fuel Problems</a></li>     
+    
+            </ul>
+    
+    </li>
+    <li><a href="{% url 'faq' %}" >FAQs</a></li>
+    <li><a href="{% url 'bat_jump' %}" >Contact Us</a></li>
+    <li><a href="{% url 'lost_key' %}" >Coverage Area</a></li>
+    </ul>
+    
+    <ul class="nav-small">
+    <li><a href="{% url 'index' %}" class="tnactive">Home</a></li>
+    <li><a href="{% url 'ac_towing'  %}" >About Us</a></li>
+    <li>
+    <li>
+
+<li>
+<div class="servicenone"><a href="services.html">Services</a></div>
+<div class="accordionButton">
+        
+        <div class="menuarrow"><img src="{% static 'images/icon_menu_arrow.png' %}"></div>
+    </div>
+    <div class="accordionContent">
+        <div class="navdiv navsmall-bordertop"><a href="towing-service.html">Towing Service</a></div>
+        <div class="navdiv"><a href="accidental-towing.html">Accidental Towing</a></div>
+        <div class="navdiv"><a href="battery-jumpstart.html">Battery Jumpstart</a></div>
+        <div class="navdiv"><a href="flat-tyre.html">Flat Tyre</a></div>
+        <div class="navdiv"><a href="lost-locked.html">Lost or Locked keys</a></div>
+        <div class="navdiv navsmall-noborder"><a href="fuel-problem.html">Fuel Problems</a></div>
+    </div>
+
+</li>
+<li><a href="faqs.html" >FAQs</a></li>
+<li><a href="contact.html" class="tnactive">Contact Us</a></li>
+<li><a href="coverage-area.html" >Coverage Area</a></li>
+</ul>
+<!-- topnav part close --></div></div></nav>
+
+
+
+
+<div class="inner_banner"><!-- inner_banner part start here -->
+<img src="{% static 'images/contactus_screen.jpg' %}" alt="Contact Us" class="ib_screen">
+<img src="{% static 'images/contactus_small.jpg' %}" alt="Contact Us" class="ib_small">
+<p class="ib_contact">Need Roadside Assistance right now?<br>Call <strong><a href="tel:1800 103 1958">1800 103 1958</a></strong></p>
+<!-- inner_banner part close here --></div>
+
+
+
+
+
+
+<div class="contactus"><!-- contactus part start here -->
+<div class="contact_address_holder"><div class="contact_upder">
+<ul class="backlink">
+<li><a href="index.html">Home</a></li>
+<li>/</li>
+<li>Contact Us</li>
+</ul>
+
+<p><strong>Contact Us</strong><br><br>
+If you would like us to call you, please submit your query in the form below and we will reach out to you.</p>
+</div></div>
+
+
+
+<div id="LocationMap">Address Map</div>
+
+
+
+<div class="contact_address_holder"><div class="contact_address">
+        <div class="ca_h2">
+		<div itemscope itemtype="http://schema.org/LocalBusiness">
+	
+		<span itemprop="name">AWP Assistance<br>(India) Private Limited</span>
+		
+     
+		   <div  class="ca_h3" itemscope itemtype="http://schema.org/PostalAddress">
+    <span itemprop="streetAddress">1st Floor,</span>
+	<span itemprop="addressLocality">DLF Square, Jacaranda Marg Gurgaon</span><br/>
+		
+              <span itemprop="addressRegion">Haryana, India</span>
+<span itemprop="postalCode" >122002</span><br />
+   </div>
+
+   <span itemprop="telephone" class="ca_h5">Toll Free:</span>
+<span itemprop="telephone" class="ca_h6">1800 103 1958</span>
+
+</div>
+
+
+        <div class="ca_h5">Email Us:</div>
+        <div class="ca_h4"><a href="mailto:help@allianzroadassist.com">help@allianzroadassist.com</a></div>
+      <!--  <div class="ca_h5">Toll Free:</div>
+        <div class="ca_h6"><span itemprop="telephone">1800 103 1958</span></div>-->
+</div></div>
+<!-- contactus part start here --></div>
+
+
+
+<div class="feedback_outer"><div class="feedback_inner">
+<style>.msg{color:#fff;font-size:24px;text-align:center;}</style>
+<div class="feedback"><!-- Feedback part start here -->
+        <div class="fb_left">
+        <p>
+        <strong>AWP Assistance<br>(India) Private Limited</strong>
+        <br><br>
+        1<sup>st</sup> Floor, DLF Square,<br>
+        Jacaranda Marg Gurgaon,<br>
+        Haryana 122002 India
+        <br><br>
+        Email Us:<br>
+		<a href="mailto:help@allianzroadassist.com">help@allianzroadassist.com</a>
+        <br><br>
+        Got a question? Call us:<br>
+        <b><a href="tel:1800 103 1958" onclick="ga('send', 'event', '1800 103 1958_Bottom', 'Click', '1800 103_1958_Bottom');">1800 103 1958</a></b>
+        </p>
+        </div>
+        
+        <div class="fb_right">
+        <p><strong>Got a question?</strong><br>Leave your details and we&#039;ll call you back.</p>
+       <form method="post" enctype="multipart/form-data" name="form1" id="form1" action="https://www.allianzroadassist.com/process.php">
+		<div id="msg" class="msg"></div><br /><br />
+		<div id="frmid" class="frmid">
+        <input name="txtname" id="txtname" class="fbr_input" type="text" placeholder="Name" value=>
+        <input name="txtemail" id="txtemail" class="fbr_input" type="text" placeholder="Email" value=>
+		<input name="txtmobile" class="fbr_input" type="text" placeholder="Mobile" value=>
+       <!-- <textarea name="txtmessage" id="txtmessage" class="fbr_textarea" placeholder="Message" ></textarea>-->
+        <!--<input name="submit" class="fbr_submit" type="submit" value="Send Message">--><button id="sub" class="fbr_submit">Submit</button>
+</div>
+        </form>
+        </div>
+<!-- Feedback part close here --></div></div></div>
+
+
+<footer id="footer"><div class="footer_holder"><div class="footer"><!-- footer part start-->
+		<ul>
+        <li><a href="global-presence.html" >Global Presence</a></li> 
+        <li><a href="refer-to-friends.html" >Refer to a friend</a></li>
+        <li><a href="faqs.html" >FAQs</a></li>
+        <li><a href="sitemap.html" >Sitemap</a></li>
+        <li><a href="privacy-policy.html" >Privacy Notice</a></li>
+        <li><a href="cancellation-refund-policy.html" >Cancellation Refund Policy</a></li>
+		</ul>		
+        <aside>
+        <a href="https://www.facebook.com/AGAIndia" target="_blank" title="Facebook" class="footerFB" >Facebook</a>
+        <a href="https://twitter.com/AllianzAssistIn" target="_blank" title="Twitter" class="footerTW">Twitter</a>
+        <a href="https://www.linkedin.com/company/allianz-global-assistance-india-" target="_blank" title="Linkedin" class="footerIN">Linkedin</a>
+		<a href="https://www.instagram.com/allianzassistanceindia/" target="_blank" title="Instagram" class="footerIG">Linkedin</a>
+        </aside>
+        <p>&copy; 2020 Allianz Global Assistance India. All rights reserved.</p>
+<!-- footer part close--></div></div></footer>
+
+
+<script src="myscript.js" type="text/javascript"></script>
+
+
+
+
+
+<!-- mainwaper part close here --></div>
+
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="{% static 'js/map.js' %}"></script> 
+
+</body>
+
+</html>

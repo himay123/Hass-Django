@@ -1,0 +1,161 @@
+{% extends 'maste.html' %}
+{% block containt %}
+<style>
+    #edit
+    {
+        background-color: black;
+        color: aliceblue;
+        height: 45px;
+        font-family: 'Courier New';
+        font-size: 25px;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+<script>
+$(document).ready(function() {
+  // Initialize form validation on the registration form.
+  // It has the name attribute "registration"
+
+  $("form[name='edit']").validate({
+    // Specify validation rules
+    rules: {
+      // The key name on the left side is the name attribute
+      // of an input field. Validation rules are defined
+      // on the right side
+      first_name: "required",
+      last_name: "required",
+      mid_name:"required",
+      states:"required",
+      city:"required",
+      email:"required"
+    },
+    messages: {
+      first_name: "Please enter your firstname",
+      last_name: "Please enter your lastname",
+      mid_name:"Please enter your middlename",
+      states:"Please select your state",
+      city:"Please select your city",
+      email:"Please enter your email"
+    },
+    submitHandler: function(form) {
+       form.submit();
+    }
+  });
+  
+$(document).ready(function(){
+    $("#states").change(function(){
+            var state=$("#states").val();
+            
+            $.ajax({
+
+                url:"{% url 'get_city' %}",
+                data:{
+                    'state':state
+                },
+                //dataType:'json',
+                success:function(data){
+                    
+                    $('#city').empty();
+                    for (var i=0;i<data.length;i++){
+                        
+                        var c=data[i].city_name;
+                        $('#city').append(`<option value="${c}">${c}</option>`)
+                    }
+                    
+                }
+            });
+        });
+    });
+});
+</script>
+<div class="container" style="margin-top: 20px;">
+    <div class="row">
+            
+        <div col-lg-3></div>
+        <div col-lg-6>
+            <form method="POST" class="b" name="edit">
+                {% csrf_token %}
+                <h1 style="color: indigo;"><span style="color: crimson;border-bottom: 3px solid crimson;">Profile</span> Detail</h1>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label for="first">First Name*</label>
+                            <input type="text"  id="first" class="form-control" name='first_name' value="{{user.first_name|title}}" >
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                            <div class="form-group">
+                                <label for="first">Middle Name*</label>
+                                <input type="text"  id="first" class="form-control" name='mid_name' value="{{user.mid_name|title}}" >
+                            </div>
+                        </div>
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label for="last">Last Name*</label>
+                            <input type="text"  id="last" class="form-control" name='last_name' value="{{user.last_name|title}}" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="mobile">Mobile*</label>
+                            <input type="number"  id="mobile" class="form-control" name='mobile' value="{{user.mobile}}" readonly>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="email">Email*</label>
+                            <input type="email"  id="email" class="form-control" name='email' value="{{user.email}}" readonly>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                        <label for="address">Address*</label>
+                            <input type="text" id="address" name="address" class="form-control" value="{{user.address|title}}" >
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="sel1">State*</label>
+                            <select name="states" id="states" class="form-control">
+                                <option value="{{user.state}}">{{user.state}}</option>
+                                {% for state in states %}
+                                <option value="{{state.city_state}}">{{state.city_state}}</option>
+                                {% endfor %}
+                             </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="sel1">city*</label>
+                            <select name="city" id="city" class="form-control">
+                                <option value="{{user.city}}">{{user.city}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <br>
+                                <input type="submit" class="form-control" value="EDIT" id="edit">
+                            </div>
+                            
+                        </div>
+                    </div>
+            </form>
+            </div>
+        </div>
+</div>
+</div>
+{% endblock %}

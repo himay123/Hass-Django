@@ -1,0 +1,50 @@
+{% extends 'maste.html' %}
+{% load static %}
+{% block containt %}
+<div id="head1">
+    <img src="{% static 'images/infocenter.jpg' %}" class="ing-responsive" alt="" width="100%" height="300px" style="margin-top: -20px;">
+    <h1 class="text-center" style="background-color: brown; font-size: 30px;font-weight: 600;height: 50px;line-height: 50px;color: white;margin-top: -0px;">Info Center</h1>
+    </div>
+    <br><br>
+     <div class="jumbotron">
+          <center><h1 style="color: #053c6d;font-weight: 700;font-size: 24px;font-family: arial;">SELECT THE TYPE OF INSURANCE TO READ RELATED ARTICLES WITH USEFUL INFORMATION, TIPS AND GUIDANCE</h1> </center>
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-2 col-md-offset-3" style="color: #053c6d;font-size: 20px;font-weight: 600;">Choose Product</div>
+                  <div class="col-md-4">
+                      <select name="c_product" id="c_product" class="form-control">
+                          <option value="car">Car Insurance</option>
+                          <option value="towing">Towing</option>
+                          <option value="rental">Rental</option>
+                      </select>
+                  </div>
+                  <div class="col-md-2">
+                      <button class="btn btn-danger">GO</button>
+                  </div>
+              </div> 
+          </div>
+        </div>
+        <center><h1 style="color: #053c6d;font-weight: 700;font-size: 24px;font-family: arial;">GET BITE-SIZED BITS OF INSURANCE-RELATED TRIVIA AND INFORMATION IN OUR INFOGRAPHICS’ <br> SHOWCASE</h1></center>
+      <div class="container">
+          <div class="row">
+             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+                 <img src="{% static 'images\car_i.jpg' %}" alt=""  height="150px" width="150px">
+                 <h3>car</h3>
+                 <p>Know more about the latest trends, facts and figures and continue your research about cars with these automotive themed infographics.</p>
+                 <a href="#">Explore</a>
+             </div>
+             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+                <img src="{% static 'images\to_info.jpg' %}" alt="" height="150px" width="150px">
+                <h3>Towing</h3>
+                <p>Also called tow car , tow truck. a vehicle equipped with a mechanical apparatus for hoisting and pulling, used to tow wrecked, disabled, or stalled automobiles. </p>
+                <a href="#">Explore</a>
+            </div>
+             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center">
+                <img src="{% static 'images\rental_info.jpg' %}" alt=""  height="150px" width="150px">
+                <h3>Rental</h3>
+                <p>As the car rental industry polarizes, business will go to the bigger companies. 5. A car rental company subcontracts out the repair and maintenance of its fleet</p>
+                <a href="#">Explore</a>
+            </div> 
+          </div>
+      </div>
+    {% endblock %}

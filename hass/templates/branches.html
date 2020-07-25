@@ -1,0 +1,155 @@
+{% extends 'maste.html' %}
+{% load static %}
+{% block containt %}
+<style>
+    .table
+    {
+        background-color: #e7ecec;
+     
+    }
+    /* header */
+.table > thead > tr > th {
+   border-bottom: 5px solid #322250;
+}
+/* rows */
+.table > thead > tr > th, .table > tbody > tr > th, .table > tbody > tr > td{
+   border-top: 1px solid #322250;
+}
+.h3text{
+        font-size: 24px;
+        color: #053c6d;
+        margin-top: 10px;
+        }
+.h3text1{
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0;color: #053c6d;
+        }
+
+
+</style>
+<script>
+$(document).ready(function(){
+      $('#garage_table').hide()
+    $("#city").change(function(){
+        var state=$("#states").val();
+        var city=$("#city").val();
+
+
+        $.ajax({
+
+            url:"{% url 'get_branches' %}",
+            data:{
+                'state':state,
+                'city':city,
+            },
+            //dataType:'json',
+            success:function(data){
+                console.log(data);
+                $('#manufacture').empty();
+                $('#garage').empty();
+                $("#garage_table tr:has(td:empty + td:empty)").index()
+                for (var i=0;i<data.length;i++){
+            
+                   
+                    var a=data[i].branch_name;
+                    var address=data[i].address;
+                    var city=data[i].city;
+                    var state=data[i].state;
+                    var no=data[i].contect_no;
+                   
+
+                    $('#manufacture').append(`<option value="${a}">${a}</option>`)
+                    $('#garage').append(`<option value="${a}">${a}</option>`)
+                    $('#garage_table').show()
+                    $('#garage_table').append(`<tr><td>${a}</td><td>${address}</td><td>${city}</td><td>${state}</td><td>${no}</td></tr>`);
+                    
+                    
+                }
+            }    
+        });
+
+
+    });
+
+
+
+    $("#states").change(function(){
+            var state=$("#states").val();
+            
+            $.ajax({
+
+                url:"{% url 'get_city' %}",
+                data:{
+                    'state':state
+                },
+                //dataType:'json',
+                success:function(data){
+                    
+                    $('#city').empty();
+                    for (var i=0;i<data.length;i++){
+                        
+                        var c=data[i].city_name;
+                        $('#city').append(`<option value="${c}">${c}</option>`)
+                    }
+                    
+                }
+
+
+            });
+    });
+    
+});
+    
+
+</script>
+
+ <h1 class="text-info text-center" style="font-size: 30px; font-weight: 700;" >FIND BRANCH</h1>   
+ <div class="container" style="margin-top: 50px;">
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-hidden col-xs-hidden"></div> 
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <select name="states" id="states" class="form-control">
+                <option value="">select state</option>
+                {% for state in states %}
+                <option value="{{state.city_state}}">{{state.city_state}}</option>
+                {% endfor %}
+            </select>
+        </div>
+       
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <select name="cities" id="city" class="form-control">
+                <option value="">select city</option>
+            </select>
+        </div>
+       
+        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <select name="manufacture" id="manufacture" class="form-control">
+                <option value="">All Branch</option>
+            </select>
+        </div>
+       
+        
+  </div>
+</div>
+<div class="container" style="margin-top: 50px;">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="table-responsive ">
+                <table class="table" id="garage_table"  style="background-color:#a3c8e9;width: 100%;">
+                    <thead>
+                        <th>Branch Name</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Contect_No</th>
+                   </thead>
+                    <tbody>
+                   </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,171 @@
+{% extends 'maste.html' %}
+{% load static %}
+{% block containt %}
+<style>
+   h2
+   {
+       position: absolute;
+       left: 25%;
+       
+   }
+.banner-txt {
+    position: absolute;
+    left: 10%;
+    top: 25%;
+    width:50%;
+    padding: 19px;
+    background: rgba(0, 0, 0, .81);
+}
+.banner-txt h2 {
+    top: -5%;
+    left: 2%;
+    color: #FFF;
+    font-size: 33px;
+    width: 100%;
+}
+.banner-txt p {
+    color: #FFF;
+    font-size: 16px;
+    width: 100%;
+}
+.banner-txt a {
+    background: #97291E;
+    color: #fff;
+    font-size: 14px;
+    display: inline-block;
+    padding: 10px 24px;
+    text-transform: uppercase;
+}
+.info_cnt {
+    left: -100%;
+    top: 0;
+    padding: 10px 15px;
+    background: #ccc;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    height: 100%;
+}   
+.info_cnt a {
+    background: #97291E;
+    color: #FFF;
+    font-size: 12px;
+    display: inline-block;
+    padding: 7px 12px;
+    text-transform: uppercase;
+    margin: 0;
+}
+.infos {
+    height: 110px;
+}
+h3 {
+    font-size: 16px;
+    font-weight: 700;
+    padding-top: 5px;
+}
+
+ h3 {
+    font-size: 17px;
+    padding: 15px 0 0;
+    font-weight: 700;
+}
+h3 p.nm {
+    font-family: arial;
+    color: #333;
+    margin: 0;
+    text-align: center;
+}
+
+</style>
+<div id="head1">
+    <img src="{% static 'images/about_us.jpg' %}" class="ing-responsive" alt="" width="100%" style="margin-top: -20px;">
+    <div class="banner-txt">
+        <br><br>
+        <h2>Who we are</h2>
+        <p>HASS GIC Ltd. is one of the leading private sector general insurance companies in India with a Gross Written Premium (GWP) of Rs147.89  billion for the year ended March 31, 2019. The company issued over 26.5 million policies and settled over 1.6 million claims as on March 31, 2019.</p>
+        <a href="{% url 'who_we_page' %}">Explore Further</a>
+        </div>
+    </div>
+    <div class="container">
+        <h1 style="color: #97291E;">What We Do</h1>
+        <p>We provide general insurance solutions to secure you and your family against unexpected and untoward events. With HASS, you can avail protection solutions for business, personal and project liabilities across rural as well as urban areas in India.</p>
+        <br>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="img-thumbnail">
+                <img src="{% static 'images\insu1.jpg' %}" alt="Carinsurance" class="img-responsive" style="width: 100%;">
+                <h2 style="color: white; top: 10%;">Car Insurance</h2>
+                <div class="info_cnt" class="caption">
+                    <p>A worry-free ride awaits you! Get comprehensive coverage for your car and secure your ride in a breeze.</p>
+                    <a href="{% url 'logout' %}">Know More</a> <br><br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="img-thumbnail">
+                <h2 style="color: white; top: 10%;">Car Towing</h2>
+                <img src="{% static 'images\insu2.jpg' %}" alt="Carinsurance" class="img-responsive" width="100%">
+                <div class="info_cnt" class="caption">
+                    <p>a person, car, or train employed in removing wreckage, debris, etc., as from railroad tracks. </p>
+                    <br><a href="{% url 'logout' %}">Know More</a>
+                    <br><br>
+                </div>
+               
+            </div>
+        </div>
+            <div class="col-lg-4">
+                <div class="img-thumbnail">
+                <h2 style="color: white; top: 10%;">Car Rental</h2>
+                <img src="{% static 'images\insu3.jpg' %}" alt="Carinsurance" class="img-responsive" width="100%">
+                <div class="info_cnt" class="caption">
+                    <p>rental Sentence Examples. He strode to his rental car with new confidence.</p>
+                    <a href="{% url 'logout' %}">Know More</a><br><br>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="well" style="background: rgba(0, 0, 0, .81);">
+        <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="color: white;">
+    <h1 class="text-center" style="position: relative;">Our Vision</h1>
+    <p class="text-center" style="font-size: 25px;">We will be the most value creating <br> and admired risk solutions company <br> in India, with a global footprint.</p>
+    </div>
+    </div>
+    </div>
+    <div class="jumbotron" style="width: 100%;border-radius: none;">
+        <h1 class="text-center" style="color: #053C6D;">Our Team</h1>
+        <p class="text-center" style="color: #053C6D;">Forever driving us and guiding us towards progress is a team that is fortified by exemplary leadership, clear focus on the goals and tireless perseverance.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <img src="{% static 'images/sagar.jpg' %}" alt="" height="200" width="200">
+                    <div class="infos">
+						<h3>Sagar Chandresh</h3>
+						<p class="nm">Non-Executive Independent Director</p>
+					</div>
+                </div>
+                <div class="col-lg-3">
+                    <img src="{% static 'images/himay.jpg' %}" alt="" height="200" width="200">
+                    <div class="infos">
+						<h3>Himay Bharoliya</h3>
+						<p class="nm">Non-Executive  Non-Independent Director</p>
+					</div>
+                </div>
+                <div class="col-lg-3">
+                    <img src="{% static 'images/abhishek.jpg' %}" alt="" height="200" width="200">
+                    <div class="infos">
+						<h3>Abhishek Dhameliya</h3>
+						<p class="nm">Non-Executive  Independent Director</p>
+					</div>
+                </div>
+                <div class="col-lg-3">
+                    <img src="{% static 'images/sagara.jpg' %}" alt="" height="200" width="200">
+                    <div class="infos">
+						<h3>Sagar Anghan</h3>
+						<p class="nm">Executive Director Wholesale</p>
+					</div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

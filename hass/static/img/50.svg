@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>airplane</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Working" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Artboard-3" stroke="#444444" stroke-width="1.26315789">
+            <g id="Group" transform="translate(3.000000, 3.000000)">
+                <polygon id="Stroke-137" stroke-linejoin="round" fill="#E6F4FE" points="11.0730945 16.6125763 0.378953967 20.7402581 0.682333841 17.4247495 10.8672296 8.39558655"></polygon>
+                <polygon id="Stroke-139" stroke-linejoin="round" fill="#E6F4FE" points="12.7920668 25.1970078 8.27748539 25.1970078 8.27748539 23.6169042 10.9871372 21.3596135"></polygon>
+                <polygon id="Stroke-145" stroke-linejoin="round" fill="#E6F4FE" points="14.6099531 16.5654892 25.300482 20.7401226 24.9971021 17.4250655 14.8122063 8.39590257"></polygon>
+                <polygon id="Stroke-147" stroke-linejoin="round" fill="#E6F4FE" points="12.8665572 25.1970078 17.3811386 25.1970078 17.3811386 23.6169042 14.7089578 21.3894098"></polygon>
+                <path d="M10.7628073,2.33092355 L10.8670942,8.39581228 L11.215349,25.1970078 L14.4963215,25.1970078 L14.7858196,8.32038409 L14.9166286,2.3309687 C14.9166286,1.18471647 13.9875277,0.255615602 12.8412755,0.255615602 C11.6919082,0.255570456 10.7628073,1.18467132 10.7628073,2.33092355 Z" id="Stroke-133" fill="#CFEAFD"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,6 +1,83 @@
 {% extends 'maste.html' %}
 {% load static %}
 {% block containt %}
+
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+<style>
+    a.init-claim-btn {
+    border: 1px solid #063b6d;
+    border-radius: 30px;
+    padding: 13px 15px;
+    font-size: 13px;
+    display: inline-block;
+    color: #063b6d;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 500;
+    margin-bottom: 20px;
+    position: unset;
+    margin-left: 80px;
+}
+span.initiate-claim-bg {
+    content: '';
+    background: url("{% static 'images/initiate-claim-bg.png' %}");
+    display: block;
+    width: 325px;
+    height: 126px;
+    text-align: center;
+    margin: auto;
+    border-radius: 6px;
+}
+.btn-orange:hover {
+    color: #fff;
+}
+.btn-primary {
+    font-size: 1.6rem;
+    text-decoration: none;
+    padding: 1.8rem 4rem;
+    -webkit-border-radius: 3rem;
+    border-radius: 3rem;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    margin-top: 30px;
+    left: 200px;
+}
+.btn-orange {
+    
+    
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    color: #fff;
+    padding: 1.5rem 4rem;
+    font-size: 1.8rem;
+    background: #fe6625;
+
+}
+.eclaim-form {
+    background: #f5f5f5;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 328px;
+    margin: 0 auto;
+    padding: 15px 15px 12px 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.eclaim-form .text-eclaim {
+    display: inline-block;
+    width: 75%;
+    text-align: left;
+}
+.eclaim-form img {
+    float: right;
+    display: inline-block;
+    padding: 3px 0;
+}
+
+</style>
 <script>
     $(document).ready(function(){
         $('#add_content').click(function(){
@@ -33,16 +110,68 @@
            $('#remove1').hide()
            $('#add1').show()
         });
+        $("form[name='claimformregister']").validate({
+    
+    rules: {
+    
+        policy_no: "required",
+        e_no: "required"
+    },
+      
+    
+    messages: {
+      policy_no: "Please enter your policy no",
+      e_no: "Please enter your Engin no"
+
+    },
+      
+   
+    submitHandler: function(form) {
+       form.submit();
+    }
+
+	
+  });
+
+	$("form input").focusout(function () {
+        $(this).valid();
+    });
+
     });
 
 </script>
+<div class="container" >  
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title text-info text-center" style="font-size: 30px;font-weight: 500;">Claim Information</h4>
+          </div>
+          <div class="modal-body">
+             <form method="POST" name="claimformregister">
+                {% csrf_token %}
+              <h1 class="text-info" style="font-weight: 500;font-size: 25px;">What is your policy number?</h1>
+              <input type="text" name="policy_no" id="policy_no" class="form-control" placeholder="Enter Policy Number">
+              <button  class="btn-primary btn-orange js-car-register" type="submit" >Submit</button>
+              </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+  </div>
+  
 <div class="sfContentBlock" style="margin-top: -20px;">
     <img title="Motor Claims" src="{% static 'images/motor_claims.jpg' %}" class="img-responsive mclaims" alt="Motor Claim" data-displaymode="Original">
     </div>
-    
-  
-        <div class="container">
+       <div class="container">
         <div class="row paddts heds para">
+          <h3 style="text-align: center; color: crimson;font-family: 'Courier New';"><strong>{{message}}</strong></h3>
         <div class="col-lg-12"><h1 style="font-size: 25px;font-weight:500; margin-top: 20px;" class="text-danger">Motor Insurance Claim Process
         </h1>
         <p style="color: #333333; margin-top: 10px;">Motor insurance comes as a much-needed respite in the event of an accident that may cause damage to your vehicle. Insurance claims help pay for the repair of the vehicle and other financial issues incurred. While you can opt for the reimbursement claim process, choosing cashless claims method is an absolute convenience. All you have to do is get your car repaired at any of our network garages that’s closest to you and we will settle the bills directly with the garage. As on 1st May, 2018, we have a network of 5900+ garages. </p>
@@ -212,28 +341,45 @@
         <!-- End -->
         </div>
         </div>
-        
-             </div>
+        </div>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div class="panel panel-default panel-primary">
                 <div class="panel-heading" style="height:50px;">
                         <h1 class="panel-title text-center" style="line-height:30px; font-size: 20px; font-weight: 600;">Quick Link</h1>
                          </div>
                          <div class="panel-body" style="background: #EAEAEA;">
-       
-        
-        <ul>
+          <ul>
             <li style="margin-bottom: 10px;"><a href="{% url 'garage_list' %}" style="text-decoration: none;"><h5 class="text-info">• Garage List</h5></a></li>
-            <li style="margin-bottom: 10px;"><a href="#"><h5 class="text-info">• Customer Support</h5></a></li>
-            <li style="margin-bottom: 10px;"><a href="#"><h5 class="text-info">•Claim Tracker</h5></a></li>
-            <li style="margin-bottom: 10px;"><a href="#"><h5 class="text-info">• Documents required for claim process</h5></a></li>
-            <li style="margin-bottom: 10px;"><a href="#"><h5 class="text-info">• Claim related FAQ's</h5></a></li>
-            <li style="margin-bottom: 10px;"><a href="#" target="_blank"><h5 class="text-info">• Policy Wordings</h5></a></li>
-            <li style="margin-bottom: 10px;"><a href="#"><h5 class="text-info">• Download Claim Form</h5></a></li>
+            <li style="margin-bottom: 10px;"><a href="{% url 'customer_support_page' %}"><h5 class="text-info">• Customer Support</h5></a></li>
+            <li style="margin-bottom: 10px;"><a href="{% url 'faq_insurance_page' %}"><h5 class="text-info">• Claim related FAQ's</h5></a></li>
+            <li style="margin-bottom: 10px;"><a href="{% url 'download' %}"><h5 class="text-info">• Download Claim Form</h5></a></li>
         </ul>
         
         </div>
         </div>
+        <div class="well">
+            <p style="font-size: 12px;line-height: 20px;padding: 5px 8px;color: #053c6d;margin: 0;font-family: arial;">Is your vehicle damaged? You can instantly lodge a &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;claim with us. <br><strong> We'll begin the claim assessment process, right away!</strong></p>
+            <a class="init-claim-btn" href="#" data-toggle="modal" data-target="#myModal">Initiate a Claim</a>
+            <span class="initiate-claim-bg"></span>
+        </div>
+        <div class="eclaim-form">
+            <div class="text-eclaim">
+            <h4>eClaim Form <a href="javascript:void(0)" class="tooltip"><span class="glyphicon glyphicon-info-sign"></span><span class="tooltiptext">Select this option to submit claim form after initiating the claim.</span></a></h4>
+            <p>Submit motor claim form<br>
+            in just few steps</p>
+            
+            </div>
+            <img alt="" src="{% static 'images/eclaims-img.png' %}">
+            </div>
+            <div class="eclaim-form ud-claims">
+                <div class="text-eclaim">
+                <h4>Upload Documents <a href="javascript:void(0)" class="tooltip"><span class="glyphicon glyphicon-info-sign"></span><span class="tooltiptext">Once you have already submitted the claim form, you can easily upload your documents.</span></a></h4>
+                <p>Upload claim related documents<br>
+                to submit your motor claim</p>
+                
+                </div>
+                <img alt="" src="{% static 'images/ud-ico.png' %}" style="margin-top: -100px;">
+                </div>
         </div>
         </div>
         </div>

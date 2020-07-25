@@ -97,20 +97,20 @@ $("#pno").fadeOut();
                   
                     <div class="input-div two" id="mno" style="display: none;">
                        <div>
-                          <h5>Mobile no.</h5>
-                          <input type="text"  name="mobileno"  class="input">
+                          
+                          <input type="text"  name="mobileno"  class="input" value="{{ user.mobile }}" readonly>
                       </div>
                   </div>
                   <div class="input-div two" id="reg" style="display: none;">
                   <div>
-                    <h5>Registration no.</h5>
-                    <input type="text"  name="regno" id="registration" class="input">
+                    
+                    <input type="text"  name="regno" id="registration" class="input" value="{{rto}}-{{series}}-{{number}}" readonly>
                 </div>
               </div>
               <div class="input-div two" id="pno" style="display: none;">
                 <div>
-                   <h5>Policy no.</h5>
-                   <input type="text"  name="policy"  class="input">
+                   
+                   <input type="text"  name="policy"  class="input" value="{{id}}" readonly>
                </div>
            </div>
            <input type="submit" value="PROCESS" class="btn-primary btn-orange js-car-register">

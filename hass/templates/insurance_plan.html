@@ -1,0 +1,263 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <title>parocess</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <style>
+        .b 
+        {
+                 border:thin black solid;
+                 padding: 25px;
+                 
+            }
+    </style>
+    <script>
+    $(document).ready(function(){
+        
+    $("#states").change(function(){
+            var state=$("#states").val();
+            
+            $.ajax({
+
+                url:"{% url 'get_rto_code' %}",
+                data:{
+                    'state':state
+                },
+                //dataType:'json',
+                success:function(data){
+                    
+                    $('#r_t_o').empty();
+                    for (var i=0;i<data.length;i++){
+                        
+                        var c=data[i].reg_no;
+                        $('#r_t_o').append(`<option value="${c}">${c}</option>`)
+                    }
+                    
+                }
+
+
+            })
+    });
+ 
+$("#make").change(function(){
+            var make=$("#make").val();
+            
+            $.ajax({
+
+                url:"{% url 'get_make_model' %}",
+                data:{
+                    'make':make
+                },
+                //dataType:'json',
+                success:function(data){
+                    
+                    $('#model').empty();
+                    for (var i=0;i<data.length;i++){
+                        
+                        var c=data[i].model;
+                        $('#model').append(`<option value="${c}">${c}</option>`)
+                    }
+                    
+                }
+
+
+            })
+    });
+});
+    </script>
+    </head>
+    <body>
+            <form method="POST" class="b">
+                    {% csrf_token %}
+        <div class="container" style="margin-top: 20px;">
+            <div class="row">
+                    
+                <div col-lg-3></div>
+                <div col-lg-6>
+                    
+                        <h1 style="color: indigo;"><span style="color: crimson;border-bottom: 3px solid crimson;">Personal</span> Detail</h1>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="first">First Name*</label>
+                                    <input type="text"  id="first" class="form-control" name='first_name' value="{{user.first_name}}" readonly>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="last">Last Name*</label>
+                                    <input type="text"  id="last" class="form-control" name='last_name' value="{{user.last_name}}" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="mobile">Mobile*</label>
+                                    <input type="number"  id="mobile" class="form-control" name='mobile' value="{{user.mobile}}" readonly>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="email">Email*</label>
+                                    <input type="email"  id="email" class="form-control" name='email' value="{{user.email}}" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="sel1">State*</label>
+                                    <input type="email"  id="email" class="form-control" name='email' value="{{user.state}}" readonly>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="sel1">city*</label>
+                                    <input type="email"  id="email" class="form-control" name='email' value="{{user.city}}" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                <label for="address">Address*</label>
+                                    <input type="text" id="address" name="address" class="form-control" value="{{user.address}}" readonly>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </form>
+                    <br>
+                    
+                        <h1 style="color: indigo;"><span style="color: crimson;border-bottom: 3px solid crimson;">Vehical </span> Detail</h1>
+                        <div class="row">
+                           
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                      <select name="states" id="states" class="form-control">
+                                          <option value="">select state</option>
+                                          {% for state in states %}
+                                          <option value="{{state.state}}">{{state.state}}</option>
+                                          {% endfor %}
+                                      </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <select name="r_t_o" id="r_t_o" class="form-control">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-3">
+                                   <input type="text" class="form-control" name="series" placeholder="e.g. AZ" style="text-transform: uppercase; ">
+                                </div>
+                                <div class="col-lg-3">
+                                    <input type="number" class="form-control" name="num" placeholder="e.g. 1234" >
+                                </div>
+                            </div>
+                
+                            <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="month">vehical Purchase Date*</label>
+                                    <select class="form-control" id="month" name="month">
+                                     <option value="month">Select Month</option>
+                                     <option value="jan">January</option>
+                                     <option value="feb">February</option>
+                                     <option value="mar">March</option>
+                                     <option value="apr">April</option>
+                                     <option value="may">May</option>
+                                     <option value="jun">Jun</option>
+                                     <option value="jul">July</option>
+                                     <option value="aug">August</option>
+                                     <option value="sep">September</option>
+                                     <option value="oct">October</option>
+                                     <option value="nov">November</option>
+                                     <option value="Dec">December</option>
+                                     </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="year"><br></label>
+                                    <select class="form-control" id="year" name="year">
+                                     <option value="states">Select year</option>
+                                     <option value="states">2020</option>
+                                     <option value="states">2019</option>
+                                     <option value="states">2018</option>
+                                     <option value="states">2017</option>
+                                     <option value="states">2016</option>
+                                     </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="make">Make*</label>
+                                    <select class="form-control" id="make" name="make">
+                                     <option value="">Select Make</option>
+                                     {% for make1 in make %}
+                                     <option value="{{make1.make}}">{{make1.make}}</option>
+                                     {% endfor %}
+                                     </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="model">Model*</label>
+                                    <select class="form-control" id="model" name="model">
+                                     <option value="states">Select Model</option>
+                                     </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label for="catagory">Catagory*</label><br>
+                                    <input type="text" value="{{ cat }}" readonly class="form-control"> 
+                                </div>
+                            </div>
+                        </div>
+                        
+                    
+                    <div class="row">
+                        <div class="col-lg-12">
+                        <div class="b">
+                        <h1 style="color: indigo;"><span style="color: crimson;border-bottom: 3px solid crimson;">Subscription</span> Detail</h1>
+                        <aside class=""><span>Standard Plan - 4 Wheelers</span><br> Priced at <b class="rs"></b>{{price}} (incl. tax).</aside>
+                        <h1 style="color: indigo;"><span style="color: crimson;border-bottom: 3px solid crimson;">Price</span> Detail</h1>
+                        <aside class=""><span>Plan Price  :</span><b> {{price}}</b></aside>
+                        
+                        <hr>
+                        <aside class=""><span>Payable amount  :</span><b> {{price}}</b></aside>
+                        </div>
+                        <h4 style="margin-bottom:20px;font-size: 16px; color: #3e3e3e; font-family: 'opensansbold';">Note: Your policy will start from Mar 13, 2020</h4>
+                        <input type="checkbox" name="TermsConditions" id="TermsConditions" value="yes">
+                        <label for="TermsConditions"><a href="#" target="_blank" style="text-decoration: none;color: #898989;text-decoration: underline;">Terms and Conditions</a></label>
+                        <br>
+                        <input type="checkbox" name="content" id="contebt" checked>
+                        <label for="TermsConditions"><a href="#" target="_blank" style="text-decoration: none;color: #898989;text-decoration: underline;">Consent Form Terms of Use</a></label>
+
+                        <input class="btn btn-success form-control" type="submit" value="Process To Pay">
+                    </div>
+                    </div>
+                </div> 
+                <div col-lg-3></div>
+                
+            </div>
+        </div>
+    </form>
+    </body>
+    
+    </html>
+    {% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'maste.html' %}
+{% load static %}
+{% block containt %}
+<style>
+ .imgs2{
+     margin-left:297px;
+     margin-top:-308px;
+    }
+.imgs3{
+    margin-left: 637px;
+    margin-top:-824px;
+}
+.digit2
+{
+    margin-left: -350px;
+    margin-top: -300px;
+}
+.digit3
+{
+    margin-top: -850px;
+    margin-left: -300px;
+}
+</style>
+<div id="head1">
+    <img src="{% static 'images/G.jpg' %}" class="ing-responsive" alt="" width="100%" height="300px" style="margin-top: -20px;">
+    <h1 class="text-center" style="background-color: brown; font-size: 30px;font-weight: 600;height: 50px;line-height: 50px;color: white; margin-top: -0px;">Grievance Redressal</h1>
+</div>
+<div class="container" style="margin-top: 50px;">
+    <p style="font-size: large;">Dear Customer</p>
+    <p style="font-size: large;">We request you to send your concerns to the following channels in the order mentioned below. We will acknowledge receipt of your concerns and respond to you upon completion of the investigation. Please fill in all your contact details to enable us to get in touch with you.</p>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="outer">
+        <div class="red_circle">
+        <img src="{% static 'images/gre1.png' %}" class="imgs1" alt="imgs">
+            
+        </div>
+        <div class="yellow_circle">
+        <img src="{% static 'images/gre2.png' %}" class="imgs2" alt="imgs" >
+        
+        <img src="{% static 'images/digit2.png' %}" class="digit2" alt="imgs">
+        </div>
+        <div class="orange_circle">
+        <img src="{% static 'images/gre3.png' %}" class="imgs3" alt="imgs">
+        
+       <img src="{% static 'images/digit3.png' %}" class="digit3" alt="imgs">
+        </div>
+        
+        </div>
+        </div>
+        </div>
+    
+</div>
+{% endblock %}

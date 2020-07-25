@@ -1,6 +1,14 @@
-{% extends 'maste.html' %}
 {% load static %}
-{% block containt %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Document</title>
 
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -18,24 +26,26 @@ body {font-family: Arial, Helvetica, sans-serif;}
   <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin: -20px;">
     
     <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="0" class="active" style="background-color: red;"></li>
+      <li data-target="#myCarousel" data-slide-to="1" style="background-color: red;"></li>
+      <li data-target="#myCarousel" data-slide-to="2" style="background-color: red;"></li>
     </ol>
 
     
     <div class="carousel-inner">
+      {% csrf_token %}
       <div class="item active">
-        <img src="{% static 'images/banner.jpg' %}" alt="" style="width:100%;">
+       <a href="{% url 'login' %}"><img src="{% static 'images/banner.jpg' %}" class="img-responsive" alt="" style="width:100%;height:700"></a>
       </div>
 
       <div class="item">
-        <img src="{% static 'images/images.jpg' %}" alt="" style="width:100%;">
+        <a href="{% url 'login' %}"><img src="{% static 'images/carproductbg.jpg' %}" class="img-responsive" alt="" style="width:100%;height: 600px;"></a>
       </div>
     
       <div class="item">
-        <img src="{% static 'images/banner.jpg' %}" alt="" style="width:100%;">
+        <a href="{% url 'login' %}"><img src="{% static 'images/PushtiBanner4.jpg' %}" class="img-responsive" alt="" style="width:100%;height: 600px;"></a>
       </div>
     </div>
   </div>
-{% endblock %}
+</body>
+</html>

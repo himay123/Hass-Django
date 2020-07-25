@@ -1,0 +1,156 @@
+{% extends 'maste.html' %}
+{% load socialaccount %}
+{% load static %}
+{% block containt %}
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+<style>
+    
+       .container
+       {
+           margin-top: 30px;
+           margin-left: 30px;
+       } 
+       form
+       {
+           padding: 20px;
+       }
+       
+
+.seperator i {
+    padding: 0 10px;
+    background: #f7f7f7;
+    position: relative;
+    top: -11px;
+    z-index: 1;
+}
+       .seperator {
+    margin: 20px 0 10px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+
+</style>
+  <script>
+          
+$(document).ready(function() {
+  // Initialize form validation on the registration form.
+  // It has the name attribute "registration"
+
+  $("form[name='login']").validate({
+    // Specify validation rules
+    rules: {
+      // The key name on the left side is the name attribute
+      // of an input field. Validation rules are defined
+      // on the right side
+    
+      username:"required",
+      password:"required"
+     
+    },
+    // Specify validation error messages
+    messages: {
+       password: "Please provide a password",
+       username: "Please enter a valid email address"
+    },
+    // Make sure the form is submitted to the destination defined
+
+    // in the "action" attribute of the form when valid
+    submitHandler: function(form) {
+       form.submit();
+    }
+
+	
+  });
+
+	$("form input").focusout(function () {
+        $(this).valid();
+    });
+});
+  </script>
+    <div class="container">
+        <div class="row centered-form">
+            <div class="col-md-6 col-sm-offset-6 col-md-offset-4">
+                <div class="panel panel-default panel-primary" style="height: 800px;">
+                    <div class="panel-heading" style="height:50px;">
+                            <h1 class="panel-title text-center" style="line-height:30px; font-size: 20px; font-weight: 600;">Login</h1>
+                             </div>
+                             <div class="panel-body">
+                                <form class="form-container " method="POST">
+                                    {% csrf_token `%}
+                                     <div class="form-group">
+                                                <label for="sel1">PICK UP CITY_NAME</label>
+                                                <select name="pick_up_city_name" id="states" class="form-control">
+                                                    <option value="">select state</option>
+                                                    {% for state in states %}
+                                                    <option value="{{state.city_name}}">{{state.city_name}}</option>
+                                                    {% endfor %}
+                                                </select>
+                                                 </select>
+                                            </div>
+                                        </div>
+                
+                                        <div class="form-group">
+                                            <label for="sel1">DROP CITY_NAME</label>
+                                            <select name="drop_up_city_name" id="states" class="form-control">
+                                                <option value="">select state</option>
+                                                {% for state in states %}
+                                                <option value="{{state.city_name}}">{{state.city_name}}</option>
+                                                {% endfor %}
+                                            </select>
+                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pick_up_date_time ">PICK UP DATE & TIME</label>
+                                        <input type="datetime-local" class="form-control" id="datetime" name="pick_up_date_time">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="">Time Duration</label>
+                                        <select class="form-control" name="drop_up_date_time" id="drop_up_date_time">
+                                            <option value="">Time duration</option>
+                                            <option value="2_days">2_days</option>
+                                            <option value="1_week">One_Week</option>
+                                            <option value="2_Week">Two_Week</option>
+                                            <option value="3_week">Three_Week</option>
+                                            <option value="1_month">One_Month</option>
+                                            <option value="1_month_1_week">One_Month_One_Week</option>
+                                            <option value="1_month_2_week">One_Month_Two_Week</option>
+                                            <option value="1_month_3_week">One_month_Three_Week</option>
+                                            <option value="max_2month">TwoMonth[MAX]</option>
+                                            </select>
+                                    </div>
+                
+                                    <div class="form-group">
+                                        <label for="month">WANT WANT TO CAR ?</label>
+                                        <select class="form-control" id="car" name="car">
+                                         <option value="">Select car</option>
+                                         <option value="Honda">HONDA</option>
+                                         <option value="Audi">AUDI</option>
+                                         <option value="Mercedes-Benz">MERCEDES-BENZ</option>
+                                         <option value="BMW">BMW</option>
+                                         <option value="Jaguar">JAGUAR</option>
+                                         <option value="Volvo">VOLVO</option>
+                                         <option value="Lexus">LEXUS</option>
+                                         <option value="Land Rover">LAND ROVER</option>
+                                         <option value="Porsche">PORSCHE</option>
+                                         </select>
+                                    </div>
+                                </div>
+                
+            
+                                    <div class="form-group form-chech">
+                                        <input type="checkbox" class="form-check-input" id="ck">
+                               |        <label class="form-check-label" for="check">check me out</label>
+                                    </div>
+                                    <button name="submit" type="submit" class="btn btn-primary btn-block">SEARCH</button>
+                                    </form>
+                                     </div>
+                        </div>
+                 </div>
+            </div>
+         </div>
+   {% endblock %}

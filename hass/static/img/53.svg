@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>map</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Working" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-3" stroke="#444444" stroke-width="1.26315789">
+            <g id="Group" transform="translate(4.000000, 6.000000)">
+                <polygon id="Stroke-187" stroke-linecap="round" stroke-linejoin="round" fill="#CFEAFD" points="16.0608367 1.99947561 23.6296531 0.205582041 23.6296531 18.7071331 16.0608367 20.3890922"></polygon>
+                <polygon id="Stroke-189" stroke-linecap="round" stroke-linejoin="round" fill="#E6F4FE" points="16.0608367 2.05574741 7.65104082 0.373788225 7.65104082 18.7091475 16.0595261 20.3862919"></polygon>
+                <polygon id="Stroke-195" stroke-linecap="round" stroke-linejoin="round" fill="#CFEAFD" points="7.65104082 18.7071331 0.0822244898 20.3890922 0.0822244898 2.30803102 7.65104082 0.377520373"></polygon>
+                <path d="M13.1268692,13.142455 L10.6039304,8.09657765" id="Stroke-189" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M15.8919993,13.1424552 L12.9485712,11.460496" id="Stroke-189" stroke-linecap="round" stroke-linejoin="round" transform="translate(14.509434, 12.249399) scale(-1, 1) translate(-14.509434, -12.249399) "></path>
+                <path d="M20.0968977,11.460496 L15.7709039,10.3571949" id="Stroke-189" stroke-linecap="round" stroke-linejoin="round" transform="translate(18.083598, 10.987930) scale(-1, 1) translate(-18.083598, -10.987930) "></path>
+                <path d="M11.0054981,9.77853683 L8.0620696,8.09657765" id="Stroke-189" stroke-linecap="round" stroke-linejoin="round" transform="translate(9.333000, 8.911592) scale(-1, 1) translate(-9.333000, -8.911592) "></path>
+                <path d="M7.71085117,10.3111704 L3.85717164,9.77853683" id="Stroke-189" stroke-linecap="round" stroke-linejoin="round" transform="translate(5.758837, 9.962817) scale(-1, 1) translate(-5.758837, -9.962817) "></path>
+                <circle id="Oval-4" fill="#E6F4FE" cx="20.3962916" cy="10.3833063" r="1.26146939"></circle>
+                <circle id="Oval-4" fill="#E6F4FE" cx="3.8068223" cy="10.3111704" r="1.26146939"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

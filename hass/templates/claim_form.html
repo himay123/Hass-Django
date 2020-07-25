@@ -1,0 +1,267 @@
+{% load static %}
+
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+</style>
+<script>
+     $(document).ready(function(){
+    $("#vehical_number").show();
+    
+    $("input[type='radio']").change(function(){
+  if($(this).val()=="vehical")
+  {
+   
+  $("#vehical_number").show();
+  }
+else
+{
+$("#vehical_number").hide(); 
+}
+if($(this).val()=="chassis")
+  {
+   
+  $("#chassis_number").show();
+  }
+else
+{
+$("#chassis_number").hide(); 
+}
+  });
+  $("#regform").show();
+ 
+  $('#c').show();
+       $('#home').click(function(){
+        $("#regform").show();
+        $('#claimform').hide();
+        $('#uploadform').hide();
+        $('#home').addClass("active");
+        $('#u').hide();
+        $('#c').show();
+        $('#doc').hide()
+      });
+      
+       $('#eclaim').click(function(){
+        $("#regform").hide();
+        $('#claimform').show();
+        $('#uploadform').hide();
+        $(this).addClass("active");
+        $('#u').hide();
+        $('#c').show();
+        $('#doc').hide()
+      });
+      
+       $('#document').click(function(){
+        $("#regform").hide();
+        $('#claimform').hide();
+        $('#uploadform').show();
+        $(this).addClass("active");
+        $('#u').show();
+        $('#c').hide();
+        $('#doc').hide()
+      });
+      $('#verify').click(function(){
+          $('#doc').show()
+      });
+      $("form[name='claim_detail']").validate({
+    
+    rules: {
+    
+        claim: "required",
+        e_no: "required",
+        proof:{
+            required:true
+        }
+    },
+      
+    
+    messages: {
+      policy_no: "Please enter your policy no",
+      e_no: "Please enter your Engin no"
+
+    },
+      
+   
+    submitHandler: function(form) {
+       form.submit();
+    }
+
+	
+  });
+
+	$("form input").focusout(function () {
+        $(this).valid();
+    });
+    });
+</script>
+</head>
+<body>
+
+
+<div class="main">
+    <h1 style="color:white;margin-top:0px; background:#532562;width:100%;height: 50px;display:none;" class="text-center" id="c"> eClaim Form</h1>
+    
+ <div class="well" style="margin: 10px;display: none;" id="regform">
+
+
+             <form method="POST" name="claim_detail" style="color: #532562;" enctype="multipart/form-data">
+                {% csrf_token %}
+                <h1 style="color: indigo;"><span style="color: crimson;border-bottom: 3px solid crimson;">Claim</span> Detail</h1>
+           
+               
+                  <div class="row">
+                      <div class="col-lg-6">
+                          <div class="form-group">
+                              <label for="name">NAME:</label>
+                              <input type="text" name="name" id="aadhaar" class="form-control" value="{{ user.first_name }} {{ user.mid_name }} {{ user.last_name }}" readonly>
+                          </div>
+                      </div>
+                      <div class="col-lg-6">
+                          <div class="form-group">
+                              <label for="mobile">MOBILE</label>
+                              <input type="text" name="mobile" id="pan" class="form-control" value="{{ user.mobile}}" readonly>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-6">
+                          <div class="form-group">
+                              <label for="policy">policy no*</label>
+                              <input type="text" name="policy_no" id="policy" class="form-control" value="{{id}}" readonly>
+                          </div>
+                      </div>
+                      <div class="col-lg-6">
+                          <div class="form-group">
+                              <label for="email">EMAIL</label>
+                              <input type="text" name="email " id="claim" class="form-control" value="{{user.email}}" readonly>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <div class="form-group">
+                              <label for="insurance">Insurance Name*</label>
+                              <input type="text" name="insurance" id="insurance" class="form-control" value="HASS Insurance & Vehicle Service Company" readonly> 
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <label for="vno">VEHICLE NUMBER</label>
+                                <input type="text" name="vno" id="insurance" class="form-control" value="{{rto}}-{{series}}-{{number}}" readonly> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label for="model">VEHICLE MODEL</label>
+                                    <input type="text" name="model" id="insurance" class="form-control" value="{{make}}-{{model}}" readonly> 
+                                </div>
+                            </div>
+                        </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                    <label for="model">ENGINE NUMBER</label>
+                                    <input type="text" name="engine" id="insurance" class="form-control" value="{{engine}}" readonly> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                    <label for="model">CHASSIS NUMBER</label>
+                                    <input type="text" name="chassis" id="insurance" class="form-control" value="{{chassis}}" readonly> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                    <label for="model">FUEL TYPE</label>
+                                    <input type="text" name="fuel" id="insurance" class="form-control" value="{{fuel}}" readonly> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                    <label for="model">SEAT CAPACITY</label>
+                                    <input type="text" name="seat" id="insurance" class="form-control" value="{{seat}}" readonly> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                    <label for="model">CC / WATTS</label>
+                                    <input type="text" name="cc" id="insurance" class="form-control" value="{{cc}}" readonly> 
+                            </div>
+                        </div>
+                    </div>
+                  <div class="row">
+                      <div class="col-lg-6">
+                          <div class="form-group">
+                              <label for="reason">Reason For Claim</label>
+                              <select name="reason" id="occupation" class="form-control">
+                                <option value="Accident"> Accident</option>
+                                <option value="Theft">Theft</option>  
+                                <option value="Other">Other</option>  
+                              </select>
+                          </div>
+                      </div>
+                       </div>
+                              <div class="row">
+                                  <div class="col-lg-6">
+                                      <div class="form-group">
+                                          <label for="usage">Usage*</label>
+                                          <select name="usage" id="usage" class="form-control">
+                                              <option value="personal">Personal </option>
+                                              <option value="business"> Business(Within city) </option>
+                                              <option value="o_city"> Business(Outside city)</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  
+                              </div>
+                              <div class="row">
+                                  <div class="col-lg-3">
+                                      <div class="form-group">
+                                     <label for="usage" >Proof For Claim</label>
+                                            <input type="file" name="proof" class="form-control" accept="image/gif, image/jpeg, image/png" >
+                                        </div>
+                                    </div>
+                        <!--  <div class="col-lg-3">
+                                    <input type="file" name="proof2" class="form-control" style="margin-top: 25px" ></div>
+                                    <div class="col-lg-3">
+                                            <input type="file" name="proof3" class="form-control" style="margin-top: 25px" ></div>
+                                             </div> -->
+                                    
+                                    
+                              
+                             <center> <button type="submit" class="btn btn-danger btn-ceneter" style="width: 50%">CONFIRM</button></center>
+        </form>
+    </div>
+                            
+</div>
+
+
+</body>
+</html> 

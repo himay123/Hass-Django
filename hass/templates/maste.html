@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="preconnect dns-prefetch" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+<link rel="preconnect dns-prefetch" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
 <link rel="preload" as="style" href="{% static 'css/home-style.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/home-style.css' %}" type="text/css">
 <link rel="preload" as="style" href="{% static 'css/header-footer.css' %}" type="text/css">
@@ -47,24 +47,50 @@
       font-size: 20px;
       margin-left:100px;
     }
-    
-   
-    
-    
+  
+@media screen and (max-width: 1199px){
+}
+@media screen and (max-width: 1024px){
+}
+@media screen and (max-width: 991px){
+    .img_logo {
+        margin-top:-25px;
+        height: 85px;
+    }
+}
+@media screen and (max-width: 767px){
+    .img_logo {
+        margin-top:-25px;
+        height: 85px;
+    }
+}
+@media screen and (max-width: 640px){
+    .img_logo {
+        margin-top:-25px;
+        height: 85px;
+    }
+}
+@media screen and (max-width: 575px){
+    .img_logo {
+        margin-top:-25px;
+        height: 85px;
+    }
+}
+
     </style>
 
 <body><br>
      
-<header id="header">
+<header id="header" style="background-color: brown;margin-top: -20px;">
     
     <div class="mainNvbg">
         <div class="il-container">
             <div class="nav clearfix">
                 <div class="mobHumberger"><span></span><span></span><span></span></div>
                 
-                <!--<div class="mobLogo">
-                    <a href="/">image logo</a>
-                </div> --> 
+                <div class="mobLogo">
+                    <a href="/"><img src="{% static 'images/Hass_demo.jpg' %}" alt="" class="img-responsive img_logo" style="margin-left: 20px;"></a>
+                </div> 
                 <div class="mobMenuWrapper">
                     <div class="mobWelBlock clearfix">
                         <a href="#" class="menuClose"></a>
@@ -88,14 +114,14 @@
                                 <li>
                                     <h4><a href="#" id="Motor_Insurance"></a><span class="menupIcons travelInsico"></span>Motor Insurance</h4>
                                     <ul class="insuranceBlock">
-                                        <li><a onclick="$('.loader_new').show();" id="Car_Insurance" href="{% url 'c_insurance' %}">Car Insurance</a></li>
+                                        <li><a onclick="$('.loader_new').show();" id="Car_Insurance" href="{% url 'insurance' %}">Car Insurance</a></li>
                                         
                                     </ul>
                                 </li>
                                 <li>
                                     <h4><a href="#" id="Rental"></a><span class="menupIcons motorInsico"></span>Rental</h4>
                                     <ul class="insuranceBlock">
-                                        <li><a onclick="$('.loader_new').show();" id="Car_Rental" href="#">Car Rental</a></li>
+                                        <li><a onclick="$('.loader_new').show();" id="Car_Rental" href="{% url 'logout' %}">Car Rental</a></li>
                                     
                                         
                                     </ul>
@@ -103,9 +129,8 @@
                                 <li>
                                     <h4><a href="#" id="Towing"></a><span class="menupIcons helthInsico"></span>Towing</h4>
                                     <ul class="insuranceBlock">
-                                        <li><a onclick="$('.loader_new').show();" id="heavy" href="#">Heavy Weight</a></li>
-                                        <li><a onclick="$('.loader_new').show();" id="light" href="#">Light Weight</a></li>
-                                        <li><a onclick="$('.loader_new').show();" id="other" href="#">Other Vehical</a></li>
+                                        <li><a onclick="$('.loader_new').show();" id="heavy" href="{% url 'logout' %}">Car Towing</a></li>
+                    
                                     </ul>
                                 </li>
                                 
@@ -129,28 +154,34 @@
                         <li>
                             <a>Support<span class="dwnArrow"></span></a>
                             <ul class="menuBox otherdrMenu">
-                                <li><a href="#">Help Center</a></li> 
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Grievance Redressal</a></li><li class=""><a href="#">Counter Offer Acceptance</a></li>
-                                
+                                <li><a href="{% url 'customer_support_page' %}">Help Center</a></li> 
+                                <li><a href="{% url 'feedback' %}">Feedback</a></li>
                             </ul>
                         </li>
                         <li>
                             <a>Info Centre<span class="dwnArrow"></span></a>
                             <ul class="menuBox otherdrMenu">
-                                <li><a href="#">Info Centre</a></li>
+                                <li><a href="{% url 'info_center' %}">Info Centre</a></li>
                                 <li><a href="{% url 'expert_blog' %}">Expert Blogs</a></li>
-                                <li><a href="#">FAQs</a></li>
-                                <li><a href="#">Tax Benefits</a></li>
-                                <li><a href="#">Downloads</a></li>
-                                <li><a href="#">Testimonials</a></li>
-                                <li><a href="#">Knowledge Articles</a></li>
-                                <li><a href="#">Insurance Updates</a></li>
+                                <li><a href="{% url 'faq_insurance_page' %}">FAQs</a></li>
+                                <li><a href="{% url 'download' %}">Downloads</a></li>
+                               
                             
                             </ul>
                         </li>
+                        <li>
+                            <a>Profile<span class="dwnArrow"></span></a>
+                            <ul class="menuBox otherdrMenu">
+                                <li><a href="{% url 'profile_ins' id=user.id%}">My Profile</a></li>
+                                <li><a href="{% url 'logout' %}">Log Out</a></li>
+                            </ul>
+                        </li>
+                        
                         <li class="no-dropdown">
-                            <a href="#">Investor Relations</a>
+                            <a href="{% url 'register' %}">Sing Up</a>
+                        </li>
+                        <li class="no-dropdown">
+                            <a href="{% url 'login' %}">Log in</a>
                         </li>
                     </ul>
                     
@@ -226,11 +257,9 @@
                     <div class="col-md-3">
                         <h4 class="">PRODUCTS</h4>
                         <ul>
-                            
-                            <li><a href="#">Car Insurance</a></li>
-                            <li><a target="_blank" href="#">Third Party Insurance</a></li>
-                            <li><a target="_blank" href="#">Towing</a></li>
-                            <li><a target="_blank" href="#">Cra Rental</a></li>
+                            <li><a href="{% url 'insurance' %}">Car Insurance</a></li>
+                            <li><a target="_blank" href="{% url 'logout' %}">Towing</a></li>
+                            <li><a target="_blank" href="{% url 'logout' %}">Car Rental</a></li>
                         </ul>
                         <h4 class="">INFO CENTER</h4>
                         <ul>
@@ -242,16 +271,11 @@
                     <div class="col-md-3">
                         <h4 class="">SERVICES</h4>
                         <ul>
-                            <li><a href="#">Customer Support</a></li>
+                            <li><a href="{% url 'customer_support_page' %}">Customer Support</a></li>
+                            <li><a target="_blank" href="{% url 'c_claim' %}" rel="nofollow">Intimate Claim</a></li>
+                            <li><a href="{% url 'renew' %}">Renew Your Policy</a></li>
+                            <li><a target="_blank" href="{% url 'feedback' %}" rel="nofollow">Customer Feedback</a></li>
                             
-                            <li><a target="_blank" href="#" rel="nofollow">Unclaimed Amount</a></li>
-                            <li><a target="_blank" href="#" rel="nofollow">Intimate Claim</a></li>
-                            <li><a target="_blank" href="#" rel="nofollow">Track Claim</a></li>
-                            <li><a target="_blank" onclick="window.open('https://chat.icicilombard.com/Chat/ChatPanel.aspx','targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=670,height=680');" rel="nofollow">Live Chat</a></li>
-                            <li><a href="#">Renew Your Policy</a></li>
-                            <li><a href="#" v="">Whatsapp Notification</a></li>
-                            <li><a target="_blank" href="#" rel="nofollow">Customer Feedback</a></li>
-                            <li><a target="_blank" href="#">Contact Us</a></li>
                         </ul>
                         <h4 class="">PMFBY</h4>
                         <ul>
@@ -262,12 +286,12 @@
                     <div class="col-md-3">
                         <h4>LEGAL</h4>
                         <ul>
-                            <li><a target="_blank" href="#" rel="nofollow">Privacy Policy</a></li>
-                            <li><a target="_blank" href="#" rel="nofollow">Insure App Privacy Policy</a></li>
-                            <li><a target="_blank" href="#" rel="nofollow">Terms &amp; Conditions</a></li>
-                            <li><a target="_blank" href="#" rel="nofollow">Disclaimer</a></li>
+                            <li><a target="_blank" href="{% url 'privacy_policy_page' %}" rel="nofollow">Privacy Policy</a></li>
+                            <li><a target="_blank" href="{% url 'insurance_app_policy_page' %}" rel="nofollow">Insure App Privacy Policy</a></li>
+                            <li><a target="_blank" href="{% url 'terms_condition_page' %}" rel="nofollow">Terms &amp; Conditions</a></li>
+                            <li><a target="_blank" href="{% url 'disclamer_page' %}" rel="nofollow">Disclaimer</a></li>
                             
-                            <li><a target="_blank" href="#">HASS Product List </a></li>
+                           
                             
                         </ul>
                         <h4>SOCIAL</h4>
@@ -283,25 +307,11 @@
                     <div class="col-md-3">
                         <h4>ABOUT US</h4>
                         <ul>
-                            <li><a target="_blank" href="#">Overview</a></li>
-                            <li><a target="_blank" href="#">Promoters</a></li>
-                            
-                            <li><a target="_blank" href="#">Risk Management</a></li>
-                            <li><a target="_blank" href="#">Public Disclosures</a></li>
+                            <li><a target="_blank" href="{% url 'overview_page' %}">Overview</a></li>
+                            <li><a target="_blank" href="{% url 'promoter_page' %}">Promoters</a></li>
+                        
                         </ul>
-                        <h4>OTHERS</h4>
-                        <ul>
-                            <li><a href="/agent" target="_blank">Agents Portal</a></li>
-                            
-                            <li><a target="_blank" href="/careers">Careers</a></li>
-                            
-                            <li><a target="_blank" href="https://onlinemanager.icicilombard.com/authenticateuser.asp">Online Manager</a></li>
-                            <li><a target="_blank" title="Suspended Agents" href="/docs/default-source/other-documents/suspended_agents.pdf?sfvrsn=16">Suspended Agents</a></li>
-                            
-                            <li><a target="_blank" href="/sitemap">Sitemap</a></li>
-                            <li><a target="_blank" href="/IL-Health-Care/COI/COICertificate">Pradhan Mantri Suraksha Bima Yojana</a></li>
-                            
-                        </ul>
+                        
                     </div>
                 </div>
             </div>

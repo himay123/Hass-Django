@@ -1,0 +1,218 @@
+{% extends 'maste.html' %}
+{% load static %}
+{% block containt %}
+ 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+
+
+   <link rel="stylesheet" href="{% static 'css/layout_trans.css' %}">
+    <link rel="stylesheet" href="{% static 'css/buyingflow_trans.css' %}">
+    
+ 
+
+    
+    <style>
+      
+
+        input[type=radio].css-checkbox {
+							position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+						}
+
+						input[type=radio].css-checkbox + label.css-label {
+							padding-left:30px;
+							height:25px; 
+							display:inline-block;
+							line-height:25px;
+							background-repeat:no-repeat;
+							background-position: 0 0;
+							font-size:25px;
+							vertical-align:middle;
+							cursor:pointer;
+
+						}
+
+						input[type=radio].css-checkbox:checked + label.css-label {
+              
+							background-position: 0 -25px;
+						}
+						label.css-label {
+                                        background-image:url("{% static 'images\ck.png' %}");
+                                        -webkit-touch-callout: none;
+                                        -webkit-user-select: none;
+                                        -khtml-user-select: none;
+                                        -moz-user-select: none;
+                                        -ms-user-select: none;
+                                         user-select: none;
+			                             }
+                                         @media screen and (max-width: 1199px){
+                                            
+                                            }
+                                         @media screen and (max-width: 1024px){
+                                            
+                                            }
+                                        @media screen and (max-width: 991px){
+                                            #select_popup
+                                            {
+                                                margin-left: 40px;
+                                            }
+                                            .modal-content
+                                            {
+                                                height: auto;
+                                                overflow-x: hidden;
+                                            }
+                                            
+                                           
+                                            }
+                                        @media screen and (max-width: 767px){
+                                            #select_popup
+                                            {
+                                                margin-left: 40px;
+                                            }
+                                            .modal-content
+                                            {
+                                                
+                                                width: 100%;
+                                                height: auto;
+                                                overflow-x: hidden;
+                                            }
+                                          
+                                            }
+                                        @media screen and (max-width: 640px){
+                                            
+                                            #select_popup
+                                            {
+                                                margin-left: 40px;
+                                            }
+                                            .modal-content
+                                            {
+                                                
+                                                width: 100%;
+                                                height: auto;
+                                                overflow-x: hidden;
+                                            }
+                                           
+                                            }
+                                        @media screen and (max-width: 575px){
+                                            #select_popup
+                                            {
+                                                margin-left: 40px;
+                                            }
+                                            .modal-content
+                                            {
+                                                
+                                                width: 100%;
+                                                height: auto;
+                                                overflow-x: hidden;
+                                            }
+                                            h1{
+                                                font-size: 20px;
+                                            }
+                                          
+                                            }
+        </style>
+        
+ 
+
+   
+
+<div class="sfContentBlock">
+    <div id="mainApp">
+    
+        <div class="mainWrapper ip-main main-wrap">
+            <div class="wrapper-content plan-page">
+                <section class="bg-blue section-content js-planWrap">
+                    <div class="container pad-n"><div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pad-n">
+                            <div data-aos="fade-up" data-aos-duration="1000" class="car-detail-wrap aos-init aos-animate">
+         <div class="car-detail">
+        <h3><strong>{{make}}&nbsp;-&nbsp;{{model}}</strong> </h3>
+         </div> 
+         <ul class="break-up">
+             <li><p class="leftValue">City of registration</p><span class="rightValue">{{state}}-{{city}}</span></li> 
+             <li><p class="leftValue">Vehicle purchase date</p><span class="rightValue">24-02-2019</span></li> 
+             <li><p class="leftValue">Car Model:</p><span class="rightValue">{{make}}-{{model}}</span></li> 
+             <li><p class="leftValue">Claims in current policy</p><span class="rightValue">0</span></li> 
+             <li><p class="leftValue">Year :</p><span class="rightValue">{{year}}</span></li> 
+              
+             <!----> <!----> <!----> <!----></ul> 
+             <!----> <!----> <div class="covers-plan over-inh">
+                                  <ul class="break-up covers-block">
+                                      <li style="display: none;"><span class="leftValue">Tenure for OD coverage</span> 
+                                           <div class="radioButtons rightValue">
+                                               <div class="radio">
+                                                   <input id="years-cal1" name="tocyears" type="radio" checked="checked" value="3"> <label for="years-cal1" class="radio-label">3 Years</label>
+                                                </div> 
+                                                <div class="radio"><input id="years-cal2" name="tocyears" type="radio" value="1"> <label for="years-cal2" class="radio-label">1 Year</label></div>
+                                            </div>
+                                            </li> <!----> <!---->
+                                           </ul>
+                                    </div>
+                                </div>
+                            </div>
+                             <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                                 <div data-aos="fade-up" data-aos-duration="1000" class="plan-parent-wrap aos-init aos-animate">
+                                    
+                                          <div data-aos="fade-up" data-aos-duration="1000" class="plan-detail-wrap js-planwrap aos-init aos-animate">
+                                              
+                                            
+                                             <div class="plan-wrap-main">
+                                                 <div class="plan-block clearfix js-plan active">
+                                                     <div class="coverage">
+                                                         <div class="cover-circle">
+                                                             <div>
+                                                                 <span class="cover__title">2</span>Covers
+                                                    </div>
+                                                </div>
+                                            </div>
+                                             <div class="addons-detail"><h4>Just the basics. No bells, no whistles.</h4><span>Basic protection for your car and others as well.</span> 
+                                                <div class="js-addonlist">
+                                                    <ul class="addon-list"><li>
+                                                            Road Side Assistance<span class="tooltip-ui tooltip"><span class="tooltip-text">
+                                                                    This is an add-on cover wherein during the policy period, you can avail emergency assistance services as listed in the policy wordings.<br><br> <strong>Key Inclusions: </strong>1. Towing service on vehicle breakdown/accident<br>2. Breakdown support over phone
+                                                                    3. Arrangement/supply of fuel<br>4. Arrangement of keys<br>5. Battery jump start<br>6. Message relay in case vehicle is immobilized due to a breakdown/accident<br>7. Replacement of flat tyre<br>8. Minor repairs<br>9. Arrangement of rental vehicle<br>10. Arrangement of accommodation<br>11. Referral of legal advisor<br>12. Referral of hospital<br>13. Taxi benefit upto a distance of 50 km<br>14. Accommodation benefits for a day (maximum Rs. 5000)<br><br><strong>Key Exclusions: </strong>Theft, supply/replacement of parts or consumables, services during natural or man-made calamities, loss to the vehicle when it is driven against the recommendations of the owner/manufacturer's manual, services done without prior approval from us.
+                                                                </span></span></li> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <li>Car Damages Cover</li> <!----></ul><a href="#" class="btn-small-fill btn-small" data-toggle="modal" data-target="#myModal1">Add more covers</a></div></div> <div class="right-side-plan"><div class="amount-plan"><div class="amt-detail tp"><span>Total Premium<strong>₹ 16,518</strong></span></div><a href="javascript:void(0)" class="js-planbuy btn-primary btn-orange">Buy now</a> <!---->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div> 
+                                                
+       
+                        </p></div></div></div></div></div> <div id="check-disc" class="js-popup-wrap overlayN travelgeoscope"><div class="popup light js-popup-body"><a href="#" class="close js-popup-close"></a> <div class="content content-heightauto"><div class="exc-discount dark-form"><h3>Please confirm your details to avail an exclusive discount.</h3> <div class="input-block mobile-block ripple-bar"><label for="exc-name">Name</label> <input id="exc-name" type="text" maxlength="30"></div> <div class="input-block mobile-block ripple-bar"><label for="exc-mobile">Mobile</label> <input id="exc-mobile" type="text" maxlength="10"></div> <div class="input-block mobile-block ripple-bar"><label for="exc-mobile">Email</label> <input id="exc-mobile" type="text" maxlength="30"></div> <div class="input-block mobile-block ripple-bar"><label for="exc-mobile">PAN Card</label> <input id="exc-mobile" type="text" maxlength="10"></div></div> <div class="amount idv-btn"><a href="#" class="btn-orange btn-primary js-popup-clos">Get discount</a></div></div></div></div> <div id="pa-coverpop" class="js-popup-wrap overlayN travelgeoscope"><div class="popup light js-popup-body js-paclose"><a href="#" class="close js-popup-close"></a> <div class="content content-heightauto pacover-popblock commonpop-pad"><h3>Waiver of Personal Acident cover</h3> <p>Please confirm the following important details.</p> <!----> <div class="vehicle-policycover"><div class="check-feild checkBoxsmall"><input type="checkbox" id="pac" class="input-check"> <label for="pac"></label> <span class="pac-text">I hereby declare that the owner driver does not require Compulsory Personal Accident cover as:</span></div> <div class="rec-idv dark-form pac-disabled"><div class="radio"><input id="accident-cover1" name="radio111" type="radio" value="true" class="val-req"> <label for="accident-cover1" class="radio-label"></label></div> <div class="rec-text"><p>I have a separate existing Personal Accident cover against Death and Permanent Disability (Total and Partial) for Sum Insured of at least ? 15 lacs</p></div></div> <div class="rec-idv dark-form pac-disabled"><div class="radio"><input id="accident-cover2" name="radio1112" type="radio" value="true" class="val-req"> <label for="accident-cover2" class="radio-label"></label></div> <div class="rec-text border-hid"><p>I do not have a valid driving license</p></div></div></div></div> <div class="amount idv-btn"><a href="#" class="js-popup-close btn-orange btn-primary js-pacovers">Yes, it's correct</a></div></div></div> <!----> <div class="js-popup-wrap overlayN travelgeoscope break-case-block" style="display: none;"><div class="popup light js-popup-body js-paclose"><div class="content content-heightauto pacover-popblock commonpop-pad"><h3>Vehicle Inspection</h3> <div class="vehicle-policycover"><div class="rec-idv dark-form"><div class="rec-text"><p>Vehicle inspection is required as your previous policy has expired. You can do "Mobile Self-Inspection" using your Smartphone or we can arrange for inspection by our representative. Continue to book online and the policy will be available in your online account subject to satisfactory inspection, you can check the inspection status and policy in your online account soon.</p></div></div></div></div> <div class="amount idv-btn"><a href="#" class="btn-orange btn-primary js-pacovers ok-btn">Ok</a></div></div></div> <div class="js-popup-wrap overlayN travelgeoscope break-case-block" style="display: none;"><div class="popup light js-popup-body js-paclose"><div class="content content-heightauto pacover-popblock commonpop-pad"><h3>Vehicle Inspection</h3> <div class="vehicle-policycover"><div class="rec-idv dark-form"><div class="rec-text"><p>   Vehicle inspection is required as your vehicle was purchased/registered 15 days back. You can do "Mobile Self-Inspection" using your Smartphone or we can arrange for inspection by our representative. Continue to book online and the policy will be available in your online account subject to satisfactory inspection, you can check the inspection status and policy in your online account soon.</p></div></div></div></div> <div class="amount idv-btn"><a href="#" class="btn-orange btn-primary js-pacovers ok-btn">Ok</a></div></div></div> <div class="js-popup-wrap overlayN travelgeoscope" style="display: none;"><div class="popup light js-popup-body js-paclose"><div class="content content-heightauto pacover-popblock commonpop-pad"><h3>Vehicle Inspection</h3> <div class="vehicle-policycover"><div class="rec-idv dark-form"><div class="rec-text"><p>Dear Customer, We would like to inform that since your previous own damage policy has expired, your current policy will be renewed post a successful break-in inspection.</p></div></div></div></div> <div class="amount idv-btn"><a href="#" class="btn-orange btn-primary js-pacovers">Ok</a></div></div></div> <div class="js-popup-wrap overlayN travelgeoscope break-case-block" style="display: none;"><div class="popup light js-popup-body js-paclose"><div class="content content-heightauto pacover-popblock commonpop-pad"><h3>Vehicle Inspection</h3> <div class="vehicle-policycover"><div class="rec-idv dark-form"><div class="rec-text"><p>   Vehicle inspection is required as your previous policy was third party. You can do "Mobile Self-Inspection" using your Smartphone or we can arrange for inspection by our representative. Continue to book online and the policy will be available in your online account subject to satisfactory inspection, you can check the inspection status and policy in your online account soon.</p></div></div></div></div> <div class="amount idv-btn"><a href="#" class="btn-orange btn-primary js-pacovers ok-btn">Ok</a></div></div></div> <!----> <!----></div>
+
+
+<style type="text/css">
+    @media(max-width: 767px) {
+        .afterFormSpace .policyTypeBox.tw-policy-new .editPolicy {
+            right: 15px;
+            font-size: 12px;
+        }
+
+            .afterFormSpace .policyTypeBox.tw-policy-new .editPolicy:before {
+                display: none;
+            }
+
+        a.tw-policyadd.editPolicy {
+            position: relative;
+        }
+
+        .afterFormSpace .policyTypeBox.tw-policy-new a.tw-policyadd {
+            position: absolute;
+            top: 40px;
+            font-size: 12px;
+            right: 15px;
+        }
+    }
+</style>
+
+</div>
+ 
+  
+
+
+
+
+        
+
+<script src="{% static 'js/main1.js' %}"></script>
+{% endblock %}

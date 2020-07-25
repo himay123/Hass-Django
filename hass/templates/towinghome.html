@@ -1,0 +1,172 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block content %}
+<style>
+    #towing
+    {
+        font-size: 20px;
+        color: #535659;
+        
+    }
+    .well
+    {
+        height: 250px;
+    }
+    
+</style>
+<script>
+    $(document).ready(function(){
+        $("#view").show();
+        $("#view").click(function(){
+            $("#more").slideDown(1000);
+            $("#viewless").show();
+            $("#view").hide();
+        });
+        $("#viewless").click(function(){
+            $("#more").slideUp(1000);
+            $("#viewless").hide();
+            $("#view").show();
+        });
+
+    });
+</script>
+            <div style="width: 100%;height: 85%; background-image: url({% static 'img/img1.jpg' %});background-size: 100%">
+                <div style="background-color:#f5f5f5; margin-left: 80px; margin-right: 800px;padding: 50px;border-bottom-left-radius: 40px;border-bottom-right-radius: 40px;">
+                    <label style="color: rgb(4, 46, 59);font-weight: bold;font-size: 20">GLOBAL ROADSIDE ASSISTANCE</label>
+                    <label style="color: red;font-weight: 300;font-size: large">With You On Every Road</label><br>
+                    <label style="color: rgb(4, 46, 59);font-weight: 300;font-size: 22"><img src="{% static 'images/24.png' %}" alt=""> 24 x 7 Assitance</label><br>
+                    <label style="color: rgb(4, 46, 59);font-weight: 300;font-size: 22"><img src="{% static 'images/loc.png' %}" alt="">Presence All Across India</label><br>
+                    <label style="color: rgb(4, 46, 59);font-weight: 300;font-size: 22"><img src="{% static 'images/word.png' %}" alt="">Great Leader For Road Assistance</label><br>
+                    <button class="btn btn-danger btn-lg" id="btnn" href="{% url '4wheel' %}" style="background-color:#e1001a;"><a href="{% url '4wheel' %}" style="text-decoration: none;color: black">4 WHEEL PLANS</a></button>
+                    
+                </div>
+            </div>    
+            <div class="container">
+                {% csrf_token %}
+                <h1>Services Offered</h1>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="well" style="border-radius: 0px;">
+                            <img src="{% static 'images/image3.jpeg' %}" alt="" style="margin-left:50px;background-color:#f2f2f2;">
+                            <h1 id="towing" class="text-center">Towing service</h1>
+                            <p style="font-size: 13px;">We tow your vehicle for free up to a distance mentioned in the applicable plan, in cases when on-site repairs are not possible.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="well" style="border-radius: 0px;">
+                            <img src="{% static 'images/image2.jpeg' %}" alt="" style="margin-left:50px;background-color:#f2f2f2;">
+                            <h1 id="towing" class="text-center">Accidental Towing</h1>
+                            <p style="font-size: 13px;">We ensure that your safety and peace of mind is not compromised by an accident through our accidental towing services.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="well" style="border-radius: 0px;">
+                            <img src="{% static 'images/image8.jpeg' %}" alt="" style="margin-left:50px;background-color:#f2f2f2;">
+                            <h1 id="towing" class="text-center">Battery Jumpstart</h1>
+                            <p style="font-size: 13px;">Our technicians will jumpstart your vehicle in case of a dead or discharged battery.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="well" style="border-radius: 0px;">
+                        <img src="{% static 'images/image5.jpeg' %}" alt="" style="margin-left:50px;background-color:#f2f2f2;">
+                        <h1 id="towing" class="text-center">Flat Tyre</h1>
+                        <p style="font-size: 13px;">We change your tyre with the spare or have the tyre repaired, in case you have a flat tyre.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="more" style="display: none;">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="well" style="border-radius: 0px;">
+                            <img src="{% static 'images/image6.jpeg' %}" alt="" style="margin-left:50px;background-color:#f2f2f2;">
+                            <h1 id="towing" class="text-center">Lost or locked keys</h1>
+                            <p style="font-size: 13px;">We get the spare keys from your home or tow your vehicle to the authorized service station, if you get locked out of your car or lose your car keys. </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="well" style="border-radius: 0px;">
+                            <img src="{% static 'images/image4.jpeg' %}" alt="" style="margin-left:50px;background-color:#f2f2f2;">
+                            <h1 id="towing" class="text-center">Fuel Problems</h1>
+                            <p style="font-size: 13px;">We provide free fuel or on actuals, basis applicable plan, if you run out of fuel. We also provide assistance in case of wrong fuelling. </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="well" style="border-radius: 0px;">
+                            <img src="{% static 'images/24s.jpeg' %}" alt="" style="margin-left:50px;background-color:#f2f2f2;">
+                            <h1 id="towing" class="text-center">24x7 Roadside Assistance</h1>
+                            <p style="font-size: 13px;">Breakdowns are unpredictable, that's why we're available 24x7x365. We also help you with troubleshooting over phone for warning signs etc.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="well" style="border-radius: 0px;">
+                        <img src="{% static 'images/image7.jpeg' %}" alt="" style="margin-left:50px;background-color:#f2f2f2;">
+                        <h1 id="towing" class="text-center">Taxi Service</h1>
+                        <p style="font-size: 13px;">We make arrangements for a cab to get you to your destination up to a distance as per the applicable plan, in case your vehicle is being towed. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="well" style="border-radius: 0px;">
+                            <img src="{% static 'images/image11.jpeg' %}" alt="" style="margin-left:50px;background-color:#f2f2f2;">
+                            <h1 id="towing" class="text-center">Minor On-site repairs</h1>
+                            <p style="font-size: 13px;">Our fully trained technicians are available 24X7 for all minor on-the-spot repairs</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="well" style="border-radius: 0px;">
+                            <img src="{% static 'images/image9.jpeg' %}" alt="" style="margin-left:50px;background-color:#f2f2f2;">
+                            <h1 id="towing" class="text-center">Medical Coordination</h1>
+                            <p style="font-size: 13px;">We assist you with contact numbers of medical facilities  and professionals in the vicinity, in case of a medical emergency arising due to a breakdown.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="well" style="border-radius: 0px;">
+                            <img src="{% static 'images/image10.jpeg' %}" alt="" style="margin-left:50px;background-color:#f2f2f2;">
+                            <h1 id="towing" class="text-center">Relay of urgent messages</h1>
+                            <p style="font-size: 13px;">Our urgent message relay service helps you keep your family and friends informed in case of an accident or vehicle breakdown.</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <center><button id="view" class="btn btn-danger btn-lg" style="display: none;background-color:#e1001a;">VIEW MORE</button></center>
+                <center><button id="viewless" class="btn btn-danger btn-lg" style="display: none;background-color:#e1001a;">VIEW LESS</button></center>
+
+            </div>
+
+            <div class="well" style="margin-top: 20px; background-color: #003781; color: white;height: auto;">
+                <h1 class="text-center" style="font-size: 30px;">Why Choose Us</h1>
+                <p style="font-size: 19px;margin-left: 150px; margin-right: 150px;">We're the industry leader in providing Roadside Assistance services in India and globally. We're also the partner of choice for leading automotive companies in India and abroad. We have the largest network presence and are present in &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 950+ locations across India.</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="well" style="margin-top: 20px;color: white; border: 1px solid white; height: 200px;">
+                               <img src="{% static 'images/im1.jpeg' %}" alt="" style="margin-left: 50px;">
+                               <p class="text-center" style="font-size: 16px;color: #003781;"><span style="font-weight:bold;">World leader</span> in Roadside Assistance Services</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="well" style="margin-top: 20px;color: white; border: 1px solid white;height: 200px;">
+                                <img src="{% static 'images/im2.jpeg' %}" alt="" style="margin-left: 50px;">
+                                <p class="text-center" style="font-size: 16px;color: #003781;">Presence in over<span style="font-weight:bold;"> 950 cities </span> across India
+                                    Presence in over 950 cities across India</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="well" style="margin-top: 20px; color: white; border: 1px solid white;height: 200px;">
+                                <img src="{% static 'images/im4.jpeg' %}" alt="" style="margin-left: 50px;">
+                                <p class="text-center" style="font-size: 16px;color: #003781;">Were available<span style="font-weight:bold;">24x7, 365 days</span> a year
+                                    We're available 24x7, 365 days a year</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="well" style="margin-top: 20px;  color: white; border: 1px solid white;height: 200px;">
+                                <img src="{% static 'images/im3.jpeg' %}" alt="" style="margin-left: 50px;">
+                                <p class="text-center" style="font-size: 16px;color: #003781;">Have assisted over<span style="font-weight:bold;">  560,000 customers </span> since inception</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+ {% endblock %}   

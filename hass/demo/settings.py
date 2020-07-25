@@ -90,12 +90,14 @@ WSGI_APPLICATION = 'demo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hass2',#database name
+        'NAME': 'database_hass',#database name
         'USER':'root',
         'PASSWORD':'',
         'HOST':'localhost',
         'PORT':'3306',
-        
+        'OPTIONS': {
+            'init_command': 'SET innodb_strict_mode=1',
+        }, 
          
         
     }
@@ -159,7 +161,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 EMAIL_USE_TLS=True
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT=587
-EMAIL_HOST_USER='sagarchandresha0708@gmail.com'
+EMAIL_HOST_USER='sagargajjar1999@gmail.com'
 EMAIL_HOST_PASSWORD='sagar@1711'
 SITE_ID = 2
 LOGIN_REDIRECT_URL="/"

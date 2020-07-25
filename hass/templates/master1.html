@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+ <link rel="preconnect dns-prefetch" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+<link rel="preload" as="style" href="{% static 'css/home-style.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/home-style.css' %}" type="text/css">
+<link rel="preload" as="style" href="{% static 'css/header-footer.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/header-footer.css' %}" type="text/css">
+<link rel="preload" as="script" href="{% static 'js/jquery-3-4-1-min.js' %}">
+<script src="{% static 'js/jquery-3-4-1-min.js' %}"></script>
+<link rel="preload" as="script" href="{% static 'js/customdeveloper.js' %}"> 
+ <script src="{% static 'js/customdeveloper.js'%}"></script>
+ <script src="{% static 'js/home-script.js' %}"></script>
+    <!-- Css Styles
+    <link rel="stylesheet" href="css/themify-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css"> -->
+</head>
+<style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    
+    
+    nav ul li a{
+      font-size: 20px;
+      margin-left:100px;
+    }
+    .navbar
+    {
+        padding: 15px;
+    }
+    .dropdown-menu a{
+        text-align: left;
+        width: 300px;
+        margin: 0px;
+        margin-left: 0px;
+    
+    }
+    .dropdown-menu{
+        border-radius: 15px;
+    }
+    </style>
+
+<body><br>
+    <script>
+    
+    </script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  PRODUCTS
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="{% url 'logout' %}">CAR TOWING</a>
+                  <hr>
+                  <a class="dropdown-item "  href="{% url 'homepage' %}">CAR RENTAL</a>
+                  <hr>
+                  <a class="dropdown-item "  href="{% url 'logout' %}">CAR INSURANCE</a>
+                </div>
+              </li>
+            
+            <li class="nav-item active">
+              <a class="nav-link text-light" href="{% url 'homepage' %}">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  POLICIES
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item  " href="{% url 'try' %}">FEE POLICY</a>
+                  <hr>
+                  <a class="dropdown-item " href="{% url 'eli' %}">ELIGIBILITY</a>
+                  <hr>
+                  <a class="dropdown-item" href="{% url 'member' %}">MEMBER AGREEMENT</a>
+                  <hr>
+                  <a class="dropdown-item" href="{% url 'rto' %}">INTER STATE TRAVEL</a>
+                  <hr>
+                  <a class="dropdown-item" href="{% url 'offer' %}">OFFER</a>
+                  <hr>
+                  <a class="dropdown-item" href="{% url 'helpcenter' %}">HELP CENTER</a>
+                  <hr>
+                  <a class="dropdown-item" href="{% url 'feedback' %}">FEEDBACK</a>
+                </div>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="{% url 'mybooking' %}">MYBOOKING</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light" href="{% url 'mybooking' %}" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                OTHERS
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item " href="{% url 'login' %}">SIGN-IN</a>
+                <hr>
+                <a class="dropdown-item" href="{% url 'register' %}">SIGN-UP</a>
+                <hr>
+                <a class="dropdown-item" href="{% url 'log' %}">LOG-OUT</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav> 
+      <br>
+      <br>
+    {% block containt %}
+
+    {% endblock %}
+
+
+
+    <br><br>
+    <!-- Page Preloder -->
+    <div id="preloder">
+      <div class="loader"></div>
+  </div>
+  
+  
+  <!-- Partner Logo Section End -->
+  
+  <!-- Footer Section Begin -->
+  <div class="sf_cols">
+      <div class="sf_colsOut " data-placeholder-label="footer">
+          <div id="C003_Col00" class="sf_colsIn sf_1col_1in_100"><div class="sfContentBlock"><footer>
+          <div class="footerTop quick_links">
+              <div class="il-container">
+                  <div class="row clearfix" style="margin-left: 10px;">
+                      <div class="col-md-3">
+                          <h4 class="">PRODUCTS</h4>
+                          <ul>
+                              <li><a href="{% url 'logout' %}">Car Insurance</a></li>
+                              <li><a target="_blank" href="{% url 'logout' %}">Towing</a></li>
+                              <li><a target="_blank" href="{% url 'homepage' %}">Car Rental</a></li>
+                          </ul>
+                          <h4 class="">INFO CENTER</h4>
+                          <ul>
+                              <li><a target="_blank" href="{% url 'expert_blog' %}">Expert Blog</a></li>
+                              <li><a target="_blank" href="{% url 'insurance_info' %}">Insurance Information</a></li><li><a target="_blank" href="/branches">HASS Branches</a></li>
+                          </ul>
+                          
+                      </div>
+                      <div class="col-md-3">
+                          <h4 class="">SERVICES</h4>
+                          <ul>
+                              <li><a href="{% url 'customer_support_page' %}">Customer Support</a></li>
+                              <li><a target="_blank" href="{% url 'c_claim' %}" rel="nofollow">Intimate Claim</a></li>
+                              <li><a href="{% url 'renew' %}">Renew Your Policy</a></li>
+                              <li><a target="_blank" href="{% url 'feedback' %}" rel="nofollow">Customer Feedback</a></li>
+                            
+                          </ul>
+                          <h4 class="">PMFBY</h4>
+                          <ul>
+                              <li><a href="/crop-insurance" class="footer-no-hover" target="_blank">
+                                  <img class="lazy pmfbyLogo loaded" data-src="{% static 'images/pmfby.png' %}" alt="Pradhan Mantri Fasal Bima Yojana" src="{% static 'images/pmfby.png' %}" data-was-processed="true"><p class="pmfbyText">Pradhan Mantri Fasal<br>Bima Yojana</p></a><p class="pmfbyText">Toll free no: 1800 266 9725</p></li>
+                          </ul>
+                      </div>
+                      <div class="col-md-3">
+                          <h4>LEGAL</h4>
+                          <ul>
+                              <li><a target="_blank" href="{% url 'privacy_policy_page' %}" rel="nofollow">Privacy Policy</a></li>
+                              <li><a target="_blank" href="{% url 'insurance_app_policy_page' %}" rel="nofollow">Insure App Privacy Policy</a></li>
+                              <li><a target="_blank" href="{% url 'terms_condition_page' %}" rel="nofollow">Terms &amp; Conditions</a></li>
+                              <li><a target="_blank" href="{% url 'disclamer_page' %}" rel="nofollow">Disclaimer</a></li>
+                              
+                             
+                              
+                          </ul>
+                          <h4>SOCIAL</h4>
+                          <div class="social_hover footer_social">
+                              <a href="#" target="_blank"><span class="si1"></span></a> 
+                              <a href="#" target="_blank"><span class="si2"></span></a> 
+                              <a href="#" target="_blank"><span class="si3"></span></a> 
+                              <a href="#" target="_blank" title="twitter"><span class="si4"></span></a>
+                              <a href="#" target="_blank" title="youtube"><span class="si5"></span></a> 
+                              <a href="#" target="_blank"><span class="si6"></span></a>
+                          </div>
+                      </div>
+                      <div class="col-md-3">
+                          <h4>ABOUT US</h4>
+                          <ul>
+                              <li><a target="_blank" href="{% url 'overview_page' %}">Overview</a></li>
+                              <li><a target="_blank" href="{% url 'promoter_page' %}">Promoters</a></li>
+                          
+                          </ul>
+                          
+                      </div>
+                  </div>
+              </div>
+          </div>
+         
+      </footer><script>$(document).ready(function(){
+  $('.sfPublicWrapper').removeClass('sfPublicWrapper');
+  });</script>
+  
+  </div>
+              
+          </div>
+      </div>
+  </div>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/main1.js' %}"></script>
+  
+  </body>
+  </html>
